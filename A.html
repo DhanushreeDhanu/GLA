@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Overview | GLA Online</title>
+  <meta name="description" content="Know about the history of GLA Online and its journey." />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green: #16833a;
+      --dark-green: #0b4d29;
+      --light-green: #eaf7ef;
+      --orange: #f59e0b;
+      --dark: #111827;
+      --muted: #6b7280;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; }
+
+    .top-bar {
+      background: var(--dark-green);
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .top-bar a { color: #fff; }
+
+    .navbar {
+      background: var(--green);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .08);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      color: #fff !important;
+      letter-spacing: .4px;
+    }
+
+    .navbar .nav-link {
+      color: #fff !important;
+      font-weight: 600;
+      padding-inline: 14px !important;
+    }
+
+    .apply-btn {
+      background: #fff;
+      color: var(--green) !important;
+      border-radius: 999px;
+      font-weight: 800;
+      padding: 9px 18px;
+      display: inline-block;
+    }
+
+    .hero {
+      min-height: 470px;
+      background:
+        linear-gradient(90deg, rgba(8, 61, 31, .88), rgba(8, 61, 31, .35)),
+        url("https://glaonline.com/uploads/home/banner_images/69895c46295431770609734.webp") center/cover no-repeat;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 86px);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .section-pad { padding: 80px 0; }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 56px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--dark-green);
+    }
+
+    .lead-text {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .image-card img {
+      border-radius: 28px;
+      box-shadow: 0 25px 55px rgba(0, 0, 0, .14);
+    }
+
+    .green-band {
+      background:
+        linear-gradient(rgba(8, 61, 31, .82), rgba(8, 61, 31, .82)),
+        url("https://glaonline.com/siteassets/images/middle-banner-img.webp") center/cover no-repeat;
+      color: #fff;
+      padding: 90px 0;
+    }
+
+    .green-band h2 {
+      font-size: clamp(34px, 5vw, 72px);
+      font-weight: 900;
+    }
+
+    .quote-card {
+      background: #fff;
+      border-radius: 30px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, .12);
+      padding: 40px;
+      position: relative;
+    }
+
+    .quote-card blockquote {
+      font-size: clamp(26px, 3vw, 44px);
+      color: var(--dark-green);
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .stats-section {
+      background: var(--light-green);
+    }
+
+    .stat-box {
+      background: #fff;
+      border-radius: 24px;
+      padding: 32px;
+      height: 100%;
+      box-shadow: 0 16px 36px rgba(0,0,0,.08);
+    }
+
+    .stat-box h3 {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--green);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: var(--green);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 0 36px 48px;
+    }
+
+    .timeline-item.left { left: 0; text-align: right; }
+    .timeline-item.right { left: 50%; }
+
+    .timeline-content {
+      background: #fff;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 18px 42px rgba(0,0,0,.10);
+    }
+
+    .timeline-content img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 18px;
+      margin-bottom: 16px;
+    }
+
+    .timeline-content h4 {
+      color: var(--green);
+      font-weight: 900;
+      font-size: 44px;
+      margin: 0 0 8px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      top: 24px;
+      width: 22px;
+      height: 22px;
+      background: var(--orange);
+      border: 5px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px var(--green);
+    }
+
+    .timeline-item.left .timeline-dot { right: -11px; }
+    .timeline-item.right .timeline-dot { left: -11px; }
+
+    .vision-card,
+    .mission-card {
+      border-radius: 28px;
+      padding: 38px;
+      height: 100%;
+      box-shadow: 0 18px 44px rgba(0,0,0,.10);
+    }
+
+    .vision-card { background: var(--dark-green); color: #fff; }
+    .mission-card { background: #fff; }
+
+    .mission-card li { margin-bottom: 12px; }
+
+    .footer {
+      background: #082b18;
+      color: #d1fae5;
+      padding: 45px 0 25px;
+    }
+
+    .footer a { color: #d1fae5; }
+
+    .floating-apply {
+      position: fixed;
+      right: 18px;
+      bottom: 22px;
+      z-index: 999;
+      background: var(--orange);
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+    }
+
+    .search-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 43, 24, .96);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 24px;
+    }
+
+    .search-overlay.active { display: flex; }
+
+    .search-box {
+      width: min(720px, 100%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-box input {
+      height: 58px;
+      border-radius: 999px;
+      border: 0;
+      padding: 0 24px;
+      font-size: 18px;
+    }
+
+    .close-search {
+      position: absolute;
+      top: 30px;
+      right: 35px;
+      color: #fff;
+      font-size: 44px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 991px) {
+      .timeline::before { left: 12px; }
+      .timeline-item,
+      .timeline-item.left,
+      .timeline-item.right {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding-left: 48px;
+        padding-right: 0;
+      }
+      .timeline-item.left .timeline-dot,
+      .timeline-item.right .timeline-dot {
+        left: 1px;
+        right: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar py-2">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <div>
+        <a href="mailto:onlineadmissions@gla.ac.in"><i class="bi bi-envelope-fill me-1"></i> onlineadmissions@gla.ac.in</a>
+      </div>
+      <div class="d-flex gap-3">
+        <a href="tel:+919568536853"><i class="bi bi-telephone-fill me-1"></i> +91-9568536853</a>
+        <a href="https://www.myglaonline.com/" target="_blank" rel="noopener">Student Login</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">GLA Online</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">About Us</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#overview">Overview</a></li>
+              <li><a class="dropdown-item" href="#journey">Journey</a></li>
+              <li><a class="dropdown-item" href="#vision">Vision & Mission</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Programs</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://glaonline.com/program/mba">MBA</a></li>
+              <li><a class="dropdown-item" href="https://glaonline.com/program/mca">MCA</a></li>
+              <li><a class="dropdown-item" href="https://glaonline.com/program/bba">BBA</a></li>
+              <li><a class="dropdown-item" href="https://glaonline.com/program/bca">BCA</a></li>
+              <li><a class="dropdown-item" href="https://glaonline.com/program/bcom-hons">B.Com (Hons.)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#admissions">Admissions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><button class="btn text-white" id="openSearch"><i class="bi bi-search"></i></button></li>
+          <li class="nav-item ms-lg-2"><a class="apply-btn" href="https://apply.glaonline.com/" target="_blank" rel="noopener">Apply Now</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="search-overlay" id="searchOverlay">
+    <span class="close-search" id="closeSearch">&times;</span>
+    <form class="search-box" id="searchForm">
+      <input class="form-control" type="search" id="searchInput" placeholder="Search..." required />
+      <button class="btn btn-warning rounded-pill px-4" type="submit"><i class="bi bi-search"></i></button>
+    </form>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <p class="text-uppercase fw-bold mb-2">About GLA Online</p>
+      <h1>Overview</h1>
+      <p class="fs-5 mx-auto" style="max-width: 760px;">Making quality online education accessible, affordable, and career-focused for modern learners.</p>
+      <a href="https://apply.glaonline.com/" target="_blank" rel="noopener" class="btn btn-warning btn-lg rounded-pill fw-bold mt-3">Apply Now</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-pad" id="overview">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5 image-card">
+            <img src="https://glaonline.com/siteassets/images/shree-ganesh-lal-ji.webp" alt="GLA founder" class="img-fluid" />
+          </div>
+          <div class="col-lg-7">
+            <h2 class="section-title">A belief that education should reach every child</h2>
+            <p class="lead-text mt-4">Everything began with a belief: education should never be a privilege, but a possibility for every child. Late Shri Ganeshi Lal Agrawal believed every child deserves education, irrespective of their circumstances.</p>
+            <p class="lead-text">His son, Shri Narayan Das Agrawal, carried that dream forward and laid the foundation of GLA Online University in Mathura with resilience, empathy, and a commitment to accessible learning.</p>
+            <p class="lead-text">What began decades ago has now shaped the futures of <strong>46,000+ GLAdiators</strong>, proving that when education becomes reachable, dreams truly take flight.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="green-band">
+      <div class="container text-center">
+        <h2><span class="text-warning">#</span>ApneSapneApneShaharSe</h2>
+        <p class="fs-4 mt-3 mx-auto" style="max-width: 850px;">Our goal is to make quality education accessible to learners at every nook and corner of the globe.</p>
+        <p class="mt-3 mx-auto" style="max-width: 900px;">We offer flexible and affordable online programs tailored to modern learners. With a focus on emerging fields, we build skills, foster innovation, and nurture future leaders and entrepreneurs.</p>
+        <a href="https://apply.glaonline.com/" target="_blank" rel="noopener" class="btn btn-warning btn-lg rounded-pill fw-bold mt-3">Apply Now</a>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5 image-card">
+            <img src="https://glaonline.com/siteassets/images/abt-ceo.webp" alt="CEO GLA Online" class="img-fluid" />
+          </div>
+          <div class="col-lg-7">
+            <div class="quote-card">
+              <blockquote>“Building India’s Premier Online Learning Ecosystem!”</blockquote>
+              <p class="lead-text mt-4">Guided by a commitment to affordable and accessible education, GLA Online University extends its legacy of academic excellence beyond the physical campus.</p>
+              <p class="lead-text">GLA Online empowers learners with knowledge, practical skills, and confidence for today’s competitive world.</p>
+              <h5 class="fw-bold mb-0">Neeraj Agrawal</h5>
+              <p class="text-muted mb-0">CEO, GLA Online University</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad stats-section">
+      <div class="container text-center">
+        <h2 class="section-title">A Global Network of Change-Makers</h2>
+        <p class="lead-text mx-auto" style="max-width: 760px;">Our GLAdiators span across the globe, contributing to leading companies, startups, and research institutions.</p>
+        <div class="row g-4 mt-4">
+          <div class="col-md-4"><div class="stat-box"><h3>46K+</h3><p>GLAdiators</p></div></div>
+          <div class="col-md-4"><div class="stat-box"><h3>86%</h3><p>Average placement over the last 5 years</p></div></div>
+          <div class="col-md-4"><div class="stat-box"><h3>5+</h3><p>Online programs</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="journey">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Our Journey</h2>
+        <div class="timeline">
+          <div class="timeline-item left"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg1.webp" alt="1998"><h4>1998</h4><p>GLA Online Institute of Technology & Management</p></div></div>
+          <div class="timeline-item right"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg2.webp" alt="2006"><h4>2006</h4><p>Institute of Business Management, Professional Studies, and Pharmaceutical Research</p></div></div>
+          <div class="timeline-item left"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg4.webp" alt="2010"><h4>2010</h4><p>GLA Online evolved into GLA Online University</p></div></div>
+          <div class="timeline-item right"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg5.webp" alt="2014"><h4>2014</h4><p>Faculty of Education</p></div></div>
+          <div class="timeline-item left"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg6.webp" alt="2018"><h4>2018</h4><p>Institute of Legal Studies & Research</p></div></div>
+          <div class="timeline-item right"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg7.webp" alt="2019"><h4>2019</h4><p>Faculty of Agricultural Sciences</p></div></div>
+          <div class="timeline-item left"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg8.webp" alt="2022"><h4>2022</h4><p>CSED-Industry 4.0 Facility and establishment of GLA Online</p></div></div>
+          <div class="timeline-item right"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg9.webp" alt="2024"><h4>2024</h4><p>Greater Noida Industry Integrated Fully Flexible Campus</p></div></div>
+        </div>
+        <h3 class="text-center fw-black mt-4" style="color: var(--green);">#GharSeGlobal with GLA Online</h3>
+      </div>
+    </section>
+
+    <section class="section-pad bg-light" id="vision">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="vision-card">
+              <h2 class="fw-bold">Vision</h2>
+              <p class="fs-5 mt-3">To make higher education globally accessible and affordable for every learner through industry-aligned, job-oriented online learning that enhances employability and prepares future-ready professionals.</p>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="mission-card">
+              <h2 class="fw-bold text-success">Mission</h2>
+              <ul class="fs-5 mt-3">
+                <li>To provide high-quality online education at an affordable cost.</li>
+                <li>To make online education accessible beyond geographical, economic, and temporal boundaries.</li>
+                <li>To offer flexible learning pathways with learner-centric schedules.</li>
+                <li>To enhance employability through industry-aligned, job-oriented curricula.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h4 class="text-white fw-bold">GLA Online</h4>
+          <p>Flexible, affordable, career-focused online education.</p>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="text-white fw-bold">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#overview">About Us</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#vision">Vision & Mission</a></li>
+            <li><a href="https://glaonline.com/contact-us">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="text-white fw-bold">Contact</h5>
+          <p class="mb-1"><a href="mailto:onlineadmissions@gla.ac.in">onlineadmissions@gla.ac.in</a></p>
+          <p><a href="tel:+919568536853">+91-9568536853</a></p>
+        </div>
+      </div>
+      <hr class="border-success" />
+      <p class="mb-0 small">© Copyright 2026 - GLA Online. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <a href="https://apply.glaonline.com/" target="_blank" rel="noopener" class="floating-apply">Apply Now</a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const openSearch = document.getElementById('openSearch');
+    const closeSearch = document.getElementById('closeSearch');
+    const searchOverlay = document.getElementById('searchOverlay');
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = document.getElementById('searchInput');
+
+    openSearch.addEventListener('click', () => {
+      searchOverlay.classList.add('active');
+      setTimeout(() => searchInput.focus(), 100);
+    });
+
+    closeSearch.addEventListener('click', () => {
+      searchOverlay.classList.remove('active');
+    });
+
+    searchOverlay.addEventListener('click', (event) => {
+      if (event.target === searchOverlay) searchOverlay.classList.remove('active');
+    });
+
+    searchForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const query = searchInput.value.trim();
+      if (!query) return;
+      window.location.href = 'https://glaonline.com/search?search=' + encodeURIComponent(query);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function (event) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
