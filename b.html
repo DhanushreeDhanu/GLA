@@ -1,115 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hero Banner</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-<style>
+  <title>World Map Section</title>
 
-.hero-section {
-  position: relative;
-  width: 100%;
-  min-height: 600px;
-  background: url("Overview/2.jpg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-/* Center content */
-.hero-content {
-  z-index: 2;
-}
-
-/* Left & Right images */
-.hero-img {
-  position: absolute;
-  bottom: 0;
-  max-height: 90%;
-}
-
-.hero-left {
-  left: 0;
-}
-
-.hero-right {
-  right: 0;
-}
-
-/* Button */
-.apply-btn {
-  background: #3f6f3f;
-  color: #fff;
-  padding: 10px 28px;
-  border-radius: 6px;
-  text-decoration: none;
-}
-
-/* Right floating button */
-.apply-fixed {
-  position: absolute;
-  right: 0;
-  bottom: 30px;
-  background: #3f6f3f;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px 0 0 6px;
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-  .hero-img {
-    display: none;
-  }
-
-  .hero-section {
-    text-align: center;
-    padding: 60px 20px;
-  }
-
-  .apply-fixed {
-    display: none;
-  }
-}
-
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
+<style>
+ body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f5;
+}
 
+/* SECTION */
+.worldmap_section_wrapper {
+  padding: 80px 0;
+  background: #f2f2f2;
+}
+
+/* HEADING */
+.world_map h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #2e5d3d;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+/* VIDEO */
+.map_video {
+  position: relative;
+}
+
+.map_video video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* OVERLAY CONTENT */
+.map_content {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  text-align: left;
+}
+
+.map_content h3 {
+  font-size: 60px;
+  font-weight: 700;
+  color: #2e5d3d;
+}
+
+.map_content p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .world_map h2 {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .map_content {
+    position: static;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .map_content h3 {
+    font-size: 40px;
+  }
+}
+</style>
 <body>
 
-<section class="hero-section">
-  <!-- CONTENT -->
-  <div class="container text-center hero-content" data-aos="zoom-in">
+<section class="worldmap_section_wrapper">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-10 col-lg-11">
 
-    <h1 class="fw-bold text-success mb-3 display-6 fs-1">
-      #ApneSapneApneShaharSe
-    </h1>
+        <div class="world_map text-center">
 
-    <p class="mb-3  fw-100 fs-5">
-      Our goal is to make quality education accessible to learners<br>
-      at every nook and corner of the globe.
-    </p>
+          <!-- Heading -->
+          <h2>A Global Network of Change-Makers</h2>
 
-    <p class="mb-4 fw-100 fs-6">
-      We offer flexible and affordable online programs tailored to the needs
-      of<br> modern learners. Focusing on emerging fields, we aim to build skills,
-      foster <br>innovation, and nurture future leaders and entrepreneurs.
-    </p>
+          <p class="subtitle">
+            Our GLAdiators span across the globe, contributing to leading
+            companies, startups, and research institutions
+          </p>
 
-    <a href="#" class="apply-btn">Apply Now</a>
+          <!-- Video Map -->
+          <div class="map_video">
+            <video autoplay muted loop playsinline>
+              <source src="https://glaonline.com/siteassets/images/world-map.mp4" type="video/mp4">
+            </video>
 
+            <!-- Overlay Content -->
+            <div class="map_content" data-aos="fade-up">
+              <h3>86%</h3>
+              <p>Average placement<br>over the last 5 years.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
   </div>
-
 </section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<!-- JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-AOS.init({ duration: 1000 });
+  AOS.init({
+    once: true
+  });
 </script>
 
 </body>

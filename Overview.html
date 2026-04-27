@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GLA Header</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
-  <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Inter', Arial, sans-serif;
       min-height: 200vh;
       background: #f6f6f6;
       color: #000;
+      margin: 0;
+      overflow-x: hidden;
     }
 
     a {
       text-decoration: none;
       color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     .main_header {
@@ -37,7 +40,7 @@
       left: 0;
       width: 100%;
       z-index: 9999;
-      padding: 16px 0;
+      padding: 14px 0;
       background: transparent;
       transition: 0.35s ease;
     }
@@ -46,11 +49,11 @@
     .main_header.mega-open {
       background: #fff;
       box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-      padding: 12px 0;
+      padding: 10px 0;
     }
 
     .logo_wrap img {
-      max-width: 360px;
+      max-width: 280px;
       width: 100%;
     }
 
@@ -58,6 +61,7 @@
       font-size: 15px;
       font-weight: 500;
       color: #000;
+      white-space: nowrap;
     }
 
     .apply_btn {
@@ -66,12 +70,14 @@
       padding: 8px 14px;
       border-radius: 5px;
       font-size: 14px;
+      white-space: nowrap;
     }
 
     .search_icon {
       width: 24px;
       height: 24px;
       cursor: pointer;
+      flex-shrink: 0;
     }
 
     .hamb_icon {
@@ -114,7 +120,7 @@
       min-height: 620px;
       background: #ffd12e;
       z-index: 9990;
-      padding: 150px 70px 50px;
+      padding: 140px 55px 45px;
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
@@ -129,7 +135,7 @@
 
     .program_card {
       position: relative;
-      height: 350px;
+      height: 330px;
       border-radius: 10px;
       overflow: hidden;
       background: #000;
@@ -174,14 +180,15 @@
       z-index: 2;
       color: #fff;
       font-weight: 700;
-      font-size: 22px;
-      line-height: 1.1;
+      font-size: 21px;
+      line-height: 1.15;
+      padding-right: 45px;
     }
 
     .program_text span {
       color: #ffd12e;
       display: block;
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 500;
     }
 
@@ -206,12 +213,12 @@
       font-size: 0;
     }
 
-    .progrm_banner {
+    .program_banner {
       height: 500px;
       overflow: hidden;
     }
 
-    .program_baner_slider,
+    .program_banner_slider,
     .swiper-wrapper,
     .swiper-slide,
     .banner_img {
@@ -224,7 +231,6 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      display: block;
     }
 
     .swiper-slide {
@@ -259,7 +265,6 @@
       cursor: pointer;
     }
 
-    /* ABOUT SECTION */
     .about_one.abt2 {
       padding: 80px 0;
       background: #f7f7f7;
@@ -285,16 +290,11 @@
       object-fit: cover;
       object-position: center;
       border-radius: 16px;
-      display: block;
-    }
-
-    .insp_rght {
-      padding-left: 6px;
     }
 
     .insp_rght h3 {
       font-size: 31px;
-      line-height: 1.20;
+      line-height: 1.35;
       font-weight: 400;
       color: #000;
       margin-bottom: 28px;
@@ -303,10 +303,10 @@
 
     .insp_rght p {
       font-size: 18px;
-      line-height: 1.20;
+      line-height: 1.6;
       font-weight: 400;
       color: #000;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .insp_rght p:last-child {
@@ -317,13 +317,85 @@
       font-weight: 800;
     }
 
+    .hero-wrapper {
+      width: 100%;
+      background: #f5f5f5;
+    }
+
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      min-height: 550px;
+      background: url("Overview/2.jpg") center center / cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 22%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(520px, 90%);
+      text-align: center;
+      z-index: 5;
+    }
+
+    .hero-content h1 {
+      color: #0a6b2f;
+      font-size: 34px;
+      line-height: 1.25;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero-content .top-text {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 22px;
+    }
+
+    .hero-content .desc {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .apply-btn {
+      display: inline-block;
+      background: #4c7439;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 30px;
+      border-radius: 4px;
+      font-size: 18px;
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .apply-btn:hover {
+      background: #355c28;
+      color: #fff;
+    }
+
     @media (max-width: 1366px) {
       .logo_wrap img {
-        max-width: 300px;
+        max-width: 250px;
       }
 
-      .progrm_banner {
+      .program_banner {
         height: 430px;
+      }
+
+      .program_card {
+        height: 300px;
+      }
+
+      .program_text {
+        font-size: 18px;
+      }
+
+      .program_text span {
+        font-size: 17px;
       }
 
       .insp_lft img {
@@ -339,9 +411,21 @@
       }
     }
 
+    @media (max-width: 1199px) {
+      .logo_wrap img {
+        max-width: 230px;
+      }
+    }
+
     @media (max-width: 991px) {
-      .progrm_banner {
+      .main_header {
+        background: #fff;
+        padding: 12px 0;
+      }
+
+      .program_banner {
         height: 360px;
+        margin-top: 78px;
       }
 
       .mega_menu_area {
@@ -369,15 +453,37 @@
         font-size: 17px;
         margin-bottom: 22px;
       }
+
+      .hero-banner {
+        background: #f4c542;
+        min-height: auto;
+        padding: 70px 20px;
+      }
+
+      .hero-content {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        max-width: 650px;
+        margin: auto;
+      }
     }
 
     @media (max-width: 575px) {
-      .logo_wrap img {
-        max-width: 220px;
+      .container-fluid.px-4 {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
       }
 
-      .progrm_banner {
+      .logo_wrap img {
+        max-width: 205px;
+      }
+
+      .program_banner {
         height: 300px;
+        margin-top: 72px;
       }
 
       .about_one.abt2 {
@@ -390,13 +496,116 @@
 
       .insp_rght h3 {
         font-size: 24px;
-        line-height: 1.20;
       }
 
       .insp_rght p {
         font-size: 16px;
       }
+
+      .hero-banner {
+        padding: 50px 16px;
+      }
+
+      .hero-content h1 {
+        font-size: 26px;
+      }
+
+      .hero-content .top-text {
+        font-size: 15px;
+      }
+
+      .hero-content .desc {
+        font-size: 14px;
+      }
+
+      .apply-btn {
+        width: 100%;
+        max-width: 220px;
+        font-size: 16px;
+      }
+
+      .search_close {
+        top: 20px;
+        right: 25px;
+        font-size: 40px;
+      }
     }
+
+    /* Section */
+.ceo-section {
+    padding-top: 80px;
+    padding-bottom:0px;
+  background-image: url("Overview/5.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  min-height: 90vh;
+  height: auto;
+}
+
+/* Image */
+.ceo-img {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Quote */
+.ceo-quote {
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* Text */
+.ceo-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #dcdcdc;
+  margin-bottom: 15px;
+}
+
+/* CEO Info */
+.ceo-info h5 {
+  color: #ffcc00;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.ceo-info span {
+  font-size: 14px;
+  color: #ccc;
+}
+.ceo-section {
+  position: relative;
+}
+
+.ceo-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("Overview/5.jpg") center/cover no-repeat;
+}
+
+.ceo-section .container {
+  position: relative;
+  z-index: 1;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .ceo-section {
+    text-align: center;
+  }
+
+  .ceo-img {
+    margin-bottom: 30px;
+  }
+  @media (max-width: 768px) {
+  .ceo-quote {
+    font-size: 26px;
+  }
+}
+}
   </style>
 </head>
 
@@ -565,8 +774,8 @@
     </form>
   </div>
 
-  <section class="progrm_banner abtbanner">
-    <div class="program_baner_slider swiper">
+  <section class="program_banner abtbanner">
+    <div class="program_banner_slider swiper">
       <div class="swiper-wrapper">
 
         <div class="swiper-slide">
@@ -634,9 +843,33 @@
     </div>
   </section>
 
+  <section class="hero-wrapper">
+    <div class="hero-banner">
+
+      <div class="hero-content">
+        <h1>#ApneSapneApneShaharSe</h1>
+
+        <p class="top-text">
+          Our goal is to make quality education accessible to learners at
+          every nook and corner of the globe.
+        </p>
+
+        <p class="desc">
+          We offer flexible and affordable online programs tailored to the needs of
+          modern learners. Focusing on emerging fields, we aim to build skills,
+          foster innovation, and nurture future leaders and entrepreneurs. Our
+          commitment to academic excellence and learner success remains at the
+          heart of everything we do.
+        </p>
+
+        <a href="https://apply.glaonline.com/" class="apply-btn" target="_blank">Apply Now</a>
+      </div>
+
+    </div>
+  </section>
+
   
 
-  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -679,7 +912,7 @@
       }, 200);
     }
 
-    if (programToggle) {
+    if (programToggle && programMega) {
       programToggle.addEventListener("mouseenter", showMegaMenu);
       programToggle.addEventListener("mouseleave", hideMegaMenu);
       programMega.addEventListener("mouseenter", showMegaMenu);
@@ -695,7 +928,7 @@
       document.getElementById("searchOverlay").classList.remove("active");
     }
 
-    new Swiper(".program_baner_slider", {
+    new Swiper(".program_banner_slider", {
       loop: true,
       effect: "fade",
       speed: 1000,
