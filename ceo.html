@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLA Online</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      overflow-x: hidden;
+    }
+
+    .main-header {
+      z-index: 999;
+      transition: .3s;
+    }
+
+    .main-header.scrolled {
+      background: #fff !important;
+      box-shadow: 0 4px 18px rgba(0,0,0,.1);
+    }
+
+    .logo {
+      max-width: 250px;
+    }
+
+    .hero-slider,
+    .hero-slider .swiper-slide,
+    .hero-slider img {
+      height: 500px;
+      width: 100%;
+    }
+
+    .hero-slider img {
+      object-fit: cover;
+    }
+
+    .green-btn {
+      background: #3f743e;
+      color: #fff;
+    }
+
+    .green-btn:hover {
+      background: #315d31;
+      color: #fff;
+    }
+
+    .overview-img {
+      height: 520px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .yellow-section {
+      background: #f4c542;
+    }
+
+    .ceo-section {
+      background:
+        linear-gradient(rgba(45,58,91,.88), rgba(45,58,91,.88)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+
+    .ceo-img {
+      max-width: 400px;
+    }
+
+    .section-title {
+      color: #061b49;
+      letter-spacing: 4px;
+    }
+
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: #bfc7d0;
+    }
+
+    .timeline-card img {
+      height: 180px;
+      object-fit: cover;
+      filter: grayscale(100%);
+      border-radius: 16px 16px 0 0;
+    }
+
+    .timeline-dot {
+      width: 20px;
+      height: 20px;
+      background: #5fc9f2;
+      border: 5px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0,0,0,.2);
+      position: absolute;
+      top: 50%;
+    }
+
+    .timeline-left .timeline-dot {
+      right: -10px;
+    }
+
+    .timeline-right .timeline-dot {
+      left: -10px;
+    }
+
+    .year {
+      color: #3f743e;
+      font-size: 46px;
+      font-weight: 700;
+    }
+
+    .mission-box {
+      background: #3f743e;
+      color: #fff;
+      border-radius: 20px 0 0 20px;
+    }
+
+    .yellow-border {
+      border-left: 8px solid #f4c542;
+    }
+
+    .mission-box li::marker {
+      color: #f4c542;
+    }
+
+    .footer {
+      background: #1d1714;
+    }
+
+    .social-icon {
+      width: 42px;
+      height: 42px;
+    }
+
+    .apply-fixed {
+      position: fixed;
+      right: 0;
+      bottom: 30px;
+      z-index: 999;
+      border-radius: 6px 0 0 6px;
+    }
+
+    @media (max-width: 991px) {
+      .hero-slider,
+      .hero-slider .swiper-slide,
+      .hero-slider img {
+        height: 350px;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-left,
+      .timeline-right {
+        padding-left: 50px !important;
+        padding-right: 0 !important;
+      }
+
+      .timeline-left .timeline-dot,
+      .timeline-right .timeline-dot {
+        left: 10px;
+        right: auto;
+      }
+
+      .overview-img {
+        height: 360px;
+      }
+
+      .mission-box {
+        border-radius: 18px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .logo {
+        max-width: 190px;
+      }
+
+      .hero-slider,
+      .hero-slider .swiper-slide,
+      .hero-slider img {
+        height: 280px;
+      }
+
+      .year {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header id="mainHeader" class="main-header position-fixed top-0 start-0 w-100 bg-white bg-opacity-75 py-3">
+  <div class="container-fluid px-4">
+    <nav class="navbar navbar-expand-xl p-0">
+
+      <a class="navbar-brand" href="#">
+        <img src="https://glaonline.com/siteassets/images/green-logo.webp" class="logo" alt="GLA Online">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav align-items-center gap-3">
+          <li><a class="nav-link" href="mailto:onlineadmissions@gla.ac.in">onlineadmissions@gla.ac.in</a></li>
+          <li><a class="nav-link" href="tel:+919568536853">+91-9568536853</a></li>
+          <li><a class="btn green-btn btn-sm" href="#">Apply Now</a></li>
+          <li><a class="btn green-btn btn-sm" href="#">Student Login</a></li>
+        </ul>
+      </div>
+
+    </nav>
+
+    <div class="d-none d-xl-flex justify-content-end mt-2">
+      <ul class="nav gap-4">
+        <li><a class="nav-link text-dark" href="#overview">About Us</a></li>
+        <li><a class="nav-link text-dark" href="#journey">Journey</a></li>
+        <li><a class="nav-link text-dark" href="#vision">Vision & Mission</a></li>
+        <li><a class="nav-link text-dark" href="#programs">Programs</a></li>
+        <li><a class="nav-link text-dark" href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="offcanvas offcanvas-end" id="mobileMenu">
+  <div class="offcanvas-header">
+    <h5>Menu</h5>
+    <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav gap-3">
+      <li><a class="nav-link" href="#overview">About Us</a></li>
+      <li><a class="nav-link" href="#journey">Journey</a></li>
+      <li><a class="nav-link" href="#vision">Vision & Mission</a></li>
+      <li><a class="nav-link" href="#programs">Programs</a></li>
+      <li><a class="nav-link" href="#contact">Contact Us</a></li>
+      <li><a class="btn green-btn w-100" href="#">Apply Now</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- BANNER -->
+<section class="swiper hero-slider mt-5 pt-5">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="https://glaonline.com/uploads/home/banner_images/69895c46295431770609734.webp" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://glaonline.com/uploads/home/banner_images/69895b4e947cc1770609486.webp" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview" class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <img src="https://glaonline.com/siteassets/images/shree-ganesh-lal-ji.webp" class="img-fluid overview-img w-100" alt="">
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left">
+        <h2 class="fw-normal mb-4">
+          Everything began with a belief - education should never be a privilege,
+          but a possibility for every child.
+        </h2>
+        <p>
+          A belief held by the Late Shri Ganeshi Lal Agrawal - that every child deserves
+          an education, irrespective of their circumstances.
+        </p>
+        <p>
+          Holding on to that purpose, he laid the foundation of GLA Online University in Mathura,
+          built with resilience, empathy, and commitment.
+        </p>
+        <p>
+          What began decades ago has now shaped the futures of
+          <b>46,000+ GLAdiators</b>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YELLOW HERO -->
+<section class="yellow-section py-5 text-center">
+  <div class="container">
+    <div class="col-lg-7 mx-auto" data-aos="fade-up">
+      <h2 class="fw-bold text-success">#ApneSapneApneShaharSe</h2>
+      <p class="fs-5">
+        Our goal is to make quality education accessible to learners at every nook and corner of the globe.
+      </p>
+      <p>
+        We offer flexible and affordable online programs tailored to the needs of modern learners.
+      </p>
+      <a href="#" class="btn green-btn px-4 py-2">Apply Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- CEO -->
+<section class="ceo-section py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 text-center" data-aos="fade-right">
+        <img src="https://glaonline.com/siteassets/images/abt-ceo.webp" class="img-fluid ceo-img" alt="">
+      </div>
+
+      <div class="col-lg-7" data-aos="fade-left">
+        <h2 class="fw-bold display-6 mb-4">
+          "Building India’s Premier Online Learning Ecosystem!"
+        </h2>
+        <p>
+          Guided by a commitment to provide affordable and accessible education,
+          GLA Online University extends its legacy of academic excellence beyond the physical campus.
+        </p>
+        <p>
+          Our goal is to build India’s most impactful online education ecosystem by making quality,
+          industry-integrated learning available to all.
+        </p>
+        <hr>
+        <h5 class="text-warning fw-bold mb-1">Neeraj Agrawal</h5>
+        <p>CEO, GLA Online University</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORLD MAP -->
+<section class="py-5 bg-white">
+  <div class="container text-center">
+    <h2 class="fw-bold text-success">A Global Network of Change-Makers</h2>
+    <p class="mb-4">
+      Our GLAdiators span across the globe, contributing to leading companies,
+      startups, and research institutions.
+    </p>
+
+    <div class="position-relative">
+      <video class="w-100 rounded" autoplay muted loop playsinline>
+        <source src="https://glaonline.com/siteassets/images/world-map.mp4" type="video/mp4">
+      </video>
+
+      <div class="position-absolute bottom-0 start-0 p-4 text-start d-none d-md-block">
+        <h2 class="display-3 fw-bold text-success">86%</h2>
+        <p>Average placement<br>over the last 5 years.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="journey" class="py-5">
+  <div class="container">
+    <h2 class="text-center text-uppercase section-title mb-5">Our Journey</h2>
+
+    <div class="timeline">
+
+      <!-- Item -->
+      <div class="row mb-5 timeline-left position-relative">
+        <div class="col-lg-6 pe-lg-5" data-aos="fade-up">
+          <div class="card border-0 rounded-4 timeline-card">
+            <img src="https://glaonline.com/siteassets/images/journeyimg1.webp" class="card-img-top">
+            <div class="card-body p-4 d-flex align-items-center justify-content-between">
+              <p class="fs-5 mb-0">GLA Online Institute of Technology & Management</p>
+              <h3 class="year mb-0">1998</h3>
+            </div>
+          </div>
+        </div>
+        <span class="timeline-dot"></span>
+      </div>
+
+      <div class="row mb-5 timeline-right position-relative justify-content-end">
+        <div class="col-lg-6 ps-lg-5" data-aos="fade-up">
+          <div class="card border-0 rounded-4 timeline-card">
+            <img src="https://glaonline.com/siteassets/images/journeyimg2.webp" class="card-img-top">
+            <div class="card-body p-4 d-flex gap-4">
+              <h3 class="year mb-0">2006</h3>
+              <ul class="mb-0">
+                <li>Institute Of Business Management</li>
+                <li>Institute of Professional Studies</li>
+                <li>Institute of Pharmaceutical Research</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <span class="timeline-dot"></span>
+      </div>
+
+      <div class="row mb-5 timeline-left position-relative">
+        <div class="col-lg-6 pe-lg-5" data-aos="fade-up">
+          <div class="card border-0 rounded-4 timeline-card">
+            <img src="https://glaonline.com/siteassets/images/journeyimg4.webp" class="card-img-top">
+            <div class="card-body p-4 d-flex align-items-center justify-content-between">
+              <p class="fs-5 mb-0">GLA Online Evolved into <b>GLA Online University</b></p>
+              <h3 class="year mb-0">2010</h3>
+            </div>
+          </div>
+        </div>
+        <span class="timeline-dot"></span>
+      </div>
+
+      <div class="row mb-5 timeline-right position-relative justify-content-end">
+        <div class="col-lg-6 ps-lg-5" data-aos="fade-up">
+          <div class="card border-0 rounded-4 timeline-card">
+            <img src="https://glaonline.com/siteassets/images/journeyimg5.webp" class="card-img-top">
+            <div class="card-body p-4 d-flex align-items-center gap-4">
+              <h3 class="year mb-0">2014</h3>
+              <p class="fs-4 mb-0">Faculty of Education</p>
+            </div>
+          </div>
+        </div>
+        <span class="timeline-dot"></span>
+      </div>
+
+      <div class="row mb-5 timeline-left position-relative">
+        <div class="col-lg-6 pe-lg-5" data-aos="fade-up">
+          <div class="card border-0 rounded-4 timeline-card">
+            <img src="https://glaonline.com/siteassets/images/journeyimg6.webp" class="card-img-top">
+            <div class="card-body p-4 d-flex align-items-center justify-content-between">
+              <p class="fs-5 mb-0">Institute of Legal Studies & Research</p>
+              <h3 class="year mb-0">2018</h3>
+            </div>
+          </div>
+        </div>
+        <span class="timeline-dot"></span>
+      </div>
+
+      <div class="row mb-5 timeline-right position-relative justify-content-end">
+        <div class="col-lg-6 ps-lg-5" data-aos="fade-up">
+          <div class="card border-0 rounded-4 timeline-card">
+            <img src="https://glaonline.com/siteassets/images/journeyimg7.webp" class="card-img-top">
+            <div class="card-body p-4 d-flex align-items-center gap-4">
+              <h3 class="year mb-0">2019</h3>
+              <p class="fs-4 mb-0">Faculty of Agricultural Sciences</p>
+            </div>
+          </div>
+        </div>
+        <span class="timeline-dot"></span>
+      </div>
+
+      <div class="row mb-5 timeline-left position-relative">
+        <div class="col-lg-6 pe-lg-5" data-aos="fade-up">
+          <div class="card border-0 rounded-4 timeline-card">
+            <img src="https://glaonline.com/siteassets/images/journeyimg8.webp" class="card-img-top">
+            <div class="card-body p-4 d-flex align-items-center justify-content-between">
+              <p class="fs-5 mb-0">CSED-Industry 4.0 Facility</p>
+              <h3 class="year mb-0">2022</h3>
+            </div>
+          </div>
+        </div>
+        <span class="timeline-dot"></span>
+      </div>
+
+      <div class="row mb-5 timeline-right position-relative justify-content-end">
+        <div class="col-lg-6 ps-lg-5" data-aos="fade-up">
+          <div class="card border-0 rounded-4 timeline-card">
+            <img src="https://glaonline.com/siteassets/images/journeyimg8.webp" class="card-img-top">
+            <div class="card-body p-4 d-flex align-items-center gap-4">
+              <h3 class="year mb-0">2022</h3>
+              <p class="fs-4 mb-0">Establishment of <span class="text-success">GLA Online</span></p>
+            </div>
+          </div>
+        </div>
+        <span class="timeline-dot"></span>
+      </div>
+
+      <div class="row mb-5 timeline-left position-relative">
+        <div class="col-lg-6 pe-lg-5" data-aos="fade-up">
+          <div class="card border-0 rounded-4 timeline-card">
+            <img src="https://glaonline.com/siteassets/images/journeyimg9.webp" class="card-img-top">
+            <div class="card-body p-4 d-flex align-items-center justify-content-between">
+              <p class="fs-5 mb-0">Greater Noida Industry Integrated Fully Flexible Campus</p>
+              <h3 class="year mb-0">2024</h3>
+            </div>
+          </div>
+        </div>
+        <span class="timeline-dot"></span>
+      </div>
+
+    </div>
+
+    <h2 class="text-center fw-bold mt-4">#GharSeGlobal with GLA Online</h2>
+  </div>
+</section>
+
+<!-- VISION MISSION -->
+<section id="vision" class="py-5">
+  <div class="container-fluid pe-0">
+    <div class="mission-box p-5">
+      <div class="container">
+        <div class="yellow-border ps-4 mb-5" data-aos="fade-up">
+          <h2 class="fw-bold mb-4">Vision</h2>
+          <p class="fs-4">
+            To make higher education globally accessible and affordable for every learner through
+            industry-aligned, job-oriented online learning that enhances employability and prepares
+            future-ready professionals.
+          </p>
+        </div>
+
+        <div class="yellow-border ps-4" data-aos="fade-up">
+          <h2 class="fw-bold mb-4">Mission</h2>
+          <ul class="fs-5">
+            <li>To provide high-quality online education at an affordable cost.</li>
+            <li>To make online education accessible beyond geographical, economic, and temporal boundaries.</li>
+            <li>To offer flexible learning pathways with learner-centric schedules and adaptable academic structures.</li>
+            <li>To enhance employability through industry-aligned, job-oriented curricula that build future-ready skills.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact" class="footer text-white py-5">
+  <div class="container">
+
+    <div class="d-flex flex-wrap justify-content-center gap-4 mb-4">
+      <a href="#" class="text-white text-decoration-none">About Us</a>
+      <a href="#" class="text-white text-decoration-none">Admissions</a>
+      <a href="#" class="text-white text-decoration-none">Programs</a>
+      <a href="#" class="text-white text-decoration-none">FAQs</a>
+      <a href="#" class="text-white text-decoration-none">Testimonials</a>
+      <a href="#" class="text-white text-decoration-none">Privacy Policy</a>
+      <a href="#" class="text-white text-decoration-none">Contact Us</a>
+    </div>
+
+    <hr class="border-light">
+
+    <div class="row align-items-center text-center gy-3">
+      <div class="col-lg-4 text-lg-start">
+        © Copyright 2026 - GLA Online. All Rights Reserved.
+      </div>
+
+      <div class="col-lg-4">
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#" class="social-icon rounded-circle bg-primary d-flex align-items-center justify-content-center text-white">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon rounded-circle bg-danger d-flex align-items-center justify-content-center text-white">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="#" class="social-icon rounded-circle bg-warning d-flex align-items-center justify-content-center text-white">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 text-lg-end">
+        Website Design and Developed by Sterco Digitex
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<a href="#" class="btn green-btn apply-fixed">Apply Now</a>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+    once: true,
+    duration: 900,
+    offset: 100
+  });
+
+  const header = document.getElementById("mainHeader");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 20) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+
+  new Swiper(".hero-slider", {
+    loop: true,
+    effect: "fade",
+    speed: 1000,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    }
+  });
+</script>
+
+</body>
+</html>

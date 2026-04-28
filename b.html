@@ -1,130 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Journey Timeline</title>
 
   <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <title>World Map Section</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <link rel="stylesheet" href="style.css">
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f2f2;
+      color: #061b49;
+    }
+
+    .timeline-section {
+      padding: 50px 0 70px;
+      background: #f1f1f1;
+      overflow: hidden;
+    }
+
+    .timeline-section h3 {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 28px;
+      letter-spacing: 4px;
+      font-weight: 500;
+      color: #061b49;
+      margin-bottom: 70px;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding-bottom: 30px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 120px;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: #bfc7d0;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      margin-bottom: 85px;
+    }
+
+    .timeline-item.left {
+      left: 0;
+      padding-right: 70px;
+      text-align: right;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+      padding-left: 70px;
+      text-align: left;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 240px;
+      width: 40px;
+      border-top: 1px dashed #45bdea;
+    }
+
+    .timeline-item.left::before {
+      right: -20px;
+    }
+
+    .timeline-item.right::before {
+      left: -20px;
+    }
+
+    .timeline-item::after {
+      content: "";
+      position: absolute;
+      top: 231px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #5fc9f2;
+      border: 5px solid #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+      z-index: 2;
+    }
+
+    .timeline-item.left::after {
+      right: -10px;
+    }
+
+    .timeline-item.right::after {
+      left: -10px;
+    }
+
+    .timeline-item figure {
+      margin: 0 auto -2px;
+      width: 335px;
+      height: 188px;
+      overflow: hidden;
+      border-radius: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-item figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      display: block;
+    }
+
+    .journey-text {
+      position: relative;
+      background: #fff;
+      border-radius: 24px;
+      padding: 45px 32px;
+      min-height: 150px;
+      box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+
+    .journey-text::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      width: 48%;
+      height: 5px;
+      background: #ffca28;
+    }
+
+    .timeline-item.left .journey-text::after {
+      right: 30%;
+    }
+
+    .timeline-item.right .journey-text::after {
+      left: 30%;
+    }
+
+    .timeline-item.left .journey-text::before {
+      content: "";
+      position: absolute;
+      right: -22px;
+      top: 35px;
+      width: 0;
+      height: 0;
+      border-top: 22px solid transparent;
+      border-bottom: 22px solid transparent;
+      border-left: 22px solid #fff;
+    }
+
+    .timeline-item.right .journey-text::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 35px;
+      width: 0;
+      height: 0;
+      border-top: 22px solid transparent;
+      border-bottom: 22px solid transparent;
+      border-right: 22px solid #fff;
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+    }
+
+    .timeline-item.left .content {
+      flex-direction: row-reverse;
+    }
+
+    .content h4 {
+      font-size: 50px;
+      line-height: 1;
+      font-weight: 700;
+      color: #3f743e;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .content p {
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 500;
+      color: #061b49;
+      margin: 0;
+    }
+
+    .timeline-item.left .content p {
+      text-align: right;
+      font-size: 19px;
+    }
+
+    .timeline-item.right .content p {
+      text-align: left;
+      font-size: 19px;
+    }
+
+    .content h4 + p,
+    .content h4 + .jou-text,
+    .content p + h4 {
+      border-left: 1px solid #e1e1e1;
+      padding-left: 22px;
+    }
+
+    .timeline-item.left .content h4 + p,
+    .timeline-item.left .content h4 + .jou-text {
+      border-left: 0;
+      padding-left: 0;
+      border-right: 1px solid #e1e1e1;
+      padding-right: 22px;
+    }
+
+    .common-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .common-list li {
+      position: relative;
+      font-size: 19px;
+      line-height: 1.45;
+      color: #061b49;
+      margin-bottom: 13px;
+      padding-left: 20px;
+    }
+
+    .common-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 8px;
+      height: 8px;
+      background: #ffca28;
+      border-radius: 50%;
+    }
+
+    .gla-online-text {
+      color: #3f743e;
+    }
+
+    .ghar-se-global {
+      text-align: center;
+      font-size: 34px;
+      font-weight: 700;
+      color: #061b49;
+      margin-top: 20px;
+    }
+
+    .apply-now {
+      position: fixed;
+      right: 0;
+      bottom: 28px;
+      background: #3f743e;
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 6px 0 0 6px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      z-index: 999;
+    }
+
+    .apply-now:hover {
+      background: #305f30;
+      color: #fff;
+    }
+
+    @media (max-width: 991px) {
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item,
+      .timeline-item.left,
+      .timeline-item.right {
+        width: 100%;
+        left: 0;
+        padding-left: 55px;
+        padding-right: 0;
+        text-align: left;
+      }
+
+      .timeline-item.left .content {
+        flex-direction: row;
+      }
+
+      .timeline-item.left .content p {
+        text-align: left;
+      }
+
+      .timeline-item.left::before,
+      .timeline-item.right::before {
+        left: 20px;
+        right: auto;
+        width: 35px;
+      }
+
+      .timeline-item.left::after,
+      .timeline-item.right::after {
+        left: 10px;
+        right: auto;
+      }
+
+      .timeline-item.left .journey-text::before,
+      .timeline-item.right .journey-text::before {
+        left: -22px;
+        right: auto;
+        border-left: 0;
+        border-right: 22px solid #fff;
+      }
+
+      .timeline-item.left .journey-text::after,
+      .timeline-item.right .journey-text::after {
+        left: 28%;
+        right: auto;
+      }
+
+      .timeline-item.left .content h4 + p,
+      .timeline-item.left .content h4 + .jou-text {
+        border-right: 0;
+        padding-right: 0;
+        border-left: 1px solid #e1e1e1;
+        padding-left: 22px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .timeline-section h3 {
+        font-size: 22px;
+        margin-bottom: 45px;
+      }
+
+      .timeline-item {
+        margin-bottom: 55px;
+      }
+
+      .timeline-item figure {
+        width: 100%;
+        height: 170px;
+      }
+
+      .journey-text {
+        padding: 28px 20px;
+      }
+
+      .content {
+        flex-direction: column !important;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .content h4 + p,
+      .content h4 + .jou-text,
+      .timeline-item.left .content h4 + p,
+      .timeline-item.left .content h4 + .jou-text {
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      .content h4 {
+        font-size: 42px;
+      }
+
+      .content p,
+      .common-list li {
+        font-size: 18px;
+      }
+
+      .ghar-se-global {
+        font-size: 24px;
+      }
+
+      .apply-now {
+        font-size: 15px;
+        padding: 12px 16px;
+      }
+    }
+  </style>
 </head>
-<style>
- body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f5f5f5;
-}
 
-/* SECTION */
-.worldmap_section_wrapper {
-  padding: 80px 0;
-  background: #f2f2f2;
-}
-
-/* HEADING */
-.world_map h2 {
-  font-size: 42px;
-  font-weight: 700;
-  color: #2e5d3d;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  font-size: 18px;
-  color: #333;
-  max-width: 700px;
-  margin: 0 auto 40px;
-}
-
-/* VIDEO */
-.map_video {
-  position: relative;
-}
-
-.map_video video {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* OVERLAY CONTENT */
-.map_content {
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-  text-align: left;
-}
-
-.map_content h3 {
-  font-size: 60px;
-  font-weight: 700;
-  color: #2e5d3d;
-}
-
-.map_content p {
-  font-size: 18px;
-  color: #333;
-  margin-top: 10px;
-  line-height: 1.4;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-
-  .world_map h2 {
-    font-size: 28px;
-  }
-
-  .subtitle {
-    font-size: 15px;
-  }
-
-  .map_content {
-    position: static;
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  .map_content h3 {
-    font-size: 40px;
-  }
-}
-</style>
 <body>
 
-<section class="worldmap_section_wrapper">
+<section class="timeline-section">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-xl-10 col-lg-11">
+      <div class="col-xl-11">
 
-        <div class="world_map text-center">
+        <h3 data-aos="fade-up">Our Journey</h3>
 
-          <!-- Heading -->
-          <h2>A Global Network of Change-Makers</h2>
+        <div class="timeline">
 
-          <p class="subtitle">
-            Our GLAdiators span across the globe, contributing to leading
-            companies, startups, and research institutions
-          </p>
-
-          <!-- Video Map -->
-          <div class="map_video">
-            <video autoplay muted loop playsinline>
-              <source src="https://glaonline.com/siteassets/images/world-map.mp4" type="video/mp4">
-            </video>
-
-            <!-- Overlay Content -->
-            <div class="map_content" data-aos="fade-up">
-              <h3>86%</h3>
-              <p>Average placement<br>over the last 5 years.</p>
+          <div class="timeline-item left" data-aos="fade-up">
+            <figure>
+              <img src="https://glaonline.com/siteassets/images/journeyimg1.webp" alt="">
+            </figure>
+            <div class="journey-text">
+              <div class="content">
+                <h4>1998</h4>
+                <p>GLA Online Institute of Technology &amp; Management</p>
+              </div>
             </div>
-
           </div>
 
+          <div class="timeline-item right" data-aos="fade-up">
+            <figure>
+              <img src="https://glaonline.com/siteassets/images/journeyimg2.webp" alt="">
+            </figure>
+            <div class="journey-text">
+              <div class="content">
+                <h4>2006</h4>
+                <div class="jou-text">
+                  <ul class="common-list">
+                    <li>Institute Of Business Management</li>
+                    <li>Institute of Professional Studies</li>
+                    <li>Institute of Pharmaceutical Research</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item left" data-aos="fade-up">
+            <figure>
+              <img src="https://glaonline.com/siteassets/images/journeyimg4.webp" alt="">
+            </figure>
+            <div class="journey-text">
+              <div class="content">
+                <h4>2010</h4>
+                <p>GLA Online Evolved into <b>GLA Online University</b></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item right" data-aos="fade-up">
+            <figure>
+              <img src="https://glaonline.com/siteassets/images/journeyimg5.webp" alt="">
+            </figure>
+            <div class="journey-text">
+              <div class="content">
+                <h4>2014</h4>
+                <p>Faculty of Education</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item left" data-aos="fade-up">
+            <figure>
+              <img src="https://glaonline.com/siteassets/images/journeyimg6.webp" alt="">
+            </figure>
+            <div class="journey-text">
+              <div class="content">
+                <h4>2018</h4>
+                <p>Institute of Legal Studies &amp; Research</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item right" data-aos="fade-up">
+            <figure>
+              <img src="https://glaonline.com/siteassets/images/journeyimg7.webp" alt="">
+            </figure>
+            <div class="journey-text">
+              <div class="content">
+                <h4>2019</h4>
+                <p>Faculty of Agricultural Sciences</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item left" data-aos="fade-up">
+            <figure>
+              <img src="https://glaonline.com/siteassets/images/journeyimg8.webp" alt="">
+            </figure>
+            <div class="journey-text">
+              <div class="content">
+                <h4>2022</h4>
+                <p>CSED-Industry 4.0 Facility</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item right" data-aos="fade-up">
+            <figure>
+              <img src="https://glaonline.com/siteassets/images/journeyimg8.webp" alt="">
+            </figure>
+            <div class="journey-text">
+              <div class="content">
+                <h4>2022</h4>
+                <p>Establishment of <span class="gla-online-text">GLA Online</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item left" data-aos="fade-up">
+            <figure>
+              <img src="https://glaonline.com/siteassets/images/journeyimg9.webp" alt="">
+            </figure>
+            <div class="journey-text">
+              <div class="content">
+                <h4>2024</h4>
+                <p>Greater Noida Industry Integrated Fully Flexible Campus</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="ghar-se-global" data-aos="fade-up">
+          #GharSeGlobal with GLA Online
         </div>
 
       </div>
@@ -132,11 +540,20 @@
   </div>
 </section>
 
-<!-- JS -->
+<a href="#" class="apply-now">Apply Now</a>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS JS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
 <script>
   AOS.init({
-    once: true
+    once: true,
+    duration: 900,
+    offset: 120,
+    easing: "ease-in-out"
   });
 </script>
 
