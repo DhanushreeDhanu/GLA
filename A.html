@@ -1,533 +1,981 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Overview | GLA Online</title>
-  <meta name="description" content="Know about the history of GLA Online and its journey." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Navbar</title>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
-    :root {
-      --green: #16833a;
-      --dark-green: #0b4d29;
-      --light-green: #eaf7ef;
-      --orange: #f59e0b;
-      --dark: #111827;
-      --muted: #6b7280;
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+/* TOP NAV */
+.custom-navbar {
+    background: linear-gradient(180deg, #723cb5 10%, #a144af 80%);
+    padding: 8px 0;
+}
+
+.custom-navbar .container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 600;
+    padding: 8px 12px !important;
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* LOGO */
+.logo-img,
+.mobile-logo {
+    height: 42px;
+    max-width: 180px;
+    object-fit: contain;
+}
+
+/* MOBILE MENU BUTTON FIX */
+.navbar-toggler {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    padding: 0;
+    border: none;
+    box-shadow: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-toggler i {
+    font-size: 34px;
+    color: #fff !important;
+}
+
+/* SECOND NAV */
+.second-nav {
+    background: #f5f6f8;
+    padding: 10px 16px;
+}
+
+.second-nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.center-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    justify-content: center;
+}
+
+.course-btn {
+    background: #673ab7;
+    color: #fff;
+    border-radius: 8px;
+    height: 46px;
+    padding: 0 18px;
+    font-weight: 600;
+    border: none;
+}
+
+.course-btn:hover {
+    background: #5e35b1;
+    color: #fff;
+}
+
+.search-box {
+    position: relative;
+  width: 500px;
+    max-width: 420px;
+}
+
+.search-box input {
+    height: 46px;
+    padding-left: 42px;
+    border-radius: 8px;
+   
+}
+
+.search-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #673ab7;
+}
+
+.right-wrap {
+    display: flex;
+    gap: 10px;
+}
+
+.quick-btn,
+.login-btn {
+    height: 46px;
+    padding: 0 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.quick-btn {
+    background: #9E31A5;
+    color: #fff;
+    border: none;
+}
+
+.login-btn {
+    border: 2px solid #9E31A5;
+    color: #9E31A5;
+    background: transparent;
+}
+
+.login-btn:hover {
+    background: #9E31A5;
+    color: #fff;
+}
+
+/* MOBILE OFFCANVAS */
+.offcanvas {
+    width: 290px;
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid #eee;
+}
+
+.accordion-button {
+    box-shadow: none !important;
+    background: transparent !important;
+    font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #f5f5f5 !important;
+    color: #673ab7;
+}
+
+.accordion-item {
+    border: none;
+}
+
+.accordion-body a {
+    display: block;
+    padding: 6px 0;
+    color: #333 !important;
+}
+
+/* MARQUEE */
+.third-section {
+    background: #111;
+    overflow: hidden;
+}
+
+.move {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 8px 0;
+}
+
+#scrollText {
+    display: inline-block;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* HERO */
+.banner {
+    background: linear-gradient(rgba(10,25,47,0.85), rgba(10,25,47,0.85)),
+    url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 60px 0 120px;
+}
+
+.banner-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.banner h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.banner p {
+    max-width: 700px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.stat img {
+    width: 25px;
+}
+
+/* CONTENT SECTION */
+.content-section {
+    background: #f5f5f5;
+}
+
+.content-box {
+    max-width: 1000px;
+    margin: -80px auto 0;
+    background: #fff;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    border-radius: 6px;
+}
+
+/* LEFT */
+.left {
+    flex: 1 1 60%;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card img {
+    width: 80px;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* RIGHT FORM */
+.right {
+    flex: 1 1 35%;
+    background: #f0f0f0;
+    padding: 20px;
+}
+
+.right h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height: 70px;
+    resize: none;
+}
+
+button {
+    width: auto;
+    padding: 10px;
+    background: #2d3cb5;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button {
+    width: 100%;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+/* FOOTER */
+.footer-main {
+    background: #0b0b0b;
+    color: #fff;
+    padding: 60px 0 25px;
+}
+
+.footer-logo {
+    color: #fff;
+    max-width: 150px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-links li:hover {
+    color: #b145b9;
+}
+
+.footer-social {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-social li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-social li i {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.footer-social li:nth-child(1) i { background: #0077b5; }
+.footer-social li:nth-child(2) i { background: #1877f2; }
+.footer-social li:nth-child(3) i { background: #ff0000; }
+.footer-social li:nth-child(4) i { background: #1da1f2; }
+.footer-social li:nth-child(5) i { background: #e1306c; }
+.footer-social li:nth-child(6) i { background: #25d366; }
+
+.footer-address p {
+    font-size: 14px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    margin: 0;
+}
+
+.bottom-logo {
+    max-width: 180px;
+}
+
+/* DESKTOP HOVER */
+@media (min-width: 992px) {
+    .nav-item.dropdown:hover .dropdown-menu,
+    .course-dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--dark);
-      overflow-x: hidden;
+    .content-box {
+        margin-top: -60px;
+    }
+}
+
+/* TABLET */
+@media(max-width:991px) {
+    .custom-navbar {
+        padding: 10px 0;
     }
 
-    a { text-decoration: none; }
-
-    .top-bar {
-      background: var(--dark-green);
-      color: #fff;
-      font-size: 14px;
-    }
-
-    .top-bar a { color: #fff; }
-
-    .navbar {
-      background: var(--green);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, .08);
+    .custom-navbar .container {
+        max-width: 100%;
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
 
     .navbar-brand {
-      font-weight: 800;
-      color: #fff !important;
-      letter-spacing: .4px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
     }
 
-    .navbar .nav-link {
-      color: #fff !important;
-      font-weight: 600;
-      padding-inline: 14px !important;
+    .navbar-toggler {
+        margin-left: auto !important;
+        margin-right: 0 !important;
     }
 
-    .apply-btn {
-      background: #fff;
-      color: var(--green) !important;
-      border-radius: 999px;
-      font-weight: 800;
-      padding: 9px 18px;
-      display: inline-block;
+    .navbar-toggler i {
+        font-size: 34px;
     }
 
-    .hero {
-      min-height: 470px;
-      background:
-        linear-gradient(90deg, rgba(8, 61, 31, .88), rgba(8, 61, 31, .35)),
-        url("https://glaonline.com/uploads/home/banner_images/69895c46295431770609734.webp") center/cover no-repeat;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      text-align: center;
+    .second-nav {
+        display: none !important;
     }
 
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 86px);
-      font-weight: 900;
-      text-transform: uppercase;
+    .mobile-logo {
+        height: 38px;
+        max-width: 170px;
     }
 
-    .section-pad { padding: 80px 0; }
-
-    .section-title {
-      font-size: clamp(30px, 4vw, 56px);
-      font-weight: 900;
-      text-transform: uppercase;
-      color: var(--dark-green);
+    .footer-main {
+        padding: 40px 0 20px;
     }
 
-    .lead-text {
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.8;
+    .footer-logo {
+        margin-bottom: 20px;
+    }
+}
+
+/* MOBILE */
+@media(max-width:576px) {
+    .custom-navbar .container {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
     }
 
-    .image-card img {
-      border-radius: 28px;
-      box-shadow: 0 25px 55px rgba(0, 0, 0, .14);
+    .mobile-logo {
+        height: 34px;
+        max-width: 150px;
     }
 
-    .green-band {
-      background:
-        linear-gradient(rgba(8, 61, 31, .82), rgba(8, 61, 31, .82)),
-        url("https://glaonline.com/siteassets/images/middle-banner-img.webp") center/cover no-repeat;
-      color: #fff;
-      padding: 90px 0;
+    .navbar-toggler i {
+        font-size: 30px;
     }
 
-    .green-band h2 {
-      font-size: clamp(34px, 5vw, 72px);
-      font-weight: 900;
+    .offcanvas {
+        width: 85%;
     }
 
-    .quote-card {
-      background: #fff;
-      border-radius: 30px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, .12);
-      padding: 40px;
-      position: relative;
+    .move {
+        font-size: 13px;
     }
 
-    .quote-card blockquote {
-      font-size: clamp(26px, 3vw, 44px);
-      color: var(--dark-green);
-      font-weight: 900;
-      line-height: 1.2;
+    .footer-links li,
+    .footer-social li,
+    .footer-address p {
+        font-size: 13px;
     }
 
-    .stats-section {
-      background: var(--light-green);
+    .footer-bottom {
+        text-align: center;
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .stat-box {
-      background: #fff;
-      border-radius: 24px;
-      padding: 32px;
-      height: 100%;
-      box-shadow: 0 16px 36px rgba(0,0,0,.08);
+    .bottom-logo {
+        max-width: 140px;
+    }
+}
+
+@media(max-width:768px) {
+    .banner {
+        padding: 40px 20px 100px;
+    }
+}
+
+@media(max-width:600px) {
+    .banner h1 {
+        font-size: 24px;
     }
 
-    .stat-box h3 {
-      font-size: 48px;
-      font-weight: 900;
-      color: var(--green);
+    .stats {
+        flex-direction: column;
+        gap: 10px;
     }
-
-    .timeline {
-      position: relative;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 4px;
-      background: var(--green);
-      transform: translateX(-50%);
-    }
-
-    .timeline-item {
-      position: relative;
-      width: 50%;
-      padding: 0 36px 48px;
-    }
-
-    .timeline-item.left { left: 0; text-align: right; }
-    .timeline-item.right { left: 50%; }
-
-    .timeline-content {
-      background: #fff;
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 18px 42px rgba(0,0,0,.10);
-    }
-
-    .timeline-content img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-      border-radius: 18px;
-      margin-bottom: 16px;
-    }
-
-    .timeline-content h4 {
-      color: var(--green);
-      font-weight: 900;
-      font-size: 44px;
-      margin: 0 0 8px;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      top: 24px;
-      width: 22px;
-      height: 22px;
-      background: var(--orange);
-      border: 5px solid #fff;
-      border-radius: 50%;
-      box-shadow: 0 0 0 4px var(--green);
-    }
-
-    .timeline-item.left .timeline-dot { right: -11px; }
-    .timeline-item.right .timeline-dot { left: -11px; }
-
-    .vision-card,
-    .mission-card {
-      border-radius: 28px;
-      padding: 38px;
-      height: 100%;
-      box-shadow: 0 18px 44px rgba(0,0,0,.10);
-    }
-
-    .vision-card { background: var(--dark-green); color: #fff; }
-    .mission-card { background: #fff; }
-
-    .mission-card li { margin-bottom: 12px; }
-
-    .footer {
-      background: #082b18;
-      color: #d1fae5;
-      padding: 45px 0 25px;
-    }
-
-    .footer a { color: #d1fae5; }
-
-    .floating-apply {
-      position: fixed;
-      right: 18px;
-      bottom: 22px;
-      z-index: 999;
-      background: var(--orange);
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 999px;
-      font-weight: 900;
-      box-shadow: 0 12px 30px rgba(0,0,0,.25);
-    }
-
-    .search-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(8, 43, 24, .96);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      padding: 24px;
-    }
-
-    .search-overlay.active { display: flex; }
-
-    .search-box {
-      width: min(720px, 100%);
-      display: flex;
-      gap: 10px;
-    }
-
-    .search-box input {
-      height: 58px;
-      border-radius: 999px;
-      border: 0;
-      padding: 0 24px;
-      font-size: 18px;
-    }
-
-    .close-search {
-      position: absolute;
-      top: 30px;
-      right: 35px;
-      color: #fff;
-      font-size: 44px;
-      cursor: pointer;
-    }
-
-    @media (max-width: 991px) {
-      .timeline::before { left: 12px; }
-      .timeline-item,
-      .timeline-item.left,
-      .timeline-item.right {
-        width: 100%;
-        left: 0;
-        text-align: left;
-        padding-left: 48px;
-        padding-right: 0;
-      }
-      .timeline-item.left .timeline-dot,
-      .timeline-item.right .timeline-dot {
-        left: 1px;
-        right: auto;
-      }
-    }
-  </style>
+}
+</style>
 </head>
+
 <body>
 
-  <div class="top-bar py-2">
-    <div class="container d-flex flex-wrap justify-content-between gap-2">
-      <div>
-        <a href="mailto:onlineadmissions@gla.ac.in"><i class="bi bi-envelope-fill me-1"></i> onlineadmissions@gla.ac.in</a>
-      </div>
-      <div class="d-flex gap-3">
-        <a href="tel:+919568536853"><i class="bi bi-telephone-fill me-1"></i> +91-9568536853</a>
-        <a href="https://www.myglaonline.com/" target="_blank" rel="noopener">Student Login</a>
-      </div>
-    </div>
-  </div>
+<!-- TOP NAVBAR -->
+<nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container d-flex align-items-center justify-content-between">
 
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">GLA Online</a>
-      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">About Us</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#overview">Overview</a></li>
-              <li><a class="dropdown-item" href="#journey">Journey</a></li>
-              <li><a class="dropdown-item" href="#vision">Vision & Mission</a></li>
+        <a class="navbar-brand d-lg-none">
+            <img src="https://ik.imagekit.io/PremierAgile/public/asset1/image/premieragile.png" class="mobile-logo" alt="Premier Agile">
+        </a>
+
+        <button class="navbar-toggler border-0 shadow-none d-lg-none ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <i class="bi bi-list text-white"></i>
+        </button>
+
+        <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item"><a class="nav-link">Home</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Who We Are</a></li>
+                        <li><a class="dropdown-item">Team</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Corporate</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Training</a></li>
+                        <li><a class="dropdown-item">Consulting</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Blogs</a></li>
+                        <li><a class="dropdown-item">Guides</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Premier Acceleration</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Programs</a></li>
+                        <li><a class="dropdown-item">Mentorship</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Contact</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Contact Us</a></li>
+                        <li><a class="dropdown-item">Refer & Earn</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link">Book AGILE51</a></li>
             </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Programs</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="https://glaonline.com/program/mba">MBA</a></li>
-              <li><a class="dropdown-item" href="https://glaonline.com/program/mca">MCA</a></li>
-              <li><a class="dropdown-item" href="https://glaonline.com/program/bba">BBA</a></li>
-              <li><a class="dropdown-item" href="https://glaonline.com/program/bca">BCA</a></li>
-              <li><a class="dropdown-item" href="https://glaonline.com/program/bcom-hons">B.Com (Hons.)</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#admissions">Admissions</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item"><button class="btn text-white" id="openSearch"><i class="bi bi-search"></i></button></li>
-          <li class="nav-item ms-lg-2"><a class="apply-btn" href="https://apply.glaonline.com/" target="_blank" rel="noopener">Apply Now</a></li>
-        </ul>
-      </div>
+        </div>
     </div>
-  </nav>
+</nav>
 
-  <div class="search-overlay" id="searchOverlay">
-    <span class="close-search" id="closeSearch">&times;</span>
-    <form class="search-box" id="searchForm">
-      <input class="form-control" type="search" id="searchInput" placeholder="Search..." required />
-      <button class="btn btn-warning rounded-pill px-4" type="submit"><i class="bi bi-search"></i></button>
-    </form>
-  </div>
+<!-- MOBILE MENU -->
+<div class="offcanvas offcanvas-start d-lg-none" id="mobileMenu">
+    <div class="offcanvas-header">
+        <img src="https://ik.imagekit.io/PremierAgile/public/asset1/image/premieragile.png" class="mobile-logo" alt="Premier Agile">
+        <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
 
-  <header class="hero">
+    <div class="offcanvas-body">
+        <div class="accordion" id="menuAccordion">
+            <button class="accordion-button collapsed">Home</button>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#aboutMenu">About</button>
+                </h2>
+                <div id="aboutMenu" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                        <a>Who We Are</a>
+                        <a>Team</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#corpMenu">Corporate</button>
+                </h2>
+                <div id="corpMenu" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                        <a>Training</a>
+                        <a>Consulting</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#resMenu">Resources</button>
+                </h2>
+                <div id="resMenu" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                        <a>Blogs</a>
+                        <a>Guides</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#premMenu">Premier Acceleration</button>
+                </h2>
+                <div id="premMenu" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                        <a>Programs</a>
+                        <a>Mentorship</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#contactMenu">Contact</button>
+                </h2>
+                <div id="contactMenu" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                        <a>Contact Us</a>
+                        <a>Refer & Earn</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="accordion-button collapsed">Book AGILE51</button>
+        </div>
+    </div>
+</div>
+
+<!-- SECOND NAV -->
+<section class="second-nav d-none d-lg-block">
+    <div class="container-fluid second-nav-inner">
+        <div class="logo-wrap">
+            <img src="https://ik.imagekit.io/PremierAgile/public/asset1/image/premieragile.png" class="logo-img" alt="Premier Agile">
+        </div>
+
+        <div class="center-wrap">
+            <div class="dropdown course-dropdown">
+                <button class="btn course-btn dropdown-toggle" data-bs-toggle="dropdown">All Courses</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item">Scrum Master</a></li>
+                    <li><a class="dropdown-item">Product Owner</a></li>
+                    <li><a class="dropdown-item">Agile Coach</a></li>
+                </ul>
+            </div>
+
+            <div class="search-box">
+                <i class="bi bi-search"></i>
+                <input type="text" class="form-control" placeholder="Search Courses">
+            </div>
+        </div>
+
+        <div class="right-wrap">
+            <button class="btn quick-btn">Quick Book</button>
+            <button class="btn login-btn">Log in</button>
+        </div>
+    </div>
+</section>
+
+<!-- SCROLL TEXT -->
+<section class="third-section text-center text-white">
+    <div class="move">
+        <p id="scrollText">
+            Welcome to PremierAgile! Get Plugged In | Grow with One of the Largest Agile & Scrum Communities | FEATURED IN FORBES MAGAZINE 2025 | Proud to Announce AGILE51 SUCCESS FACTORS | World-class guidance to transform yourself and your organization
+        </p>
+    </div>
+</section>
+
+<section class="banner">
+    <div class="container banner-inner">
+        <h1>Our Accreditation Bodies</h1>
+        <p>
+            We are accredited with some of the best global organizations that provide great learning and transformation opportunities to both individuals and corporations alike.
+        </p>
+
+        <div class="stats">
+            <div class="stat">
+                <img src="https://ik.imagekit.io/PremierAgile/public/asset/image/753651.svg" alt="">
+                20000+ Trained
+            </div>
+
+            <div class="stat">
+                <img src="https://ik.imagekit.io/PremierAgile/public/asset/image/knowledge.svg" alt="">
+                100% success
+            </div>
+
+            <div class="stat">
+                <img src="https://ik.imagekit.io/PremierAgile/public/asset/image/success.svg" alt="">
+                Highly Interactive
+            </div>
+
+            <div class="stat">
+                <img src="https://ik.imagekit.io/PremierAgile/public/asset/image/globe.svg" alt="">
+                Reviews
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="content-box">
+        <div class="left">
+            <div class="card">
+                <img src="https://ik.imagekit.io/PremierAgile/public/uploads/Ouraccreditation/logo1648634066.png" alt="">
+                <div>
+                    <h3>Scrum Alliance</h3>
+                    <p>Scrum Alliance nurtures the Agile movement by providing education, advocacy, and research.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://ik.imagekit.io/PremierAgile/public/uploads/Ouraccreditation/logo1648633790.png" alt="">
+                <div>
+                    <h3>Training from the Back of the Room (TBR)</h3>
+                    <p>TBR is a brain-science learning technique that enhances training delivery skills.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>Contact us</h2>
+
+            <form id="form" novalidate>
+                <div class="form-group">
+                    <label>Name*</label>
+                    <input type="text" id="name">
+                    <div class="error">Enter full name (first & last)</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email*</label>
+                    <input type="email" id="email">
+                    <div class="error">Enter valid email</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Mobile*</label>
+                    <input type="tel" id="mobile">
+                    <div class="error">Enter valid 10-digit number</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Message*</label>
+                    <textarea id="message"></textarea>
+                    <div class="error">Enter meaningful message</div>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-main mt-5">
     <div class="container">
-      <p class="text-uppercase fw-bold mb-2">About GLA Online</p>
-      <h1>Overview</h1>
-      <p class="fs-5 mx-auto" style="max-width: 760px;">Making quality online education accessible, affordable, and career-focused for modern learners.</p>
-      <a href="https://apply.glaonline.com/" target="_blank" rel="noopener" class="btn btn-warning btn-lg rounded-pill fw-bold mt-3">Apply Now</a>
+        <div class="row gy-4">
+            <div class="col-lg-2 col-md-4 col-12">
+                <img src="https://ik.imagekit.io/PremierAgile/public/asset/image/logo.png" alt="Footer Image" style="filter: brightness(0) invert(1);" class="img-fluid">
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <ul class="footer-links">
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Premier Wednesday</li>
+                    <li>Corporate</li>
+                    <li>Resources</li>
+                    <li>Blog</li>
+                    <li>Quizzes</li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <ul class="footer-links">
+                    <li>Founder-CEO</li>
+                    <li>Contact Us</li>
+                    <li>Terms & Conditions</li>
+                    <li>Privacy Policy</li>
+                    <li>Refund & Cancellation</li>
+                    <li>Rescheduling Policy</li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-6">
+                <ul class="footer-social">
+                    <li><i class="fab fa-linkedin"></i> Linkedin</li>
+                    <li><i class="fab fa-facebook"></i> Facebook</li>
+                    <li><i class="fab fa-youtube"></i> Youtube</li>
+                    <li><i class="fab fa-twitter"></i> Twitter</li>
+                    <li><i class="fab fa-instagram"></i> Instagram</li>
+                    <li><i class="fab fa-whatsapp"></i> Whatsapp</li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="footer-address">
+                    <p><strong>India Office 1:</strong><br>
+                        Flat no 301, 3rd floor, B Block, Anjanadri Residency, Miyapur, Hyderabad</p>
+
+                    <p><strong>India Office 2:</strong><br>
+                        Marathahalli, Bengaluru-560037</p>
+
+                    <p><strong>USA Office:</strong><br>
+                        Austin, TX-78717</p>
+
+                    <p>Email: info@premieragile.com</p>
+                    <p>Call: 918977024453<br>917702124453<br>919154224453</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <p>© PremierAgile Consulting Private Limited. All Rights Reserved.</p>
+
+            <div>
+                <span class="me-2">As Featured In</span>
+                <img src="https://premieragile.com/public/uploads/assetupload/assetupload01756716198.png" class="img-fluid bottom-logo" alt="">
+            </div>
+        </div>
     </div>
-  </header>
+</footer>
 
-  <main>
-    <section class="section-pad" id="overview">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-5 image-card">
-            <img src="https://glaonline.com/siteassets/images/shree-ganesh-lal-ji.webp" alt="GLA founder" class="img-fluid" />
-          </div>
-          <div class="col-lg-7">
-            <h2 class="section-title">A belief that education should reach every child</h2>
-            <p class="lead-text mt-4">Everything began with a belief: education should never be a privilege, but a possibility for every child. Late Shri Ganeshi Lal Agrawal believed every child deserves education, irrespective of their circumstances.</p>
-            <p class="lead-text">His son, Shri Narayan Das Agrawal, carried that dream forward and laid the foundation of GLA Online University in Mathura with resilience, empathy, and a commitment to accessible learning.</p>
-            <p class="lead-text">What began decades ago has now shaped the futures of <strong>46,000+ GLAdiators</strong>, proving that when education becomes reachable, dreams truly take flight.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <section class="green-band">
-      <div class="container text-center">
-        <h2><span class="text-warning">#</span>ApneSapneApneShaharSe</h2>
-        <p class="fs-4 mt-3 mx-auto" style="max-width: 850px;">Our goal is to make quality education accessible to learners at every nook and corner of the globe.</p>
-        <p class="mt-3 mx-auto" style="max-width: 900px;">We offer flexible and affordable online programs tailored to modern learners. With a focus on emerging fields, we build skills, foster innovation, and nurture future leaders and entrepreneurs.</p>
-        <a href="https://apply.glaonline.com/" target="_blank" rel="noopener" class="btn btn-warning btn-lg rounded-pill fw-bold mt-3">Apply Now</a>
-      </div>
-    </section>
+<script>
+const text = document.getElementById("scrollText");
+const container = document.querySelector(".move");
 
-    <section class="section-pad">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-5 image-card">
-            <img src="https://glaonline.com/siteassets/images/abt-ceo.webp" alt="CEO GLA Online" class="img-fluid" />
-          </div>
-          <div class="col-lg-7">
-            <div class="quote-card">
-              <blockquote>“Building India’s Premier Online Learning Ecosystem!”</blockquote>
-              <p class="lead-text mt-4">Guided by a commitment to affordable and accessible education, GLA Online University extends its legacy of academic excellence beyond the physical campus.</p>
-              <p class="lead-text">GLA Online empowers learners with knowledge, practical skills, and confidence for today’s competitive world.</p>
-              <h5 class="fw-bold mb-0">Neeraj Agrawal</h5>
-              <p class="text-muted mb-0">CEO, GLA Online University</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+let pos = window.innerWidth;
+let speed = 1;
+let isPaused = false;
 
-    <section class="section-pad stats-section">
-      <div class="container text-center">
-        <h2 class="section-title">A Global Network of Change-Makers</h2>
-        <p class="lead-text mx-auto" style="max-width: 760px;">Our GLAdiators span across the globe, contributing to leading companies, startups, and research institutions.</p>
-        <div class="row g-4 mt-4">
-          <div class="col-md-4"><div class="stat-box"><h3>46K+</h3><p>GLAdiators</p></div></div>
-          <div class="col-md-4"><div class="stat-box"><h3>86%</h3><p>Average placement over the last 5 years</p></div></div>
-          <div class="col-md-4"><div class="stat-box"><h3>5+</h3><p>Online programs</p></div></div>
-        </div>
-      </div>
-    </section>
+function loop() {
+    if (!isPaused) {
+        pos -= speed;
 
-    <section class="section-pad" id="journey">
-      <div class="container">
-        <h2 class="section-title text-center mb-5">Our Journey</h2>
-        <div class="timeline">
-          <div class="timeline-item left"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg1.webp" alt="1998"><h4>1998</h4><p>GLA Online Institute of Technology & Management</p></div></div>
-          <div class="timeline-item right"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg2.webp" alt="2006"><h4>2006</h4><p>Institute of Business Management, Professional Studies, and Pharmaceutical Research</p></div></div>
-          <div class="timeline-item left"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg4.webp" alt="2010"><h4>2010</h4><p>GLA Online evolved into GLA Online University</p></div></div>
-          <div class="timeline-item right"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg5.webp" alt="2014"><h4>2014</h4><p>Faculty of Education</p></div></div>
-          <div class="timeline-item left"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg6.webp" alt="2018"><h4>2018</h4><p>Institute of Legal Studies & Research</p></div></div>
-          <div class="timeline-item right"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg7.webp" alt="2019"><h4>2019</h4><p>Faculty of Agricultural Sciences</p></div></div>
-          <div class="timeline-item left"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg8.webp" alt="2022"><h4>2022</h4><p>CSED-Industry 4.0 Facility and establishment of GLA Online</p></div></div>
-          <div class="timeline-item right"><span class="timeline-dot"></span><div class="timeline-content"><img src="https://glaonline.com/siteassets/images/journeyimg9.webp" alt="2024"><h4>2024</h4><p>Greater Noida Industry Integrated Fully Flexible Campus</p></div></div>
-        </div>
-        <h3 class="text-center fw-black mt-4" style="color: var(--green);">#GharSeGlobal with GLA Online</h3>
-      </div>
-    </section>
+        if (pos < -text.offsetWidth) {
+            pos = container.offsetWidth;
+        }
 
-    <section class="section-pad bg-light" id="vision">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-5">
-            <div class="vision-card">
-              <h2 class="fw-bold">Vision</h2>
-              <p class="fs-5 mt-3">To make higher education globally accessible and affordable for every learner through industry-aligned, job-oriented online learning that enhances employability and prepares future-ready professionals.</p>
-            </div>
-          </div>
-          <div class="col-lg-7">
-            <div class="mission-card">
-              <h2 class="fw-bold text-success">Mission</h2>
-              <ul class="fs-5 mt-3">
-                <li>To provide high-quality online education at an affordable cost.</li>
-                <li>To make online education accessible beyond geographical, economic, and temporal boundaries.</li>
-                <li>To offer flexible learning pathways with learner-centric schedules.</li>
-                <li>To enhance employability through industry-aligned, job-oriented curricula.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+        text.style.transform = `translateX(${pos}px)`;
+    }
 
-  <footer class="footer" id="contact">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <h4 class="text-white fw-bold">GLA Online</h4>
-          <p>Flexible, affordable, career-focused online education.</p>
-        </div>
-        <div class="col-lg-4">
-          <h5 class="text-white fw-bold">Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="#overview">About Us</a></li>
-            <li><a href="#journey">Journey</a></li>
-            <li><a href="#vision">Vision & Mission</a></li>
-            <li><a href="https://glaonline.com/contact-us">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-4">
-          <h5 class="text-white fw-bold">Contact</h5>
-          <p class="mb-1"><a href="mailto:onlineadmissions@gla.ac.in">onlineadmissions@gla.ac.in</a></p>
-          <p><a href="tel:+919568536853">+91-9568536853</a></p>
-        </div>
-      </div>
-      <hr class="border-success" />
-      <p class="mb-0 small">© Copyright 2026 - GLA Online. All Rights Reserved.</p>
-    </div>
-  </footer>
+    requestAnimationFrame(loop);
+}
 
-  <a href="https://apply.glaonline.com/" target="_blank" rel="noopener" class="floating-apply">Apply Now</a>
+container.addEventListener("mouseenter", () => isPaused = true);
+container.addEventListener("mouseleave", () => isPaused = false);
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+window.addEventListener("load", loop);
+window.addEventListener("resize", () => {
+    pos = container.offsetWidth;
+});
 
-  <script>
-    const openSearch = document.getElementById('openSearch');
-    const closeSearch = document.getElementById('closeSearch');
-    const searchOverlay = document.getElementById('searchOverlay');
-    const searchForm = document.getElementById('searchForm');
-    const searchInput = document.getElementById('searchInput');
+document.getElementById("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    let valid = true;
 
-    openSearch.addEventListener('click', () => {
-      searchOverlay.classList.add('active');
-      setTimeout(() => searchInput.focus(), 100);
-    });
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const mobile = document.getElementById("mobile");
+    const message = document.getElementById("message");
 
-    closeSearch.addEventListener('click', () => {
-      searchOverlay.classList.remove('active');
-    });
+    const nameRegex = /^[A-Za-z]{2,}( [A-Za-z]{2,})+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-    searchOverlay.addEventListener('click', (event) => {
-      if (event.target === searchOverlay) searchOverlay.classList.remove('active');
-    });
+    function showError(input) {
+        input.nextElementSibling.style.display = "block";
+        valid = false;
+    }
 
-    searchForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const query = searchInput.value.trim();
-      if (!query) return;
-      window.location.href = 'https://glaonline.com/search?search=' + encodeURIComponent(query);
-    });
+    function hideError(input) {
+        input.nextElementSibling.style.display = "none";
+    }
 
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function (event) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (!target) return;
-        event.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-  </script>
+    if (!nameRegex.test(name.value.trim())) {
+        showError(name);
+    } else {
+        hideError(name);
+    }
+
+    if (!emailRegex.test(email.value.trim())) {
+        showError(email);
+    } else {
+        hideError(email);
+    }
+
+    if (!/^\d{10}$/.test(mobile.value)) {
+        showError(mobile);
+    } else {
+        hideError(mobile);
+    }
+
+    if (message.value.trim().length < 10) {
+        showError(message);
+    } else {
+        hideError(message);
+    }
+
+    if (valid) {
+        alert("Form submitted successfully!");
+        this.reset();
+    }
+});
+</script>
+
 </body>
 </html>

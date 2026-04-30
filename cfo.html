@@ -4,23 +4,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CEO | GLA Online</title>
+    <title>CFO | GLA Online</title>
 
-    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
@@ -31,15 +27,8 @@
             font-size: 15px;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
 
         :root {
             --green: #2f6f35;
@@ -465,6 +454,11 @@
             color: #111;
         }
 
+        .yellow-text {
+            color: #5f7f2f;
+            font-weight: 600;
+        }
+
         .sign-box {
             border-top: 1px solid #ccc;
             margin-top: 26px;
@@ -545,17 +539,9 @@
             font-size: 14px;
         }
 
-        .social a:nth-child(1) {
-            color: #3858ff;
-        }
-
-        .social a:nth-child(2) {
-            color: red;
-        }
-
-        .social a:nth-child(3) {
-            color: #d34aa1;
-        }
+        .social a:nth-child(1) { color: #3858ff; }
+        .social a:nth-child(2) { color: red; }
+        .social a:nth-child(3) { color: #d34aa1; }
 
         .float-apply {
             position: fixed;
@@ -570,72 +556,38 @@
             font-size: 15px;
         }
 
-        .mobile-bottom {
-            display: none;
-        }
-
+        .mobile-bottom,
         .mobile-panel {
             display: none;
         }
 
         @media(max-width:1199px) {
-            .header-wrap {
-                padding: 18px 34px;
-            }
-
-            .logo img {
-                width: 320px;
-            }
-
-            .top-links,
-            .main-nav {
-                gap: 16px;
-            }
-
-            .leader-hero h1 {
-                font-size: 34px;
-            }
+            .header-wrap { padding: 18px 34px; }
+            .logo img { width: 320px; }
+            .top-links, .main-nav { gap: 16px; }
+            .leader-hero h1 { font-size: 34px; }
         }
 
         @media(max-width:991px) {
-            .header-wrap {
-                padding: 15px 20px;
-            }
-
-            .logo img {
-                width: 270px;
-            }
-
-            .right-head {
-                gap: 0;
-            }
-
-            .top-links,
-            .main-nav {
-                display: none;
-            }
+            .header-wrap { padding: 15px 20px; }
+            .logo img { width: 270px; }
+            .right-head { gap: 0; }
+            .top-links, .main-nav { display: none; }
 
             .leader-hero {
                 margin-top: 82px;
                 min-height: 330px;
             }
 
-            .leader-hero h1 {
-                font-size: 30px;
-            }
-
-            .leader-hero p {
-                font-size: 17px;
-            }
+            .leader-hero h1 { font-size: 30px; }
+            .leader-hero p { font-size: 17px; }
 
             .chancellor-grid {
                 grid-template-columns: 1fr;
                 gap: 32px;
             }
 
-            .person-img {
-                height: auto;
-            }
+            .person-img { height: auto; }
 
             .footer-bottom {
                 display: flex;
@@ -643,9 +595,7 @@
                 text-align: center;
             }
 
-            .credit {
-                text-align: center;
-            }
+            .credit { text-align: center; }
 
             .float-apply {
                 bottom: 100px;
@@ -675,9 +625,7 @@
                 border-right: 1px solid rgba(255, 255, 255, .2);
             }
 
-            .mobile-bottom button:last-child {
-                border-right: 0;
-            }
+            .mobile-bottom button:last-child { border-right: 0; }
 
             .mobile-bottom i {
                 display: block;
@@ -699,9 +647,7 @@
                 overflow: auto;
             }
 
-            .mobile-panel.active {
-                display: block;
-            }
+            .mobile-panel.active { display: block; }
 
             .mobile-panel h4 {
                 font-weight: 900;
@@ -718,58 +664,36 @@
                 font-size: 15px;
             }
 
-            .mega-menu {
-                display: none !important;
-            }
+            .mega-menu { display: none !important; }
         }
 
         @media(max-width:575px) {
-            .logo img {
-                width: 220px;
-            }
-
-            .header-wrap {
-                padding: 13px;
-            }
+            .logo img { width: 220px; }
+            .header-wrap { padding: 13px; }
 
             .leader-hero {
                 margin-top: 70px;
                 min-height: 315px;
             }
 
-            .leader-hero h1 {
-                font-size: 24px;
-            }
+            .leader-hero h1 { font-size: 24px; }
 
             .leader-hero p {
                 font-size: 14.5px;
                 margin-bottom: 26px;
             }
 
-            .leader-tabs {
-                gap: 8px;
-            }
+            .leader-tabs { gap: 8px; }
 
             .leader-tabs a {
                 font-size: 14px;
                 padding-bottom: 16px;
             }
 
-            .chancellor-sec {
-                padding: 42px 0 78px;
-            }
-
-            .right-text h5 {
-                font-size: 19px;
-            }
-
-            .right-text p {
-                font-size: 14px;
-            }
-
-            .sign-box h4 {
-                font-size: 20px;
-            }
+            .chancellor-sec { padding: 42px 0 78px; }
+            .right-text h5 { font-size: 19px; }
+            .right-text p { font-size: 14px; }
+            .sign-box h4 { font-size: 20px; }
 
             .footer-links {
                 display: grid;
@@ -782,20 +706,13 @@
                 padding: 11px 16px;
             }
 
-            .quote-mark {
-                width: 78px;
-            }
-
-            .hamb-btn,
-            .search-btn {
-                font-size: 26px;
-            }
+            .quote-mark { width: 78px; }
+            .hamb-btn, .search-btn { font-size: 26px; }
         }
     </style>
 </head>
 
 <body>
-
     <header class="main-header" data-aos="fade-down" data-aos-duration="700">
         <div class="header-wrap">
             <a href="https://glaonline.com/" class="logo">
@@ -807,7 +724,7 @@
                     <li><a href="mailto:onlineadmissions@gla.ac.in"><i class="bi bi-envelope-fill"></i>onlineadmissions@gla.ac.in</a></li>
                     <li><a href="tel:+919568536853"><i class="bi bi-telephone-fill"></i>+91-9568536853</a></li>
                     <li><a href="https://apply.glaonline.com/" target="_blank" class="apply-btn">Apply Now</a></li>
-                    <li><a href="Student.html" target="_blank" class="student-btn">Student Login</a></li>
+                    <li><a href="https://www.myglaonline.com/" target="_blank" class="student-btn">Student Login</a></li>
                 </ul>
 
                 <div class="d-flex align-items-center gap-4">
@@ -946,8 +863,8 @@
                     <li><a href="Chancellor.html">Chancellor</a></li>
                     <li><a href="Vice-Chancellor.html">Vice Chancellor</a></li>
                     <li><a href="Director.html">Director</a></li>
-                    <li class="active"><a href="Ceo.html">CEO</a></li>
-                    <li><a href="Cfo.html">CFO</a></li>
+                    <li><a href="Ceo.html">CEO</a></li>
+                    <li class="active"><a href="cfo.html">CFO</a></li>
                 </ul>
             </div>
         </section>
@@ -957,24 +874,22 @@
                 <div class="chancellor-grid">
                     <div class="left-photo" data-aos="fade-right" data-aos-duration="900">
                         <img class="quote-mark" src="Leadership/1.jpg" alt="Quote">
-                        <img class="person-img" src="Leadership/5.jpg" alt="Neeraj Agrawal">
+                        <img class="person-img" src="Leadership/6.jpg" alt="Dr. Vivek Agrawal">
                     </div>
 
                     <div class="right-text" data-aos="fade-left" data-aos-duration="900">
-                        <h5>“Learning That Opens Doors, Builds Futures &amp; Reaches Every Home”</h5>
+                        <h5>"Building an Online Education System That’s Transparent, Reliable &amp; Learner-Focused"</h5>
 
-                        <p>At GLA Online, I believe education should reach every learner - no matter where they live or how busy their life is. Our journey from a single campus to a nationwide digital platform comes with one clear purpose - to offer quality, flexible, and affordable programs that help learners grow in their careers and in their lives.</p>
+                        <p>At GLA Online, my focus is to ensure that every learner receives maximum value from their education. As CFO, I believe quality learning should be accessible, affordable, and financially wise - without ever compromising on standards. Through our online programs, we are creating a system that is transparent, efficient, and designed to support long-term success.</p>
 
-                        <p>Today, learners want more than a degree - they want skills, confidence, and direction. That is exactly what we aim to provide through industry-aligned courses, supportive faculty, and a strong digital ecosystem.</p>
+                        <p class="yellow-text">With a strong digital infrastructure, structured support, and carefully planned resources, we ensure that every rupee you invest directly contributes to your growth and career advancement.</p>
 
-                        <p>My message to every learner is simple - stay focused, stay curious, and keep moving forward. Your future starts here.</p>
-
-                        <p>Welcome to GLA Online.<br>Let’s lead the change!</p>
+                        <p>I’m proud to welcome you to a platform built on trust, accountability, and opportunity. Together, let’s create a future that is truly worth investing in.</p>
 
                         <div class="sign-box" data-aos="fade-up" data-aos-delay="150">
-                            <p>Love You All,</p>
-                            <h4>Neeraj Agrawal</h4>
-                            <p>CEO, GLA Online University</p>
+                            <p>Kudos,</p>
+                            <h4>Dr. Vivek Agrawal</h4>
+                            <p>CFO, GLA Online University</p>
                         </div>
                     </div>
                 </div>
@@ -1014,7 +929,7 @@
         </div>
     </footer>
 
-    <a href="Apply.html" target="_blank" class="float-apply">Apply Now</a>
+    <a href="https://apply.glaonline.com/" target="_blank" class="float-apply">Apply Now</a>
 
     <nav class="mobile-bottom">
         <button onclick="openMobilePanel('programPanel')"><i class="bi bi-book"></i><span>Programs</span></button>
@@ -1054,7 +969,6 @@
         <a href="https://glaonline.com/contact-us">Contact Us</a>
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- AOS JS -->
@@ -1139,7 +1053,6 @@
             }
         });
     </script>
-
 </body>
 
 </html>
