@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GLA Online Header</title>
+    <title>Evaluation System</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -19,7 +19,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background: #f4f4f4;
-            padding-top: 82px;
+
         }
 
         a {
@@ -410,395 +410,589 @@
             color: #111 !important;
         }
 
-        /*part-2*/
-        .common-sec {
+        /* section -2 */
+        /* HERO */
+        .leader-hero {
+            margin-top: 122px;
+            min-height: 300px;
             position: relative;
-            min-height: 315px;
+            background: url('Admission/1.jpg') right center / cover no-repeat;
             display: flex;
             align-items: center;
-            overflow: hidden;
-
+            text-align: center;
+            color: #fff;
         }
 
-        .banner_image_right {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .banner_image_right img {
-            width: 100%;
-            height: 100%;
-            object-position: center right;
-            /* shows right-side student properly */
-        }
-
-        /* Green overlay */
-        .common-sec::before {
+        .leader-hero:before {
             content: "";
             position: absolute;
             inset: 0;
-            z-index: 2;
+
         }
 
-        .common-sec .container {
+        .leader-hero .container {
             position: relative;
-            z-index: 3;
+            z-index: 1
         }
 
-        .common-text {
-            text-align: center;
-            color: #fff;
-            padding: 40px 20px;
+        .leader-hero h1 {
+            font-size: 48px;
+            line-height: 1.18;
+
+            margin-bottom: 28px
         }
 
-        .common-text h1 {
-            font-size: 42px;
-            font-weight: 600;
-            line-height: 1.15;
-            margin-bottom: 28px;
-            color: #fff;
+        .leader-hero p {
+            font-size: 25px;
+            line-height: 1.4;
+
+            max-width: 860px;
+            margin: 0 auto 48px
         }
 
-        .common-text p {
-            font-size: 22px;
-            line-height: 1.35;
-            max-width: 900px;
-            margin: 0 auto;
-            color: #fff;
-        }
-
-        /* Large laptop */
-        @media (max-width: 1400px) {
-            .common-text h1 {
-                font-size: 48px;
-            }
-
-            .common-text p {
-                font-size: 24px;
-            }
-        }
-
-        /* Laptop */
-        @media (max-width: 1200px) {
-            .common-sec {
-                min-height: 280px;
-            }
-
-            .common-text h1 {
-                font-size: 42px;
-            }
-
-            .common-text p {
-                font-size: 22px;
-            }
-        }
-
-        /* Tablet */
-        @media (max-width: 991px) {
-            .common-sec {
-                min-height: 250px;
-            }
-
-            .common-text {
-                padding: 30px 15px;
-            }
-
-            .common-text h1 {
-                font-size: 34px;
-                margin-bottom: 18px;
-            }
-
-            .common-text p {
-                font-size: 18px;
-                max-width: 700px;
-            }
-        }
-
-        /* Mobile */
-        @media (max-width: 575px) {
-            .common-sec {
-                min-height: 220px;
-            }
-
-            .common-text h1 {
-                font-size: 26px;
-                margin-bottom: 14px;
-            }
-
-            .common-text p {
-                font-size: 15px;
-                line-height: 1.5;
-                padding: 0 8px;
-            }
-        }
-
-        /*part-3*/
-        /* SUBHEAD TEXT */
-        .common-sec.subhead {
-            background: #f4f4f4;
-            padding: 70px 0 45px;
-            text-align: center;
-        }
-
-        .common-sec.subhead blockquote {
-            font-size: 28px;
-            line-height: 1.35;
-            font-weight: 400;
-            color: #000;
-            max-width: 1120px;
-            margin: 0 auto;
-        }
-
-        /* FEE SECTION */
-        .eligible_list {
-            background: #f4f4f4;
-            padding: 35px 0 90px;
-        }
-
-        .eligible_grid {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* TAB BUTTONS */
-        .tab-buttons {
-            display: flex !important;
+        .leader-tabs {
+            display: flex;
             justify-content: center;
-            margin-bottom: 70px;
+            gap: 28px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap
         }
 
-        .tab-btn {
-            border: 0;
-            background: #fff;
-            color: #5d8877;
-            font-size: 16px;
-           
-            padding: 18px 55px;
-            min-width: 340px;
-            border-radius: 0;
+        .leader-tabs a {
+            display: block;
+            color: #fff;
+            font-size: 22px;
+            padding: 0 10px 28px;
+            position: relative
+        }
+
+        .leader-tabs li.active a {
+            color: var(--yellow)
+        }
+
+        .leader-tabs li.active a:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 5px;
+            background: var(--yellow)
+        }
+
+        .admission-subhead blockquote {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 26px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        /*section -4*/
+        .evaluation1 {
+  padding: 70px 0;
+  background: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+
+.evaluation-img img {
+  width: 80%;
+  border-radius: 14px;
+}
+
+.evaluation-text p,
+.evaluation-text h6 {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #000;
+  margin-bottom: 24px;
+}
+
+.evaluation-text h5 {
+  color: #00612f;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 30px 0;
+}
+
+.structure-list {
+  text-align: center;
+}
+
+.left-term {
+  padding: 25px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.left-term span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.left-term h4 {
+  font-size: 36px;
+  font-weight: 800;
+  background: linear-gradient(to right, #436F40 40%, #FFCC29 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+display: inline-block;
+}
+
+.inter-grp {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.inter-grp h2 {
+  font-size: 28px;
+  line-height: 1.35;
+  font-weight: 400;
+  margin-bottom: 55px;
+}
+
+.inter-grp h2 strong {
+  font-weight: 600;
+}
+
+.inter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px;
+  justify-content: center;
+}
+
+.assignments-box {
+  width: 31%;
+  min-height: 360px;
+  background: #fff;
+  padding: 38px 32px;
+  text-align: center;
+  border-radius: 6px;
+  position: relative;
+}
+
+.assignments-box::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(to right, #00612f, #f4bf25);
+}
+
+.assignments-img {
+  width: 95px;
+  height: 95px;
+  margin: 0 auto 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.assignments-img img {
+  width: 88px;
+  height: 88px;
+}
+
+.assignments-text h4 {
+  color: #00612f;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.assignments-text p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #000;
+}
+
+@media (max-width: 991px) {
+  .assignments-box {
+    width: 47%;
+  }
+}
+
+@media (max-width: 767px) {
+  .assignments-box {
+    width: 100%;
+  }
+
+  .left-term h4 {
+    font-size: 34px;
+  }
+
+  .inter-grp h2 {
+    font-size: 24px;
+  }
+}
+
+
+        /* REAL RESPONSIVE WEBPAGE FIXES */
+        :root {
+            --green: #2f6f35;
+            --yellow: #ffd332;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .main-header {
             transition: all 0.3s ease;
         }
 
-        .tab-btn:first-child {
-            border-radius: 7px 0 0 7px;
+        .header-wrap {
+            min-height: 106px;
         }
 
-        .tab-btn:last-child {
-            border-radius: 0 7px 7px 0;
+        .leader-hero {
+            padding: 80px 15px;
+            background-position: center;
         }
 
-        .tab-btn.active {
-            background: linear-gradient(135deg, #3f713f 45%, #ffd332 100%);
-            color: #fff;
+        .leader-hero h4 {
+            font-size: 24px;
+            line-height: 1.45;
+            font-weight: 400;
+            max-width: 980px;
+            margin: 0 auto;
         }
 
-        /* TABS */
-        .tab-content {
+        .admission-subhead {
+            padding: 28px 0 8px;
+            background: #fff;
+        }
+
+        .admission-subhead blockquote br,
+        .leader-hero h4 br {
             display: none;
         }
 
-        .tab-content.active {
+        .evaluation-img figure {
+            margin: 0;
+        }
+
+        .evaluation-img img {
+            width: 100%;
+            max-width: 720px;
             display: block;
         }
 
-        /* COURSE BLOCK */
-        .eligible-cont.fee-cont {
-            text-align: center;
-            padding-bottom: 80px;
-            border-bottom: 1px solid #d4d4d4;
-            margin-bottom: 75px;
-        }
-
-        .eligible-cont.fee-cont:last-child {
-            border-bottom: 0;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .eligible-cont.fee-cont h3 {
-            font-size: 28px;
-            line-height: 1.25;
-            font-weight: 700;
-            color: #3f713f;
-            margin-bottom: 22px;
-        }
-
-        .eligible-cont.fee-cont blockquote {
-            font-size: 19px;
-            line-height: 1.45;
-            color: #000;
-            margin: 0 auto 28px;
-            max-width: 980px;
-        }
-
-        /* FEE BOX GRID */
-        .eligible_grid_one {
-            display: grid;
-            grid-template-columns: 395px 1fr;
-            gap: 38px;
-            align-items: stretch;
-            margin-top: 25px;
-        }
-
-        .eligible_bx {
-            background: #fff;
-            border-radius: 8px;
-            padding: 34px 38px;
-            text-align: left;
-            
-        }
-
-        .grid_one_shadow {
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-        }
-
-        .grid_one_bg {
-            background: #f7f7f7;
-        }
-
-        .eligible_bx p {
+        .evaluation-text {
+            height: 100%;
             display: flex;
-            justify-content: space-between;
-            gap: 25px;
-            font-size: 16px;
-            line-height: 1.45;
-            color: #111;
-            margin: 0 0 20px;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .eligible_bx p:last-child {
-            margin-bottom: 0;
+        .inter-list {
+            align-items: stretch;
         }
 
-        .eligible_bx span {
-          
-            color: #000;
-            text-align: right;
+        .assignments-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .grid_one_shadow p:last-child span {
-            font-weight: 800;
+        .assignments-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 38px rgba(0, 0, 0, 0.12);
         }
 
-        /* LAPTOP */
-        @media (max-width: 1400px) {
-            .common-sec.subhead blockquote {
-                font-size: 30px;
+        @media (max-width: 1199px) {
+            .header-wrap {
+                padding: 12px 24px;
             }
 
-            .tab-btn {
-                font-size: 18px;
-                min-width: 300px;
+            .logo img {
+                width: 245px;
             }
 
-            .eligible-cont.fee-cont h3 {
-                font-size: 30px;
+            .top-links,
+            .main-nav {
+                gap: 14px;
             }
 
-            .eligible-cont.fee-cont blockquote {
+            .top-links a {
+                font-size: 14px;
+            }
+
+            .main-nav a {
+                font-size: 14px;
+            }
+
+            .leader-hero h1 {
+                font-size: 42px;
+            }
+
+            .leader-hero h4 {
                 font-size: 22px;
             }
 
-            .eligible_bx p {
-                font-size: 16px;
+            .assignments-box {
+                width: calc(50% - 18px);
             }
         }
 
-        /* TABLET */
         @media (max-width: 991px) {
-            .common-sec.subhead {
-                padding: 50px 0 30px;
+            body {
+                padding-top: 82px;
             }
 
-            .common-sec.subhead blockquote {
-                font-size: 24px;
-                padding: 0 15px;
+            .main-header {
+                position: fixed;
             }
 
-            .tab-buttons {
-                margin-bottom: 45px;
+            .header-wrap {
+                min-height: 82px;
+                padding: 12px 18px;
             }
 
-            .tab-btn {
-                min-width: 220px;
-                padding: 15px 20px;
-                font-size: 17px;
+            .right-head {
+                flex-direction: row;
+                align-items: center;
+                gap: 14px;
             }
 
-            .eligible_grid_one {
-                grid-template-columns: 1fr;
-                gap: 22px;
+            .leader-hero {
+                margin-top: 0;
+                min-height: 360px;
+                padding: 72px 15px;
             }
 
-            .eligible-cont.fee-cont {
-                padding-bottom: 55px;
-                margin-bottom: 55px;
+            .leader-hero h1 {
+                font-size: 36px;
+                margin-bottom: 18px;
             }
 
-            .eligible-cont.fee-cont h3 {
-                font-size: 25px;
-            }
-
-            .eligible-cont.fee-cont blockquote {
-                font-size: 18px;
-            }
-        }
-
-        /* MOBILE */
-        @media (max-width: 575px) {
-            .common-sec.subhead {
-                padding: 38px 0 25px;
-            }
-
-            .common-sec.subhead blockquote {
+            .leader-hero h4 {
                 font-size: 20px;
             }
 
-            .eligible_list {
-                padding: 25px 0 60px;
-            }
-
-            .tab-buttons {
-                display: flex;
-                gap: 10px;
-                margin-bottom: 35px;
-            }
-
-            .tab-btn {
-                min-width: auto;
-                width: 50%;
-                padding: 13px 10px;
-                font-size: 14px;
-                border-radius: 7px !important;
-            }
-
-            .eligible-cont.fee-cont h3 {
+            .admission-subhead blockquote {
                 font-size: 22px;
+                padding: 0 12px;
             }
 
-            .eligible-cont.fee-cont blockquote {
-                font-size: 16px;
+            .evaluation1 {
+                padding: 54px 0;
             }
 
-            .eligible_bx {
-                padding: 24px 20px;
+            .evaluation-img {
+                margin-bottom: 30px;
+                text-align: center;
             }
 
-            .eligible_bx p {
-                display: block;
-                font-size: 15px;
+            .evaluation-img img {
+                margin: 0 auto;
             }
 
-            .eligible_bx span {
-                display: block;
-                text-align: left;
-                margin-top: 5px;
+            .evaluation-text {
+                text-align: center;
+            }
+
+            .inter-grp {
+                margin-top: 52px;
             }
         }
-    
+
+        @media (max-width: 767px) {
+            body {
+                padding-top: 74px;
+            }
+
+            .header-wrap {
+                min-height: 74px;
+                padding: 10px 14px;
+            }
+
+            .logo img {
+                width: 170px;
+            }
+
+            .right-head {
+                gap: 8px;
+            }
+
+            .search-btn,
+            .hamb-btn {
+                width: 38px;
+                height: 38px;
+                display: grid;
+                place-items: center;
+                font-size: 22px;
+                border-radius: 50%;
+            }
+
+            .search-btn:hover,
+            .hamb-btn:hover {
+                background: #f2f2f2;
+            }
+
+            .leader-hero {
+                min-height: 320px;
+                padding: 56px 15px;
+            }
+
+            .leader-hero h1 {
+                font-size: 30px;
+                line-height: 1.25;
+            }
+
+            .leader-hero h4 {
+                font-size: 17px;
+                line-height: 1.55;
+            }
+
+            .admission-subhead {
+                padding: 22px 0 0;
+            }
+
+            .admission-subhead blockquote {
+                font-size: 19px;
+                line-height: 1.55;
+                margin-bottom: 0;
+            }
+
+            .evaluation1 {
+                padding: 42px 0;
+            }
+
+            .evaluation-text p,
+            .evaluation-text h6 {
+                font-size: 15px;
+                margin-bottom: 16px;
+            }
+
+            .evaluation-text h5 {
+                font-size: 21px;
+                margin: 22px 0 18px;
+            }
+
+            .structure-list {
+                display: grid;
+                gap: 14px;
+            }
+
+            .left-term {
+                padding: 20px 12px;
+                border: 1px solid #ddd;
+                border-radius: 12px;
+                background: #fff;
+            }
+
+            .left-term h4 {
+                font-size: 30px;
+            }
+
+            .inter-grp h2 {
+                font-size: 21px;
+                margin-bottom: 32px;
+            }
+
+            .inter-list {
+                gap: 20px;
+            }
+
+            .assignments-box {
+                width: 100%;
+                min-height: auto;
+                padding: 30px 22px;
+            }
+
+            .assignments-img {
+                width: 78px;
+                height: 78px;
+                margin-bottom: 20px;
+            }
+
+            .assignments-img img {
+                width: 72px;
+                height: 72px;
+            }
+
+            .assignments-text h4 {
+                font-size: 19px;
+                margin-bottom: 14px;
+            }
+
+            .assignments-text p {
+                font-size: 15px;
+                line-height: 1.55;
+            }
+
+            .search-close {
+                top: 16px;
+                right: 22px;
+                font-size: 42px;
+            }
+
+            .search-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-form input {
+                height: 54px;
+                font-size: 16px;
+                width: 100%;
+            }
+
+            .search-form button {
+                width: 54px;
+                height: 54px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 145px;
+            }
+
+            .leader-hero {
+                min-height: 285px;
+                padding: 45px 12px;
+            }
+
+            .leader-hero h1 {
+                font-size: 25px;
+            }
+
+            .leader-hero h4 {
+                font-size: 15.5px;
+            }
+
+            .admission-subhead blockquote {
+                font-size: 17px;
+            }
+
+            .left-term h4 {
+                font-size: 26px;
+            }
+
+            .inter-grp h2 {
+                font-size: 19px;
+            }
+
+            .side-menu {
+                width: 86%;
+                padding: 28px 22px;
+            }
+        }
+
           
 /* ===== FOOTER ===== */
 .glaFooter_section{
@@ -940,6 +1134,7 @@
 
 
     </style>
+    </style>
 </head>
 
 <body>
@@ -965,13 +1160,13 @@
                     </li>
 
                     <li>
-                        <a href="Apply.html" class="apply-btn">
+                        <a href="#" class="apply-btn">
                             Apply Now
                         </a>
                     </li>
 
                     <li>
-                        <a href="Student.html" class="student-btn">
+                        <a href="#" class="student-btn">
                             Student Login
                         </a>
                     </li>
@@ -982,9 +1177,9 @@
                         <li class="dropdown">
                             <a href="#">About Us <i class="bi bi-caret-down-fill small"></i></i></a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="Overview.html">Overview</a></li>
-                                <li><a class="dropdown-item" href="Chancellor.html">Leadership</a></li>
-                                <li><a class="dropdown-item" href="Reco-Accr.html">Recognitions & Accreditations</a></li>
+                                <li><a class="dropdown-item" href="#">Overview</a></li>
+                                <li><a class="dropdown-item" href="#">Leadership</a></li>
+                                <li><a class="dropdown-item" href="#">Recognitions & Accreditations</a></li>
                             </ul>
                         </li>
 
@@ -995,7 +1190,7 @@
                                 <li><a class="dropdown-item" href="Eligibility-Criteria.html">Eligibility Criteria</a></li>
                                 <li><a class="dropdown-item" href="Fee-Structure.html">Fee Structure</a></li>
                                 <li><a class="dropdown-item" href="Evaluation-System.html">Evaluation System</a></li>
-                               
+                                
                             </ul>
                         </li>
 
@@ -1110,171 +1305,126 @@
         </ul>
     </aside>
 
-    <!-- part-2 -->
-    <section class="common-sec">
 
-        <picture class="banner_image_right">
-            <img src="https://glaonline.com/uploads/cms_images/694d4612536c01766671890.webp" alt="Fee Structure"
-                class="img-fluid w-100">
-        </picture>
-
+    <!--section 2-->
+    <section class="leader-hero" data-aos="fade-in" data-aos-duration="900">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
-                    <div class="common-text">
-                        <h1>Your Degree, Your Investment </h1>
-                        <p>Explore course-wise fees designed to keep learning <br>accessible and affordable.</p>
-                    </div>
-                </div>
-            </div>
+            <h1 data-aos="fade-up" data-aos-delay="250">Clear, Transparent & Outcome-Driven Evaluation</h1>
+            <h4>Beyond just tests: formative quizzes, LMS-based activities, <br>term-end exams, and transparent policies
+                define progress at <br>GLA Online</h4>
         </div>
     </section>
-
-    <!--part-3-->
-
-    <section class="common-sec subhead">
+    <!--Section -3-->
+    <section class="admission-subhead">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
-                    <div class="common-text">
-                        <blockquote>At GLA Online, we offer transparent and affordable fee structures for our various
-                            programs.</blockquote>
-                        <!--<div class="blink_button"><span>ZERO COST EMI</span></div>-->
-                    </div>
-                </div>
-            </div>
+            <blockquote data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">At GLA Online, we follow a
+                relative grading system based on a ten-point letter scale <br>to ensure a fair and comprehensive
+                assessment of learners' performance.
+            </blockquote>
         </div>
     </section>
+    <!--Section -4-->
 
-    <section class="eligible_list">
+    <section class="evaluation1">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <div class="tabs-container eligible_grid">
-                        <div class="right-pnl image aos-init reveal-image aos-animate" data-aos="fade-up"
-                            data-aos-delay="800" data-aos-duration="1200">
-                            <div class="tab-buttons d-none d-md-block"><button class="tab-btn active"
-                                    data-tab="tab1">Postgraduate Programs</button> <button class="tab-btn"
-                                    data-tab="tab2">Undergraduate Programs</button></div>
-                            
-                        <div class="eligible-pnl aos-init aos-animate" data-aos="fade-up" data-aos-delay="800"
-                            data-aos-duration="1400">
-                            <div class="tab-content active" id="tab1">
-                                <div class="tab-body image2 reveal-image2">
-                                    <div class="eligible-pnl-grp">
-                                        <div class="row g-0 align-items-center">
-                                            <div class="col-lg-12">
-                                                <div class="eligible-cont fee-cont">
-                                                    <h3>Master of Business Administration (MBA)</h3>
-                                                    <blockquote>Develop leadership and management skills with the MBA
-                                                        program by GLA Online.</blockquote>
-                                                    <div class="eligible_grid_one">
-                                                        <div class="eligible_bx grid_one_shadow">
-                                                            <p>Per Semester: <span>₹ 24,250</span></p>
-                                                            <p>Per Year: <span>₹ 48,500</span></p>
-                                                            <p>Total Course Fee (2 Years): <span>₹ 97,000</span></p>
-                                                        </div>
-                                                        <div class="eligible_bx grid_one_bg">
-                                                            <p>Registration Fee: <span>₹ 500 (one-time)</span></p>
-                                                            <p>Alumni Fee: <span>₹ 1,800 (one-time)</span></p>
-                                                            <p>Exam Fee Options: <span>₹ 6,000 (full) / ₹ 3,000 (per
-                                                                    year) / ₹ 1,500 (per semester)</span></p>
-                                                            <p>Fee Benefits: <span>Avail ₹ 4,000 off on full payment or
-                                                                    ₹ 2,000 off first-year (yearly mode)</span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="eligible-cont fee-cont">
-                                                    <h3>Master of Computer Applications (MCA)</h3>
-                                                    <blockquote>Advance your tech skills with a career-oriented MCA
-                                                        program by GLA Online.</blockquote>
-                                                    <div class="eligible_grid_one">
-                                                        <div class="eligible_bx grid_one_shadow">
-                                                            <p>Per Semester: <span>₹ 21,500</span></p>
-                                                            <p>Per Year: <span>₹ 43,000</span></p>
-                                                            <p>Total Course Fee (2 Years): <span>₹ 86,000</span></p>
-                                                        </div>
-                                                        <div class="eligible_bx grid_one_bg">
-                                                            <p>Registration Fee: <span>₹ 500 (one-time)</span></p>
-                                                            <p>Alumni Fee: <span>₹ 1,800 (one-time)</span></p>
-                                                            <p>Exam Fee Options: <span>₹ 6,000 (full) / ₹ 3,000 (per
-                                                                    year) / ₹ 1,500 (per semester)</span></p>
-                                                            <p>Fee Benefits: <span>Avail ₹ 4,000 off on full payment or
-                                                                    ₹ 2,000 off first-year (yearly mode)</span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                <div class="col-lg-12 mx-auto">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="evaluation-img">
+                                <figure><img src="https://glaonline.com/siteassets/images/evaluation.webp"
+                                        alt="why-gla-img" class="img-fluid image2 reveal-image2" /></figure>
+                            </div>
+                        </div>
+                        <div class="col-lg-5" data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
+                            <div class="evaluation-text">
+
+                                <p>Each letter grade reflects the level of academic achievement and carries
+                                    corresponding grade points that contribute to Semester Grade Point Average (SGPA)
+                                    and Cumulative Grade Point Average (CGPA).</p>
+                                <h5>Assessment Structure</h5>
+                                <h6>Each course is evaluated out of 100 marks.</h6>
+                                <h6>Each practical/lab course is evaluated out of 100 marks in the term-end examination.
+                                </h6>
+                                <div class="structure-list">
+                                    <div class="left-term"><span>Term-End Examination:</span>
+                                        <h4>70% weightage</h4>
+                                    </div>
+                                    <div class="left-term right-term"><span>Internal Assessment:</span>
+                                        <h4>30% weightage</h4>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-content" id="tab2">
-                                <div class="tab-body image2 reveal-image2">
-                                    <div class="eligible-pnl-grp">
-                                        <div class="row g-0 align-items-center">
-                                            <div class="col-lg-12">
-                                                <div class="eligible-cont fee-cont">
-                                                    <h3>Bachelor of Business Administration (BBA)</h3>
-                                                    <blockquote>Shape your career in commerce and management with an
-                                                        industry-oriented BBA program by GLA Online.</blockquote>
-                                                    <div class="eligible_grid_one">
-                                                        <div class="eligible_bx grid_one_shadow">
-                                                            <p>Per Semester: <span>₹ 14,750</span></p>
-                                                            <p>Per Year: <span>₹ 29,500</span></p>
-                                                            <p>Total Course Fee (3 Years): <span>₹ 88,500</span></p>
-                                                        </div>
-                                                        <div class="eligible_bx grid_one_bg">
-                                                            <p>Registration Fee: <span>₹ 500 (one-time)</span></p>
-                                                            <p>Alumni Fee: <span>₹ 1,800 (one-time)</span></p>
-                                                            <p>Exam Fee Options: <span>₹ 9,000 (full) / ₹ 3,000 (per
-                                                                    year) / ₹ 1,500 (per semester)</span></p>
-                                                            <p>Fee Benefits: <span>Avail ₹ 3,000 off on full payment or
-                                                                    ₹ 1,000 on first-year (yearly mode)</span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="eligible-cont fee-cont">
-                                                    <h3>Bachelor of Computer Applications (BCA)</h3>
-                                                    <blockquote>Begin your tech journey with hands-on learning and
-                                                        innovation with the BCA program by GLA Online.</blockquote>
-                                                    <div class="eligible_grid_one">
-                                                        <div class="eligible_bx grid_one_shadow">
-                                                            <p>Per Semester: <span>₹ 14,750</span></p>
-                                                            <p>Per Year: <span>₹ 29,500</span></p>
-                                                            <p>Total Course Fee (3 Years): <span>₹ 88,500</span></p>
-                                                        </div>
-                                                        <div class="eligible_bx grid_one_bg">
-                                                            <p>Registration Fee: <span>₹ 500 (one-time)</span></p>
-                                                            <p>Alumni Fee: <span>₹ 1,800 (one-time)</span></p>
-                                                            <p>Exam Fee Options: <span>₹ 9,000 (full) / ₹ 3,000 (per
-                                                                    year) / ₹ 1,500 (per semester)</span></p>
-                                                            <p>Fee Benefits: <span>Avail ₹ 3,000 off on full payment or
-                                                                    ₹ 1,000 on first-year (yearly mode)</span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="eligible-cont fee-cont">
-                                                    <h3>Bachelor of Commerce (B.COM. (Hons.))</h3>
-                                                    <blockquote>Learn commerce anytime, anywhere with the B.COM. (Hons.)
-                                                        program by GLA Online.</blockquote>
-                                                    <div class="eligible_grid_one">
-                                                        <div class="eligible_bx grid_one_shadow">
-                                                            <p>Per Semester: <span>₹ 10,000</span></p>
-                                                            <p>Per Year: <span>₹ 20,000</span></p>
-                                                            <p>Total Course Fee (3 Years): <span>₹ 60,000</span></p>
-                                                        </div>
-                                                        <div class="eligible_bx grid_one_bg">
-                                                            <p>Registration Fee: <span>₹ 500 (one-time)</span></p>
-                                                            <p>Alumni Fee: <span>₹ 1,800 (one-time)</span></p>
-                                                            <p>Exam Fee Options: <span>₹ 9,000 (full) / ₹ 3,000 (per
-                                                                    year) / ₹ 1,500 (per semester)</span></p>
-                                                            <p>Fee Benefits: <span>Avail ₹ 3,000 off on full payment or
-                                                                    ₹ 1,000 on first-year (yearly mode)</span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-10 mx-auto">
+                            <div class="inter-grp">
+                                <h2>The internal assessment includes <strong>formative assessments, practice quizzes,
+                                        discussion forums, and other activities</strong> designed to reinforce learning
+                                    and track continuous progress.</h2>
+                                <div class="inter-list evaluation_system justify-content-center">
+                                    <div class="assignments-box" data-aos="fade-up" data-aos-delay="800"
+                                        data-aos-duration="1000">
+                                        <div class="assignments-img">
+                                            <figure><img src="https://glaonline.com/siteassets/images/assignments1.svg"
+                                                    alt="why-gla-img" class="img-fluid image2 reveal-image2" /></figure>
+                                        </div>
+                                        <div class="assignments-text">
+                                            <h4>Formative Assessments<br />&amp; Quizzes</h4>
+                                            <p>Formative assessments and quizzes are shared through the Learning
+                                                Management System (LMS), enabling learners to submit their responses
+                                                conveniently.</p>
+                                        </div>
+                                    </div>
+                                    <div class="assignments-box" data-aos="fade-up" data-aos-delay="800"
+                                        data-aos-duration="1200">
+                                        <div class="assignments-img">
+                                            <figure><img src="https://glaonline.com/siteassets/images/assignments2.svg"
+                                                    alt="why-gla-img" class="img-fluid image2 reveal-image2" /></figure>
+                                        </div>
+                                        <div class="assignments-text">
+                                            <h4>Term-End <br />Examinations</h4>
+                                            <p>Updated schedule and guidelines of term-end examinations are shared in
+                                                advance via the academic calendar and official GLA Online portal.</p>
+                                        </div>
+                                    </div>
+                                    <div class="assignments-box" data-aos="fade-up" data-aos-delay="800"
+                                        data-aos-duration="1400">
+                                        <div class="assignments-img">
+                                            <figure><img src="https://glaonline.com/siteassets/images/assignments3.svg"
+                                                    alt="why-gla-img" class="img-fluid image2 reveal-image2" /></figure>
+                                        </div>
+                                        <div class="assignments-text">
+                                            <h4>Notifications &amp; <br />Communication</h4>
+                                            <p>All exam-related notifications will be available on the Learning
+                                                Management System (LMS) notice board. Learners are advised to check for
+                                                updates regularly.</p>
+                                        </div>
+                                    </div>
+                              
+                                    <div class="assignments-box" data-aos="fade-up" data-aos-delay="800"
+                                        data-aos-duration="1800">
+                                        <div class="assignments-img">
+                                            <figure><img src="https://glaonline.com/siteassets/images/assignments5.svg"
+                                                    alt="why-gla-img" class="img-fluid image2 reveal-image2" /></figure>
+                                        </div>
+                                        <div class="assignments-text">
+                                            <h4>Re-Evaluation <br />Policy</h4>
+                                            <p>Students seeking re-evaluation of a course may apply online within the
+                                                stipulated time frame by paying the applicable fee.</p>
+                                        </div>
+                                    </div>
+                                    <div class="assignments-box" data-aos="fade-up" data-aos-delay="800"
+                                        data-aos-duration="2000">
+                                        <div class="assignments-img">
+                                            <figure><img src="https://glaonline.com/siteassets/images/assignments6.svg"
+                                                    alt="why-gla-img" class="img-fluid image2 reveal-image2" /></figure>
+                                        </div>
+                                        <div class="assignments-text">
+                                            <h4>Carry Over <br />Examination</h4>
+                                            <p>In case a learner misses or fails an examination, he or she may appear
+                                                for it in the subsequent attempt.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1285,10 +1435,7 @@
             </div>
         </div>
     </section>
-
-
-
-  <footer class="glaFooter_section">
+       <footer class="glaFooter_section">
 
       <div class="glaFooter_container">
 
@@ -1335,10 +1482,6 @@
       </div>
 
     </footer>
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
@@ -1384,26 +1527,7 @@
         megaMenu.addEventListener("mouseleave", () => {
             megaMenu.classList.remove("active");
         });
-        //part-3
-        const tabButtons = document.querySelectorAll(".tab-btn");
-        const tabContents = document.querySelectorAll(".tab-content");
-
-        tabButtons.forEach((button) => {
-            button.addEventListener("click", function () {
-                const target = this.getAttribute("data-tab");
-
-                tabButtons.forEach((btn) => btn.classList.remove("active"));
-                tabContents.forEach((content) => content.classList.remove("active"));
-
-                document.querySelectorAll(`[data-tab="${target}"]`).forEach((btn) => {
-                    btn.classList.add("active");
-                });
-
-                document.getElementById(target).classList.add("active");
-            });
-        });
     </script>
-
 
 </body>
 
