@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Accreditation Logo Slider</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .prg_logos {
+      width: 100%;
+      padding: 35px 0 25px;
+      background: #f4f4f4;
+      overflow: hidden;
+    }
+
+    .recruiter_slider {
+      width: 100%;
+      padding-bottom: 35px;
+    }
+
+    .recruiter_slider_item {
+      width: 100%;
+      min-height: 95px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 12px 24px;
+      border-right: 1px solid #ccc;
+    }
+
+    .recruiter_slider_item img {
+      width: auto;
+      max-width: 100px;
+      height: 60px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .recruiter_txt {
+      flex: 1;
+    }
+
+    .recruiter_txt p {
+      font-size: 15px;
+      line-height: 1.4;
+      color: #111;
+      margin: 0;
+    }
+
+    .recruiter_txt span {
+      display: inline;
+      font-weight: 600;
+    }
+
+    .swiper-pagination {
+      position: relative;
+      margin-top: 15px;
+    }
+
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background: #bfbfbf;
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #ffc400;
+    }
+
+    /* Large Tablet */
+    @media (max-width: 1199px) {
+      .recruiter_slider_item {
+        min-height: 105px;
+        padding: 12px 18px;
+      }
+
+      .recruiter_slider_item img {
+        max-width: 90px;
+        height: 55px;
+      }
+
+      .recruiter_txt p {
+        font-size: 14px;
+      }
+    }
+
+    /* Tablet */
+    @media (max-width: 991px) {
+      .recruiter_slider_item {
+        min-height: 115px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 575px) {
+      .prg_logos {
+        padding: 25px 0 20px;
+      }
+
+      .recruiter_slider_item {
+        flex-direction: column;
+        text-align: center;
+        border-right: none;
+        gap: 12px;
+        min-height: 160px;
+        padding: 18px 12px;
+      }
+
+      .recruiter_slider_item img {
+        max-width: 120px;
+        height: 70px;
+      }
+
+      .recruiter_txt {
+        flex: unset;
+      }
+
+      .recruiter_txt p {
+        font-size: 14px;
+        max-width: 260px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="prg_logos">
+  <div class="container">
+    <div class="recruiter" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1800">
+
+      <div class="recruiter_slider swiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="recruiter_slider_item">
+              <img src="https://glaonline.com/uploads/logo/68df4f0d68ff31759465229.png" alt="Ranked by NIRF">
+              <div class="recruiter_txt">
+                <p>Ranked by NIRF: <span>A Testament to Excellence</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="recruiter_slider_item">
+              <img src="https://glaonline.com/uploads/logo/68df4f3c89fda1759465276.png" alt="Accredited by NAAC">
+              <div class="recruiter_txt">
+                <p>Accredited by NAAC: <span>A Mark of Excellence</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="recruiter_slider_item">
+              <img src="https://glaonline.com/uploads/logo/68df4f53aca241759465299.png" alt="Times Higher Education">
+              <div class="recruiter_txt">
+                <p>Accredited by Times <span>Higher Education</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="recruiter_slider_item">
+              <img src="https://glaonline.com/uploads/logo/68df4f796b5a71759465337.png" alt="UGC">
+              <div class="recruiter_txt">
+                <p>Accredited by the University <span>Grants Commission</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="recruiter_slider_item">
+              <img src="https://glaonline.com/uploads/logo/68df4f8fbcf221759465359.png" alt="WES">
+              <div class="recruiter_txt">
+                <p>WES (World Education Services) recognizes GLA</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="recruiter_slider_item">
+              <img src="https://glaonline.com/uploads/logo/68df4fe316f561759465443.png" alt="IACBE">
+              <div class="recruiter_txt">
+                <p>Accredited by <span>IACBE (USA)</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="recruiter_slider_item">
+              <img src="https://glaonline.com/uploads/logo/68df4fb238fda1759465394.png" alt="IAU">
+              <div class="recruiter_txt">
+                <p>A proud member <span>of IAU</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="recruiter_slider_item">
+              <img src="https://glaonline.com/uploads/logo/68df4fcfb4e3b1759465423.webp" alt="Association of Indian Universities">
+              <div class="recruiter_txt">
+                <p>Association of <span>Indian Universities</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="recruiter_slider_item">
+              <img src="https://glaonline.com/uploads/logo/68e79f3bbf1191760010043.webp" alt="NAAC">
+              <div class="recruiter_txt">
+                <p>National Assessment and Accreditation Council</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="recruiter_slider_item">
+              <img src="https://glaonline.com/uploads/logo/692551508b58d1764053328.webp" alt="AICTE">
+              <div class="recruiter_txt">
+                <p>All India Council for Technical Education</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+    once: true
+  });
+
+  const recruiterSlider = new Swiper(".recruiter_slider", {
+    loop: true,
+    speed: 800,
+    spaceBetween: 0,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".recruiter_slider .swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 4,
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
