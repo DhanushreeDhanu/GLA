@@ -806,7 +806,92 @@
   }
 }
 
+@media (max-width: 991px) {
+  .program-panel-ui {
+    left: 0;
+    right: 0;
+    bottom: 78px;
+    border-radius: 8px 8px 0 0;
+    padding: 18px 22px 130px;
+    background: #f1f1f1;
+    max-height: 85vh;
+  }
 
+  .program-panel-ui h3 {
+    text-align: center;
+    color: #09245a;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 22px;
+  }
+
+  .program-panel-ui h3 b {
+    font-weight: 900;
+  }
+
+  .program-grid-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .program-box {
+    background: #fff;
+    min-height: 124px;
+    padding: 18px 18px;
+    border-radius: 4px;
+    border-left: 2px solid #ffc928;
+    color: #09245a !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-bottom: 0 !important;
+  }
+
+  .program-box span {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .program-box b {
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 900;
+  }
+
+  .program-box em {
+    margin-top: 16px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #98b5ae;
+    color: #7fa19b;
+    font-style: normal;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .program-box:last-child {
+    grid-column: 1 / 2;
+  }
+}
+
+@media (max-width: 575px) {
+  .program-panel-ui h3 {
+    font-size: 28px;
+  }
+
+  .program-grid-mobile {
+    grid-template-columns: 1fr;
+  }
+
+  .program-box {
+    min-height: 110px;
+  }
+}
 
     </style>
 </head>
@@ -978,7 +1063,6 @@
     <li><a href="#">Contact Us</a></li>
   </ul>
 </aside>
-
 
 
 
