@@ -1586,73 +1586,85 @@
             }
         }
 
+
+
+        /* ===== FULL WIDTH LEARNERS / TESTIMONIAL SECTION - FINAL FIX ===== */
         .gla_learners_section {
-            width: 100%;
-            padding: 90px 0;
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            padding: 80px 0 75px;
             background: #163a63;
             overflow: hidden;
         }
 
-        .gla_learners_section .container {
-            max-width: 1400px;
+        .gla_learners_section .container,
+        .gla_learners_section .container1 {
+            width: 100%;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 55px;
         }
 
-        /* Heading */
         .alumni_hed {
             text-align: center;
-            margin-bottom: 65px;
+            margin-bottom: 55px;
+            width: 100%;
         }
 
         .alumni_hed h6 {
-            font-size: 16px;
-            color: #ffffff;
-            font-weight: 500;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
+            display: none;
         }
 
         .alumni_hed h3 {
-            font-size: 40px;
-            color: #ffffff;
-            font-weight: 700;
+            font-size: 34px;
+            color: #fff;
+            font-weight: 800;
             line-height: 1.2;
-            max-width: 1000px;
-            margin: 0 auto;
+            margin: 0;
         }
 
-        /* Slider */
         .students-learners {
-            padding-bottom: 55px;
+            width: 100%;
+            padding: 35px 0 20px;
+            overflow: hidden;
+        }
+
+        .students-learners .swiper-wrapper {
+            display: flex !important;
+            align-items: stretch;
+        }
+
+        .students-learners .swiper-slide {
+            height: auto !important;
+            display: flex;
         }
 
         .learner_Bx {
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 10px;
-            padding: 85px 28px 35px;
+            width: 100%;
+            min-height: 285px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 6px;
+            padding: 70px 26px 28px;
             background: transparent;
             position: relative;
-            min-height: 430px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        /* Profile Image */
         .learner_txt figure {
-            width: 115px;
-            height: 115px;
+            width: 85px;
+            height: 85px;
             border-radius: 50%;
             overflow: hidden;
             position: absolute;
-            top: -58px;
+            top: -42px;
             left: 50%;
             transform: translateX(-50%);
-            margin: 0;
             border: 4px solid #163a63;
             background: #fff;
+            margin: 0;
         }
 
         .learner_txt figure img {
@@ -1661,112 +1673,106 @@
             object-fit: cover;
         }
 
-        /* Text */
         .learner_txt p {
-            color: #ffffff;
-            font-size: 16px;
-            line-height: 1.75;
-            font-weight: 400;
-            margin-bottom: 35px;
+            color: #fff;
+            font-size: 13px;
+            line-height: 1.65;
+            font-weight: 600;
+            margin-bottom: 22px;
+            text-align: left;
         }
 
-        /* Name */
         .learners_name h4 {
-            color: #ffffff;
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 6px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 4px;
+            line-height: 1.05;
         }
 
         .learners_name h5 {
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 500;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0;
         }
 
-        /* Pagination */
-        .students-learners .swiper-pagination-bullet {
-            width: 11px;
-            height: 11px;
-            background: rgba(255, 255, 255, 0.35);
-            opacity: 1;
+        .students-learners .swiper-pagination,
+        .students-learners .swiper-button-next,
+        .students-learners .swiper-button-prev {
+            display: none !important;
         }
 
-        .students-learners .swiper-pagination-bullet-active {
-            background: #f2c230;
-        }
+        @media (min-width: 1400px) {
 
-        /* ===== Responsive ===== */
-        @media (max-width: 1200px) {
-            .alumni_hed h3 {
-                font-size: 30px;
+            .gla_learners_section .container,
+            .gla_learners_section .container1 {
+                max-width: 1320px;
+                padding: 0 60px;
             }
         }
 
         @media (max-width: 991px) {
             .gla_learners_section {
-                padding: 75px 0;
+                padding: 70px 0;
+            }
+
+            .gla_learners_section .container,
+            .gla_learners_section .container1 {
+                max-width: 100%;
+                padding: 0 30px;
             }
 
             .alumni_hed h3 {
-                font-size: 30px;
+                font-size: 28px;
             }
 
             .learner_Bx {
-                min-height: 400px;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .gla_learners_section {
-                padding: 60px 0;
-            }
-
-            .alumni_hed {
-                margin-bottom: 50px;
-            }
-
-            .alumni_hed h3 {
-                font-size: 38px;
-            }
-
-            .learner_Bx {
-                padding: 80px 22px 30px;
-                min-height: auto;
+                padding: 65px 18px 22px;
+                min-height: 300px;
             }
 
             .learner_txt p {
-                font-size: 14px;
-                line-height: 1.65;
+                font-size: 11px;
+                line-height: 1.6;
             }
 
             .learners_name h4 {
-                font-size: 20px;
+                font-size: 17px;
             }
 
             .learners_name h5 {
-                font-size: 14px;
+                font-size: 11px;
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 575px) {
+            .gla_learners_section {
+                padding: 55px 0;
+            }
+
+            .gla_learners_section .container,
+            .gla_learners_section .container1 {
+                padding: 0 18px;
+            }
+
+            .alumni_hed {
+                margin-bottom: 45px;
+            }
+
             .alumni_hed h3 {
                 font-size: 24px;
             }
 
-            .learner_txt figure {
-                width: 95px;
-                height: 95px;
-                top: -48px;
+            .learner_Bx {
+                min-height: auto;
+                padding: 65px 22px 25px;
+            }
+
+            .learner_txt p {
+                font-size: 13px;
             }
         }
-
-        .students-learners {
-            padding-top: 60px;
-            padding-bottom: 55px;
-        }
-
-
 
         .faq_sec {
             width: 100%;
@@ -2052,168 +2058,195 @@
         }
 
 
-        a {
-            text-decoration: none;
-            color: inherit;
+        /* ===== SYLLABUS FIX: match compact reference design ===== */
+        #syllabus_wrapper {
+            padding: 55px 0 58px;
+            background: #f3f3f3;
         }
 
-        /* Hide on desktop */
-        .mobile-bottom,
-        .mobile-panel,
-        .float-apply {
-            display: none;
+        #syllabus_wrapper .container {
+            max-width: 1120px;
         }
 
-        /* Mobile Only */
-        @media (max-width: 991px) {
-
-            body {
-                padding-bottom: 100px;
-            }
-
-            /* Floating Apply Button */
-            .float-apply {
-                display: inline-block;
-                position: fixed;
-                right: 15px;
-                bottom: 95px;
-                background: rgb(67, 111, 64);
-                color: white;
-                padding: 12px 18px;
-                border-radius: 5px;
-                font-size: 15px;
-                font-weight: 400;
-                z-index: 9999;
-            }
-
-            /* Bottom Menu */
-            .mobile-bottom {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                position: fixed;
-                left: 10px;
-                right: 10px;
-                bottom: 8px;
-                z-index: 9999;
-                background: #2f6d82;
-                border-radius: 20px 20px 8px 8px;
-                overflow: hidden;
-            }
-
-            .mobile-bottom button {
-                border: 0;
-                background: transparent;
-                color: #fff;
-                padding: 10px 4px;
-                font-size: 12px;
-                border-right: 1px solid rgba(255, 255, 255, .2);
-                cursor: pointer;
-            }
-
-            .mobile-bottom button:last-child {
-                border-right: 0;
-            }
-
-            .mobile-bottom button.active {
-                background: rgba(255, 255, 255, 0.15);
-            }
-
-            .mobile-bottom i {
-                display: block;
-                font-size: 22px;
-                margin-bottom: 4px;
-            }
-
-            /* Panels */
-            .mobile-panel {
-                display: none;
-                position: fixed;
-                left: 10px;
-                right: 10px;
-                bottom: 78px;
-                background: #fff;
-                z-index: 9998;
-                border-radius: 14px;
-                padding: 20px;
-                box-shadow: 0 0 25px rgba(0, 0, 0, .25);
-                max-height: 70vh;
-                overflow: auto;
-            }
-
-            .mobile-panel.active {
-                display: block;
-            }
-
-            .mobile-panel h4 {
-                font-weight: 900;
-                color: #2f6d82;
-                margin-bottom: 15px;
-                font-size: 20px;
-            }
-
-            .mobile-panel a {
-                display: block;
-                padding: 12px 0;
-                border-bottom: 1px solid #eee;
-                font-weight: 700;
-                font-size: 15px;
-                color: #333;
-            }
-
-            .mobile-panel a:last-child {
-                border-bottom: 0;
-            }
+        #syllabus_wrapper .col-lg-10 {
+            width: 100%;
+            max-width: 980px;
         }
 
-        /* Small mobile adjustments */
-        @media(max-width:575px) {
-            .float-apply {
-                font-size: 15px;
-                padding: 11px 16px;
-                border-radius: 5px;
-            }
-        }
-
-        /* Floating Apply Button - visible on ALL screens */
-        .float-apply {
-            display: inline-block;
-            position: fixed;
-            right: 15px;
-            bottom: 20px;
-            background: rgb(67, 111, 64);
-            color: white !important;
-            padding: 14px 22px;
-            border-radius: 6px 0 0 6px;
-            font-size: 15px;
+        #syllabus_wrapper .prg_titl h3 {
+            font-size: 20px;
+            line-height: 1.2;
+            margin-bottom: 26px;
+            color: #05275c;
             font-weight: 700;
-            z-index: 9999;
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-            transition: all 0.3s ease;
         }
 
-        .float-apply:hover {
-            background: #2f6f35;
-            color: white !important;
-            transform: translateX(-3px);
+        #syllabus_wrapper .faq_item .accordion {
+            max-width: 980px;
+            margin: 0 auto;
         }
 
-        /* Tablet */
-        @media(max-width:991px) {
-            .float-apply {
-                right: 15px;
-                bottom: 95px;
-                border-radius: 8px;
-                padding: 12px 18px;
+        #syllabus_wrapper .accordion-item,
+        #syllabus_wrapper .faq_item .accordion-item {
+            margin-bottom: 10px;
+            border: 0;
+            border-radius: 5px;
+            overflow: hidden;
+            background: #d7dddd;
+        }
+
+        #syllabus_wrapper .accordion-header,
+        #syllabus_wrapper .faq_item .accordion-header {
+            width: 100%;
+            height: 38px;
+            padding: 0 16px 0 46px;
+            background: #d7dddd;
+            border: 0;
+            border-radius: 5px;
+            color: #05275c;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 38px;
+            text-align: left;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #syllabus_wrapper .accordion-header::before,
+        #syllabus_wrapper .faq_item .accordion-header::before {
+            content: "+";
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            border: 1px solid #738593;
+            border-radius: 50%;
+            color: #738593;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1;
+            margin: 0;
+        }
+
+        #syllabus_wrapper .accordion-item.active .accordion-header,
+        #syllabus_wrapper .faq_item .accordion-item.active .accordion-header {
+            background: #4f777b;
+            color: #fff;
+            border-radius: 5px 5px 0 0;
+        }
+
+        #syllabus_wrapper .accordion-item.active .accordion-header::before,
+        #syllabus_wrapper .faq_item .accordion-item.active .accordion-header::before {
+            content: "−";
+            border-color: #ffd23f;
+            color: #ffd23f;
+            background: transparent;
+        }
+
+        #syllabus_wrapper .accordion-body,
+        #syllabus_wrapper .faq_item .accordion-body {
+            display: none;
+            padding: 22px;
+            background: #4f777b;
+        }
+
+        #syllabus_wrapper .accordion-item.active .accordion-body,
+        #syllabus_wrapper .faq_item .accordion-item.active .accordion-body {
+            display: block;
+        }
+
+        @media (max-width: 767px) {
+            #syllabus_wrapper {
+                padding: 42px 0;
+            }
+
+            #syllabus_wrapper .prg_titl h3 {
+                font-size: 18px;
+                margin-bottom: 18px;
             }
         }
 
-        /* Mobile */
-        @media(max-width:575px) {
-            .float-apply {
-                font-size: 14px;
-                padding: 11px 16px;
-                right: 12px;
-                bottom: 92px;
+
+        /* ===== Cleaned utility styles for existing sections ===== */
+        .alumi_work,
+        .marksheetSec {
+            padding: 70px 0;
+            background: #f3f3f3;
+        }
+
+        .alumni_logo_section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+        }
+
+        .alumni_logo_section li {
+            background: #fff;
+            border-radius: 6px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 95px;
+        }
+
+        .alumni_logo_section figure,
+        .marksheet_grid figure {
+            margin: 0;
+        }
+
+        .marksheet_grid ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .marksheet_grid h3 {
+            color: #05275c;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .marksheet_grid h4 {
+            margin-top: 14px;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .marksheet_grid img {
+            width: 100%;
+            max-width: 360px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 6px;
+        }
+
+        @media(max-width: 767px) {
+            .alumni_logo_section ul {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .marksheet_grid ul {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .marksheet_grid h3 {
+                font-size: 24px;
             }
         }
     </style>
@@ -2257,7 +2290,7 @@
                 <div class="d-flex align-items-center header-actions">
                     <ul class="main-nav">
                         <li class="dropdown">
-                            <a href="#">About Us <i class="bi bi-caret-down-fill small"></i></i></a>
+                            <a href="#">About Us <i class="bi bi-caret-down-fill small"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Overview</a></li>
                                 <li><a class="dropdown-item" href="#">Leadership</a></li>
@@ -2266,7 +2299,7 @@
                         </li>
 
                         <li class="dropdown">
-                            <a href="#">Admissions<i class="bi bi-caret-down-fill small"></i></i></a>
+                            <a href="#">Admissions<i class="bi bi-caret-down-fill small"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Admission Procedure</a></li>
                                 <li><a class="dropdown-item" href="#">Eligibility Criteria</a></li>
@@ -2391,7 +2424,7 @@
 
     <section class="progrm_banner">
         <div class="banner_img">
-            <img src="https://glaonline.com/uploads/course_banner/6984625c63e901770283612.webp" alt="Banner">
+            <img src="https://glaonline.com/uploads/course_banner/69896ed55db521770614485.webp" alt="Banner">
         </div>
     </section>
 
@@ -2562,20 +2595,15 @@
 
                 <div class="lft_cntnt" data-aos="fade-right" data-aos-duration="1200">
                     <h3>OVERVIEW</h3>
-
-                    <h5>MBA by GLA Online is designed for aspiring business leaders and working professionals who seek
-                        flexibility without compromising on quality.</h5>
-
-                    <p>With a rigorous, industry-relevant curriculum, live faculty-led sessions, and a strong focus on
-                        real-world outcomes, the program empowers learners with strategic, analytical, and leadership
-                        skills. Choose from specializations in Banking &amp; Financial Services, Business Analytics,
-                        Supply Chain Management, Operations Management, Finance Management, Human Resources Management,
-                        Information Technology Management, and Marketing Management.</p>
+                    <h5>B.Com. (Hons.) by GLA Online equips learners with strong foundations in accounting, finance,
+                        taxation, business laws, and economics.</h5>
+                    <p>Designed for learners aiming to build careers in commerce, banking, corporate, or entrepreneurial
+                        ventures, the program blends academic rigor with industry insights.</p>
                 </div>
 
                 <div class="rght_img" data-aos="fade-left" data-aos-duration="1200">
                     <figure>
-                        <img src="https://glaonline.com/uploads/course_group/68b03a1cb4a481756379676.webp"
+                        <img src="https://glaonline.com/uploads/course_group/68b03a8a764ca1756379786.webp"
                             alt="Master of Business Administration">
                     </figure>
                 </div>
@@ -2661,574 +2689,680 @@
     <!-- ===== SYLLABUS ===== -->
     <section id="syllabus_wrapper" class="syllabus_section">
         <div class="container">
-
-            <div class="prg_titl" data-aos="fade-up">
-                <h3>SYLLABUS</h3>
-            </div>
-
-            <h5 data-aos="fade-up" data-aos-delay="100">
-                Learn how the Online MBA program can help you upskill for today’s professional environment, including
-                the subjects covered, course credits, and program structure.
-            </h5>
-
-            <div class="accordion">
-
-                <!-- Semester 1 -->
-                <div class="accordion-item active" data-aos="fade-up">
-                    <button class="accordion-header">Semester 1</button>
-                    <div class="accordion-body">
-                        <div class="table-container">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>S. No.</th>
-                                        <th>Subjects</th>
-                                        <th>Category</th>
-                                        <th>L</th>
-                                        <th>T</th>
-                                        <th>P</th>
-                                        <th>J</th>
-                                        <th>Credit</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Accounting for Managers</td>
-                                        <td>MAJOR</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Contemporary Managerial Economics</td>
-                                        <td>MAJOR</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Management Process and Organizational Behavior</td>
-                                        <td>MAJOR</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Business Statistics and Analytics</td>
-                                        <td>MAJOR</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Marketing Management</td>
-                                        <td>MAJOR</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total</td>
-                                        <td colspan="6"></td>
-                                        <td>20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="note">
-                            <p><strong>L => Lecture, T => Tutorial, P => Practical, J => Project Hours</strong></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Replace only the Semester 2, 3, and 4 accordion-body sections with this full code -->
-
-                <!-- Semester 2 -->
-                <div class="accordion-item" data-aos="fade-up">
-                    <button class="accordion-header">Semester 2</button>
-                    <div class="accordion-body">
-                        <div class="table-container">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>S. No.</th>
-                                        <th>Subjects</th>
-                                        <th>Category</th>
-                                        <th>L</th>
-                                        <th>T</th>
-                                        <th>P</th>
-                                        <th>J</th>
-                                        <th>Credit</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Financial Management</td>
-                                        <td>MAJOR</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Research Methodology</td>
-                                        <td>MAJOR</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Operations Research</td>
-                                        <td>MAJOR</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Operations and Supply Chain Management</td>
-                                        <td>MAJOR</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Human Resource Management</td>
-                                        <td>MAJOR</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total</td>
-                                        <td colspan="6"></td>
-                                        <td>20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="note">
-                            <p><strong>L => Lecture, T => Tutorial, P => Practical, J => Project Hours</strong></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Semester 3 -->
-                <div class="accordion-item" data-aos="fade-up">
-                    <button class="accordion-header">Semester 3</button>
-                    <div class="accordion-body">
-                        <div class="table-container">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>S. No.</th>
-                                        <th>Subjects</th>
-                                        <th>Category</th>
-                                        <th>L</th>
-                                        <th>T</th>
-                                        <th>P</th>
-                                        <th>J</th>
-                                        <th>Credit</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Strategic Management</td>
-                                        <td>MAJOR</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Open Elective - Liberal Arts 1</td>
-                                        <td>OPEN ELECTIVE</td>
-                                        <td>2</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Open Elective - Liberal Arts 2</td>
-                                        <td>OPEN ELECTIVE</td>
-                                        <td>2</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Specialization Elective, Course – 1</td>
-                                        <td>DSC</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Specialization Elective, Course – 2</td>
-                                        <td>DSC</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>Specialization Elective, Course – 3</td>
-                                        <td>DSC</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total</td>
-                                        <td colspan="6"></td>
-                                        <td>20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="note">
-                            <p><strong>L => Lecture, T => Tutorial, P => Practical, J => Project Hours</strong></p>
-                            <p><strong>DSC => Discipline-Specific Core</strong></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Semester 4 -->
-                <div class="accordion-item" data-aos="fade-up">
-                    <button class="accordion-header">Semester 4</button>
-                    <div class="accordion-body">
-                        <div class="table-container">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>S. No.</th>
-                                        <th>Subjects</th>
-                                        <th>Category</th>
-                                        <th>L</th>
-                                        <th>T</th>
-                                        <th>P</th>
-                                        <th>J</th>
-                                        <th>Credit</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="section-header">
-                                        <td colspan="8">THEORY</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>International Business Management</td>
-                                        <td>MAJOR</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Project Management</td>
-                                        <td>MAJOR</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Specialization Elective, Course – 1</td>
-                                        <td>DSC</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Specialization Elective, Course – 2</td>
-                                        <td>DSC</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Specialization Elective, Course – 3</td>
-                                        <td>DSC</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>4</td>
-                                    </tr>
-
-                                    <tr class="section-header">
-                                        <td colspan="8">PRACTICALS</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>Research Project</td>
-                                        <td>PROJECT</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>8</td>
-                                        <td>0</td>
-                                        <td>8</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Total</td>
-                                        <td colspan="6"></td>
-                                        <td>28</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="note">
-                            <p><strong>L => Lecture, T => Tutorial, P => Practical, J => Project Hours</strong></p>
-                            <p><strong>DSC => Discipline-Specific Core</strong></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <section id="online_degree" class="online_degree">
-        <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <div class="online_degree_img">
-                        <figure><a href="https://deb.ugc.ac.in/Uploads/Notices_Upload/UGC_20220906101709_1.pdf"
-                                target="_blank" rel="noopener"><img
-                                    src="https://glaonline.com/siteassets/images/online_degree_img.webp"
-                                    class="img-fluid w-100" alt="online degree" /></a></figure>
+                    <div class="prg_titl">
+                        <h3>SYLLABUS</h3>
+                    </div>
+
+
+
+                    <div class="faq_item">
+                        <div class="accordion">
+
+                            <div class="accordion-item">
+                                <button class="accordion-header">Semester 1</button>
+                                <div class="accordion-body">
+                                    <div class="semester_Box">
+                                        <div class="table-container">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>S. No.</th>
+                                                        <th>Subjects</th>
+                                                        <th>Category</th>
+                                                        <th>L</th>
+                                                        <th>T</th>
+                                                        <th>P</th>
+                                                        <th>J</th>
+                                                        <th>Credit</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                    <!-- THEORY SECTION -->
+                                                    <tr class="section-header">
+                                                        <td colspan="8">THEORY</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Fundamentals of Computer Science</td>
+                                                        <td>NA</td>
+                                                        <td>4</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>4</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Software Engineering and Testing</td>
+                                                        <td>NA</td>
+                                                        <td>3</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Problem Solving Using Python</td>
+                                                        <td>NA</td>
+                                                        <td>3</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Web Technology</td>
+                                                        <td>NA</td>
+                                                        <td>3</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td>Database Management System</td>
+                                                        <td>NA</td>
+                                                        <td>3</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6</td>
+                                                        <td>Professional Communication–I</td>
+                                                        <td>NA</td>
+                                                        <td>2</td>
+                                                        <td>2</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>3</td>
+                                                    </tr>
+
+                                                    <!-- PRACTICAL SECTION -->
+                                                    <tr class="section-header">
+                                                        <td colspan="8">PRACTICALS</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>7</td>
+                                                        <td>Problem Solving Using Python Lab</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>2</td>
+                                                        <td>0</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>8</td>
+                                                        <td>Web Technology Lab</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>4</td>
+                                                        <td>0</td>
+                                                        <td>2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>9</td>
+                                                        <td>Database Management System Lab</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>2</td>
+                                                        <td>0</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>10</td>
+                                                        <td>Soft Skills–I</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>4</td>
+                                                        <td>0</td>
+                                                        <td>1</td>
+                                                    </tr>
+
+                                                    <!-- TOTAL -->
+                                                    <tr>
+                                                        <td>Total</td>
+                                                        <td colspan="6"></td>
+                                                        <td>24</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="note">
+                                            <p><strong>L => Lecture, T => Tutorial, P => Practical, J => Project
+                                                    Hours</strong></p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item ">
+                                <button class="accordion-header">Semester 2</button>
+                                <div class="accordion-body">
+                                    <div class="semester_Box">
+                                        <div class="table-container">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>S. No.</th>
+                                                        <th>Subjects</th>
+                                                        <th>Category</th>
+                                                        <th>L</th>
+                                                        <th>T</th>
+                                                        <th>P</th>
+                                                        <th>J</th>
+                                                        <th>Credit</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                    <!-- THEORY SECTION -->
+                                                    <tr class="section-header">
+                                                        <td colspan="8">THEORY</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Problem Solving Using Java</td>
+                                                        <td>NA</td>
+                                                        <td>3</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Applied Data Structure and Applications</td>
+                                                        <td>NA</td>
+                                                        <td>3</td>
+                                                        <td>1</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>4</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Machine Learning</td>
+                                                        <td>NA</td>
+                                                        <td>3</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Computer Networks</td>
+                                                        <td>NA</td>
+                                                        <td>3</td>
+                                                        <td>1</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>4</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td>Professional Communication–II</td>
+                                                        <td>NA</td>
+                                                        <td>2</td>
+                                                        <td>2</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6</td>
+                                                        <td>Ethics & Values</td>
+                                                        <td>NA</td>
+                                                        <td>2</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>2</td>
+                                                    </tr>
+
+                                                    <!-- PRACTICAL SECTION -->
+                                                    <tr class="section-header">
+                                                        <td colspan="8">PRACTICALS</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>7</td>
+                                                        <td>Problem Solving Using Java Lab</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>4</td>
+                                                        <td>0</td>
+                                                        <td>2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>8</td>
+                                                        <td>Applied Data Structure and Applications Lab using C/C++</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>4</td>
+                                                        <td>0</td>
+                                                        <td>2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>9</td>
+                                                        <td>Mini Project</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>4</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>10</td>
+                                                        <td>Soft Skills–II</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>4</td>
+                                                        <td>0</td>
+                                                        <td>1</td>
+                                                    </tr>
+
+                                                    <!-- TOTAL -->
+                                                    <tr>
+                                                        <td>Total</td>
+                                                        <td colspan="6"></td>
+                                                        <td>27</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="note">
+                                            <p><strong>L => Lecture, T => Tutorial, P => Practical, J => Project
+                                                    Hours</strong></p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item ">
+                                <button class="accordion-header">Semester 3</button>
+                                <div class="accordion-body">
+                                    <div class="semester_Box">
+                                        <div class="table-container">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>S. No.</th>
+                                                        <th>Subjects</th>
+                                                        <th>Category</th>
+                                                        <th>L</th>
+                                                        <th>T</th>
+                                                        <th>P</th>
+                                                        <th>J</th>
+                                                        <th>Credit</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                    <!-- THEORY SECTION -->
+                                                    <tr class="section-header">
+                                                        <td colspan="8">THEORY</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Cloud Computing</td>
+                                                        <td>NA</td>
+                                                        <td>3</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>.Net framework using C#</td>
+                                                        <td>NA</td>
+                                                        <td>3</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Mobile Application Development-I /Digital and Social Media
+                                                            Marketing/Full Stack-I</td>
+                                                        <td>NA</td>
+                                                        <td>3</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Soft Skills–III</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>4</td>
+                                                        <td>0</td>
+                                                        <td>2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td>Environmental Studies</td>
+                                                        <td>NA</td>
+                                                        <td>2</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>2</td>
+                                                    </tr>
+
+                                                    <!-- PRACTICAL SECTION -->
+                                                    <tr class="section-header">
+                                                        <td colspan="8">PRACTICALS</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>6</td>
+                                                        <td>Project-I</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>8</td>
+                                                        <td>8</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>7</td>
+                                                        <td>Cloud Computing Lab</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>2</td>
+                                                        <td>0</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>8</td>
+                                                        <td>Mobile Application Development-I Lab / Digital and Social
+                                                            Media Marketing Lab/Full Stack-I Lab</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>2</td>
+                                                        <td>0</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>9</td>
+                                                        <td>.Net framework Lab</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>4</td>
+                                                        <td>0</td>
+                                                        <td>2</td>
+                                                    </tr>
+
+                                                    <!-- TOTAL -->
+                                                    <tr>
+                                                        <td>Total</td>
+                                                        <td colspan="6"></td>
+                                                        <td>25</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="note">
+                                            <p><strong>L => Lecture, T => Tutorial, P => Practical, J => Project
+                                                    Hours</strong></p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item ">
+                                <button class="accordion-header">Semester 4</button>
+                                <div class="accordion-body">
+                                    <div class="semester_Box">
+                                        <div class="table-container">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>S. No.</th>
+                                                        <th>Subjects</th>
+                                                        <th>Category</th>
+                                                        <th>L</th>
+                                                        <th>T</th>
+                                                        <th>P</th>
+                                                        <th>J</th>
+                                                        <th>Credit</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                    <!-- THEORY SECTION -->
+                                                    <tr class="section-header">
+                                                        <td colspan="8">THEORY</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>DevOps</td>
+                                                        <td>NA</td>
+                                                        <td>3</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Mobile Application Development- II /Full Stack Development-
+                                                            II/Search Engine Optimization</td>
+                                                        <td>NA</td>
+                                                        <td>3</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Soft Skills–IV</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>4</td>
+                                                        <td>0</td>
+                                                        <td>2</td>
+                                                    </tr>
+
+                                                    <!-- PRACTICAL SECTION -->
+                                                    <tr class="section-header">
+                                                        <td colspan="8">PRACTICALS</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Project-II</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>18</td>
+                                                        <td>18</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td>DevOps Lab</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>2</td>
+                                                        <td>0</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6</td>
+                                                        <td>Mobile Application Development- II Lab /Full Stack
+                                                            Development-II Lab/ Search Engine Optimization Lab</td>
+                                                        <td>NA</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>2</td>
+                                                        <td>0</td>
+                                                        <td>1</td>
+                                                    </tr>
+
+                                                    <!-- TOTAL -->
+                                                    <tr>
+                                                        <td>Total</td>
+                                                        <td colspan="6"></td>
+                                                        <td>28</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="note">
+                                            <p><strong>L => Lecture, T => Tutorial, P => Practical, J => Project
+                                                    Hours</strong></p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <section id="online_degree" class="online_degree">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10">
+                                        <div class="online_degree_img">
+                                            <figure><a
+                                                    href="https://deb.ugc.ac.in/Uploads/Notices_Upload/UGC_20220906101709_1.pdf"
+                                                    target="_blank" rel="noopener"><img
+                                                        src="https://glaonline.com/siteassets/images/online_degree_img.webp"
+                                                        class="img-fluid w-100" alt="online degree" /></a></figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    <div class="gla_learners_section">
+	<div class="container">
+		<div class="alumni_hed text-center image">
+			<h6 class="h_16 white">B.Com. (Hons.) LEARNERS</h6>
+<h3 class="h_40 white">What Current Learners Say About GLA Online</h3> 
+			</div>
+							<div class="learners_section">
+					<div class="students-learners swiper swiper-container">
+						<div class="swiper-wrapper">
+						
+						
+													<div class="swiper-slide">
+								<div class="learner_Bx">
+									<div class="learner_txt">
+										<figure><img  src="https://glaonline.com/uploads/alumni/693a9a77c98ad1765448311.webp"  alt="Dharvantha B" class="img-fluid" /></figure>										<p>Living in a remote area with limited access to quality commerce colleges, pursuing a B.Com. (Hons.) degree through GLA Online, a UGC-DEB-recognized program from a NAAC A+ university, has been one of the best decisions for my career.</p>									</div> 
+									<div class="learners_name">
+										<h4>Dharvantha B</h4>
+										<h5>B.Com. (Hons.), Pursuing)</h5>										
+									</div>
+								</div>
+							</div>
+							
+													<div class="swiper-slide">
+								<div class="learner_Bx">
+									<div class="learner_txt">
+										<figure><img  src="https://glaonline.com/uploads/alumni/693a9a9686fb41765448342.webp"  alt="Sahil Raj" class="img-fluid" /></figure>										<p>I&rsquo;m pursuing a CA internship alongside my B.Com. (Hons.) at GLA Online. The syllabus is so well-aligned with professional bodies that I often find my notes helpful for my CA preparation. The structured curriculum and supportive faculty make it easier to balance both programs effectively.</p>									</div> 
+									<div class="learners_name">
+										<h4>Sahil Raj</h4>
+										<h5>B.Com. (Hons.), Pursuing)</h5>										
+									</div>
+								</div>
+							</div>
+							
+													<div class="swiper-slide">
+								<div class="learner_Bx">
+									<div class="learner_txt">
+										<figure><img  src="https://glaonline.com/uploads/alumni/693a9ab03c9471765448368.webp"  alt="Bishal Majumder" class="img-fluid" /></figure>										<p>At GLA Online, faculty go beyond slides, using real-life case studies from the Indian economy to explain taxation and auditing in practice. The program&rsquo;s practical approach and supportive learning environment make studying engaging and effective.</p>									</div> 
+									<div class="learners_name">
+										<h4>Bishal Majumder</h4>
+										<h5>B.Com. (Hons.), Pursuing)</h5>										
+									</div>
+								</div>
+							</div>
+							
+													<div class="swiper-slide">
+								<div class="learner_Bx">
+									<div class="learner_txt">
+										<figure><img  src="https://glaonline.com/uploads/alumni/693a9acc5d4b11765448396.webp"  alt="Sirikonda Govardhan" class="img-fluid" /></figure>										<p>Considering the fee structure, the quality of faculty, and the NAAC A+ accreditation, GLA Online B.Com. (Hons.) offers one of the best returns on investment for a commerce degree in India today. As a student, I feel I have made the best decision by choosing GLA Online.</p>									</div> 
+									<div class="learners_name">
+										<h4>Sirikonda Govardhan</h4>
+										<h5>B.Com. (Hons.), Pursuing)</h5>										
+									</div>
+								</div>
+							</div>
+							
+													<div class="swiper-slide">
+								<div class="learner_Bx">
+									<div class="learner_txt">
+										<figure><img  src="https://glaonline.com/uploads/alumni/693a9ae84005d1765448424.webp"  alt="Astha Gupta" class="img-fluid" /></figure>										<p>GLA Online provides access to a massive alumni network. I reached out to a senior who graduated two years ago, and her guidance on which FinTech certifications to pair with my B.Com. (Hons.) was invaluable. As a student, getting this kind of hand-holding from alumni is truly amazing.</p>									</div> 
+									<div class="learners_name">
+										<h4>Astha Gupta</h4>
+										<h5>B.Com. (Hons.), Pursuing)</h5>										
+									</div>
+								</div>
+							</div>
+							
+							
+							
+						</div> <span class="swiper-pagination"></span></div>
+				</div>
+			</div>
+</div>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <div class="gla_learners_section">
-        <div class="container">
-            <div class="alumni_hed text-center image">
-                <h6 class="h_16 white">MBA LEARNERS</h6>
-                <h3 class="h_40 white">What Current Learners Say About GLA Online</h3>
-            </div>
-            <div class="learners_section">
-                <div class="students-learners swiper swiper-container">
-                    <div class="swiper-wrapper">
-
-
-                        <div class="swiper-slide">
-                            <div class="learner_Bx">
-                                <div class="learner_txt">
-                                    <figure><img src="https://glaonline.com/uploads/alumni/693a945311b971765446739.webp"
-                                            alt="Yatika Thakur" class="img-fluid" /></figure>
-                                    <p>As a first-year online MBA student at GLA Online, I&rsquo;ve found the experience
-                                        truly enriching. The emphasis on teacher&ndash;student interaction ensures a
-                                        quality education, while the program&rsquo;s flexibility allows me to balance my
-                                        professional and academic commitments seamlessly.</p>
-                                </div>
-                                <div class="learners_name">
-                                    <h4>Yatika Thakur</h4>
-                                    <h5>(MBA, Pursuing)</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="learner_Bx">
-                                <div class="learner_txt">
-                                    <figure><img src="https://glaonline.com/uploads/alumni/693a94c78db341765446855.webp"
-                                            alt="Somya Singh" class="img-fluid" /></figure>
-                                    <p>I&rsquo;m happy to be part of the GLA Online MBA program. The supportive faculty,
-                                        easily accessible study materials, and helpful recorded lectures make it easy to
-                                        balance work commitments while staying on track. Thank you, GLA Online, for a
-                                        wonderful learning experience.</p>
-                                </div>
-                                <div class="learners_name">
-                                    <h4>Somya Singh</h4>
-                                    <h5>(MBA, Pursuing)</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="learner_Bx">
-                                <div class="learner_txt">
-                                    <figure><img src="https://glaonline.com/uploads/alumni/693c0768a85f41765541736.png"
-                                            alt="Elavarasi Kumar" class="img-fluid" /></figure>
-                                    <p>Following my brother&rsquo;s recommendation, I joined GLA Online as a
-                                        postgraduate student and had an excellent experience. The industry-led
-                                        Masterclass series greatly enriched my learning, and I highly recommend the GLA
-                                        Online MBA for its balance of professional growth and academic excellence.</p>
-                                </div>
-                                <div class="learners_name">
-                                    <h4>Elavarasi Kumar</h4>
-                                    <h5>(MBA, Pursuing)</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="learner_Bx">
-                                <div class="learner_txt">
-                                    <figure><img src="https://glaonline.com/uploads/alumni/693a95597933f1765447001.webp"
-                                            alt="Venkateswarlu Munagapati" class="img-fluid" /></figure>
-                                    <p>Choosing GLA&rsquo;s Online MBA was a pivotal career decision. I needed a program
-                                        that combined quality education with the flexibility required of a working
-                                        professional. I highly recommend this program for having a degree with
-                                        maintaining job.</p>
-                                </div>
-                                <div class="learners_name">
-                                    <h4>Venkateswarlu Munagapati</h4>
-                                    <h5>(MBA, Pursuing)</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="learner_Bx">
-                                <div class="learner_txt">
-                                    <figure><img src="https://glaonline.com/uploads/alumni/693a958237d7e1765447042.webp"
-                                            alt="Shubham Sharma" class="img-fluid" /></figure>
-                                    <p>GLA&rsquo;s Online MBA in Business Analytics has been a transformative
-                                        experience. Thanks to the practical curriculum and supportive faculty, I&rsquo;m
-                                        already confident in recommending GLA Online to others, even just one year into
-                                        my studies.</p>
-                                </div>
-                                <div class="learners_name">
-                                    <h4>Shubham Sharma</h4>
-                                    <h5>(MBA, Pursuing)</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="learner_Bx">
-                                <div class="learner_txt">
-                                    <figure><img src="https://glaonline.com/uploads/alumni/693a95ac3408f1765447084.webp"
-                                            alt="Manish Pandit" class="img-fluid" /></figure>
-                                    <p>GLA&rsquo;s online platform offers excellent flexibility for balancing work and
-                                        study. Interactive sessions and case studies ensure the learning is practical,
-                                        providing a comprehensive education that holds the same value as an on-campus
-                                        degree.</p>
-                                </div>
-                                <div class="learners_name">
-                                    <h4>Manish Pandit</h4>
-                                    <h5>(MBA, Pursuing)</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="learner_Bx">
-                                <div class="learner_txt">
-                                    <figure><img src="https://glaonline.com/uploads/alumni/693a95e0813931765447136.webp"
-                                            alt="Priyansh Agrawal" class="img-fluid" /></figure>
-                                    <p>Choosing the Online MBA in IT at GLA Online has been a pivotal career step. With
-                                        its focus on emerging technologies and leadership, the program equips tech
-                                        professionals to navigate the evolving digital landscape and transition into
-                                        leadership roles.</p>
-                                </div>
-                                <div class="learners_name">
-                                    <h4>Priyansh Agrawal</h4>
-                                    <h5>(MBA, Pursuing)</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="learner_Bx">
-                                <div class="learner_txt">
-                                    <figure><img src="https://glaonline.com/uploads/alumni/693a966226e4e1765447266.webp"
-                                            alt="Vanshika Sharma" class="img-fluid" /></figure>
-                                    <p>Pursuing a master&rsquo;s degree seemed impossible while working, but GLA&rsquo;s
-                                        online program made it attainable. The flexible schedule and supportive
-                                        environment have been truly transformative. I am grateful to GLA Online for
-                                        providing a platform that fosters such meaningful career growth.</p>
-                                </div>
-                                <div class="learners_name">
-                                    <h4>Vanshika Sharma</h4>
-                                    <h5>(MBA, Pursuing)</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="learner_Bx">
-                                <div class="learner_txt">
-                                    <figure><img src="https://glaonline.com/uploads/alumni/693a9687df7921765447303.webp"
-                                            alt="Kapeesh Garg" class="img-fluid" /></figure>
-                                    <p>GLA Online&rsquo;s MBA gave me the strategic direction to scale my business. Its
-                                        data-driven curriculum improved operational efficiency and resource management,
-                                        adding a strong layer of professionalism to my ventures. An invaluable program
-                                        for entrepreneurs focused on sustainable growth.</p>
-                                </div>
-                                <div class="learners_name">
-                                    <h4>Kapeesh Garg</h4>
-                                    <h5>(MBA, Pursuing)</h5>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                    </div> <span class="swiper-pagination"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 
 
@@ -3245,22 +3379,28 @@
 
                     <div class="accordion-item active">
                         <button class="accordion-header">
-                            Is the Online MBA degree from GLA Online University UGC/AIU approved and valid?
+                            Is the Online MBA degree from GLA Online University UGC/AIU approved and
+                            valid?
                         </button>
                         <div class="accordion-body">
-                            <p>Yes. The online MBA from GLA Online University is offered through the online mode under
-                                proper recognition, ensuring the degree is valid for employment, further studies and
+                            <p>Yes. The online MBA from GLA Online University is offered through the
+                                online mode under
+                                proper recognition, ensuring the degree is valid for employment,
+                                further studies and
                                 government examinations.</p>
                         </div>
                     </div>
 
                     <div class="accordion-item">
                         <button class="accordion-header">
-                            What is the eligibility for the Online MBA program at GLA Online University?
+                            What is the eligibility for the Online MBA program at GLA Online
+                            University?
                         </button>
                         <div class="accordion-body">
-                            <p>Candidates must have earned a bachelor’s degree from a recognised university in any
-                                discipline to be eligible for the Online MBA at GLA Online University.</p>
+                            <p>Candidates must have earned a bachelor’s degree from a recognised
+                                university in any
+                                discipline to be eligible for the Online MBA at GLA Online
+                                University.</p>
                         </div>
                     </div>
 
@@ -3269,41 +3409,52 @@
                             What is the duration of the Online MBA program at GLA Online University?
                         </button>
                         <div class="accordion-body">
-                            <p>The Online MBA typically spans two years, organised in four semesters, enabling
+                            <p>The Online MBA typically spans two years, organised in four
+                                semesters, enabling
                                 structured progression of study.</p>
                         </div>
                     </div>
 
                     <div class="accordion-item">
                         <button class="accordion-header">
-                            What specializations are available in the Online MBA at GLA Online University?
+                            What specializations are available in the Online MBA at GLA Online
+                            University?
                         </button>
                         <div class="accordion-body">
-                            <p>The program offers specializations such as Marketing Management, Finance Management,
-                                Human Resource Management, Supply Chain Management, Business Analytics, Information
-                                Technology Management, Operations Management, and Banking and Financial Services.</p>
+                            <p>The program offers specializations such as Marketing Management,
+                                Finance Management,
+                                Human Resource Management, Supply Chain Management, Business
+                                Analytics, Information
+                                Technology Management, Operations Management, and Banking and
+                                Financial Services.</p>
                         </div>
                     </div>
 
                     <div class="accordion-item">
                         <button class="accordion-header">
-                            How does the Online MBA program support flexible learning for working professionals?
+                            How does the Online MBA program support flexible learning for working
+                            professionals?
                         </button>
                         <div class="accordion-body">
-                            <p>The program is delivered via online lectures, interactive learning modules, case-studies
-                                and assignments; students can access content remotely, allowing them to balance
+                            <p>The program is delivered via online lectures, interactive learning
+                                modules, case-studies
+                                and assignments; students can access content remotely, allowing them
+                                to balance
                                 professional and personal commitments in a flexible manner.</p>
                         </div>
                     </div>
 
                     <div class="accordion-item">
                         <button class="accordion-header">
-                            Does GLA Online University provide placement assistance or career support for Online MBA
+                            Does GLA Online University provide placement assistance or career
+                            support for Online MBA
                             students?
                         </button>
                         <div class="accordion-body">
-                            <p>The university offers career support services including industry-relevant
-                                specializations, placement guidance, mentorship, and networking opportunities through
+                            <p>The university offers career support services including
+                                industry-relevant
+                                specializations, placement guidance, mentorship, and networking
+                                opportunities through
                                 its online programs.</p>
                         </div>
                     </div>
@@ -3313,8 +3464,10 @@
                             What are the career opportunities after completing the Online MBA?
                         </button>
                         <div class="accordion-body">
-                            <p>Graduates can pursue roles such as Marketing Manager, Financial Analyst, HR Manager,
-                                Operations Manager, Business Development Manager, and may also go for higher studies or
+                            <p>Graduates can pursue roles such as Marketing Manager, Financial
+                                Analyst, HR Manager,
+                                Operations Manager, Business Development Manager, and may also go
+                                for higher studies or
                                 specialised certifications.</p>
                         </div>
                     </div>
@@ -3324,6 +3477,245 @@
 
         </div>
     </section>
+
+
+
+    <section id="alumi_logo" class="alumi_work">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="prg_titl">
+                        <h3>Our Alumni Work At</h3>
+                    </div>
+                    <div class="alumni_logo_section">
+                        <ul>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo01.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo02.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo03.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/tcs.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo04.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/capgemini.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/infosys.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/accenture-logo.webp"
+                                        alt="logo" class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/wipro.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/tech-mahindra.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo_010.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo05.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo06.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo07.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo08.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo09.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo010.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo011.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo012.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo013.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo_01.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo_02.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo_04.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo_05.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                            <li>
+                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo_06.webp" alt="logo"
+                                        class="img-fluid w-100" /></figure>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="progrm_four group  marksheetSec">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="marksheet_grid">
+                        <ul>
+                            <li>
+                                <h3>See What Your Success Looks Like:</h3>
+                            </li>
+                            <li>
+                                <figure><a href="https://glaonline.com/siteassets/images/sample-of-degree.webp"
+                                        target="_blank" rel="noopener"><img
+                                            src="https://glaonline.com/siteassets/images/sample-of-degree.webp"
+                                            alt="degree" /></a></figure>
+                                <h4>Sample Degree</h4>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="faq_sec_mca" class="faq_sec progrm_eleven spec pdt_8 pdb_8 prgr_faq">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="faq_hed image reveal-image">
+                        <h6 class="h_16">FAQs</h6>
+                        <h3>Got Questions? <span>We've Got </span><span>Answers!</span></h3>
+                    </div>
+                    <div class="faq_tabs program_faq">
+                        <div class="tabs-container">
+                            <!-- Desktop tab buttons -->
+                            <div class="right-pnl image reveal-image">
+                                <div class="tab-buttons">
+                                    <button class="tab-btn active" data-tab="general">General</button>
+                                </div>
+                            </div>
+                            <!-- Tab contents -->
+                            <div class="lft-pnl">
+                                <div class="tab-content active" id="general">
+                                    <div class="tab-header">
+                                        <p>General</p>
+                                    </div>
+                                    <div class="tab-body image2 reveal-image2">
+                                        <div class="faq_item">
+                                            <div class="accordion">
+                                                <div class="accordion-item  active">
+                                                    <button class="accordion-header">Is the Online MCA degree from GLA
+                                                        Online University UGC-approved and valid?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Yes. The online MCA offered by GLA Online University is
+                                                            covered under the approval of the University Grants
+                                                            Commission-DEB (Distance Education Bureau) and other
+                                                            statutory bodies, therefore valid for employment, further
+                                                            studies and government examinations. </p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">What is the eligibility for the
+                                                        Online MCA program at GLA Online University?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Candidates must have a bachelor’s degree in any discipline
+                                                            from a recognised university preferably with a background in
+                                                            Science, Computer Applications or IT.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">What is the typical duration of the
+                                                        Online MCA program?</button>
+                                                    <div class="accordion-body">
+                                                        <p>The program is designed to be completed in approximately 2
+                                                            years (4 semesters) for students who meet the standard
+                                                            eligibility criteria.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">How does the Online MCA program
+                                                        offer flexibility for working professionals?</button>
+                                                    <div class="accordion-body">
+                                                        <p>The program provides a flexible learning structure with
+                                                            recorded lectures, interactive content, on-demand modules
+                                                            and a schedule that allows students to balance their
+                                                            personal or professional commitments alongside their
+                                                            studies.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Does GLA Online University provide
+                                                        placement and career support for Online MCA students?</button>
+                                                    <div class="accordion-body">
+                                                        <p>The online division of GLA Online University offers
+                                                            career-services support including resume building, mock
+                                                            interviews, mentorship and access to job opportunities via
+                                                            industry partnerships. </p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">What career opportunities open up
+                                                        after completing the Online MCA?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Graduates can pursue roles such as Software Developer,
+                                                            Database Administrator, Systems Analyst, Network Security
+                                                            Specialist, Data Scientist, and may also progress to higher
+                                                            studies (e.g., MPhil/PhD) or professional certifications in
+                                                            specialised domains.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <footer class="glaFooter_section">
 
@@ -3479,8 +3871,9 @@
                 },
                 breakpoints: {
                     0: { slidesPerView: 1, spaceBetween: 20 },
-                    768: { slidesPerView: 2, spaceBetween: 25 },
-                    1200: { slidesPerView: 3, spaceBetween: 28 }
+                    576: { slidesPerView: 1, spaceBetween: 20 },
+                    768: { slidesPerView: 3, spaceBetween: 20 },
+                    1200: { slidesPerView: 3, spaceBetween: 30 }
                 }
             });
 
@@ -3496,11 +3889,11 @@
                 });
             });
 
-            document.querySelectorAll("#faq_sec .accordion-header").forEach(function (button) {
+            document.querySelectorAll("#faq_sec .accordion-header, #faq_sec_mca .accordion-header").forEach(function (button) {
                 button.addEventListener("click", function () {
                     const item = button.parentElement;
 
-                    document.querySelectorAll("#faq_sec .accordion-item").forEach(function (i) {
+                    document.querySelectorAll("#faq_sec .accordion-item, #faq_sec_mca .accordion-item").forEach(function (i) {
                         if (i !== item) i.classList.remove("active");
                     });
 
@@ -3590,42 +3983,6 @@
             }
         });
 
-        function openMobilePanel(panelId, buttonElement) {
-            const panels = document.querySelectorAll(".mobile-panel");
-            const buttons = document.querySelectorAll(".mobile-bottom button");
-
-            panels.forEach(panel => {
-                if (panel.id === panelId) {
-                    panel.classList.toggle("active");
-                } else {
-                    panel.classList.remove("active");
-                }
-            });
-
-            buttons.forEach(button => {
-                if (button === buttonElement) {
-                    button.classList.toggle("active");
-                } else {
-                    button.classList.remove("active");
-                }
-            });
-        }
-
-        // Close when clicking outside
-        document.addEventListener("click", function (e) {
-            const clickedButton = e.target.closest(".mobile-bottom button");
-            const clickedPanel = e.target.closest(".mobile-panel");
-
-            if (!clickedButton && !clickedPanel) {
-                document.querySelectorAll(".mobile-panel").forEach(panel => {
-                    panel.classList.remove("active");
-                });
-
-                document.querySelectorAll(".mobile-bottom button").forEach(button => {
-                    button.classList.remove("active");
-                });
-            }
-        });
     </script>
 
 </body>
