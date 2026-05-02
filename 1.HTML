@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PremierAgile Reel Header</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,sans-serif;
+   
+}
+
+a{
+    text-decoration:none !important;
+    cursor:pointer;
+}
+
+/* TOP NAVBAR */
+.custom-navbar{
+    background:linear-gradient(180deg,#723cb5 10%,#a144af 80%);
+    padding:8px 0;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.nav-link{
+    color:#fff !important;
+    font-weight:600;
+    padding:8px 14px !important;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#f8d7ff !important;
+}
+
+.dropdown-menu{
+    border:none;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    padding:10px;
+}
+
+.dropdown-item{
+    border-radius:8px;
+    padding:10px 14px;
+    font-weight:500;
+}
+
+.dropdown-item:hover{
+    background:#f4e8f8 !important;
+    color:#9E31A5 !important;
+}
+
+@media(min-width:992px){
+    .nav-item.dropdown:hover .dropdown-menu{
+        display:block;
+        margin-top:0;
+    }
+}
+
+.logo-img,
+.mobile-logo{
+    height:42px;
+    max-width:180px;
+    object-fit:contain;
+}
+
+/* REEL STYLE SECOND NAV */
+.second-nav{
+    background:#0d0d0f;
+    padding:14px 22px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+    position:sticky;
+    top:58px;
+    z-index:998;
+}
+
+.second-nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo-img{
+    filter:brightness(0) invert(1);
+}
+
+.center-wrap{
+    display:flex;
+    align-items:center;
+    flex:1;
+    justify-content:center;
+}
+
+.reel-search-box{
+    position:relative;
+    width:100%;
+    max-width:520px;
+}
+
+.reel-search-box input{
+    height:48px;
+    padding-left:48px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    font-size:15px;
+}
+
+.reel-search-box input::placeholder{
+    color:rgba(255,255,255,.65);
+}
+
+.reel-search-box input:focus{
+    box-shadow:none;
+    border-color:#9E31A5;
+    background:rgba(255,255,255,.14);
+    color:#fff;
+}
+
+.reel-search-box i{
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#fff;
+    font-size:18px;
+}
+
+.right-wrap{
+    display:flex;
+    gap:12px;
+}
+
+.quick-btn,
+.login-btn{
+    height:46px;
+    padding:0 20px;
+    border-radius:999px;
+    font-weight:700;
+    border:none;
+    white-space:nowrap;
+}
+
+.quick-btn{
+    background:#9E31A5;
+    color:#fff;
+}
+
+.quick-btn:hover{
+    background:#b83dc0;
+    color:#fff;
+}
+
+.login-btn{
+    border:1px solid rgba(255,255,255,.35);
+    color:#fff;
+    background:rgba(255,255,255,.08);
+}
+
+.login-btn:hover{
+    background:#fff;
+    color:#111;
+}
+
+/* MOBILE OFFCANVAS */
+.offcanvas{
+    width:290px;
+    background:#111;
+    color:#fff;
+}
+
+.offcanvas-header{
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.btn-close{
+    filter:invert(1);
+}
+
+.accordion-button{
+    box-shadow:none !important;
+    background:#111 !important;
+    color:#fff !important;
+    font-weight:600;
+}
+
+.accordion-button:not(.collapsed){
+
+    color:#9E31A5 !important;
+}
+
+.accordion-item{
+    border:none;
+    background:transparent;
+}
+
+.accordion-body a{
+    display:block;
+    padding:8px 0;
+    color:#ddd !important;
+}
+
+/* REEL MARQUEE */
+.third-section{
+    
+    overflow:hidden;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.move{
+    width:100%;
+    overflow:hidden;
+    white-space:nowrap;
+    padding:10px 0;
+}
+
+#scrollText{
+    display:inline-block;
+    white-space:nowrap;
+    color:#fff;
+    font-size:14px;
+    font-weight:500;
+}
+
+/* RESPONSIVE */
+@media(max-width:991px){
+    .second-nav{
+        display:none !important;
+    }
+
+    .custom-navbar .container{
+        max-width:100%;
+        padding:0 15px;
+    }
+
+    .navbar-toggler i{
+        font-size:34px;
+    }
+}
+
+@media(max-width:576px){
+    .mobile-logo{
+        height:36px;
+        max-width:150px;
+    }
+
+    .navbar-toggler i{
+        font-size:30px;
+    }
+
+    .offcanvas{
+        width:85%;
+    }
+
+    #scrollText{
+        font-size:13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP NAV -->
+<nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <!-- MOBILE LOGO -->
+        <a class="navbar-brand d-lg-none">
+            <img src="https://ik.imagekit.io/PremierAgile/public/asset1/image/premieragile.png" class="mobile-logo">
+        </a>
+
+        <!-- MOBILE MENU -->
+        <button class="navbar-toggler border-0 shadow-none d-lg-none ms-auto"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu">
+            <i class="bi bi-list text-white"></i>
+        </button>
+
+        <!-- DESKTOP MENU -->
+        <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end">
+            <ul class="navbar-nav align-items-center">
+
+                <li class="nav-item"><a class="nav-link">Home</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Who We Are</a></li>
+                        <li><a class="dropdown-item">Team</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Corporate</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Training</a></li>
+                        <li><a class="dropdown-item">Consulting</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Blogs</a></li>
+                        <li><a class="dropdown-item">Guides</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Premier Acceleration</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Programs</a></li>
+                        <li><a class="dropdown-item">Mentorship</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Contact</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Contact Us</a></li>
+                        <li><a class="dropdown-item">Refer & Earn</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link">Book AGILE51</a></li>
+
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- MOBILE OFFCANVAS -->
+<div class="offcanvas offcanvas-start d-lg-none" id="mobileMenu">
+    <div class="offcanvas-header">
+        <img src="https://ik.imagekit.io/PremierAgile/public/asset1/image/premieragile.png" class="mobile-logo">
+        <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body">
+        <div class="accordion" id="menuAccordion">
+
+            <button class="accordion-button collapsed">Home</button>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#aboutMenu">
+                        About
+                    </button>
+                </h2>
+                <div id="aboutMenu" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <a>Who We Are</a>
+                        <a>Team</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#corpMenu">
+                        Corporate
+                    </button>
+                </h2>
+                <div id="corpMenu" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <a>Training</a>
+                        <a>Consulting</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="accordion-button collapsed">Book AGILE51</button>
+
+        </div>
+    </div>
+</div>
+
+<!-- REEL STYLE SECOND NAV -->
+<section class="second-nav d-none d-lg-block">
+    <div class="container-fluid second-nav-inner">
+
+        <!-- LOGO -->
+        <div>
+            <img src="https://ik.imagekit.io/PremierAgile/public/asset1/image/premieragile.png" class="logo-img">
+        </div>
+
+        <!-- SEARCH -->
+        <div class="center-wrap">
+            <div class="search-box reel-search-box">
+                <i class="bi bi-search"></i>
+                <input type="text" class="form-control" placeholder="Search Reels">
+            </div>
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="right-wrap">
+            <button class="btn quick-btn">
+                <i class="bi bi-play-circle"></i> Watch Reels
+            </button>
+            <button class="btn login-btn">Log in</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- REEL MARQUEE -->
+<section class="third-section text-center">
+    <div class="move">
+        <p id="scrollText">
+            Welcome to PremierAgile Reels | Watch Agile Success Stories | Explore Scrum Master Tips | Learn Product Ownership | Featured In Forbes 2025 | Continuous Learning Starts Here
+        </p>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+const text = document.getElementById("scrollText");
+const container = document.querySelector(".move");
+
+let pos = window.innerWidth;
+let speed = 1;
+let isPaused = false;
+
+function loop(){
+    if(!isPaused){
+        pos -= speed;
+
+        if(pos < -text.offsetWidth){
+            pos = container.offsetWidth;
+        }
+
+        text.style.transform = `translateX(${pos}px)`;
+    }
+
+    requestAnimationFrame(loop);
+}
+
+container.addEventListener("mouseenter",()=>isPaused=true);
+container.addEventListener("mouseleave",()=>isPaused=false);
+
+window.addEventListener("load",loop);
+window.addEventListener("resize",()=>{
+    pos = container.offsetWidth;
+});
+</script>
+
+</body>
+</html>

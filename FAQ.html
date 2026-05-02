@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>FAQs</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding-top: 82px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            z-index: 9999;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-wrap {
+            padding: 14px 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            width: 300px;
+        }
+
+        .right-head {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        .top-links,
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-links a {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .top-links i {
+            color: #2f6f35;
+            margin-right: 6px;
+        }
+
+        .top-links .apply-btn,
+        .top-links .student-btn {
+            background: #2f6f35;
+            color: #fff !important;
+            padding: 9px 16px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 500;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .top-links .apply-btn:hover,
+        .top-links .student-btn:hover {
+            background: #ffd332;
+            color: #111 !important;
+            transform: translateY(-2px);
+        }
+
+        .top-links .apply-btn:hover i,
+        .top-links .student-btn:hover i {
+            color: #111 !important;
+        }
+
+        .main-nav a {
+            font-size: 15px;
+            color: #000;
+            font-weight: 500;
+        }
+
+        .main-nav a:hover {
+            color: #2f6f35;
+        }
+
+        .main-nav .dropdown {
+            position: relative;
+        }
+
+        .main-nav .dropdown-menu {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 240px;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: linear-gradient(#6e8c3f, #ffd332);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(14px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .main-nav .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .dropdown-item {
+            color: #fff !important;
+            padding: 14px 18px;
+            font-size: 14px;
+        }
+
+        .dropdown-item:hover {
+            background: #5f7d35;
+        }
+
+        .header-actions {
+            gap: 1.5rem;
+        }
+
+        .search-btn,
+        .hamb-btn {
+            border: 0;
+            background: transparent;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        .divider {
+            width: 1px;
+            height: 26px;
+            background: #bbb;
+        }
+
+        /* MEGA MENU */
+        .mega-menu {
+            position: fixed;
+            top: 110px;
+            left: 0;
+            width: 100%;
+            background: #ffd332;
+            z-index: 9998;
+            padding: 30px 55px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(16px);
+            transition: all 0.35s ease;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+        }
+
+        .mega-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .program-card {
+            height: 320px;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            background: #000;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+        }
+
+        .program-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: transform 0.35s ease;
+        }
+
+        .program-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .program-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.95));
+        }
+
+        .program-tag {
+            position: absolute;
+            top: 16px;
+            right: 0;
+            background: #2f6f35;
+            color: #fff;
+            padding: 5px 12px;
+            z-index: 2;
+            font-size: 14px;
+        }
+
+        .program-title {
+            position: absolute;
+            left: 16px;
+            bottom: 20px;
+            color: #fff;
+            z-index: 2;
+            font-size: 17px;
+            line-height: 1.2;
+        }
+
+        .program-title span {
+            display: block;
+            color: #ffd332;
+        }
+
+        .plus {
+            position: absolute;
+            right: 16px;
+            bottom: 20px;
+            z-index: 2;
+            color: #fff;
+            border: 1px solid #fff;
+            width: 28px;
+            height: 28px;
+            display: grid;
+            place-items: center;
+            font-size: 20px;
+        }
+
+        .card-cover {
+            position: absolute;
+            inset: 0;
+            z-index: 4;
+            font-size: 0;
+        }
+
+        /* SEARCH */
+        .search-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .search-overlay.active {
+            display: flex;
+        }
+
+        .search-close {
+            position: absolute;
+            top: 28px;
+            right: 42px;
+            font-size: 52px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .search-form {
+            width: 100%;
+            max-width: 680px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .search-form input {
+            flex: 1;
+            height: 60px;
+            border: 0;
+            border-radius: 999px;
+            padding: 0 28px;
+            font-size: 18px;
+        }
+
+        .search-form button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 0;
+            background: #2f6f35;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        /* SIDE MENU */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -390px;
+            width: 360px;
+            max-width: 90%;
+            height: 100vh;
+            background: #fff;
+            z-index: 10001;
+            padding: 35px 28px;
+            transition: right 0.35s ease;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.18);
+            overflow-y: auto;
+        }
+
+        .side-menu.active {
+            right: 0;
+        }
+
+        .side-close {
+            border: 0;
+            background: transparent;
+            font-size: 38px;
+            float: right;
+        }
+
+        .side-menu ul {
+            list-style: none;
+            margin: 60px 0 0;
+            padding: 0;
+        }
+
+        .side-menu li {
+            border-bottom: 1px solid #eee;
+        }
+
+        .side-menu a {
+            display: block;
+            padding: 15px 0;
+            font-size: 18px;
+        }
+
+        .side-sub {
+            display: none;
+            padding-left: 15px;
+            background: #f8f8f8;
+        }
+
+        .side-sub.open {
+            display: block;
+        }
+
+        /* FAQ BANNER */
+        .common-sec {
+            position: relative;
+            width: 100%;
+            min-height: 260px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: #0b5a2f;
+        }
+
+        .banner_image_right {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .banner_image_right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .common-sec::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 82, 38, 0.78);
+            z-index: 2;
+        }
+
+        .common-sec .container {
+            position: relative;
+            z-index: 3;
+        }
+
+        .common-text {
+            text-align: center;
+        }
+
+        .common-text h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* FLOAT APPLY */
+        .float-apply {
+            display: inline-block;
+            position: fixed;
+            right: 15px;
+            bottom: 20px;
+            background: rgb(67, 111, 64);
+            color: white !important;
+            padding: 14px 22px;
+            border-radius: 6px 0 0 6px;
+            font-size: 15px;
+            font-weight: 700;
+            z-index: 9999;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .float-apply:hover {
+            background: #2f6f35;
+            color: white !important;
+            transform: translateX(-3px);
+        }
+
+        /* MOBILE BOTTOM */
+        .mobile-bottom,
+        .mobile-panel {
+            display: none;
+        }
+
+        /* FOOTER */
+        .glaFooter_section {
+            background: #1d1714;
+            padding: 40px 18px 30px;
+            color: #fff;
+        }
+
+        .glaFooter_container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .glaFooter_links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px 22px;
+        }
+
+        .glaFooter_links a {
+            color: #fff;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .glaFooter_links a:hover {
+            color: #ffc400;
+        }
+
+        .glaFooter_line {
+            height: 1px;
+            background: rgba(255, 255, 255, .2);
+            margin: 28px 0;
+        }
+
+        .glaFooter_bottom {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .glaFooter_copy,
+        .glaFooter_credit {
+            font-size: 13px;
+        }
+
+        .glaFooter_credit {
+            text-align: right;
+        }
+
+        .glaFooter_social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .glaFooter_social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .glaFb {
+            background: #1877f2;
+        }
+
+        .glaYt {
+            background: #ff0000;
+        }
+
+        .glaInsta {
+            background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+        }
+
+        .glaFooter_social a:hover {
+            transform: scale(1.1);
+        }
+
+        /* RESPONSIVE */
+        @media (min-width: 992px) and (max-width: 1366px) {
+            body {
+                padding-top: 76px;
+            }
+
+            .header-wrap {
+                padding: 12px 24px;
+            }
+
+            .logo img {
+                width: 220px;
+            }
+
+            .right-head {
+                gap: 8px;
+            }
+
+            .top-links,
+            .main-nav {
+                gap: 12px;
+            }
+
+            .top-links a,
+            .main-nav a {
+                font-size: 13px;
+            }
+
+            .top-links .apply-btn,
+            .top-links .student-btn {
+                padding: 7px 10px;
+                font-size: 13px;
+            }
+
+            .search-btn,
+            .hamb-btn {
+                font-size: 22px;
+            }
+
+            .mega-menu {
+                top: 92px;
+                padding: 24px 28px;
+            }
+
+            .program-card {
+                height: 260px;
+            }
+
+            .program-title {
+                font-size: 15px;
+            }
+
+            .header-actions {
+                gap: 0.8rem;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1100px) {
+            .logo img {
+                width: 190px;
+            }
+
+            .top-links,
+            .main-nav {
+                gap: 9px;
+            }
+
+            .top-links a,
+            .main-nav a {
+                font-size: 12px;
+            }
+
+            .top-links .apply-btn,
+            .top-links .student-btn {
+                padding: 6px 8px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 1199px) {
+            .common-sec {
+                min-height: 240px;
+            }
+
+            .common-text h1 {
+                font-size: 44px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            body {
+                padding-top: 74px;
+                padding-bottom: 100px;
+            }
+
+            .top-links,
+            .main-nav {
+                display: none;
+            }
+
+            .header-wrap {
+                padding: 12px 16px;
+            }
+
+            .logo img {
+                width: 220px;
+            }
+
+            .right-head {
+                flex-direction: row;
+            }
+
+            .divider,
+            .mega-menu {
+                display: none;
+            }
+
+            .common-sec {
+                min-height: 220px;
+            }
+
+            .common-text h1 {
+                font-size: 38px;
+            }
+
+            .float-apply {
+                right: 15px;
+                bottom: 95px;
+                border-radius: 8px;
+                padding: 12px 18px;
+            }
+
+            .mobile-bottom {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                position: fixed;
+                left: 10px;
+                right: 10px;
+                bottom: 8px;
+                z-index: 9999;
+                background: #2f6d82;
+                border-radius: 20px 20px 8px 8px;
+                overflow: hidden;
+            }
+
+            .mobile-bottom button {
+                border: 0;
+                background: transparent;
+                color: #fff;
+                padding: 10px 4px;
+                font-size: 12px;
+                border-right: 1px solid rgba(255, 255, 255, .2);
+                cursor: pointer;
+            }
+
+            .mobile-bottom button:last-child {
+                border-right: 0;
+            }
+
+            .mobile-bottom button.active {
+                background: rgba(255, 255, 255, 0.15);
+            }
+
+            .mobile-bottom i {
+                display: block;
+                font-size: 22px;
+                margin-bottom: 4px;
+            }
+
+            .mobile-panel {
+                display: none;
+                position: fixed;
+                left: 10px;
+                right: 10px;
+                bottom: 78px;
+                background: #fff;
+                z-index: 9998;
+                border-radius: 14px;
+                padding: 20px;
+                box-shadow: 0 0 25px rgba(0, 0, 0, .25);
+                max-height: 70vh;
+                overflow: auto;
+            }
+
+            .mobile-panel.active {
+                display: block;
+            }
+
+            .mobile-panel h4 {
+                font-weight: 900;
+                color: #2f6f35;
+                margin-bottom: 15px;
+                font-size: 20px;
+            }
+
+            .mobile-panel a {
+                display: block;
+                padding: 12px 0;
+                border-bottom: 1px solid #eee;
+                font-weight: 700;
+                font-size: 15px;
+                color: #333;
+            }
+
+            .mobile-panel a:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .glaFooter_links {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 28px 40px;
+                text-align: left;
+            }
+
+            .glaFooter_links a {
+                font-size: 18px;
+            }
+
+            .glaFooter_bottom {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .glaFooter_copy {
+                order: 1;
+            }
+
+            .glaFooter_credit {
+                order: 2;
+                text-align: center;
+            }
+
+            .glaFooter_social {
+                order: 3;
+                margin-top: 10px;
+            }
+
+            .common-sec {
+                min-height: 190px;
+            }
+
+            .common-text h1 {
+                font-size: 32px;
+            }
+
+            .banner_image_right img {
+                object-position: center right;
+            }
+        }
+
+        @media (max-width: 575px) {
+            body {
+                padding-top: 66px;
+            }
+
+            .logo img {
+                width: 180px;
+            }
+
+            .search-btn,
+            .hamb-btn {
+                font-size: 23px;
+            }
+
+            .common-sec {
+                min-height: 160px;
+            }
+
+            .common-text h1 {
+                font-size: 28px;
+            }
+
+            .float-apply {
+                font-size: 14px;
+                padding: 11px 16px;
+                right: 12px;
+                bottom: 92px;
+            }
+
+            .search-close {
+                right: 24px;
+                font-size: 42px;
+            }
+
+            .search-form {
+                gap: 8px;
+            }
+
+            .search-form input {
+                height: 52px;
+                font-size: 16px;
+            }
+
+            .search-form button {
+                width: 52px;
+                height: 52px;
+            }
+        }
+        .faq-section {
+  padding: 70px 0;
+  background: #fff;
+}
+
+.faq_hed {
+  margin-bottom: 30px;
+}
+
+.faq_hed h6 {
+  color: #2f6f35;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.faq_hed h3 {
+  color: #0b5a2f;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.tabs-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 35px;
+  align-items: flex-start;
+}
+
+.right-pnl {
+  background: #315f63;
+  padding: 22px 18px;
+  min-height: 650px;
+}
+
+.tab-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.7);
+  color: #fff;
+  text-align: left;
+  padding: 14px 0;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  color: #ffd332;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.accordion-item {
+  border: 0;
+  margin-bottom: 10px;
+  background: transparent;
+}
+
+.accordion-header {
+  width: 100%;
+  border: 0;
+  background: #3f703c;
+  color: #fff;
+  padding: 12px 18px 12px 42px;
+  border-radius: 4px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+  position: relative;
+  cursor: pointer;
+}
+
+.accordion-header::before {
+  content: "+";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background: #8aa629;
+  color: #fff;
+  border-radius: 2px;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.accordion-item.active .accordion-header::before {
+  content: "-";
+  background: #ffd332;
+  color: #0b5a2f;
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  background: #3f703c;
+  color: #fff;
+  border-radius: 0 0 4px 4px;
+  transition: max-height 0.35s ease;
+}
+
+.accordion-body p,
+.accordion-body ul,
+.accordion-body ol {
+  padding: 18px 18px 18px 42px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.accordion-body a {
+  color: #ffd332;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .faq-section {
+    padding: 50px 0;
+  }
+
+  .faq_hed h3 {
+    font-size: 28px;
+  }
+
+  .tabs-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .right-pnl {
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .tab-buttons {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 10px;
+  }
+
+  .tab-btn {
+    flex: 0 0 auto;
+    border-bottom: 0;
+    background: rgba(255,255,255,0.12);
+    padding: 10px 14px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .tab-btn.active {
+    background: #ffd332;
+    color: #0b5a2f;
+  }
+}
+
+@media (max-width: 575px) {
+  .faq-section {
+    padding: 40px 0;
+  }
+
+  .faq_hed h3 {
+    font-size: 24px;
+  }
+
+  .accordion-header {
+    font-size: 13px;
+    padding: 11px 12px 11px 38px;
+  }
+
+  .accordion-body p,
+  .accordion-body ul,
+  .accordion-body ol {
+    font-size: 13px;
+    padding: 0 12px 14px 38px;
+  }
+}
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="header-wrap">
+            <a href="#" class="logo">
+                <img src="https://glaonline.com/siteassets/images/green-logo.webp" alt="GLA Online">
+            </a>
+
+            <div class="right-head">
+                <ul class="top-links">
+                    <li>
+                        <a href="mailto:onlineadmissions@gla.ac.in">
+                            <i class="bi bi-envelope-fill"></i> onlineadmissions@gla.ac.in
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+919568536853">
+                            <i class="bi bi-telephone-fill"></i> +91-9568536853
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://apply.glaonline.com/" target="_blank" rel="noopener noreferrer"
+                            class="apply-btn">
+                            Apply Now
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="student-btn">
+                            Student Login
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center header-actions">
+                    <ul class="main-nav">
+                        <li class="dropdown">
+                            <a href="#">About Us <i class="bi bi-caret-down-fill small"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Overview</a></li>
+                                <li><a class="dropdown-item" href="#">Leadership</a></li>
+                                <li><a class="dropdown-item" href="#">Recognitions & Accreditations</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#">Admissions <i class="bi bi-caret-down-fill small"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Admission Procedure</a></li>
+                                <li><a class="dropdown-item" href="#">Eligibility Criteria</a></li>
+                                <li><a class="dropdown-item" href="#">Fee Structure</a></li>
+                                <li><a class="dropdown-item" href="#">Evaluation System</a></li>
+                                <li><a class="dropdown-item" href="#">Academic Calendar</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0)" id="programToggle">
+                                Programs <i class="bi bi-caret-down-fill small"></i>
+                            </a>
+                        </li>
+
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+
+                    <button class="search-btn" onclick="openSearch()" aria-label="Search">
+                        <i class="bi bi-search"></i>
+                    </button>
+
+                    <span class="divider"></span>
+
+                    <button class="hamb-btn" onclick="openSideMenu()" aria-label="Menu">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="mega-menu" id="megaMenu">
+        <div class="container-fluid">
+            <div class="row g-4 row-cols-1 row-cols-md-5">
+                <div class="col">
+                    <div class="program-card">
+                        <span class="program-tag">PG</span>
+                        <img src="https://glaonline.com/uploads/course_group/6928264fb0a231764238927.webp"
+                            alt="MBA Program">
+                        <div class="program-title"><span>Master of</span>Business Administration</div>
+                        <div class="plus">+</div>
+                        <a href="#" class="card-cover">MBA</a>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="program-card">
+                        <span class="program-tag">PG</span>
+                        <img src="https://glaonline.com/uploads/course_group/68aef588901ea1756296584.webp"
+                            alt="MCA Program">
+                        <div class="program-title"><span>Master of</span>Computer Applications</div>
+                        <div class="plus">+</div>
+                        <a href="#" class="card-cover">MCA</a>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="program-card">
+                        <span class="program-tag">UG</span>
+                        <img src="https://glaonline.com/uploads/course_group/68aedd4b265be1756290379.webp"
+                            alt="BBA Program">
+                        <div class="program-title"><span>Bachelor of</span>Business Administration</div>
+                        <div class="plus">+</div>
+                        <a href="#" class="card-cover">BBA</a>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="program-card">
+                        <span class="program-tag">UG</span>
+                        <img src="https://glaonline.com/uploads/course_group/68aedd8f853ee1756290447.webp"
+                            alt="BCA Program">
+                        <div class="program-title"><span>Bachelor of</span>Computer Applications</div>
+                        <div class="plus">+</div>
+                        <a href="#" class="card-cover">BCA</a>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="program-card">
+                        <span class="program-tag">UG</span>
+                        <img src="https://glaonline.com/uploads/course_group/68aeddd46cb4b1756290516.webp"
+                            alt="B.Com Program">
+                        <div class="program-title"><span>Bachelor of</span>Commerce Hons.</div>
+                        <div class="plus">+</div>
+                        <a href="#" class="card-cover">BCom</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="search-overlay" id="searchOverlay">
+        <span class="search-close" onclick="closeSearch()">×</span>
+        <form class="search-form">
+            <input type="text" aria-label="Search website" placeholder="Search..." required>
+            <button type="submit" aria-label="Submit search"><i class="bi bi-search"></i></button>
+        </form>
+    </div>
+
+    <aside class="side-menu" id="sideMenu">
+        <button class="side-close" onclick="closeSideMenu()" aria-label="Close menu">×</button>
+        <ul>
+            <li><a href="#">Meet Our Faculty</a></li>
+            <li>
+                <a href="javascript:void(0)" onclick="toggleSub(this)">
+                    Events @ GLA <i class="bi bi-chevron-down float-end"></i>
+                </a>
+                <ul class="side-sub">
+                    <li><a href="#">News and Events</a></li>
+                    <li><a href="#">Media Coverage</a></li>
+                    <li><a href="#">CDOE Events</a></li>
+                </ul>
+            </li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Mandatory Disclosure</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </aside>
+
+    <section class="common-sec">
+        <picture class="banner_image_right">
+            <img src="https://glaonline.com/uploads/cms_images/694d4397c8db91766671255.webp" alt="FAQs Banner"
+                class="img-fluid w-100">
+        </picture>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                    <div class="common-text">
+                        <h1>FAQs</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="faq_sec progrm_eleven  faq-section pdt_8 pdb_8">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="faq_hed image reveal-image">
+                        <h6 class="h_16">FAQs</h6>
+                        <h3><span>Got Questions? We've Got Answers!</span></h3>
+                    </div>
+                    <div class="faq_tabs">
+
+                        <div class="tabs-container">
+                            <!-- Desktop tab buttons -->
+                            <div class="right-pnl" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
+                                <div class="tab-buttons">
+                                    <button class="tab-btn active" data-tab="general">General</button> <button
+                                        class="tab-btn" data-tab="portal">Examination</button>
+                                    <button class="tab-btn" data-tab="lms">LMS</button> <button class="tab-btn"
+                                        data-tab="degree_Bonafide">Degree/Bonafide Certificate</button> <button
+                                        class="tab-btn" data-tab="faq_Internship">Internship/Placement</button>
+                                </div>
+
+                            </div>
+                            <!-- Tab contents -->
+                            <div class="lft-pnl">
+                                <div class="tab-content active" id="general">
+                                    <div class="tab-body">
+                                        <div class="faq_item">
+                                            <div class="accordion">
+                                                <div class="accordion-item  active">
+                                                    <button class="accordion-header">Are the programs offered by GLA
+                                                        Online UGC-recognised?</button>
+                                               <div class="accordion-body">
+                                                        <p>Yes. All programs offered by GLA Online are duly recognized
+                                                            by the University Grants Commission (UGC). Degrees awarded
+                                                            through the online mode are valid and hold equivalence to
+                                                            regular on-campus degrees, in accordance with UGC
+                                                            regulations.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Which programs are currently
+                                                        offered by GLA Online?</button>
+                                                    <div class="accordion-body">
+                                                        <p><b>GLA Online</b> offers the following programs:</p>
+                                                        <ul>
+                                                            <li><a href="https://glaonline.com/program/mba">Master of
+                                                                    Business Administration (MBA)</a></li>
+                                                            <li><a href="https://glaonline.com/program/mca">Master of
+                                                                    Computer Applications (MCA)</a></li>
+                                                            <li><a href="https://glaonline.com/program/bba">Bachelor of
+                                                                    Business Administration (BBA)</a></li>
+                                                            <li><a href="https://glaonline.com/program/bca">Bachelor of
+                                                                    Computer Applications (BCA)</a></li>
+                                                            <li><a href="https://glaonline.com/program/bcom-hons">Bachelor
+                                                                    of Commerce (Hons.)</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Is there any difference between an
+                                                        online degree and a regular degree?</button>
+                                                    <div class="accordion-body">
+                                                        <p>No. As per UGC guidelines, a degree obtained through an
+                                                            approved online program from a recognized university is
+                                                            considered equivalent to a regular on-campus degree in all
+                                                            academic and professional aspects.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">What is the mode of teaching for
+                                                        GLA Online programs?</button>
+                                                    <div class="accordion-body">
+                                                        <p>All programs are delivered entirely through a Digital
+                                                            Learning Management System (LMS). The LMS provides access to
+                                                            pre-recorded video lectures, live interactive sessions,
+                                                            e-books, quizzes, formative assessments, and discussion
+                                                            forums for collaborative learning.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">How can I apply for an online
+                                                        course?</button>
+                                                    <div class="accordion-body">
+                                                        <ol>
+                                                            <li><b>Visit the official website</b> Go to <a
+                                                                    href="https://glaonline.com/" target="_blank"
+                                                                    rel="noopener">glaonline.com</a> and begin the
+                                                                application process by selecting <a
+                                                                    href="https://apply.glaonline.com/" target="_blank"
+                                                                    rel="noopener">&ldquo;Apply Now.&rdquo;</a> Choose
+                                                                the Online Campus option to start your registration.
+                                                            </li>
+                                                            <li><b>Log in to your account</b> Use the login credentials
+                                                                created during the initial registration to access the
+                                                                application portal.</li>
+                                                            <li><b>Complete the registration form</b> Enter all required
+                                                                information, including personal details, parent/guardian
+                                                                details, and residential information.</li>
+                                                            <li><b>Pay the registration fee</b> Submit the
+                                                                non-refundable registration fee of ₹2,000 to proceed
+                                                                further.</li>
+                                                            <li><b>Provide educational details</b> Fill in your academic
+                                                                information and generate your DEB ID as instructed.</li>
+                                                            <li><b>Upload necessary documents</b> Submit all required
+                                                                documents along with the mandatory undertaking.</li>
+                                                            <li><b>Pay the admission fee</b> Complete the process by
+                                                                paying the applicable admission fee.</li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Is any entrance examination
+                                                        required for admission?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Learners must have successfully completed 10+2 (Senior
+                                                            Secondary) education from a recognized board or equivalent
+                                                            institution.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">What is the eligibility criteria
+                                                        for postgraduate programs?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Applicants must have successfully completed <b>10+2 from a
+                                                                recognized</b> board to be eligible for GLA Online
+                                                            undergraduate programs.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Are the online programs suitable
+                                                        for working professionals?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Yes. GLA Online programs are designed to offer maximum
+                                                            flexibility, enabling learners&mdash;especially working
+                                                            professionals&mdash;to balance academic commitments with
+                                                            full-time employment.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Are classes conducted live or
+                                                        through recorded sessions?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Both modes are available. Live classes are conducted as per
+                                                            schedule, and recordings of these sessions are made
+                                                            available on the LMS for learners to access at their
+                                                            convenience.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">What is the fee structure?</button>
+                                                    <div class="accordion-body">
+                                                        <ul>
+                                                            <li>MBA: ₹1,05,000</li>
+                                                            <li>MCA: ₹94,000</li>
+                                                            <li>BBA: ₹99,500</li>
+                                                            <li>BCA: ₹99,500</li>
+                                                            <li>B.Com. (Hons.) : ₹71,000</li>
+                                                        </ul>
+                                                        <p>GLA Online provides flexible payment options, including
+                                                            one-time, annual, and semester-wise plans. The fee for each
+                                                            program includes a non-refundable registration fee of
+                                                            ₹2,000.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Are EMI or education loan
+                                                        facilities available for fee payment?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Yes. GLA Online has partnered with financial service
+                                                            providers to offer no-cost EMI options on one-time and
+                                                            yearly fee payments. Learners may select a suitable option
+                                                            during the payment process.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">What is the duration of the
+                                                        programs?</button>
+                                                    <div class="accordion-body">
+                                                        <ul>
+                                                            <li>Undergraduate Programs (BBA, BCA, B.Com. (Hons.)): 3
+                                                                years (6 semesters)</li>
+                                                            <li>Postgraduate Programs (MBA, MCA): 2 years (4 semesters)
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Can I pause or defer my
+                                                        program?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Deferment requests are considered under <b>GLA Online</b>
+                                                            academic policies and subject to approval.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Does GLA Online offer scholarships
+                                                        to learners?</button>
+                                                    <div class="accordion-body">
+                                                        <p>No. Currently, GLA Online does not offer merit-based
+                                                            scholarships.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Are scholarships
+                                                        available?</button>
+                                                    <div class="accordion-body">
+                                                        <p><b>GLA Online</b> does not offer merit-based scholarships;
+                                                            however, one-time fee payment carries special benefits.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Can I study while working
+                                                        full-time?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Yes, the self-paced structure of <b>GLA Online</b> suits
+                                                            full-time professionals.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">What is the medium of instruction
+                                                        for GLA Online programs?</button>
+                                                    <div class="accordion-body">
+                                                        <p>The medium of instruction for all GLA Online programs is
+                                                            English.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">What academic support is available
+                                                        for learners?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Each learner is assigned a dedicated Program Coordinator.
+                                                            Additionally, learners receive access to technical support,
+                                                            discussion forums, doubt-clearing sessions, and continuous
+                                                            academic mentoring.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Are examinations conducted online
+                                                        or offline?</button>
+                                                    <div class="accordion-body">
+                                                        <p>All end-semester examinations are conducted online through a
+                                                            secure, AI-proctored examination platform. Learners are
+                                                            informed well in advance about examination schedules and
+                                                            guidelines.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">How will learners receive their
+                                                        degree certificate?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Upon successful completion of the program, the degree
+                                                            certificate is issued by GLA Online University through the
+                                                            following modes:</p>
+                                                        <ul>
+                                                            <li>In-person collection at the GLA Online University,
+                                                                Mathura Campus during Convocation</li>
+                                                            <li>Courier dispatch in case the learner is unable to attend
+                                                                the Convocation ceremony</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Can international learners enroll
+                                                        in GLA Online programs?</button>
+                                                    <div class="accordion-body">
+                                                        <p>No. At present, international learner enrollment has not
+                                                            commenced for <b>GLA Online</b> programs.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Are internships included in the
+                                                        program structure?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Internships are not mandatory; however, they are highly
+                                                            encouraged. GLA Online provides guidance and support to help
+                                                            learners pursue industry-relevant internships or projects.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Is placement assistance available
+                                                        for GLA Online learners?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Yes. GLA Online offers career development and placement
+                                                            assistance, including resume building, interview
+                                                            preparation, access to job portals, and participation in
+                                                            recruitment drives.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Can a learner pursue online studies
+                                                        while working full-time?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Yes. The flexible and self-paced learning model allows
+                                                            learners to effectively manage both professional and
+                                                            academic responsibilities.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">What documents are required for
+                                                        admission?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Learners are required to submit the following documents:</p>
+                                                        <ul>
+                                                            <li>Recent passport-size photograph</li>
+                                                            <li>Valid government-issued ID proof (Aadhaar Card)</li>
+                                                            <li>Undertaking form</li>
+                                                            <li>Digital signature</li>
+                                                            <li>Class 10th and 12th mark sheets (for undergraduate
+                                                                programs)</li>
+                                                            <li>Graduation certificate and mark sheets (for postgraduate
+                                                                programs)</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">How can learners contact the GLA
+                                                        Online support team?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Learners may contact the support team via <a
+                                                                href="mailto:support.cdoe@gla.ac.in">support.cdoe@gla.ac.in</a>
+                                                            The dedicated support team ensures timely resolution of all
+                                                            academic, technical, and administrative queries.</p>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="tab-content" id="lms">
+                                    <div class="tab-body">
+                                        <div class="faq_item">
+                                            <div class="accordion">
+                                                <div class="accordion-item  active">
+                                                    <button class="accordion-header">Are classes delivered live
+                                                        ?</button>
+                                                    <div class="accordion-body">
+                                                        <p><b>GLA Online</b> provides live sessions for convenient
+                                                            learning. However, in case you miss a lecture, you can view
+                                                            the recorded sessions of live classes available on LMS.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Is attendance mandatory for live
+                                                        classes?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Learners are expected to maintain a minimum of 75%
+                                                            participation in all academic activities of the online
+                                                            program to be eligible for the end-semester examinations.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">What is the medium of
+                                                        instruction?</button>
+                                                    <div class="accordion-body">
+                                                        <p>All GLA Online programs are offered in English. Live classes
+                                                            are conducted in a dual-mode format, providing learners with
+                                                            flexibility and an enhanced, student-friendly learning
+                                                            experience.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">What kind of academic support is
+                                                        available to the learners?</button>
+                                                    <div class="accordion-body">
+                                                        <p>GLA Online provides comprehensive learner support through
+                                                            program coordinators, course coordinators, mentors,
+                                                            doubt-clearing sessions, discussion forums, and dedicated
+                                                            technical assistance, ensuring guidance at every stage of
+                                                            the learning journey.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">How are internal assessments
+                                                        conducted?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Internal evaluations under GLA Online include formative
+                                                            assessments consisting of multiple-choice questions, which
+                                                            must be completed on the LMS within a stipulated time
+                                                            period.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">How can I contact support?</button>
+                                                    <div class="accordion-body">
+                                                        <p>You can reach GLA Online supp by emailing <a
+                                                                href="mailto:support.cdoe@gla.ac.in">support.cdoe@gla.ac.in.</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-content" id="portal">
+                                    <div class="tab-body">
+                                        <div class="faq_item">
+                                            <div class="accordion">
+
+                                                <div class="accordion-item  active">
+                                                    <button class="accordion-header">Are examinations conducted online
+                                                        or offline?</button>
+                                                    <div class="accordion-body" style="max-height: 57px;">
+                                                        <p><b>GLA Online</b> conducts exams online through a secure
+                                                            AI-proctored system.</p>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+                                <div class="tab-content" id="degree_Bonafide">
+                                    <div class="tab-body">
+                                        <div class="faq_item">
+                                            <div class="accordion">
+
+                                                <div class="accordion-item  active">
+                                                    <button class="accordion-header">How will I receive my degree
+                                                        certificate?</button>
+                                                    <div class="accordion-body" style="max-height: 57px;">
+                                                        <p>Learners should first confirm the readiness of their degree
+                                                            and marksheet with the support team. Once confirmed,
+                                                            documents can be collected in person from the Mathura campus
+                                                            or received by post upon submitting a request along with
+                                                            Aadhaar details, complete address, and the required payment.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Will I receive a student ID
+                                                        card?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Learners may request a bonafide certificate as needed.</p>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-content" id="faq_Internship">
+                                    <div class="tab-body">
+                                        <div class="faq_item">
+                                            <div class="accordion">
+
+                                                <div class="accordion-item  active">
+                                                    <button class="accordion-header">Does the program include any
+                                                        internship opportunities?</button>
+                                                    <div class="accordion-body" style="max-height: 57px;">
+                                                        <p>No, internships are not included as part of the online
+                                                            program. However, we aid learners based on their interests
+                                                            and preferences regarding internships. Data will be
+                                                            collected from the learner, and if they meet the eligibility
+                                                            criteria, they may be referred to the opportunity. Please
+                                                            note that we only provide support and guidance; this does
+                                                            not guarantee internship placement.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item  ">
+                                                    <button class="accordion-header">Is placement assistance
+                                                        available?</button>
+                                                    <div class="accordion-body">
+                                                        <p>Yes, GLA Online offers placement readiness support for
+                                                            freshers and career growth assistance for working
+                                                            professionals. Please note that we provide guidance and
+                                                            support only; this does not guarantee job placement.</p>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a href="https://apply.glaonline.com/" target="_blank" rel="noopener noreferrer" class="float-apply">
+        Apply Now
+    </a>
+
+    <nav class="mobile-bottom">
+        <button onclick="openMobilePanel('programPanel', this)">
+            <i class="bi bi-book"></i>
+            <span>Programs</span>
+        </button>
+
+        <button onclick="openMobilePanel('admissionPanel', this)">
+            <i class="bi bi-mortarboard"></i>
+            <span>Admission</span>
+        </button>
+
+        <button onclick="openMobilePanel('contactPanel', this)">
+            <i class="bi bi-telephone-fill"></i>
+            <span>Contact</span>
+        </button>
+
+        <button onclick="openMobilePanel('menuPanel', this)">
+            <i class="bi bi-grid-fill"></i>
+            <span>Menu</span>
+        </button>
+    </nav>
+
+    <div class="mobile-panel" id="programPanel">
+        <h4>Find Your Program</h4>
+        <a href="https://glaonline.com/program/mba">Master of Business Administration</a>
+        <a href="https://glaonline.com/program/mca">Master of Computer Applications</a>
+        <a href="https://glaonline.com/program/bba">Bachelor of Business Administration</a>
+        <a href="https://glaonline.com/program/bca">Bachelor of Computer Applications</a>
+        <a href="https://glaonline.com/program/bcom-hons">Bachelor of Commerce Hons.</a>
+    </div>
+
+    <div class="mobile-panel" id="admissionPanel">
+        <h4>Admissions</h4>
+        <a href="tel:+919568536853">+91-9568536853</a>
+        <a href="mailto:onlineadmissions@gla.ac.in">onlineadmissions@gla.ac.in</a>
+        <a href="https://apply.glaonline.com/">Apply Now</a>
+    </div>
+
+    <div class="mobile-panel" id="contactPanel">
+        <h4>Contact</h4>
+        <a href="tel:+919568536853">Call Us Now</a>
+        <a href="https://glaonline.com/contact-us">Contact Us</a>
+    </div>
+
+    <div class="mobile-panel" id="menuPanel">
+        <h4>Menu</h4>
+        <a href="https://glaonline.com/about-us/overview">About Us</a>
+        <a href="https://glaonline.com/faculty">Meet Our Faculty</a>
+        <a href="https://glaonline.com/faq">FAQs</a>
+        <a href="https://glaonline.com/blog">Blog</a>
+        <a href="https://glaonline.com/contact-us">Contact Us</a>
+    </div>
+
+    <footer class="glaFooter_section">
+        <div class="glaFooter_container">
+            <div class="glaFooter_links">
+                <a href="#">About Us</a>
+                <a href="#">Admissions</a>
+                <a href="#">Programs</a>
+                <a href="#">Events @ GLA</a>
+                <a href="#">FAQs</a>
+                <a href="#">Testimonials</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Disclaimer</a>
+                <a href="#">Mandatory Disclosure</a>
+                <a href="#">Contact Us</a>
+            </div>
+
+            <div class="glaFooter_line"></div>
+
+            <div class="glaFooter_bottom">
+                <div class="glaFooter_copy">
+                    © Copyright 2026 - GLA Online. All Rights Reserved.
+                </div>
+
+                <div class="glaFooter_social">
+                    <a href="#" class="glaFb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="glaYt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="glaInsta" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+
+                <div class="glaFooter_credit">
+                    Website Design and Developed by Sterco Digitex
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            once: true,
+            offset: 80,
+            duration: 1000
+        });
+
+        function openSearch() {
+            document.getElementById("searchOverlay").classList.add("active");
+        }
+
+        function closeSearch() {
+            document.getElementById("searchOverlay").classList.remove("active");
+        }
+
+        function openSideMenu() {
+            document.getElementById("sideMenu").classList.add("active");
+        }
+
+        function closeSideMenu() {
+            document.getElementById("sideMenu").classList.remove("active");
+        }
+
+        function toggleSub(el) {
+            el.nextElementSibling.classList.toggle("open");
+        }
+
+        const programToggle = document.getElementById("programToggle");
+        const megaMenu = document.getElementById("megaMenu");
+
+        if (programToggle && megaMenu) {
+            programToggle.addEventListener("mouseenter", () => {
+                megaMenu.classList.add("active");
+            });
+
+            programToggle.addEventListener("mouseleave", () => {
+                setTimeout(() => {
+                    if (!megaMenu.matches(":hover") && !programToggle.matches(":hover")) {
+                        megaMenu.classList.remove("active");
+                    }
+                }, 120);
+            });
+
+            megaMenu.addEventListener("mouseenter", () => {
+                megaMenu.classList.add("active");
+            });
+
+            megaMenu.addEventListener("mouseleave", () => {
+                megaMenu.classList.remove("active");
+            });
+        }
+
+        function openMobilePanel(panelId, buttonElement) {
+            const panels = document.querySelectorAll(".mobile-panel");
+            const buttons = document.querySelectorAll(".mobile-bottom button");
+
+            panels.forEach(panel => {
+                if (panel.id === panelId) {
+                    panel.classList.toggle("active");
+                } else {
+                    panel.classList.remove("active");
+                }
+            });
+
+            buttons.forEach(button => {
+                if (button === buttonElement) {
+                    button.classList.toggle("active");
+                } else {
+                    button.classList.remove("active");
+                }
+            });
+        }
+
+        document.addEventListener("click", function (e) {
+            const clickedButton = e.target.closest(".mobile-bottom button");
+            const clickedPanel = e.target.closest(".mobile-panel");
+
+            if (!clickedButton && !clickedPanel) {
+                document.querySelectorAll(".mobile-panel").forEach(panel => {
+                    panel.classList.remove("active");
+                });
+
+                document.querySelectorAll(".mobile-bottom button").forEach(button => {
+                    button.classList.remove("active");
+                });
+            }
+        });
+   
+  document.querySelectorAll(".tab-btn").forEach(button => {
+    button.addEventListener("click", function () {
+      const tabId = this.getAttribute("data-tab");
+
+      document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      document.querySelectorAll(".tab-content").forEach(content => {
+        content.classList.remove("active");
+      });
+
+      this.classList.add("active");
+      document.getElementById(tabId).classList.add("active");
+    });
+  });
+
+  document.querySelectorAll(".accordion-header").forEach(header => {
+    header.addEventListener("click", function () {
+      const item = this.parentElement;
+      const body = item.querySelector(".accordion-body");
+      const accordion = item.closest(".accordion");
+
+      accordion.querySelectorAll(".accordion-item").forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove("active");
+          otherItem.querySelector(".accordion-body").style.maxHeight = null;
+        }
+      });
+
+      item.classList.toggle("active");
+
+      if (item.classList.contains("active")) {
+        body.style.maxHeight = body.scrollHeight + "px";
+      } else {
+        body.style.maxHeight = null;
+      }
+    });
+  });
+
+  document.querySelectorAll(".accordion-item.active .accordion-body").forEach(body => {
+    body.style.maxHeight = body.scrollHeight + "px";
+  });
+
+  </script>
+</body>
+</html>
