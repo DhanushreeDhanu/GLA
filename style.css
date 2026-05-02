@@ -776,90 +776,104 @@ body {
   font-size: 16px;
 }
 
-/* ===== TESTIMONIAL SECTION ===== */
-.zxqTesti_section {
-  background: #244262;
-  padding: 60px 0;
-  color: #fff;
-  overflow: hidden;
+/* ===== TESTIMONIAL SECTION ===== *//* ===== CORPORATE LEARNER SECTION FIX ===== */
+.spx-section {
+  padding: 70px 0;
+  background: #f5f5f5;
 }
 
-.zxqTesti_heading h6 {
-  color: #f6c744;
-  font-size: 26px;
-  margin-bottom: 30px;
+.spx-section .container {
+  max-width: 1320px;
+}
+
+.spx-box {
+  background: #F9CE3A;
+  padding: 70px 70px 55px;
+  border-radius: 10px;
   text-align: center;
+  width: 100%;
 }
 
-.zxqTesti_section .container {
-  max-width: 1140px;
-  margin: auto;
-  padding: 0 15px;
+.spx-box .col-lg-10 {
+  width: 100%;
+  max-width: 100%;
+  flex: 0 0 100%;
 }
 
-.zxqTesti_swiper {
-  padding: 40px 40px 0;
+.spx-box h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.spx-box h3 {
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #3f6f40;
+  margin-bottom: 22px;
+}
+
+.spx-slider {
+  max-width: 1060px;
+  margin: 0 auto;
   overflow: hidden;
 }
 
-.zxqTesti_swiper .swiper-wrapper {
-  align-items: stretch;
-}
-
-.zxqTesti_swiper .swiper-slide {
-  display: flex;
-  justify-content: center;
+.spx-slider .swiper-slide {
   height: auto;
+  display: flex;
 }
 
-.zxqTesti_card {
-  position: relative;
-  margin-top: 60px;
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 15px;
-  padding: 80px 25px 30px;
-  text-align: start;
+.spx-card {
   width: 100%;
-  transition: 0.3s;
+  height: 360px;
 }
 
-.zxqTesti_imgWrap {
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  transform: translateX(-50%);
+.spx-flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
 }
 
-.zxqTesti_imgWrap img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 4px solid #244262;
+.spx-card figure {
+  background: #fff;
+  border-radius: 4px;
+}
+
+.spx-card img {
+  width: 100%;
+  height: 230px;
   object-fit: cover;
+  display: block;
 }
 
-.zxqTesti_text {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #dbe6f2;
-  margin-bottom: 25px;
+.spx-content {
+  padding: 14px 12px;
+  text-align: left;
 }
 
-.zxqTesti_name h4 {
-  font-size: 20px;
-  font-weight: 600;
+.spx-content h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 
-.zxqTesti_name h5 {
-  font-size: 14px;
-  color: #cfd9e6;
+.spx-content p {
+  font-size: 13px;
+  line-height: 1.35;
 }
 
-.zxqTesti_card:hover {
-  transform: translateY(-10px);
-  border-color: #f6c744;
+.spx-card figcaption {
+  background: #3f6f40;
+  color: #fff;
+  border-radius: 4px;
+  padding: 30px 18px;
 }
 
+.spx-arrows {
+  margin-top: 28px;
+}
 /* ===== MENTOR SECTION ===== */
 .mtm-section {
   background: #f3f3f3;
