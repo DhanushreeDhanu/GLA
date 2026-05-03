@@ -14,30 +14,22 @@ window.addEventListener("scroll", handleHeaderScroll);
 
 
   /* HOME SLIDER */
-  if (typeof Swiper !== "undefined") {
-    new Swiper(".home_slider", {
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".home_banner .swiper-pagination",
-        clickable: true,
-      },
-    });
-  }
-
-  /* SEARCH OVERLAY */
-  window.openSearch = function () {
-    const overlay = document.getElementById("myOverlay");
-    if (overlay) overlay.style.display = "block";
-  };
-
-  window.closeSearch = function () {
-    const overlay = document.getElementById("myOverlay");
-    if (overlay) overlay.style.display = "none";
-  };
+ new Swiper(".home_slider", {
+  loop: true,
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true
+  },
+  speed: 800,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".home_banner .swiper-pagination",
+    clickable: true,
+  },
+});
 
   /* HAMBURGER MENU */
   const openBtn = document.querySelector(".hamb_open");
@@ -505,15 +497,113 @@ function setBannerBgFromImage(img) {
 }
 
 // run on load + slide change
-const swiper = document.querySelector(".home_slider").swiper;
+window.addEventListener("load", function () {
+  const homeSlider = document.querySelector(".home_slider");
 
-swiper.on("slideChange", function () {
-  const activeSlide = document.querySelector(".swiper-slide-active img");
-  setBannerBgFromImage(activeSlide);
+  if (!homeSlider || !homeSlider.swiper) return;
+
+  const swiper = homeSlider.swiper;
+
+  swiper.on("slideChange", function () {
+    const activeSlide = document.querySelector(".home_slider .swiper-slide-active img");
+    setBannerBgFromImage(activeSlide);
+  });
+
+  const firstImg = document.querySelector(".home_slider .swiper-slide-active img");
+  if (firstImg) {
+    setBannerBgFromImage(firstImg);
+  }
 });
 
-// initial load
-window.addEventListener("load", () => {
-  const firstImg = document.querySelector(".swiper-slide-active img");
-  setBannerBgFromImage(firstImg);
+
+
+/* form validation */
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const registrationForm = document.getElementById("registrationForm");
+
+  if (!registrationForm) return;
+
+  registrationForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let isValid = true;
+
+    const fields = {
+      name: document.getElementById("name"),
+      email: document.getElementById("email"),
+      mobile: document.getElementById("mobile"),
+      alternateMobile: document.getElementById("alternateMobile"),
+      state: document.getElementById("state"),
+      city: document.getElementById("city"),
+      program: document.getElementById("program")
+    };
+
+    document.querySelectorAll("#registrationForm .error").forEach(el => {
+      el.textContent = "";
+    });
+
+    document.querySelectorAll("#registrationForm input, #registrationForm select").forEach(el => {
+      el.classList.remove("input-error");
+    });
+
+    if (!fields.name.value.trim()) {
+      showError(fields.name, "nameError", "Name is required");
+      isValid = false;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!fields.email.value.trim()) {
+      showError(fields.email, "emailError", "Email is required");
+      isValid = false;
+    } else if (!emailPattern.test(fields.email.value.trim())) {
+      showError(fields.email, "emailError", "Enter valid email");
+      isValid = false;
+    }
+
+    const mobilePattern = /^[6-9][0-9]{9}$/;
+
+    if (!fields.mobile.value.trim()) {
+      showError(fields.mobile, "mobileError", "Mobile number is required");
+      isValid = false;
+    } else if (!mobilePattern.test(fields.mobile.value.trim())) {
+      showError(fields.mobile, "mobileError", "Enter valid 10-digit mobile number");
+      isValid = false;
+    }
+
+    if (
+      fields.alternateMobile.value.trim() &&
+      !mobilePattern.test(fields.alternateMobile.value.trim())
+    ) {
+      showError(fields.alternateMobile, "alternateMobileError", "Enter valid alternate number");
+      isValid = false;
+    }
+
+    if (!fields.state.value) {
+      showError(fields.state, "stateError", "Please select state");
+      isValid = false;
+    }
+
+    if (!fields.city.value) {
+      showError(fields.city, "cityError", "Please select city");
+      isValid = false;
+    }
+
+    if (!fields.program.value) {
+      showError(fields.program, "programError", "Please select program");
+      isValid = false;
+    }
+
+    if (isValid) {
+      alert("Form submitted successfully!");
+      registrationForm.reset();
+    }
+  });
+
+  function showError(input, errorId, message) {
+    input.classList.add("input-error");
+    document.getElementById(errorId).textContent = message;
+  }
 });
