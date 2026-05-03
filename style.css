@@ -11,6 +11,8 @@ body {
   font-family: Arial, sans-serif;
 }
 
+
+
 /* ===== HOME BANNER CLEAN VERSION ===== */
 .home_banner {
   position: relative;
@@ -1799,82 +1801,131 @@ body {
 }
 
 /* =================================THIS IS THE END=============================================== */
-/* hide by default */
-.mobile-apply-btn,
-.mobile-bottom-nav {
-  display: none;
-}
 
-/* =========================
-   MOBILE + TABLET ONLY
-========================= */
-@media (max-width: 1024px) {
 
-  body {
-    padding-bottom: 95px;
-  }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-  /* APPLY BUTTON */
-  .mobile-apply-btn {
-    display: block;
-    position: fixed;
-    right: 20px;
-    bottom: 110px;
-    z-index: 99999;
-    background: #4a7746;
-    color: #fff;
-    padding: 12px 22px;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 10px;
-  }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-  /* BOTTOM NAV */
-  .mobile-bottom-nav {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    position: fixed;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    z-index: 99999;
-    background: #2f6d82;
-    border-radius: 20px 20px 8px 8px;
-    overflow: hidden;
-  }
+    /* Hide on desktop */
+    .mobile-bottom,
+    .mobile-panel,
+    .float-apply {
+      display: none;
+    }
 
-  .mobile-bottom-nav a {
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    padding: 10px 5px 12px;
-    font-size: 13px;
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
-  }
+    /* Mobile Only */
+    @media (max-width: 991px) {
 
-  .mobile-bottom-nav a:last-child {
-    border-right: none;
-  }
+      body {
+        padding-bottom: 100px;
+      }
 
-  .mobile-bottom-nav i {
-    display: block;
-    font-size: 26px;
-    margin-bottom: 5px;
-  }
+      /* Floating Apply Button */
+      .float-apply {
+        display: inline-block;
+        position: fixed;
+        right: 15px;
+        bottom: 95px;
+        background: rgb(67, 111, 64);
+        color: white;
+        padding: 12px 18px;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: 400;
+        z-index: 9999;
+      }
 
-  .mobile-bottom-nav span {
-    display: block;
-  }
-}
+      /* Bottom Menu */
+      .mobile-bottom {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        position: fixed;
+        left: 10px;
+        right: 10px;
+        bottom: 8px;
+        z-index: 9999;
+        background: #2f6d82;
+        border-radius: 20px 20px 8px 8px;
+        overflow: hidden;
+      }
 
-/* =========================
-   LAPTOP / DESKTOP HIDE
-========================= */
-@media (min-width: 1024px) {
+      .mobile-bottom button {
+        border: 0;
+        background: transparent;
+        color: #fff;
+        padding: 10px 4px;
+        font-size: 12px;
+        border-right: 1px solid rgba(255, 255, 255, .2);
+        cursor: pointer;
+      }
 
-  .mobile-apply-btn,
-  .mobile-bottom-nav {
-    display: none !important;
-  }
-}
+      .mobile-bottom button:last-child {
+        border-right: 0;
+      }
+
+      .mobile-bottom button.active {
+        background: rgba(255,255,255,0.15);
+      }
+
+      .mobile-bottom i {
+        display: block;
+        font-size: 22px;
+        margin-bottom: 4px;
+      }
+
+      /* Panels */
+      .mobile-panel {
+        display: none;
+        position: fixed;
+        left: 10px;
+        right: 10px;
+        bottom: 78px;
+        background: #fff;
+        z-index: 9998;
+        border-radius: 14px;
+        padding: 20px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, .25);
+        max-height: 70vh;
+        overflow: auto;
+      }
+
+      .mobile-panel.active {
+        display: block;
+      }
+
+      .mobile-panel h4 {
+        font-weight: 900;
+        color: #2f6d82;
+        margin-bottom: 15px;
+        font-size: 20px;
+      }
+
+      .mobile-panel a {
+        display: block;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+        font-weight: 700;
+        font-size: 15px;
+        color: #333;
+      }
+
+      .mobile-panel a:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    /* Small mobile adjustments */
+    @media(max-width:575px) {
+      .float-apply {
+        font-size: 15px;
+        padding: 11px 16px;
+        border-radius: 5px;
+      }
+    }

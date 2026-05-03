@@ -607,3 +607,40 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById(errorId).textContent = message;
   }
 });
+
+    function openMobilePanel(panelId, buttonElement) {
+      const panels = document.querySelectorAll(".mobile-panel");
+      const buttons = document.querySelectorAll(".mobile-bottom button");
+
+      panels.forEach(panel => {
+        if (panel.id === panelId) {
+          panel.classList.toggle("active");
+        } else {
+          panel.classList.remove("active");
+        }
+      });
+
+      buttons.forEach(button => {
+        if (button === buttonElement) {
+          button.classList.toggle("active");
+        } else {
+          button.classList.remove("active");
+        }
+      });
+    }
+
+    // Close when clicking outside
+    document.addEventListener("click", function (e) {
+      const clickedButton = e.target.closest(".mobile-bottom button");
+      const clickedPanel = e.target.closest(".mobile-panel");
+
+      if (!clickedButton && !clickedPanel) {
+        document.querySelectorAll(".mobile-panel").forEach(panel => {
+          panel.classList.remove("active");
+        });
+
+        document.querySelectorAll(".mobile-bottom button").forEach(button => {
+          button.classList.remove("active");
+        });
+      }
+    });
