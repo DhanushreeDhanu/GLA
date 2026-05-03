@@ -1,3990 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GLA Online</title>
-
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            overflow-x: hidden;
-            background: #fff;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .main-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: #fff;
-            z-index: 9999;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .header-wrap {
-            padding: 14px 52px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo img {
-            width: 300px;
-        }
-
-        .right-head {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 12px;
-        }
-
-        .top-links,
-        .main-nav {
-            display: flex;
-            align-items: center;
-            gap: 22px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .top-links a {
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        .top-links i {
-            color: #2f6f35;
-            margin-right: 6px;
-        }
-
-        .main-nav a {
-            font-size: 15px;
-            color: #000;
-            font-weight: 500;
-        }
-
-        .main-nav a:hover {
-            color: #2f6f35;
-        }
-
-        .main-nav .dropdown {
-            position: relative;
-        }
-
-        .main-nav .dropdown-menu {
-            display: block;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            min-width: 240px;
-            padding: 0;
-            border: 0;
-            border-radius: 0;
-            background: linear-gradient(#6e8c3f, #ffd332);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(14px);
-            transition: all 0.3s ease;
-            pointer-events: none;
-        }
-
-        .main-nav .dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        .dropdown-item {
-            color: #fff !important;
-            padding: 14px 18px;
-            font-size: 14px;
-        }
-
-        .dropdown-item:hover {
-            background: #5f7d35;
-        }
-
-        .search-btn,
-        .hamb-btn {
-            border: 0;
-            background: transparent;
-            font-size: 26px;
-            cursor: pointer;
-        }
-
-        .divider {
-            width: 1px;
-            height: 26px;
-            background: #bbb;
-        }
-
-        .mega-menu {
-            position: fixed;
-            top: 110px;
-            left: 0;
-            width: 100%;
-            background: #ffd332;
-            z-index: 9998;
-            padding: 30px 55px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(16px);
-            transition: all 0.35s ease;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
-            height: 400px;
-        }
-
-        .mega-menu.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .program-card {
-            height: 320px;
-            border-radius: 6px;
-            overflow: hidden;
-            position: relative;
-            background: #000;
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
-        }
-
-        .program-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.9;
-            transition: transform 0.35s ease;
-        }
-
-        .program-card:hover img {
-            transform: scale(1.06);
-        }
-
-        .program-card::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.95));
-        }
-
-        .program-tag {
-            position: absolute;
-            top: 16px;
-            right: 0;
-            background: #2f6f35;
-            color: #fff;
-            padding: 5px 12px;
-            z-index: 2;
-            font-size: 14px;
-        }
-
-        .program-title {
-            position: absolute;
-            left: 16px;
-            bottom: 20px;
-            color: #fff;
-            z-index: 2;
-            font-size: 17px;
-            line-height: 1.2;
-        }
-
-        .program-title span {
-            display: block;
-            color: #ffd332;
-        }
-
-        .plus {
-            position: absolute;
-            right: 16px;
-            bottom: 20px;
-            z-index: 2;
-            color: #fff;
-            border: 1px solid #fff;
-            width: 28px;
-            height: 28px;
-            display: grid;
-            place-items: center;
-            font-size: 20px;
-        }
-
-        .card-cover {
-            position: absolute;
-            inset: 0;
-            z-index: 4;
-            font-size: 0;
-        }
-
-        .search-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.92);
-            z-index: 10000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .search-overlay.active {
-            display: flex;
-        }
-
-        .search-close {
-            position: absolute;
-            top: 28px;
-            right: 42px;
-            font-size: 52px;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        .search-form {
-            width: 100%;
-            max-width: 680px;
-            display: flex;
-            gap: 12px;
-        }
-
-        .search-form input {
-            flex: 1;
-            height: 60px;
-            border: 0;
-            border-radius: 999px;
-            padding: 0 28px;
-            font-size: 18px;
-        }
-
-        .search-form button {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: 0;
-            background: #2f6f35;
-            color: #fff;
-            font-size: 24px;
-        }
-
-        .side-menu {
-            position: fixed;
-            top: 0;
-            right: -390px;
-            width: 360px;
-            max-width: 90%;
-            height: 100vh;
-            background: #fff;
-            z-index: 10001;
-            padding: 35px 28px;
-            transition: right 0.35s ease;
-            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.18);
-            overflow-y: auto;
-        }
-
-        .side-menu.active {
-            right: 0;
-        }
-
-        .side-close {
-            border: 0;
-            background: transparent;
-            font-size: 38px;
-            float: right;
-        }
-
-        .side-menu ul {
-            list-style: none;
-            margin: 60px 0 0;
-            padding: 0;
-        }
-
-        .side-menu li {
-            border-bottom: 1px solid #eee;
-        }
-
-        .side-menu a {
-            display: block;
-            padding: 15px 0;
-            font-size: 18px;
-        }
-
-        .side-sub {
-            display: none;
-            padding-left: 15px;
-            background: #f8f8f8;
-        }
-
-        .side-sub.open {
-            display: block;
-        }
-
-        @media(max-width: 991px) {
-
-            .top-links,
-            .main-nav {
-                display: none;
-            }
-
-            .header-wrap {
-                padding: 12px 16px;
-            }
-
-            .logo img {
-                width: 220px;
-            }
-
-            .right-head {
-                flex-direction: row;
-            }
-
-            .divider {
-                display: none;
-            }
-
-            .mega-menu {
-                display: none;
-            }
-
-
-        }
-
-        @media(max-width: 575px) {
-            body {
-                padding-top: 66px;
-            }
-
-            .logo img {
-                width: 180px;
-            }
-
-            .search-btn,
-            .hamb-btn {
-                font-size: 23px;
-            }
-
-
-        }
-
-        .top-links .apply-btn,
-        .top-links .student-btn {
-            background: #2f6f35;
-            color: #fff !important;
-            padding: 9px 16px;
-            border-radius: 4px;
-            font-size: 15px;
-            font-weight: 500;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        /* HOVER EFFECT */
-        .top-links .apply-btn:hover,
-        .top-links .student-btn:hover {
-            background: #ffd332;
-            /* Yellow */
-            color: #111 !important;
-            /* Black */
-            transform: translateY(-2px);
-        }
-
-        .top-links .apply-btn:hover i,
-        .top-links .student-btn:hover i {
-            color: #111 !important;
-        }
-
-        /* Laptop responsive: 992px to 1366px */
-        @media (min-width: 992px) and (max-width: 1366px) {
-            body {
-                padding-top: 76px;
-            }
-
-            .header-wrap {
-                padding: 12px 24px;
-            }
-
-            .logo img {
-                width: 220px;
-            }
-
-            .right-head {
-                gap: 8px;
-            }
-
-            .top-links,
-            .main-nav {
-                gap: 12px;
-            }
-
-            .top-links a {
-                font-size: 13px;
-            }
-
-            .top-links .apply-btn,
-            .top-links .student-btn {
-                padding: 7px 10px;
-                font-size: 13px;
-            }
-
-            .main-nav a {
-                font-size: 13px;
-            }
-
-            .search-btn,
-            .hamb-btn {
-                font-size: 22px;
-            }
-
-            .mega-menu {
-                top: 92px;
-                padding: 24px 28px;
-                height: auto;
-            }
-
-            .program-card {
-                height: 260px;
-            }
-
-            .program-title {
-                font-size: 15px;
-            }
-        }
-
-        /* Smaller laptop / tablet landscape */
-        @media (min-width: 992px) and (max-width: 1100px) {
-            .logo img {
-                width: 190px;
-            }
-
-            .top-links,
-            .main-nav {
-                gap: 9px;
-            }
-
-            .top-links a,
-            .main-nav a {
-                font-size: 12px;
-            }
-
-            .top-links .apply-btn,
-            .top-links .student-btn {
-                padding: 6px 8px;
-                font-size: 12px;
-            }
-        }
-
-        .header-actions {
-            gap: 1.5rem;
-        }
-
-        @media (min-width: 992px) and (max-width: 1366px) {
-            .header-actions {
-                gap: 0.8rem;
-            }
-        }
-
-
-        /* ===== FOOTER ===== */
-        .glaFooter_section {
-            background: #1d1714;
-            padding: 40px 18px 30px;
-            color: #fff;
-        }
-
-        .glaFooter_container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* ===== LINKS ===== */
-        .glaFooter_links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 18px 22px;
-        }
-
-        .glaFooter_links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 15px;
-
-            transition: 0.3s;
-        }
-
-        .glaFooter_links a:hover {
-            color: #ffc400;
-        }
-
-        /* LINE */
-        .glaFooter_line {
-            height: 1px;
-            background: rgba(255, 255, 255, .2);
-            margin: 28px 0;
-        }
-
-        /* ===== BOTTOM ===== */
-        .glaFooter_bottom {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* TEXT */
-        .glaFooter_copy,
-        .glaFooter_credit {
-            font-size: 13px;
-
-        }
-
-        .glaFooter_credit {
-            text-align: right;
-        }
-
-        /* ===== SOCIAL ICONS ===== */
-        .glaFooter_social {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .glaFooter_social a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            color: #fff;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        /* FACEBOOK */
-        .glaFb {
-            background: #1877f2;
-        }
-
-        /* YOUTUBE */
-        .glaYt {
-            background: #ff0000;
-        }
-
-        /* INSTAGRAM */
-        .glaInsta {
-            background: radial-gradient(circle at 30% 30%,
-                    #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-        }
-
-        /* HOVER */
-        .glaFooter_social a:hover {
-            transform: scale(1.1);
-        }
-
-        /* ===== MOBILE ===== */
-        @media(max-width:768px) {
-
-            .glaFooter_links {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 28px 40px;
-                text-align: left;
-            }
-
-            .glaFooter_links a {
-                font-size: 18px;
-            }
-
-            .glaFooter_bottom {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 12px;
-            }
-
-            /* ORDER FIX */
-            .glaFooter_copy {
-                order: 1;
-            }
-
-            .glaFooter_credit {
-                order: 2;
-                text-align: center;
-            }
-
-            .glaFooter_social {
-                order: 3;
-                margin-top: 10px;
-            }
-        }
-
-
-
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Hide on desktop */
-        .mobile-bottom,
-        .mobile-panel,
-        .float-apply {
-            display: none;
-        }
-
-        /* Mobile Only */
-        @media (max-width: 991px) {
-
-            body {
-                padding-bottom: 100px;
-            }
-
-            /* Floating Apply Button */
-            .float-apply {
-                display: inline-block;
-                position: fixed;
-                right: 15px;
-                bottom: 95px;
-                background: rgb(67, 111, 64);
-                color: white;
-                padding: 12px 18px;
-                border-radius: 5px;
-                font-size: 15px;
-                font-weight: 400;
-                z-index: 9999;
-            }
-
-            /* Bottom Menu */
-            .mobile-bottom {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                position: fixed;
-                left: 10px;
-                right: 10px;
-                bottom: 8px;
-                z-index: 9999;
-                background: #2f6d82;
-                border-radius: 20px 20px 8px 8px;
-                overflow: hidden;
-            }
-
-            .mobile-bottom button {
-                border: 0;
-                background: transparent;
-                color: #fff;
-                padding: 10px 4px;
-                font-size: 12px;
-                border-right: 1px solid rgba(255, 255, 255, .2);
-                cursor: pointer;
-            }
-
-            .mobile-bottom button:last-child {
-                border-right: 0;
-            }
-
-            .mobile-bottom button.active {
-                background: rgba(255, 255, 255, 0.15);
-            }
-
-            .mobile-bottom i {
-                display: block;
-                font-size: 22px;
-                margin-bottom: 4px;
-            }
-
-            /* Panels */
-            .mobile-panel {
-                display: none;
-                position: fixed;
-                left: 10px;
-                right: 10px;
-                bottom: 78px;
-                background: #fff;
-                z-index: 9998;
-                border-radius: 14px;
-                padding: 20px;
-                box-shadow: 0 0 25px rgba(0, 0, 0, .25);
-                max-height: 70vh;
-                overflow: auto;
-            }
-
-            .mobile-panel.active {
-                display: block;
-            }
-
-            .mobile-panel h4 {
-                font-weight: 900;
-                color: #2f6d82;
-                margin-bottom: 15px;
-                font-size: 20px;
-            }
-
-            .mobile-panel a {
-                display: block;
-                padding: 12px 0;
-                border-bottom: 1px solid #eee;
-                font-weight: 700;
-                font-size: 15px;
-                color: #333;
-            }
-
-            .mobile-panel a:last-child {
-                border-bottom: 0;
-            }
-        }
-
-        /* Small mobile adjustments */
-        @media(max-width:575px) {
-            .float-apply {
-                font-size: 15px;
-                padding: 11px 16px;
-                border-radius: 5px;
-            }
-        }
-
-        /* Floating Apply Button - visible on ALL screens */
-        .float-apply {
-            display: inline-block;
-            position: fixed;
-            right: 15px;
-            bottom: 20px;
-            background: rgb(67, 111, 64);
-            color: white !important;
-            padding: 14px 22px;
-            border-radius: 6px 0 0 6px;
-            font-size: 15px;
-            font-weight: 700;
-            z-index: 9999;
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-            transition: all 0.3s ease;
-        }
-
-        .float-apply:hover {
-            background: #2f6f35;
-            color: white !important;
-            transform: translateX(-3px);
-        }
-
-        /* Tablet */
-        @media(max-width:991px) {
-            .float-apply {
-                right: 15px;
-                bottom: 95px;
-                border-radius: 8px;
-                padding: 12px 18px;
-            }
-        }
-
-        /* Mobile */
-        @media(max-width:575px) {
-            .float-apply {
-                font-size: 14px;
-                padding: 11px 16px;
-                right: 12px;
-                bottom: 92px;
-            }
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .progrm_banner {
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .banner_img img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .prg_logos {
-            width: 100%;
-            padding: 35px 0 45px;
-            background: #f3f3f3;
-            overflow: hidden;
-        }
-
-        .recruiter_slider {
-            width: 100%;
-            padding-bottom: 35px;
-        }
-
-        .recruiter_slider .swiper-slide {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .recruiter_slider_item {
-            width: 100%;
-            min-height: 90px;
-            padding: 0 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 22px;
-            position: relative;
-        }
-
-        .recruiter_slider_item::after {
-            content: "";
-            position: absolute;
-            right: 0;
-            top: 18px;
-            width: 1px;
-            height: 52px;
-            background: #c9c9c9;
-        }
-
-        .recruiter_slider_item img {
-            max-width: 110px;
-            max-height: 75px;
-            object-fit: contain;
-            flex-shrink: 0;
-        }
-
-        .recruiter_txt p {
-            font-size: 14px;
-            line-height: 1.4;
-            color: #111;
-        }
-
-        .swiper-pagination-bullet {
-            width: 10px;
-            height: 10px;
-            background: #bdbdbd;
-            opacity: 1;
-        }
-
-        .swiper-pagination-bullet-active {
-            background: #f3c400;
-        }
-
-        .progrm_hed {
-            width: 100%;
-            padding: 70px 0;
-            background: #f3f3f3;
-            text-align: center;
-        }
-
-        .progrm_hed h2 {
-            font-size: 42px;
-            font-weight: 700;
-            color: #3f6f3d;
-            line-height: 1.2;
-        }
-
-        .progrm_four {
-            width: 100%;
-            padding: 90px 0;
-            background: linear-gradient(to bottom,
-                    #f3f3f3 0%,
-                    #f3f3f3 28%,
-                    #efc734 28%,
-                    #efc734 100%);
-        }
-
-        .comprsiv_grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            max-width: 980px;
-            margin: 0 auto;
-        }
-
-        .cmprs {
-            perspective: 1000px;
-            min-height: 190px;
-            cursor: pointer;
-        }
-
-        .cmprs_inner {
-            position: relative;
-            width: 100%;
-            min-height: 190px;
-            transition: transform 0.8s ease;
-            transform-style: preserve-3d;
-        }
-
-        .cmprs:hover .cmprs_inner {
-            transform: rotateY(180deg);
-        }
-
-        .cmprs_front,
-        .cmprs_caption {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            min-height: 190px;
-            border-radius: 6px;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
-
-        .cmprs_front {
-            background: #fff;
-            padding: 25px 18px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .cmprs_front figure {
-            width: 78px;
-            height: 78px;
-            border-radius: 50%;
-            margin: 0 auto 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f7f7f7;
-        }
-
-        .cmprs_front figure img {
-            width: 68px;
-            height: 68px;
-            object-fit: contain;
-        }
-
-        .cmprs_front h6 {
-            font-size: 16px;
-            font-weight: 500;
-            color: #111;
-        }
-
-        .cmprs_caption {
-            background: #3f6f3d;
-            color: #fff;
-            padding: 22px 18px;
-            transform: rotateY(180deg);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .cmprs_caption h6 {
-            color: #fff;
-            font-size: 17px;
-            margin-bottom: 12px;
-        }
-
-        .cmprs_caption p {
-            color: #fff;
-            font-size: 12px;
-            line-height: 1.5;
-        }
-
-        @media (max-width: 991px) {
-            .recruiter_slider_item {
-                padding: 0 25px;
-                gap: 18px;
-            }
-
-            .recruiter_slider_item img {
-                max-width: 95px;
-            }
-
-            .progrm_hed {
-                padding: 55px 0;
-            }
-
-            .progrm_hed h2 {
-                font-size: 36px;
-            }
-
-            .comprsiv_grid {
-                grid-template-columns: repeat(2, 1fr);
-                max-width: 700px;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .prg_logos {
-                padding: 25px 0 40px;
-            }
-
-            .recruiter_slider_item {
-                min-height: 100px;
-                padding: 10px 15px;
-                gap: 16px;
-            }
-
-            .recruiter_slider_item::after {
-                display: none;
-            }
-
-            .recruiter_slider_item img {
-                max-width: 80px;
-                max-height: 60px;
-            }
-
-            .recruiter_txt p {
-                font-size: 13px;
-            }
-
-            .progrm_hed {
-                padding: 45px 0;
-            }
-
-            .progrm_hed h2 {
-                font-size: 30px;
-            }
-
-            .progrm_four {
-                padding: 70px 0;
-            }
-
-            .comprsiv_grid {
-                grid-template-columns: 1fr;
-                max-width: 100%;
-            }
-
-            .cmprs,
-            .cmprs_inner,
-            .cmprs_front,
-            .cmprs_caption {
-                min-height: 190px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .recruiter_slider_item {
-                flex-direction: column;
-                text-align: center;
-                min-height: 130px;
-                gap: 10px;
-            }
-
-            .recruiter_slider_item img {
-                max-width: 80px;
-                max-height: 55px;
-            }
-
-            .recruiter_txt p {
-                font-size: 12px;
-            }
-
-            .progrm_hed h2 {
-                font-size: 26px;
-            }
-        }
-
-        .progrm_three {
-            width: 100%;
-            padding: 70px 0;
-            background: #f3f3f3;
-        }
-
-        .progrm_three .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .onlibba_grid {
-            max-width: 980px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1.35fr;
-            align-items: center;
-            gap: 70px;
-            padding-bottom: 65px;
-            border-bottom: 1px solid #d4d4d4;
-        }
-
-        .lft_cntnt h3 {
-            font-size: 18px;
-            color: #05275c;
-            font-weight: 700;
-            margin-bottom: 18px;
-            text-transform: uppercase;
-        }
-
-        .lft_cntnt h5 {
-            font-size: 18px;
-            line-height: 1.35;
-            color: #000;
-            font-weight: 500;
-            margin-bottom: 18px;
-        }
-
-        .lft_cntnt p {
-            font-size: 14px;
-            line-height: 1.55;
-            color: #000;
-            margin-bottom: 20px;
-        }
-
-        .rght_img figure {
-            margin: 0;
-        }
-
-        .rght_img img {
-            width: 100%;
-            display: block;
-            border-radius: 6px;
-            object-fit: cover;
-        }
-
-
-        /* Responsive */
-        @media (max-width: 991px) {
-            .onlibba_grid {
-                grid-template-columns: 1fr;
-                gap: 35px;
-                max-width: 760px;
-            }
-
-            .rght_img {
-                order: -1;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .progrm_three {
-                padding: 50px 0;
-            }
-
-            .onlibba_grid {
-                gap: 25px;
-                padding-bottom: 45px;
-            }
-
-            .lft_cntnt h3 {
-                font-size: 16px;
-            }
-
-            .lft_cntnt h5 {
-                font-size: 16px;
-            }
-
-            .lft_cntnt p {
-                font-size: 13px;
-            }
-        }
-
-        .progrm_six {
-            width: 100%;
-            padding: 70px 0;
-            background: #f3f3f3;
-        }
-
-        .progrm_six .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .divider_line {
-            max-width: 980px;
-            margin: 0 auto;
-        }
-
-        .fee-titl {
-            text-align: center;
-            margin-bottom: 28px;
-        }
-
-        .fee-titl h3 {
-            font-size: 22px;
-            font-weight: 700;
-            color: #05275c;
-            text-transform: uppercase;
-        }
-
-        .fee_grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .fee_bx {
-            background: #fff;
-            border-radius: 6px;
-            padding: 22px 22px;
-        }
-
-        .fee_bx h4 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #000;
-            margin-bottom: 18px;
-        }
-
-        .fee_bx p {
-            font-size: 14px;
-            color: #000;
-            margin-bottom: 14px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .fee_bx p span {
-            font-weight: 500;
-        }
-
-        .fee-benift_2 {
-            margin-top: 20px;
-        }
-
-        .fee-benift_2 p {
-            font-size: 15px;
-            color: #000;
-        }
-
-        .blink_button {
-            display: flex;
-            justify-content: center;
-            margin: 35px auto 0;
-            width: fit-content;
-            background: #e7c12f;
-            color: #fff;
-            text-decoration: none;
-            padding: 14px 26px;
-            font-size: 18px;
-            font-weight: 700;
-            border-radius: 4px;
-            transition: 0.3s ease;
-        }
-
-        .blink_button:hover {
-            background: #d4b126;
-        }
-
-        /* Responsive */
-        @media (max-width: 991px) {
-            .fee_grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 767px) {
-            .progrm_six {
-                padding: 50px 0;
-            }
-
-            .fee_grid {
-                grid-template-columns: 1fr;
-            }
-
-            .fee_bx {
-                padding: 20px;
-            }
-
-            .fee_bx h4 {
-                font-size: 17px;
-            }
-
-            .fee_bx p {
-                font-size: 13px;
-            }
-
-            .blink_button {
-                font-size: 16px;
-                padding: 12px 20px;
-            }
-        }
-
-        /* ===== Section ===== */
-        .syllabus_section {
-            width: 100%;
-            padding: 80px 0;
-            background: #f3f3f3;
-        }
-
-        .syllabus_section .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .prg_titl h3,
-        .fee-titl h3 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #05275c;
-            margin-bottom: 18px;
-            text-transform: uppercase;
-        }
-
-        .syllabus_section h5 {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #111;
-            font-weight: 400;
-            margin-bottom: 35px;
-            max-width: 900px;
-        }
-
-        /* ===== Specializations ===== */
-        .specialization_section {
-            width: 100%;
-            padding: 70px 0 40px;
-            background: #f3f3f3;
-        }
-
-        .specialization_grid ul {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .specialization_grid li a {
-            display: block;
-            padding: 14px 18px;
-            background: #fff;
-            border-radius: 6px;
-            color: #111;
-            text-decoration: none;
-            font-size: 15px;
-            transition: 0.3s;
-        }
-
-        .specialization_grid li a:hover {
-            background: #3f6f3d;
-            color: #fff;
-        }
-
-        /* ===== Accordion ===== */
-        .accordion-item {
-            margin-bottom: 10px;
-            border-radius: 4px;
-            overflow: hidden;
-            background: #d7dddd;
-        }
-
-        .accordion-header {
-            width: 100%;
-            padding: 14px 18px;
-            background: #d7dddd;
-            border: none;
-            text-align: left;
-            font-size: 18px;
-            font-weight: 500;
-            color: #05275c;
-            cursor: pointer;
-            position: relative;
-            transition: 0.3s;
-        }
-
-        .accordion-header::before {
-            content: "+";
-            margin-right: 12px;
-            font-weight: bold;
-        }
-
-        .accordion-item.active .accordion-header {
-            background: #4f777b;
-            color: #fff;
-        }
-
-        .accordion-item.active .accordion-header::before {
-            content: "−";
-            color: #ffd23f;
-        }
-
-        .accordion-body {
-            display: none;
-            padding: 22px;
-            background: #4f777b;
-        }
-
-        .accordion-item.active .accordion-body {
-            display: block;
-        }
-
-        /* ===== Table ===== */
-        .table-container {
-            overflow-x: auto;
-            background: #fff;
-            border-radius: 6px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 850px;
-        }
-
-        table th,
-        table td {
-            padding: 14px 12px;
-            font-size: 14px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        table th {
-            color: #5b7a35;
-            font-weight: 700;
-            background: #fff;
-        }
-
-        .section-header td {
-            font-weight: 700;
-            text-align: center;
-            background: #f7f7f7;
-        }
-
-        .note {
-            margin-top: 18px;
-        }
-
-        .note p {
-            color: #fff;
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-
-        /* ===== Responsive ===== */
-        @media (max-width: 991px) {
-            .specialization_grid ul {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 767px) {
-
-            .syllabus_section,
-            .specialization_section {
-                padding: 50px 0;
-            }
-
-            .prg_titl h3,
-            .fee-titl h3 {
-                font-size: 24px;
-            }
-
-            .syllabus_section h5 {
-                font-size: 16px;
-            }
-
-            .accordion-header {
-                font-size: 16px;
-            }
-
-            table th,
-            table td {
-                font-size: 13px;
-                padding: 10px;
-            }
-        }
-
-        /* ===== Online Degree Section ===== */
-        .online_degree {
-            width: 100%;
-            padding: 70px 0;
-            background: #f3f3f3;
-        }
-
-        .online_degree .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .online_degree_img {
-            max-width: 980px;
-            margin: 0 auto;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .online_degree_img:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-        }
-
-        .online_degree_img figure {
-            margin: 0;
-        }
-
-        .online_degree_img a {
-            display: block;
-            width: 100%;
-        }
-
-        .online_degree_img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        /* ===== Responsive ===== */
-        @media (max-width: 991px) {
-            .online_degree {
-                padding: 55px 0;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .online_degree {
-                padding: 45px 0;
-            }
-
-            .online_degree .container {
-                padding: 0 15px;
-            }
-
-            .online_degree_img {
-                border-radius: 6px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .online_degree {
-                padding: 35px 0;
-            }
-        }
-
-
-
-        /* ===== FULL WIDTH LEARNERS / TESTIMONIAL SECTION - FINAL FIX ===== */
-        .gla_learners_section {
-            width: 100vw;
-            margin-left: calc(50% - 50vw);
-            margin-right: calc(50% - 50vw);
-            padding: 80px 0 75px;
-            background: #163a63;
-            overflow: hidden;
-        }
-
-        .gla_learners_section .container,
-        .gla_learners_section .container1 {
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 55px;
-        }
-
-        .alumni_hed {
-            text-align: center;
-            margin-bottom: 55px;
-            width: 100%;
-        }
-
-        .alumni_hed h6 {
-            display: none;
-        }
-
-        .alumni_hed h3 {
-            font-size: 34px;
-            color: #fff;
-            font-weight: 800;
-            line-height: 1.2;
-            margin: 0;
-        }
-
-        .students-learners {
-            width: 100%;
-            padding: 35px 0 20px;
-            overflow: hidden;
-        }
-
-        .students-learners .swiper-wrapper {
-            display: flex !important;
-            align-items: stretch;
-        }
-
-        .students-learners .swiper-slide {
-            height: auto !important;
-            display: flex;
-        }
-
-        .learner_Bx {
-            width: 100%;
-            min-height: 285px;
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            border-radius: 6px;
-            padding: 70px 26px 28px;
-            background: transparent;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .learner_txt figure {
-            width: 85px;
-            height: 85px;
-            border-radius: 50%;
-            overflow: hidden;
-            position: absolute;
-            top: -42px;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 4px solid #163a63;
-            background: #fff;
-            margin: 0;
-        }
-
-        .learner_txt figure img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .learner_txt p {
-            color: #fff;
-            font-size: 13px;
-            line-height: 1.65;
-            font-weight: 600;
-            margin-bottom: 22px;
-            text-align: left;
-        }
-
-        .learners_name h4 {
-            color: #fff;
-            font-size: 20px;
-            font-weight: 800;
-            margin-bottom: 4px;
-            line-height: 1.05;
-        }
-
-        .learners_name h5 {
-            color: #fff;
-            font-size: 13px;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .students-learners .swiper-pagination,
-        .students-learners .swiper-button-next,
-        .students-learners .swiper-button-prev {
-            display: none !important;
-        }
-
-        @media (min-width: 1400px) {
-
-            .gla_learners_section .container,
-            .gla_learners_section .container1 {
-                max-width: 1320px;
-                padding: 0 60px;
-            }
-        }
-
-        @media (max-width: 991px) {
-            .gla_learners_section {
-                padding: 70px 0;
-            }
-
-            .gla_learners_section .container,
-            .gla_learners_section .container1 {
-                max-width: 100%;
-                padding: 0 30px;
-            }
-
-            .alumni_hed h3 {
-                font-size: 28px;
-            }
-
-            .learner_Bx {
-                padding: 65px 18px 22px;
-                min-height: 300px;
-            }
-
-            .learner_txt p {
-                font-size: 11px;
-                line-height: 1.6;
-            }
-
-            .learners_name h4 {
-                font-size: 17px;
-            }
-
-            .learners_name h5 {
-                font-size: 11px;
-            }
-        }
-
-        @media (max-width: 575px) {
-            .gla_learners_section {
-                padding: 55px 0;
-            }
-
-            .gla_learners_section .container,
-            .gla_learners_section .container1 {
-                padding: 0 18px;
-            }
-
-            .alumni_hed {
-                margin-bottom: 45px;
-            }
-
-            .alumni_hed h3 {
-                font-size: 24px;
-            }
-
-            .learner_Bx {
-                min-height: auto;
-                padding: 65px 22px 25px;
-            }
-
-            .learner_txt p {
-                font-size: 13px;
-            }
-        }
-
-        .faq_sec {
-            width: 100%;
-            padding: 80px 0;
-            background: #315f64;
-        }
-
-        .faq_sec .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Heading */
-        .faq_hed {
-            margin-bottom: 45px;
-        }
-
-        .faq_hed h6 {
-            color: #ffd12f;
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .faq_hed h3 {
-            color: #fff;
-            font-size: 42px;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .faq_hed h3 span {
-            font-weight: 400;
-        }
-
-        /* Hide tab button */
-        .right-pnl,
-        .tab-header {
-            display: none;
-        }
-
-        /* Accordion */
-        .faq_item .accordion {
-            max-width: 980px;
-        }
-
-        .faq_item .accordion-item {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 6px;
-            margin-bottom: 10px;
-            overflow: hidden;
-        }
-
-        .faq_item .accordion-header {
-            width: 100%;
-            padding: 17px 22px 17px 55px;
-            background: transparent;
-            border: none;
-            color: #fff;
-            font-size: 18px;
-            font-weight: 600;
-            text-align: left;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .faq_item .accordion-header::before {
-            content: "+";
-            position: absolute;
-            left: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #ffd12f;
-            border: 1px solid #ffd12f;
-            width: 17px;
-            height: 17px;
-            border-radius: 50%;
-            font-size: 14px;
-            line-height: 15px;
-            text-align: center;
-        }
-
-        .faq_item .accordion-item.active .accordion-header::before {
-            content: "−";
-            background: #ffd12f;
-            color: #315f64;
-        }
-
-        .faq_item .accordion-body {
-            display: none;
-            padding: 0 28px 18px 55px;
-        }
-
-        .faq_item .accordion-item.active .accordion-body {
-            display: block;
-        }
-
-        .faq_item .accordion-body p {
-            color: #fff;
-            font-size: 16px;
-            line-height: 1.7;
-        }
-
-        /* Responsive */
-        @media (max-width: 991px) {
-            .faq_hed h3 {
-                font-size: 34px;
-            }
-
-            .faq_item .accordion-header {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .faq_sec {
-                padding: 55px 0;
-            }
-
-            .faq_hed h3 {
-                font-size: 28px;
-            }
-
-            .faq_item .accordion-header {
-                padding: 15px 15px 15px 45px;
-                font-size: 15px;
-            }
-
-            .faq_item .accordion-body {
-                padding: 0 15px 16px 45px;
-            }
-
-            .faq_item .accordion-body p {
-                font-size: 14px;
-            }
-        }
-
-        /* FAQ + icon perfectly centered */
-        .faq_item .accordion-header::before {
-            content: "+";
-            position: absolute;
-            left: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-
-            width: 20px;
-            height: 20px;
-
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-
-            border: 1px solid #ffd12f;
-            border-radius: 50%;
-
-            color: #ffd12f;
-            font-size: 14px;
-            font-weight: bold;
-            line-height: 1;
-            text-align: center;
-        }
-
-        /* Active minus icon */
-        .faq_item .accordion-item.active .accordion-header::before {
-            content: "−";
-            background: #ffd12f;
-            color: #315f64;
-        }
-
-        /* Perfect center alignment for FAQ + / - icon */
-        .faq_item .accordion-header::before {
-            content: "+";
-            position: absolute;
-            left: 18px;
-            top: 50%;
-            transform: translate(-50%, -50%);
-
-            width: 24px;
-            height: 24px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border: 1px solid #ffd12f;
-            border-radius: 50%;
-
-            color: #ffd12f;
-            font-size: 16px;
-            font-weight: 700;
-            line-height: 1;
-            padding: 0;
-            margin: 0;
-        }
-
-        /* Active state */
-        .faq_item .accordion-item.active .accordion-header::before {
-            content: "−";
-            background: #ffd12f;
-            color: #315f64;
-        }
-
-        /* ===== FINAL FAQ FIX: smaller font + centered + / - icon ===== */
-        #faq_sec .faq_hed h6 {
-            font-size: 14px;
-        }
-
-        #faq_sec .faq_hed h3 {
-            font-size: 34px;
-            line-height: 1.25;
-        }
-
-        #faq_sec .faq_item .accordion {
-            max-width: 980px;
-            margin: 0 auto;
-        }
-
-        #faq_sec .faq_item .accordion-header {
-            padding: 15px 20px 15px 56px;
-            font-size: 16px;
-            line-height: 1.35;
-            font-weight: 600;
-        }
-
-        #faq_sec .faq_item .accordion-header::before {
-            content: "+";
-            position: absolute;
-            left: 28px;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 22px;
-            height: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ffd12f;
-            border-radius: 50%;
-            color: #ffd12f;
-            font-size: 15px;
-            font-weight: 700;
-            line-height: 1;
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        #faq_sec .faq_item .accordion-item.active .accordion-header::before {
-            content: "−";
-            background: #ffd12f;
-            color: #315f64;
-        }
-
-        #faq_sec .faq_item .accordion-body {
-            padding: 0 22px 18px 56px;
-        }
-
-        #faq_sec .faq_item .accordion-body p {
-            font-size: 14px;
-            line-height: 1.65;
-        }
-
-        @media(max-width:767px) {
-            #faq_sec .faq_hed h3 {
-                font-size: 26px;
-            }
-
-            #faq_sec .faq_item .accordion-header {
-                font-size: 14px;
-                padding: 14px 14px 14px 48px;
-            }
-
-            #faq_sec .faq_item .accordion-header::before {
-                left: 24px;
-                width: 20px;
-                height: 20px;
-                font-size: 14px;
-            }
-
-            #faq_sec .faq_item .accordion-body {
-                padding: 0 14px 16px 48px;
-            }
-        }
-
-
-        /* ===== SYLLABUS FIX: match compact reference design ===== */
-        #syllabus_wrapper {
-            padding: 55px 0 58px;
-            background: #f3f3f3;
-        }
-
-        #syllabus_wrapper .container {
-            max-width: 1120px;
-        }
-
-        #syllabus_wrapper .col-lg-10 {
-            width: 100%;
-            max-width: 980px;
-        }
-
-        #syllabus_wrapper .prg_titl h3 {
-            font-size: 20px;
-            line-height: 1.2;
-            margin-bottom: 26px;
-            color: #05275c;
-            font-weight: 700;
-        }
-
-        #syllabus_wrapper .faq_item .accordion {
-            max-width: 980px;
-            margin: 0 auto;
-        }
-
-        #syllabus_wrapper .accordion-item,
-        #syllabus_wrapper .faq_item .accordion-item {
-            margin-bottom: 10px;
-            border: 0;
-            border-radius: 5px;
-            overflow: hidden;
-            background: #d7dddd;
-        }
-
-        #syllabus_wrapper .accordion-header,
-        #syllabus_wrapper .faq_item .accordion-header {
-            width: 100%;
-            height: 38px;
-            padding: 0 16px 0 46px;
-            background: #d7dddd;
-            border: 0;
-            border-radius: 5px;
-            color: #05275c;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 38px;
-            text-align: left;
-            position: relative;
-            cursor: pointer;
-        }
-
-        #syllabus_wrapper .accordion-header::before,
-        #syllabus_wrapper .faq_item .accordion-header::before {
-            content: "+";
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 15px;
-            height: 15px;
-            border: 1px solid #738593;
-            border-radius: 50%;
-            color: #738593;
-            background: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 600;
-            line-height: 1;
-            margin: 0;
-        }
-
-        #syllabus_wrapper .accordion-item.active .accordion-header,
-        #syllabus_wrapper .faq_item .accordion-item.active .accordion-header {
-            background: #4f777b;
-            color: #fff;
-            border-radius: 5px 5px 0 0;
-        }
-
-        #syllabus_wrapper .accordion-item.active .accordion-header::before,
-        #syllabus_wrapper .faq_item .accordion-item.active .accordion-header::before {
-            content: "−";
-            border-color: #ffd23f;
-            color: #ffd23f;
-            background: transparent;
-        }
-
-        #syllabus_wrapper .accordion-body,
-        #syllabus_wrapper .faq_item .accordion-body {
-            display: none;
-            padding: 22px;
-            background: #4f777b;
-        }
-
-        #syllabus_wrapper .accordion-item.active .accordion-body,
-        #syllabus_wrapper .faq_item .accordion-item.active .accordion-body {
-            display: block;
-        }
-
-        @media (max-width: 767px) {
-            #syllabus_wrapper {
-                padding: 42px 0;
-            }
-
-            #syllabus_wrapper .prg_titl h3 {
-                font-size: 18px;
-                margin-bottom: 18px;
-            }
-        }
-
-
-        /* ===== Cleaned utility styles for existing sections ===== */
-        .alumi_work,
-        .marksheetSec {
-            padding: 70px 0;
-            background: #f3f3f3;
-        }
-
-        .alumni_logo_section ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 18px;
-        }
-
-        .alumni_logo_section li {
-            background: #fff;
-            border-radius: 6px;
-            padding: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 95px;
-        }
-
-        .alumni_logo_section figure,
-        .marksheet_grid figure {
-            margin: 0;
-        }
-
-        .marksheet_grid ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            align-items: center;
-        }
-
-        .marksheet_grid h3 {
-            color: #05275c;
-            font-size: 28px;
-            font-weight: 700;
-        }
-
-        .marksheet_grid h4 {
-            margin-top: 14px;
-            font-size: 18px;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .marksheet_grid img {
-            width: 100%;
-            max-width: 360px;
-            display: block;
-            margin: 0 auto;
-            border-radius: 6px;
-        }
-
-        @media(max-width: 767px) {
-            .alumni_logo_section ul {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .marksheet_grid ul {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .marksheet_grid h3 {
-                font-size: 24px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLA Online</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      background: #f4f4f4;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .main_header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      z-index: 9999;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    }
+
+    .header_wrap {
+      height: 82px;
+      padding: 0 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo img {
+      width: 240px;
+    }
+
+    .nav_menu {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav_menu a {
+      color: #000;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .apply_btn {
+      background: #2f6f35;
+      color: #fff !important;
+      padding: 9px 16px;
+      border-radius: 4px;
+    }
+
+    /* HOME BANNER */
+    .home_banner {
+      position: relative;
+      margin-top: 82px;
+      height: 90vh;
+      overflow: hidden;
+    }
+
+    .home_slider,
+    .home_slider .swiper-wrapper,
+    .home_slider .swiper-slide {
+      height: 100%;
+    }
+
+    .home_slider .swiper-slide {
+      display: block;
+    }
+
+    .home_slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .home_banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.08));
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .banner_form {
+      position: absolute;
+      top: 50%;
+      right: 45px;
+      transform: translateY(-50%);
+      width: 330px;
+      background: #fff;
+      padding: 22px;
+      border-radius: 10px;
+      z-index: 5;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .banner_form input,
+    .banner_form select {
+      width: 100%;
+      height: 42px;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .banner_form button {
+      width: 100%;
+      height: 44px;
+      background: #2f6f35;
+      color: #fff;
+      border: 0;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #ffd22f;
+    }
+
+    /* CORPORATE LEARNER */
+    .corporate-learner {
+      padding: 40px 0;
+      background: #f4f4f4;
+    }
+
+    .corporate_learner_Bx {
+      background: #ffd22f;
+      border-radius: 6px;
+      padding: 60px 90px;
+      text-align: center;
+    }
+
+    .corporate_learner_Bx > h4 {
+      font-size: 22px;
+      color: #000;
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+
+    .corporate_learner_Bx > h3 {
+      max-width: 760px;
+      margin: 0 auto 20px;
+      font-size: 42px;
+      line-height: 1.05;
+      color: #3f7045;
+      font-weight: 900;
+    }
+
+    .corporate_learner_Bx > h3 span {
+      display: block;
+    }
+
+    .alimni_btn {
+      width: 20px;
+      height: 20px;
+      display: inline-grid;
+      place-items: center;
+      border: 1px solid #000;
+      color: #000;
+      margin-bottom: 35px;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .corporate_slider {
+      overflow: hidden;
+    }
+
+    .corporate_slider .swiper-slide {
+      display: block;
+    }
+
+    .wall_distinction_Bx {
+      text-align: left;
+    }
+
+    .wall_distinction_Bx img {
+      width: 100%;
+      height: 232px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 13px;
+      background: #dce8de;
+    }
+
+    .wall_distinction_Bx h4 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 5px;
+      color: #000;
+    }
+
+    .wall_distinction_Bx p,
+    .wall_distinction_Bx h6 {
+      font-size: 13px;
+      line-height: 1.35;
+      margin: 0;
+      color: #000;
+      font-weight: 400;
+    }
+
+    .corporate_arrows {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .corp-prev,
+    .corp-next {
+      width: 23px;
+      height: 23px;
+      border: 1px solid #000;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      color: #000;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 991px) {
+      .header_wrap {
+        padding: 0 18px;
+      }
+
+      .logo img {
+        width: 180px;
+      }
+
+      .nav_menu {
+        display: none;
+      }
+
+      .home_banner {
+        height: auto;
+      }
+
+      .home_slider,
+      .home_slider .swiper-wrapper,
+      .home_slider .swiper-slide {
+        height: 70vh;
+      }
+
+      .banner_form {
+        position: static;
+        transform: none;
+        width: auto;
+        margin: 20px;
+      }
+
+      .corporate_learner_Bx {
+        padding: 45px 25px;
+      }
+
+      .corporate_learner_Bx > h3 {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .home_slider,
+      .home_slider .swiper-wrapper,
+      .home_slider .swiper-slide {
+        height: 60vh;
+      }
+
+      .corporate_learner_Bx > h3 {
+        font-size: 26px;
+      }
+
+      .wall_distinction_Bx img {
+        height: auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <header class="main-header">
-        <div class="header-wrap">
-            <a href="#" class="logo">
-                <img src="https://glaonline.com/siteassets/images/green-logo.webp" alt="GLA Online">
-            </a>
-
-            <div class="right-head">
-                <ul class="top-links">
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-envelope-fill"></i> onlineadmissions@gla.ac.in
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-telephone-fill"></i> +91-9568536853
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="apply-btn">
-                            Apply Now
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="student-btn">
-                            Student Login
-                        </a>
-                    </li>
-                </ul>
-
-                <div class="d-flex align-items-center header-actions">
-                    <ul class="main-nav">
-                        <li class="dropdown">
-                            <a href="#">About Us <i class="bi bi-caret-down-fill small"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Overview</a></li>
-                                <li><a class="dropdown-item" href="#">Leadership</a></li>
-                                <li><a class="dropdown-item" href="#">Recognitions & Accreditations</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown">
-                            <a href="#">Admissions<i class="bi bi-caret-down-fill small"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Admission Procedure</a></li>
-                                <li><a class="dropdown-item" href="#">Eligibility Criteria</a></li>
-                                <li><a class="dropdown-item" href="#">Fee Structure</a></li>
-                                <li><a class="dropdown-item" href="#">Evaluation System</a></li>
-                                <li><a class="dropdown-item" href="#">Academic Calendar</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="javascript:void(0)" id="programToggle">
-                                Programs <i class="bi bi-caret-down-fill small"></i>
-                            </a>
-                        </li>
-
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-
-                    <button class="search-btn" onclick="openSearch()" aria-label="Search">
-                        <i class="bi bi-search"></i>
-                    </button>
-
-                    <span class="divider"></span>
-
-                    <button class="hamb-btn" onclick="openSideMenu()" aria-label="Menu">
-                        <i class="bi bi-list"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section class="mega-menu" id="megaMenu">
-        <div class="container-fluid">
-            <div class="row g-4 row-cols-1 row-cols-md-5">
-                <div class="col">
-                    <div class="program-card">
-                        <span class="program-tag">PG</span>
-                        <img src="https://glaonline.com/uploads/course_group/6928264fb0a231764238927.webp" alt="MBA">
-                        <div class="program-title"><span>Master of</span>Business Administration</div>
-                        <div class="plus">+</div>
-                        <a href="#" class="card-cover">MBA</a>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="program-card">
-                        <span class="program-tag">PG</span>
-                        <img src="https://glaonline.com/uploads/course_group/68aef588901ea1756296584.webp" alt="MCA">
-                        <div class="program-title"><span>Master of</span>Computer Applications</div>
-                        <div class="plus">+</div>
-                        <a href="#" class="card-cover">MCA</a>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="program-card">
-                        <span class="program-tag">UG</span>
-                        <img src="https://glaonline.com/uploads/course_group/68aedd4b265be1756290379.webp" alt="BBA">
-                        <div class="program-title"><span>Bachelor of</span>Business Administration</div>
-                        <div class="plus">+</div>
-                        <a href="#" class="card-cover">BBA</a>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="program-card">
-                        <span class="program-tag">UG</span>
-                        <img src="https://glaonline.com/uploads/course_group/68aedd8f853ee1756290447.webp" alt="BCA">
-                        <div class="program-title"><span>Bachelor of</span>Computer Applications</div>
-                        <div class="plus">+</div>
-                        <a href="#" class="card-cover">BCA</a>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="program-card">
-                        <span class="program-tag">UG</span>
-                        <img src="https://glaonline.com/uploads/course_group/68aeddd46cb4b1756290516.webp" alt="B.Com">
-                        <div class="program-title"><span>Bachelor of</span>Commerce Hons.</div>
-                        <div class="plus">+</div>
-                        <a href="#" class="card-cover">BCom</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <div class="search-overlay" id="searchOverlay">
-        <span class="search-close" onclick="closeSearch()">×</span>
-        <form class="search-form">
-            <input type="text" placeholder="Search..." required>
-            <button type="submit"><i class="bi bi-search"></i></button>
-        </form>
-    </div>
-
-    <aside class="side-menu" id="sideMenu">
-        <button class="side-close" onclick="closeSideMenu()">×</button>
-        <ul>
-            <li><a href="#">Meet Our Faculty</a></li>
-            <li>
-                <a href="javascript:void(0)" onclick="toggleSub(this)">
-                    Events @ GLA <i class="bi bi-chevron-down float-end"></i>
-                </a>
-                <ul class="side-sub">
-                    <li><a href="#">News and Events</a></li>
-                    <li><a href="#">Media Coverage</a></li>
-                    <li><a href="#">CDOE Events</a></li>
-                </ul>
-            </li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Testimonials</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Mandatory Disclosure</a></li>
-            <li><a href="#">Contact Us</a></li>
-        </ul>
-    </aside>
-
-
-
-    <section class="progrm_banner">
-        <div class="banner_img">
-            <img src="https://glaonline.com/uploads/course_banner/69896ed55db521770614485.webp" alt="Banner">
-        </div>
-    </section>
-
-    <section class="prg_logos">
-        <div class="container">
-            <div class="recruiter_slider swiper">
-                <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-                        <div class="recruiter_slider_item">
-                            <img src="https://glaonline.com/uploads/logo/692551508b58d1764053328.webp" alt="">
-                            <div class="recruiter_txt">
-                                <p>All India Council for Technical<br>Education</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="recruiter_slider_item">
-                            <img src="https://glaonline.com/uploads/logo/68df4f0d68ff31759465229.png" alt="">
-                            <div class="recruiter_txt">
-                                <p>Ranked by NIRF:<br>A Testament to Excellence</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="recruiter_slider_item">
-                            <img src="https://glaonline.com/uploads/logo/68df4f3c89fda1759465276.png" alt="">
-                            <div class="recruiter_txt">
-                                <p>Accredited by NAAC:<br>A Mark of Excellence</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="recruiter_slider_item">
-                            <img src="https://glaonline.com/uploads/logo/68df4f53aca241759465299.png" alt="">
-                            <div class="recruiter_txt">
-                                <p>Accredited by Times<br>Higher Education</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="recruiter_slider_item">
-                            <img src="https://glaonline.com/uploads/logo/68df4f796b5a71759465337.png" alt="">
-                            <div class="recruiter_txt">
-                                <p>University Grants<br>Commission</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="progrm_hed">
-        <div class="container">
-            <h2 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
-                Master of Business Administration
-            </h2>
-        </div>
-    </section>
-
-    <section class="progrm_four group yellow_bg">
-        <div class="container">
-            <div class="comprsiv_grid">
-
-                <div class="cmprs" data-aos="fade-up" data-aos-delay="100">
-                    <div class="cmprs_inner">
-                        <div class="cmprs_front">
-                            <figure><img src="https://glaonline.com/siteassets/images/icons/co-creation-icon.svg"
-                                    alt=""></figure>
-                            <h6>Co-Creation</h6>
-                        </div>
-                        <div class="cmprs_caption">
-                            <h6>Co-Creation</h6>
-                            <p>Designed in collaboration with industry leaders, management professionals, and
-                                academicians to align learning with modern business practices.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cmprs" data-aos="fade-up" data-aos-delay="200">
-                    <div class="cmprs_inner">
-                        <div class="cmprs_front">
-                            <figure><img src="https://glaonline.com/siteassets/images/icons/innovation-icon.svg" alt="">
-                            </figure>
-                            <h6>Innovation</h6>
-                        </div>
-                        <div class="cmprs_caption">
-                            <h6>Innovation</h6>
-                            <p>Integrates emerging trends in finance, marketing analytics, digital transformation, and
-                                leadership.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cmprs" data-aos="fade-up" data-aos-delay="300">
-                    <div class="cmprs_inner">
-                        <div class="cmprs_front">
-                            <figure><img src="https://glaonline.com/siteassets/images/icons/foundation-icon.svg" alt="">
-                            </figure>
-                            <h6>Strong Foundation</h6>
-                        </div>
-                        <div class="cmprs_caption">
-                            <h6>Strong Foundation</h6>
-                            <p>Master essential business strategy, operations, finance, HR, and leadership principles.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cmprs" data-aos="fade-up" data-aos-delay="400">
-                    <div class="cmprs_inner">
-                        <div class="cmprs_front">
-                            <figure><img src="https://glaonline.com/siteassets/images/icons/cdf-icon.svg" alt="">
-                            </figure>
-                            <h6>Career-Driven Focus</h6>
-                        </div>
-                        <div class="cmprs_caption">
-                            <h6>Career-Driven Focus</h6>
-                            <p>Placement support, mentorship, and leadership opportunities across industries.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cmprs" data-aos="fade-up" data-aos-delay="500">
-                    <div class="cmprs_inner">
-                        <div class="cmprs_front">
-                            <figure><img src="https://glaonline.com/siteassets/images/icons/beyond-icon.svg" alt="">
-                            </figure>
-                            <h6>Beyond Classroom</h6>
-                        </div>
-                        <div class="cmprs_caption">
-                            <h6>Beyond Classroom</h6>
-                            <p>Engage in case studies, simulations, and projects bridging theory with practical
-                                business.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cmprs" data-aos="fade-up" data-aos-delay="600">
-                    <div class="cmprs_inner">
-                        <div class="cmprs_front">
-                            <figure><img src="https://glaonline.com/siteassets/images/icons/certification-icon.svg"
-                                    alt=""></figure>
-                            <h6>Authentic Certification</h6>
-                        </div>
-                        <div class="cmprs_caption">
-                            <h6>Authentic Certification</h6>
-                            <p>Earn a UGC-entitled online MBA degree to strengthen your career profile.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <section id="progrm_three" class="progrm_three group program_overview about_pro">
-        <div class="container">
-            <div class="onlibba_grid">
-
-                <div class="lft_cntnt" data-aos="fade-right" data-aos-duration="1200">
-                    <h3>OVERVIEW</h3>
-                    <h5>B.Com. (Hons.) by GLA Online equips learners with strong foundations in accounting, finance,
-                        taxation, business laws, and economics.</h5>
-                    <p>Designed for learners aiming to build careers in commerce, banking, corporate, or entrepreneurial
-                        ventures, the program blends academic rigor with industry insights.</p>
-                </div>
-
-                <div class="rght_img" data-aos="fade-left" data-aos-duration="1200">
-                    <figure>
-                        <img src="https://glaonline.com/uploads/course_group/68b03a8a764ca1756379786.webp"
-                            alt="Master of Business Administration">
-                    </figure>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <section id="progrm_six" class="progrm_six">
-        <div class="container">
-            <div class="divider_line">
-
-                <div class="fee-titl" data-aos="fade-up" data-aos-duration="1000">
-                    <h3>Fee Structure</h3>
-                </div>
-
-                <div class="fee_grid">
-
-                    <div class="fee_bx" data-aos="fade-up" data-aos-delay="100">
-                        <h4>Semester Fee</h4>
-                        <p>Registration Fee (One-Time) <span>₹ 500</span></p>
-                        <p>Alumni Fee (One-Time) <span>₹ 1,800</span></p>
-                        <p>Tuition Fee <span>₹ 24,250</span></p>
-                        <p>Exam Fee (Per Sem) <span>₹ 1,500</span></p>
-                    </div>
-
-                    <div class="fee_bx" data-aos="fade-up" data-aos-delay="200">
-                        <h4>Annual Fee</h4>
-                        <p>Registration Fee (One-Time) <span>₹ 500</span></p>
-                        <p>Alumni Fee (One-Time) <span>₹ 1,800</span></p>
-                        <p>Tuition Fee* <span>₹ 48,500</span></p>
-                        <p>Exam Fee (Per Year) <span>₹ 3,000</span></p>
-                    </div>
-
-                    <div class="fee_bx" data-aos="fade-up" data-aos-delay="300">
-                        <h4>Total Program Fee</h4>
-                        <p>Registration Fee (One-Time) <span>₹ 500</span></p>
-                        <p>Alumni Fee (One-Time) <span>₹ 1,800</span></p>
-                        <p>Tuition Fee** <span>₹ 97,000</span></p>
-                        <p>Exam Fee <span>₹ 6,000</span></p>
-                    </div>
-
-                </div>
-
-                <div class="fee-benift_2" data-aos="fade-up" data-aos-delay="400">
-                    <p><i><b>*</b>A benefit of <b>₹ 2000</b> on annual fee (Applicable only on first-year fee)</i></p>
-                    <p><i><b>**</b>A benefit of <b>₹ 4000</b> on total program fee</i></p>
-                </div>
-
-                <a href="Apply.html" target="_blank" class="blink_button" rel="noopener" data-aos="zoom-in"
-                    data-aos-delay="500">
-                    <span>NO-COST EMI AVAILABLE</span>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ===== SPECIALIZATIONS ===== -->
-    <section id="specelization_wrapper" class="specialization_section">
-        <div class="container">
-            <div class="fee-titl" data-aos="fade-up">
-                <h3>SPECIALIZATIONS</h3>
-            </div>
-
-            <div class="specialization_grid">
-                <ul>
-                    <li data-aos="fade-up" data-aos-delay="100"><a href="#">Banking and Financial Services</a></li>
-                    <li data-aos="fade-up" data-aos-delay="150"><a href="#">Business Analytics</a></li>
-                    <li data-aos="fade-up" data-aos-delay="200"><a href="#">Operations Management</a></li>
-                    <li data-aos="fade-up" data-aos-delay="250"><a href="#">Supply Chain Management</a></li>
-                    <li data-aos="fade-up" data-aos-delay="300"><a href="#">Finance Management</a></li>
-                    <li data-aos="fade-up" data-aos-delay="350"><a href="#">Human Resource Management</a></li>
-                    <li data-aos="fade-up" data-aos-delay="400"><a href="#">Information Technology Management</a></li>
-                    <li data-aos="fade-up" data-aos-delay="450"><a href="#">Marketing Management</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SYLLABUS ===== -->
-    <section id="syllabus_wrapper" class="syllabus_section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="prg_titl">
-                        <h3>SYLLABUS</h3>
-                    </div>
-
-
-
-                    <div class="faq_item">
-                        <div class="accordion">
-
-                            <div class="accordion-item">
-                                <button class="accordion-header">Semester 1</button>
-                                <div class="accordion-body">
-                                    <div class="semester_Box">
-                                        <div class="table-container">
-                                            <table>
-                                                <thead>
-                                                    <tr>
-                                                        <th>S. No.</th>
-                                                        <th>Subjects</th>
-                                                        <th>Category</th>
-                                                        <th>L</th>
-                                                        <th>T</th>
-                                                        <th>P</th>
-                                                        <th>J</th>
-                                                        <th>Credit</th>
-                                                    </tr>
-                                                </thead>
-
-                                                <tbody>
-
-                                                    <!-- THEORY SECTION -->
-                                                    <tr class="section-header">
-                                                        <td colspan="8">THEORY</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Fundamentals of Computer Science</td>
-                                                        <td>NA</td>
-                                                        <td>4</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>4</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Software Engineering and Testing</td>
-                                                        <td>NA</td>
-                                                        <td>3</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>3</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Problem Solving Using Python</td>
-                                                        <td>NA</td>
-                                                        <td>3</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>3</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>Web Technology</td>
-                                                        <td>NA</td>
-                                                        <td>3</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>3</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>5</td>
-                                                        <td>Database Management System</td>
-                                                        <td>NA</td>
-                                                        <td>3</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>3</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>6</td>
-                                                        <td>Professional Communication–I</td>
-                                                        <td>NA</td>
-                                                        <td>2</td>
-                                                        <td>2</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>3</td>
-                                                    </tr>
-
-                                                    <!-- PRACTICAL SECTION -->
-                                                    <tr class="section-header">
-                                                        <td colspan="8">PRACTICALS</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>7</td>
-                                                        <td>Problem Solving Using Python Lab</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>2</td>
-                                                        <td>0</td>
-                                                        <td>1</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>8</td>
-                                                        <td>Web Technology Lab</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>4</td>
-                                                        <td>0</td>
-                                                        <td>2</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>9</td>
-                                                        <td>Database Management System Lab</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>2</td>
-                                                        <td>0</td>
-                                                        <td>1</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>10</td>
-                                                        <td>Soft Skills–I</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>4</td>
-                                                        <td>0</td>
-                                                        <td>1</td>
-                                                    </tr>
-
-                                                    <!-- TOTAL -->
-                                                    <tr>
-                                                        <td>Total</td>
-                                                        <td colspan="6"></td>
-                                                        <td>24</td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-                                        <div class="note">
-                                            <p><strong>L => Lecture, T => Tutorial, P => Practical, J => Project
-                                                    Hours</strong></p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item ">
-                                <button class="accordion-header">Semester 2</button>
-                                <div class="accordion-body">
-                                    <div class="semester_Box">
-                                        <div class="table-container">
-                                            <table>
-                                                <thead>
-                                                    <tr>
-                                                        <th>S. No.</th>
-                                                        <th>Subjects</th>
-                                                        <th>Category</th>
-                                                        <th>L</th>
-                                                        <th>T</th>
-                                                        <th>P</th>
-                                                        <th>J</th>
-                                                        <th>Credit</th>
-                                                    </tr>
-                                                </thead>
-
-                                                <tbody>
-
-                                                    <!-- THEORY SECTION -->
-                                                    <tr class="section-header">
-                                                        <td colspan="8">THEORY</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Problem Solving Using Java</td>
-                                                        <td>NA</td>
-                                                        <td>3</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>3</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Applied Data Structure and Applications</td>
-                                                        <td>NA</td>
-                                                        <td>3</td>
-                                                        <td>1</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>4</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Machine Learning</td>
-                                                        <td>NA</td>
-                                                        <td>3</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>3</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>Computer Networks</td>
-                                                        <td>NA</td>
-                                                        <td>3</td>
-                                                        <td>1</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>4</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>5</td>
-                                                        <td>Professional Communication–II</td>
-                                                        <td>NA</td>
-                                                        <td>2</td>
-                                                        <td>2</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>3</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>6</td>
-                                                        <td>Ethics & Values</td>
-                                                        <td>NA</td>
-                                                        <td>2</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>2</td>
-                                                    </tr>
-
-                                                    <!-- PRACTICAL SECTION -->
-                                                    <tr class="section-header">
-                                                        <td colspan="8">PRACTICALS</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>7</td>
-                                                        <td>Problem Solving Using Java Lab</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>4</td>
-                                                        <td>0</td>
-                                                        <td>2</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>8</td>
-                                                        <td>Applied Data Structure and Applications Lab using C/C++</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>4</td>
-                                                        <td>0</td>
-                                                        <td>2</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>9</td>
-                                                        <td>Mini Project</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>4</td>
-                                                        <td>3</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>10</td>
-                                                        <td>Soft Skills–II</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>4</td>
-                                                        <td>0</td>
-                                                        <td>1</td>
-                                                    </tr>
-
-                                                    <!-- TOTAL -->
-                                                    <tr>
-                                                        <td>Total</td>
-                                                        <td colspan="6"></td>
-                                                        <td>27</td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-                                        <div class="note">
-                                            <p><strong>L => Lecture, T => Tutorial, P => Practical, J => Project
-                                                    Hours</strong></p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item ">
-                                <button class="accordion-header">Semester 3</button>
-                                <div class="accordion-body">
-                                    <div class="semester_Box">
-                                        <div class="table-container">
-                                            <table>
-                                                <thead>
-                                                    <tr>
-                                                        <th>S. No.</th>
-                                                        <th>Subjects</th>
-                                                        <th>Category</th>
-                                                        <th>L</th>
-                                                        <th>T</th>
-                                                        <th>P</th>
-                                                        <th>J</th>
-                                                        <th>Credit</th>
-                                                    </tr>
-                                                </thead>
-
-                                                <tbody>
-
-                                                    <!-- THEORY SECTION -->
-                                                    <tr class="section-header">
-                                                        <td colspan="8">THEORY</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Cloud Computing</td>
-                                                        <td>NA</td>
-                                                        <td>3</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>3</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>.Net framework using C#</td>
-                                                        <td>NA</td>
-                                                        <td>3</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>3</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Mobile Application Development-I /Digital and Social Media
-                                                            Marketing/Full Stack-I</td>
-                                                        <td>NA</td>
-                                                        <td>3</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>3</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>Soft Skills–III</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>4</td>
-                                                        <td>0</td>
-                                                        <td>2</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>5</td>
-                                                        <td>Environmental Studies</td>
-                                                        <td>NA</td>
-                                                        <td>2</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>2</td>
-                                                    </tr>
-
-                                                    <!-- PRACTICAL SECTION -->
-                                                    <tr class="section-header">
-                                                        <td colspan="8">PRACTICALS</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>6</td>
-                                                        <td>Project-I</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>8</td>
-                                                        <td>8</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>7</td>
-                                                        <td>Cloud Computing Lab</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>2</td>
-                                                        <td>0</td>
-                                                        <td>1</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>8</td>
-                                                        <td>Mobile Application Development-I Lab / Digital and Social
-                                                            Media Marketing Lab/Full Stack-I Lab</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>2</td>
-                                                        <td>0</td>
-                                                        <td>1</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>9</td>
-                                                        <td>.Net framework Lab</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>4</td>
-                                                        <td>0</td>
-                                                        <td>2</td>
-                                                    </tr>
-
-                                                    <!-- TOTAL -->
-                                                    <tr>
-                                                        <td>Total</td>
-                                                        <td colspan="6"></td>
-                                                        <td>25</td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-                                        <div class="note">
-                                            <p><strong>L => Lecture, T => Tutorial, P => Practical, J => Project
-                                                    Hours</strong></p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item ">
-                                <button class="accordion-header">Semester 4</button>
-                                <div class="accordion-body">
-                                    <div class="semester_Box">
-                                        <div class="table-container">
-                                            <table>
-                                                <thead>
-                                                    <tr>
-                                                        <th>S. No.</th>
-                                                        <th>Subjects</th>
-                                                        <th>Category</th>
-                                                        <th>L</th>
-                                                        <th>T</th>
-                                                        <th>P</th>
-                                                        <th>J</th>
-                                                        <th>Credit</th>
-                                                    </tr>
-                                                </thead>
-
-                                                <tbody>
-
-                                                    <!-- THEORY SECTION -->
-                                                    <tr class="section-header">
-                                                        <td colspan="8">THEORY</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>DevOps</td>
-                                                        <td>NA</td>
-                                                        <td>3</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>3</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Mobile Application Development- II /Full Stack Development-
-                                                            II/Search Engine Optimization</td>
-                                                        <td>NA</td>
-                                                        <td>3</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>3</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Soft Skills–IV</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>4</td>
-                                                        <td>0</td>
-                                                        <td>2</td>
-                                                    </tr>
-
-                                                    <!-- PRACTICAL SECTION -->
-                                                    <tr class="section-header">
-                                                        <td colspan="8">PRACTICALS</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>Project-II</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>18</td>
-                                                        <td>18</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>5</td>
-                                                        <td>DevOps Lab</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>2</td>
-                                                        <td>0</td>
-                                                        <td>1</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>6</td>
-                                                        <td>Mobile Application Development- II Lab /Full Stack
-                                                            Development-II Lab/ Search Engine Optimization Lab</td>
-                                                        <td>NA</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>2</td>
-                                                        <td>0</td>
-                                                        <td>1</td>
-                                                    </tr>
-
-                                                    <!-- TOTAL -->
-                                                    <tr>
-                                                        <td>Total</td>
-                                                        <td colspan="6"></td>
-                                                        <td>28</td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-                                        <div class="note">
-                                            <p><strong>L => Lecture, T => Tutorial, P => Practical, J => Project
-                                                    Hours</strong></p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <section id="online_degree" class="online_degree">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-10">
-                                        <div class="online_degree_img">
-                                            <figure><a
-                                                    href="https://deb.ugc.ac.in/Uploads/Notices_Upload/UGC_20220906101709_1.pdf"
-                                                    target="_blank" rel="noopener"><img
-                                                        src="https://glaonline.com/siteassets/images/online_degree_img.webp"
-                                                        class="img-fluid w-100" alt="online degree" /></a></figure>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    <div class="gla_learners_section">
-	<div class="container">
-		<div class="alumni_hed text-center image">
-			<h6 class="h_16 white">B.Com. (Hons.) LEARNERS</h6>
-<h3 class="h_40 white">What Current Learners Say About GLA Online</h3> 
-			</div>
-							<div class="learners_section">
-					<div class="students-learners swiper swiper-container">
-						<div class="swiper-wrapper">
-						
-						
-													<div class="swiper-slide">
-								<div class="learner_Bx">
-									<div class="learner_txt">
-										<figure><img  src="https://glaonline.com/uploads/alumni/693a9a77c98ad1765448311.webp"  alt="Dharvantha B" class="img-fluid" /></figure>										<p>Living in a remote area with limited access to quality commerce colleges, pursuing a B.Com. (Hons.) degree through GLA Online, a UGC-DEB-recognized program from a NAAC A+ university, has been one of the best decisions for my career.</p>									</div> 
-									<div class="learners_name">
-										<h4>Dharvantha B</h4>
-										<h5>B.Com. (Hons.), Pursuing)</h5>										
-									</div>
-								</div>
-							</div>
-							
-													<div class="swiper-slide">
-								<div class="learner_Bx">
-									<div class="learner_txt">
-										<figure><img  src="https://glaonline.com/uploads/alumni/693a9a9686fb41765448342.webp"  alt="Sahil Raj" class="img-fluid" /></figure>										<p>I&rsquo;m pursuing a CA internship alongside my B.Com. (Hons.) at GLA Online. The syllabus is so well-aligned with professional bodies that I often find my notes helpful for my CA preparation. The structured curriculum and supportive faculty make it easier to balance both programs effectively.</p>									</div> 
-									<div class="learners_name">
-										<h4>Sahil Raj</h4>
-										<h5>B.Com. (Hons.), Pursuing)</h5>										
-									</div>
-								</div>
-							</div>
-							
-													<div class="swiper-slide">
-								<div class="learner_Bx">
-									<div class="learner_txt">
-										<figure><img  src="https://glaonline.com/uploads/alumni/693a9ab03c9471765448368.webp"  alt="Bishal Majumder" class="img-fluid" /></figure>										<p>At GLA Online, faculty go beyond slides, using real-life case studies from the Indian economy to explain taxation and auditing in practice. The program&rsquo;s practical approach and supportive learning environment make studying engaging and effective.</p>									</div> 
-									<div class="learners_name">
-										<h4>Bishal Majumder</h4>
-										<h5>B.Com. (Hons.), Pursuing)</h5>										
-									</div>
-								</div>
-							</div>
-							
-													<div class="swiper-slide">
-								<div class="learner_Bx">
-									<div class="learner_txt">
-										<figure><img  src="https://glaonline.com/uploads/alumni/693a9acc5d4b11765448396.webp"  alt="Sirikonda Govardhan" class="img-fluid" /></figure>										<p>Considering the fee structure, the quality of faculty, and the NAAC A+ accreditation, GLA Online B.Com. (Hons.) offers one of the best returns on investment for a commerce degree in India today. As a student, I feel I have made the best decision by choosing GLA Online.</p>									</div> 
-									<div class="learners_name">
-										<h4>Sirikonda Govardhan</h4>
-										<h5>B.Com. (Hons.), Pursuing)</h5>										
-									</div>
-								</div>
-							</div>
-							
-													<div class="swiper-slide">
-								<div class="learner_Bx">
-									<div class="learner_txt">
-										<figure><img  src="https://glaonline.com/uploads/alumni/693a9ae84005d1765448424.webp"  alt="Astha Gupta" class="img-fluid" /></figure>										<p>GLA Online provides access to a massive alumni network. I reached out to a senior who graduated two years ago, and her guidance on which FinTech certifications to pair with my B.Com. (Hons.) was invaluable. As a student, getting this kind of hand-holding from alumni is truly amazing.</p>									</div> 
-									<div class="learners_name">
-										<h4>Astha Gupta</h4>
-										<h5>B.Com. (Hons.), Pursuing)</h5>										
-									</div>
-								</div>
-							</div>
-							
-							
-							
-						</div> <span class="swiper-pagination"></span></div>
-				</div>
-			</div>
-</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section id="faq_sec" class="faq_sec progrm_eleven spec pdt_8 pdb_8 prgr_faq">
-        <div class="container">
-
-            <div class="faq_hed" data-aos="fade-up">
-                <h6>FAQs</h6>
-                <h3>Got Questions? <span>We've Got Answers!</span></h3>
-            </div>
-
-            <div class="faq_item" data-aos="fade-up" data-aos-delay="200">
-                <div class="accordion">
-
-                    <div class="accordion-item active">
-                        <button class="accordion-header">
-                            Is the Online MBA degree from GLA Online University UGC/AIU approved and
-                            valid?
-                        </button>
-                        <div class="accordion-body">
-                            <p>Yes. The online MBA from GLA Online University is offered through the
-                                online mode under
-                                proper recognition, ensuring the degree is valid for employment,
-                                further studies and
-                                government examinations.</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            What is the eligibility for the Online MBA program at GLA Online
-                            University?
-                        </button>
-                        <div class="accordion-body">
-                            <p>Candidates must have earned a bachelor’s degree from a recognised
-                                university in any
-                                discipline to be eligible for the Online MBA at GLA Online
-                                University.</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            What is the duration of the Online MBA program at GLA Online University?
-                        </button>
-                        <div class="accordion-body">
-                            <p>The Online MBA typically spans two years, organised in four
-                                semesters, enabling
-                                structured progression of study.</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            What specializations are available in the Online MBA at GLA Online
-                            University?
-                        </button>
-                        <div class="accordion-body">
-                            <p>The program offers specializations such as Marketing Management,
-                                Finance Management,
-                                Human Resource Management, Supply Chain Management, Business
-                                Analytics, Information
-                                Technology Management, Operations Management, and Banking and
-                                Financial Services.</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            How does the Online MBA program support flexible learning for working
-                            professionals?
-                        </button>
-                        <div class="accordion-body">
-                            <p>The program is delivered via online lectures, interactive learning
-                                modules, case-studies
-                                and assignments; students can access content remotely, allowing them
-                                to balance
-                                professional and personal commitments in a flexible manner.</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            Does GLA Online University provide placement assistance or career
-                            support for Online MBA
-                            students?
-                        </button>
-                        <div class="accordion-body">
-                            <p>The university offers career support services including
-                                industry-relevant
-                                specializations, placement guidance, mentorship, and networking
-                                opportunities through
-                                its online programs.</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            What are the career opportunities after completing the Online MBA?
-                        </button>
-                        <div class="accordion-body">
-                            <p>Graduates can pursue roles such as Marketing Manager, Financial
-                                Analyst, HR Manager,
-                                Operations Manager, Business Development Manager, and may also go
-                                for higher studies or
-                                specialised certifications.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-
-    <section id="alumi_logo" class="alumi_work">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="prg_titl">
-                        <h3>Our Alumni Work At</h3>
-                    </div>
-                    <div class="alumni_logo_section">
-                        <ul>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo01.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo02.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo03.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/tcs.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo04.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/capgemini.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/infosys.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/accenture-logo.webp"
-                                        alt="logo" class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/wipro.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/tech-mahindra.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo_010.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo05.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo06.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo07.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo08.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo09.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo010.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo011.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo012.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo013.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo_01.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo_02.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo_04.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo_05.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                            <li>
-                                <figure><img src="https://glaonline.com/siteassets/images/mca-logo_06.webp" alt="logo"
-                                        class="img-fluid w-100" /></figure>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="progrm_four group  marksheetSec">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="marksheet_grid">
-                        <ul>
-                            <li>
-                                <h3>See What Your Success Looks Like:</h3>
-                            </li>
-                            <li>
-                                <figure><a href="https://glaonline.com/siteassets/images/sample-of-degree.webp"
-                                        target="_blank" rel="noopener"><img
-                                            src="https://glaonline.com/siteassets/images/sample-of-degree.webp"
-                                            alt="degree" /></a></figure>
-                                <h4>Sample Degree</h4>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="faq_sec_mca" class="faq_sec progrm_eleven spec pdt_8 pdb_8 prgr_faq">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="faq_hed image reveal-image">
-                        <h6 class="h_16">FAQs</h6>
-                        <h3>Got Questions? <span>We've Got </span><span>Answers!</span></h3>
-                    </div>
-                    <div class="faq_tabs program_faq">
-                        <div class="tabs-container">
-                            <!-- Desktop tab buttons -->
-                            <div class="right-pnl image reveal-image">
-                                <div class="tab-buttons">
-                                    <button class="tab-btn active" data-tab="general">General</button>
-                                </div>
-                            </div>
-                            <!-- Tab contents -->
-                            <div class="lft-pnl">
-                                <div class="tab-content active" id="general">
-                                    <div class="tab-header">
-                                        <p>General</p>
-                                    </div>
-                                    <div class="tab-body image2 reveal-image2">
-                                        <div class="faq_item">
-                                            <div class="accordion">
-                                                <div class="accordion-item  active">
-                                                    <button class="accordion-header">Is the Online MCA degree from GLA
-                                                        Online University UGC-approved and valid?</button>
-                                                    <div class="accordion-body">
-                                                        <p>Yes. The online MCA offered by GLA Online University is
-                                                            covered under the approval of the University Grants
-                                                            Commission-DEB (Distance Education Bureau) and other
-                                                            statutory bodies, therefore valid for employment, further
-                                                            studies and government examinations. </p>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item  ">
-                                                    <button class="accordion-header">What is the eligibility for the
-                                                        Online MCA program at GLA Online University?</button>
-                                                    <div class="accordion-body">
-                                                        <p>Candidates must have a bachelor’s degree in any discipline
-                                                            from a recognised university preferably with a background in
-                                                            Science, Computer Applications or IT.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item  ">
-                                                    <button class="accordion-header">What is the typical duration of the
-                                                        Online MCA program?</button>
-                                                    <div class="accordion-body">
-                                                        <p>The program is designed to be completed in approximately 2
-                                                            years (4 semesters) for students who meet the standard
-                                                            eligibility criteria.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item  ">
-                                                    <button class="accordion-header">How does the Online MCA program
-                                                        offer flexibility for working professionals?</button>
-                                                    <div class="accordion-body">
-                                                        <p>The program provides a flexible learning structure with
-                                                            recorded lectures, interactive content, on-demand modules
-                                                            and a schedule that allows students to balance their
-                                                            personal or professional commitments alongside their
-                                                            studies.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item  ">
-                                                    <button class="accordion-header">Does GLA Online University provide
-                                                        placement and career support for Online MCA students?</button>
-                                                    <div class="accordion-body">
-                                                        <p>The online division of GLA Online University offers
-                                                            career-services support including resume building, mock
-                                                            interviews, mentorship and access to job opportunities via
-                                                            industry partnerships. </p>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item  ">
-                                                    <button class="accordion-header">What career opportunities open up
-                                                        after completing the Online MCA?</button>
-                                                    <div class="accordion-body">
-                                                        <p>Graduates can pursue roles such as Software Developer,
-                                                            Database Administrator, Systems Analyst, Network Security
-                                                            Specialist, Data Scientist, and may also progress to higher
-                                                            studies (e.g., MPhil/PhD) or professional certifications in
-                                                            specialised domains.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <footer class="glaFooter_section">
-
-        <div class="glaFooter_container">
-
-            <!-- LINKS -->
-            <div class="glaFooter_links">
-                <a href="#">About Us</a>
-                <a href="#">Admissions</a>
-                <a href="#">Programs</a>
-                <a href="#">Events @ GLA</a>
-                <a href="#">FAQs</a>
-                <a href="#">Testimonials</a>
-                <a href="#">Terms & Conditions</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Disclaimer</a>
-                <a href="#">Mandatory Disclosure</a>
-                <a href="#">Contact Us</a>
-            </div>
-
-            <!-- LINE -->
-            <div class="glaFooter_line"></div>
-
-            <!-- BOTTOM -->
-            <div class="glaFooter_bottom">
-
-                <!-- LEFT -->
-                <div class="glaFooter_copy">
-                    © Copyright 2026 - GLA Online. All Rights Reserved.
-                </div>
-
-                <!-- CENTER -->
-                <div class="glaFooter_social">
-                    <a href="#" class="glaFb"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="glaYt"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="glaInsta"><i class="fab fa-instagram"></i></a>
-                </div>
-
-                <!-- RIGHT -->
-                <div class="glaFooter_credit">
-                    Website Design and Developed by Sterco Digitex
-                </div>
-
-            </div>
-
-        </div>
-
-    </footer>
-
-    <!-- Apply Button -->
-    <a href="https://apply.glaonline.com/" target="_blank" class="float-apply">Apply Now</a>
-
-    <!-- Bottom Navigation -->
-    <nav class="mobile-bottom">
-        <button onclick="openMobilePanel('programPanel', this)">
-            <i class="bi bi-book"></i>
-            <span>Programs</span>
-        </button>
-
-        <button onclick="openMobilePanel('admissionPanel', this)">
-            <i class="bi bi-mortarboard"></i>
-            <span>Admission</span>
-        </button>
-
-        <button onclick="openMobilePanel('contactPanel', this)">
-            <i class="bi bi-telephone-fill"></i>
-            <span>Contact</span>
-        </button>
-
-        <button onclick="openMobilePanel('menuPanel', this)">
-            <i class="bi bi-grid-fill"></i>
-            <span>Menu</span>
-        </button>
+<header class="main_header">
+  <div class="header_wrap">
+    <a href="#" class="logo">
+      <img src="https://glaonline.com/siteassets/images/green-logo.webp" alt="GLA Online">
+    </a>
+
+    <nav class="nav_menu">
+      <a href="#">About Us</a>
+      <a href="#">Admissions</a>
+      <a href="#">Programs</a>
+      <a href="#">Contact Us</a>
+      <a href="#" class="apply_btn">Apply Now</a>
     </nav>
+  </div>
+</header>
 
-    <!-- Program Panel -->
-    <div class="mobile-panel" id="programPanel">
-        <h4>Find Your Program</h4>
-        <a href="https://glaonline.com/program/mba">Master of Business Administration</a>
-        <a href="https://glaonline.com/program/mca">Master of Computer Applications</a>
-        <a href="https://glaonline.com/program/bba">Bachelor of Business Administration</a>
-        <a href="https://glaonline.com/program/bca">Bachelor of Computer Applications</a>
-        <a href="https://glaonline.com/program/bcom-hons">Bachelor of Commerce (Hons.)</a>
+<main>
+
+  <section class="home_banner">
+    <div class="home_slider swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://glaonline.com/uploads/frame/banner_images/68d67c01849de1758886913.webp" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://glaonline.com/uploads/frame/banner_images/693a4b89efcd61765428105.webp" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://glaonline.com/uploads/frame/banner_images/693a4b95d03241765428117.webp" alt="">
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
 
-    <!-- Admission Panel -->
-    <div class="mobile-panel" id="admissionPanel">
-        <h4>Admissions</h4>
-        <a href="tel:+919568536853">+91-9568536853</a>
-        <a href="mailto:onlineadmissions@gla.ac.in">onlineadmissions@gla.ac.in</a>
-        <a href="https://apply.glaonline.com/">Apply Now</a>
+    <div class="banner_form">
+      <form id="registrationForm">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email Address">
+        <input type="tel" placeholder="Mobile Number">
+        <select>
+          <option>Select State</option>
+          <option>Delhi</option>
+          <option>Uttar Pradesh</option>
+        </select>
+        <select>
+          <option>Select City</option>
+          <option>Noida</option>
+          <option>Mathura</option>
+        </select>
+        <select>
+          <option>Select Program</option>
+          <option>MBA</option>
+          <option>MCA</option>
+          <option>BBA</option>
+          <option>BCA</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
     </div>
+  </section>
 
-    <!-- Contact Panel -->
-    <div class="mobile-panel" id="contactPanel">
-        <h4>Contact</h4>
-        <a href="tel:+919568536853">Call Us Now</a>
-        <a href="https://glaonline.com/contact-us">Contact Us</a>
+  <section class="corporate-learner">
+    <div class="container">
+      <div class="corporate_learner_Bx">
+        <h4>Corporate Learner</h4>
+        <h3>Future-Ready Skills for Today’s <span>Corporate Leaders</span></h3>
+        <a href="#" class="alimni_btn">+</a>
+
+        <div class="corporate_slider swiper">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="wall_distinction_Bx">
+                <img src="https://glaonline.com/uploads/trustees/694cfafdbd5101766652669.webp" alt="">
+                <h4>Punit Pratap Singh</h4>
+                <p>AGM R&D Mechanical Testing</p>
+                <h6>Ecocat India</h6>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="wall_distinction_Bx">
+                <img src="https://glaonline.com/uploads/trustees/694cfaf874d9b1766652664.webp" alt="">
+                <h4>Abhishek Kumar Srivastava</h4>
+                <p>Process Engineer & Senior Engineer</p>
+                <h6>Sanden Vikas India Pvt. Ltd.</h6>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="wall_distinction_Bx">
+                <img src="https://glaonline.com/uploads/trustees/694cfaf315fdd1766652659.webp" alt="">
+                <h4>Abhishek Sharma</h4>
+                <p>Assistant Manager</p>
+                <h6>Uniparts India Limited</h6>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="wall_distinction_Bx">
+                <img src="https://glaonline.com/uploads/trustees/694cfaee688451766652654.webp" alt="">
+                <h4>Alok Kumar Singh</h4>
+                <p>Asst. Manager R&D</p>
+                <h6>Sanden Vikas India Pvt Ltd</h6>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="wall_distinction_Bx">
+                <img src="https://glaonline.com/uploads/trustees/694cfae8c4f521766652648.webp" alt="">
+                <h4>Jitendar Sahu</h4>
+                <p>PPC Department Engineer</p>
+                <h6>Sanden Vikas India Pvt Ltd</h6>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="corporate_arrows">
+            <div class="corp-prev">‹</div>
+            <div class="corp-next">›</div>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <!-- Menu Panel -->
-    <div class="mobile-panel" id="menuPanel">
-        <h4>Menu</h4>
-        <a href="https://glaonline.com/about-us/overview">About Us</a>
-        <a href="https://glaonline.com/faculty">Meet Our Faculty</a>
-        <a href="https://glaonline.com/faq">FAQs</a>
-        <a href="https://glaonline.com/blog">Blog</a>
-        <a href="https://glaonline.com/contact-us">Contact Us</a>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+</main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            AOS.init({
-                once: true,
-                duration: 1000,
-                offset: 100
-            });
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-            new Swiper(".recruiter_slider", {
-                loop: true,
-                speed: 3000,
-                autoplay: {
-                    delay: 4000,
-                    disableOnInteraction: false
-                },
-                pagination: {
-                    el: ".recruiter_slider .swiper-pagination",
-                    clickable: true
-                },
-                breakpoints: {
-                    0: { slidesPerView: 1, spaceBetween: 10 },
-                    576: { slidesPerView: 1, spaceBetween: 15 },
-                    768: { slidesPerView: 2, spaceBetween: 20 },
-                    992: { slidesPerView: 3, spaceBetween: 25 },
-                    1200: { slidesPerView: 3, spaceBetween: 30 }
-                }
-            });
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".home_slider", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: ".home_slider .swiper-pagination",
+        clickable: true
+      }
+    });
 
-            new Swiper(".students-learners", {
-                loop: true,
-                speed: 1200,
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: false
-                },
-                slidesPerGroup: 1,
-                pagination: {
-                    el: ".students-learners .swiper-pagination",
-                    clickable: true
-                },
-                breakpoints: {
-                    0: { slidesPerView: 1, spaceBetween: 20 },
-                    576: { slidesPerView: 1, spaceBetween: 20 },
-                    768: { slidesPerView: 3, spaceBetween: 20 },
-                    1200: { slidesPerView: 3, spaceBetween: 30 }
-                }
-            });
-
-            document.querySelectorAll("#syllabus_wrapper .accordion-header").forEach(function (button) {
-                button.addEventListener("click", function () {
-                    const item = button.parentElement;
-
-                    document.querySelectorAll("#syllabus_wrapper .accordion-item").forEach(function (i) {
-                        if (i !== item) i.classList.remove("active");
-                    });
-
-                    item.classList.toggle("active");
-                });
-            });
-
-            document.querySelectorAll("#faq_sec .accordion-header, #faq_sec_mca .accordion-header").forEach(function (button) {
-                button.addEventListener("click", function () {
-                    const item = button.parentElement;
-
-                    document.querySelectorAll("#faq_sec .accordion-item, #faq_sec_mca .accordion-item").forEach(function (i) {
-                        if (i !== item) i.classList.remove("active");
-                    });
-
-                    item.classList.toggle("active");
-                });
-            });
-        });
-
-        function openSearch() {
-            document.getElementById("searchOverlay").classList.add("active");
+    new Swiper(".corporate_slider", {
+      loop: true,
+      spaceBetween: 18,
+      slidesPerView: 4,
+      navigation: {
+        nextEl: ".corp-next",
+        prevEl: ".corp-prev"
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1
+        },
+        576: {
+          slidesPerView: 2
+        },
+        992: {
+          slidesPerView: 4
         }
+      }
+    });
 
-        function closeSearch() {
-            document.getElementById("searchOverlay").classList.remove("active");
-        }
-
-        function openSideMenu() {
-            document.getElementById("sideMenu").classList.add("active");
-        }
-
-        function closeSideMenu() {
-            document.getElementById("sideMenu").classList.remove("active");
-        }
-
-        function toggleSub(el) {
-            el.nextElementSibling.classList.toggle("open");
-        }
-
-        const programToggle = document.getElementById("programToggle");
-        const megaMenu = document.getElementById("megaMenu");
-
-        programToggle.addEventListener("mouseenter", () => {
-            megaMenu.classList.add("active");
-        });
-
-        programToggle.addEventListener("mouseleave", () => {
-            setTimeout(() => {
-                if (!megaMenu.matches(":hover") && !programToggle.matches(":hover")) {
-                    megaMenu.classList.remove("active");
-                }
-            }, 120);
-        });
-
-        megaMenu.addEventListener("mouseenter", () => {
-            megaMenu.classList.add("active");
-        });
-
-        megaMenu.addEventListener("mouseleave", () => {
-            megaMenu.classList.remove("active");
-        });
-
-
-        function openMobilePanel(panelId, buttonElement) {
-            const panels = document.querySelectorAll(".mobile-panel");
-            const buttons = document.querySelectorAll(".mobile-bottom button");
-
-            panels.forEach(panel => {
-                if (panel.id === panelId) {
-                    panel.classList.toggle("active");
-                } else {
-                    panel.classList.remove("active");
-                }
-            });
-
-            buttons.forEach(button => {
-                if (button === buttonElement) {
-                    button.classList.toggle("active");
-                } else {
-                    button.classList.remove("active");
-                }
-            });
-        }
-
-        // Close when clicking outside
-        document.addEventListener("click", function (e) {
-            const clickedButton = e.target.closest(".mobile-bottom button");
-            const clickedPanel = e.target.closest(".mobile-panel");
-
-            if (!clickedButton && !clickedPanel) {
-                document.querySelectorAll(".mobile-panel").forEach(panel => {
-                    panel.classList.remove("active");
-                });
-
-                document.querySelectorAll(".mobile-bottom button").forEach(button => {
-                    button.classList.remove("active");
-                });
-            }
-        });
-
-    </script>
+    document.getElementById("registrationForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Form submitted successfully!");
+    });
+  });
+</script>
 
 </body>
-
 </html>
