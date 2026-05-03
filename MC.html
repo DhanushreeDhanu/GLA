@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CEO | GLA Online</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News And Events</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <style
   >
@@ -496,298 +496,6 @@
   }
 }
 
-        * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            font-family: 'Inter', Arial, sans-serif;
-            background: #f4f4f4;
-            color: #111;
-            overflow-x: hidden;
-            font-size: 15px;
-        }
-        a { text-decoration: none; color: inherit; }
-        img { max-width: 100%; display: block; }
-        :root {
-            --green: #2f6f35;
-            --yellow: #ffd332;
-        }
-
-        .leader-hero {
-            min-height: 340px;
-            position: relative;
-            background: url('Leadership/0.jpg') left center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-        }
-        .leader-hero .container { position: relative; z-index: 1; }
-        .leader-hero h1 {
-            font-size: 38px;
-            line-height: 1.2;
-            font-weight: 900;
-            margin-bottom: 22px;
-        }
-        .leader-hero p {
-            font-size: 19px;
-            line-height: 1.45;
-            font-weight: 600;
-            max-width: 800px;
-            margin: 0 auto 38px;
-        }
-
-        .leader-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 22px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            flex-wrap: wrap;
-        }
-        .leader-tabs a {
-            display: block;
-            color: #fff;
-            font-size: 18px;
-            padding: 0 8px 22px;
-            position: relative;
-        }
-        .leader-tabs li.active a { color: var(--yellow); }
-        .leader-tabs li.active a:after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 4px;
-            background: var(--yellow);
-        }
-
-        .chancellor-sec {
-            padding: 62px 0 90px;
-            background: #f6f6f6;
-        }
-        .chancellor-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 55px;
-            align-items: start;
-            max-width: 1080px;
-            margin: auto;
-        }
-        .left-photo {
-            position: relative;
-            padding-top: 24px;
-        }
-        .quote-mark {
-            position: absolute;
-            top: 0;
-            left: 20px;
-            width: 95px;
-            opacity: .7;
-            z-index: 2;
-        }
-        .person-img {
-            width: 100%;
-            height: 390px;
-            object-fit: cover;
-            object-position: center top;
-            background: #ead8cf;
-        }
-        .right-text h5 {
-            font-size: 22px;
-            line-height: 1.35;
-            color: #477a3e;
-            font-weight: 500;
-            margin: 0 0 24px;
-        }
-        .right-text p {
-            font-size: 15px;
-            line-height: 1.65;
-            margin-bottom: 18px;
-            color: #111;
-        }
-        .sign-box {
-            border-top: 1px solid #ccc;
-            margin-top: 26px;
-            padding-top: 24px;
-        }
-        .sign-box p { margin: 0 0 5px; }
-        .sign-box h4 {
-            font-size: 22px;
-            font-weight: 900;
-            margin: 0 0 4px;
-            color: #000;
-        }
-
-        @media(max-width:991px) {
-            .leader-hero { min-height: 330px; }
-            .leader-hero h1 { font-size: 30px; }
-            .leader-hero p { font-size: 17px; }
-            .chancellor-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-            .person-img { height: auto; }
-        }
-
-        @media(max-width:575px) {
-            .leader-hero { min-height: 315px; }
-            .leader-hero h1 { font-size: 24px; }
-            .leader-hero p {
-                font-size: 14.5px;
-                margin-bottom: 26px;
-            }
-            .leader-tabs { gap: 8px; }
-            .leader-tabs a {
-                font-size: 14px;
-                padding-bottom: 16px;
-            }
-            .chancellor-sec { padding: 42px 0 78px; }
-            .right-text h5 { font-size: 19px; }
-            .right-text p { font-size: 14px; }
-            .sign-box h4 { font-size: 20px; }
-            .quote-mark { width: 78px; }
-        }
-  
-          
-/* ===== FOOTER ===== */
-.glaFooter_section{
-  background:#1d1714;
-  padding:40px 18px 30px;
-  color:#fff;
-}
-
-.glaFooter_container{
-  max-width:1200px;
-  margin:0 auto;
-}
-
-/* ===== LINKS ===== */
-.glaFooter_links{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:18px 22px;
-}
-
-.glaFooter_links a{
-  color:#fff;
-  text-decoration:none;
-  font-size:15px;
-  
-  transition:0.3s;
-}
-
-.glaFooter_links a:hover{
-  color:#ffc400;
-}
-
-/* LINE */
-.glaFooter_line{
-  height:1px;
-  background:rgba(255,255,255,.2);
-  margin:28px 0;
-}
-
-/* ===== BOTTOM ===== */
-.glaFooter_bottom{
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  gap:20px;
-}
-
-/* TEXT */
-.glaFooter_copy,
-.glaFooter_credit{
-  font-size:13px;
-  
-}
-
-.glaFooter_credit{
-  text-align:right;
-}
-
-/* ===== SOCIAL ICONS ===== */
-.glaFooter_social{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-}
-
-.glaFooter_social a{
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:13px;
-  color:#fff;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-/* FACEBOOK */
-.glaFb{
-  background:#1877f2;
-}
-
-/* YOUTUBE */
-.glaYt{
-  background:#ff0000;
-}
-
-/* INSTAGRAM */
-.glaInsta{
-  background: radial-gradient(circle at 30% 30%, 
-    #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-}
-
-/* HOVER */
-.glaFooter_social a:hover{
-  transform:scale(1.1);
-}
-
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-
-  .glaFooter_links{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:28px 40px;
-    text-align:left;
-  }
-
-  .glaFooter_links a{
-    font-size:18px;
-  }
-
-  .glaFooter_bottom{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    gap:12px;
-  }
-
-  /* ORDER FIX */
-  .glaFooter_copy{
-    order:1;
-  }
-
-  .glaFooter_credit{
-    order:2;
-    text-align:center;
-  }
-
-  .glaFooter_social{
-    order:3;
-    margin-top:10px;
-  }
-}
-
 
 
 
@@ -960,10 +668,264 @@
         bottom: 92px;
     }
 }
-  </style>
+
+          
+/* ===== FOOTER ===== */
+.glaFooter_section{
+  background:#1d1714;
+  padding:40px 18px 30px;
+  color:#fff;
+}
+
+.glaFooter_container{
+  max-width:1200px;
+  margin:0 auto;
+}
+
+/* ===== LINKS ===== */
+.glaFooter_links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px 22px;
+}
+
+.glaFooter_links a{
+  color:#fff;
+  text-decoration:none;
+  font-size:15px;
+  
+  transition:0.3s;
+}
+
+.glaFooter_links a:hover{
+  color:#ffc400;
+}
+
+/* LINE */
+.glaFooter_line{
+  height:1px;
+  background:rgba(255,255,255,.2);
+  margin:28px 0;
+}
+
+/* ===== BOTTOM ===== */
+.glaFooter_bottom{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:20px;
+}
+
+/* TEXT */
+.glaFooter_copy,
+.glaFooter_credit{
+  font-size:13px;
+  
+}
+
+.glaFooter_credit{
+  text-align:right;
+}
+
+/* ===== SOCIAL ICONS ===== */
+.glaFooter_social{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+
+.glaFooter_social a{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  color:#fff;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+/* FACEBOOK */
+.glaFb{
+  background:#1877f2;
+}
+
+/* YOUTUBE */
+.glaYt{
+  background:#ff0000;
+}
+
+/* INSTAGRAM */
+.glaInsta{
+  background: radial-gradient(circle at 30% 30%, 
+    #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+
+/* HOVER */
+.glaFooter_social a:hover{
+  transform:scale(1.1);
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+
+  .glaFooter_links{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px 40px;
+    text-align:left;
+  }
+
+  .glaFooter_links a{
+    font-size:18px;
+  }
+
+  .glaFooter_bottom{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:12px;
+  }
+
+  /* ORDER FIX */
+  .glaFooter_copy{
+    order:1;
+  }
+
+  .glaFooter_credit{
+    order:2;
+    text-align:center;
+  }
+
+  .glaFooter_social{
+    order:3;
+    margin-top:10px;
+  }
+}
+
+  .common-sec {
+    position: relative;
+    min-height: 310px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .inner_banner_image {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .inner_banner_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .common-sec::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 70, 32, 0.78);
+    z-index: 2;
+  }
+
+  .common-sec .container {
+    position: relative;
+    z-index: 3;
+  }
+
+  .common-text {
+    text-align: center;
+  }
+
+  .common-text h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .gallery-list.meida-coverage {
+    padding: 70px 15px;
+    background: #f4f4f4;
+  }
+
+  .gallery-list_grid {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    column-count: 3;
+    column-gap: 24px;
+  }
+
+  .g_list_bx {
+    break-inside: avoid;
+    margin-bottom: 24px;
+  }
+
+  .g_list_bx a {
+    display: block;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #ddd;
+  }
+
+  .g_list_bx img {
+    width: 100%;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+
+  .g_list_bx:hover img {
+    transform: scale(1.04);
+  }
+
+  @media (max-width: 991px) {
+    .common-sec {
+      min-height: 260px;
+    }
+
+    .common-text h1 {
+      font-size: 42px;
+    }
+
+    .gallery-list_grid {
+      max-width: 760px;
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .common-sec {
+      min-height: 210px;
+    }
+
+    .common-text h1 {
+      font-size: 32px;
+    }
+
+    .gallery-list.meida-coverage {
+      padding: 45px 15px;
+    }
+
+    .gallery-list_grid {
+      column-count: 1;
+    }
+  }
+
+    </style>
 </head>
+
 <body>
-    
+
 <header class="main-header">
   <div class="header-wrap">
     <a href="#" class="logo">
@@ -1000,7 +962,7 @@
      <div class="d-flex align-items-center header-actions">
         <ul class="main-nav">
           <li class="dropdown">
-            <a href="#">About Us <i class="bi bi-caret-down-fill small"></i></a>
+            <a href="#">About Us <i class="bi bi-caret-down-fill small"></i></i></a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Overview</a></li>
               <li><a class="dropdown-item" href="#">Leadership</a></li>
@@ -1009,7 +971,7 @@
           </li>
 
           <li class="dropdown">
-            <a href="#">Admissions<i class="bi bi-caret-down-fill small"></i></a>
+            <a href="#">Admissions<i class="bi bi-caret-down-fill small"></i></i></a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Admission Procedure</a></li>
               <li><a class="dropdown-item" href="#">Eligibility Criteria</a></li>
@@ -1111,112 +1073,233 @@
 <aside class="side-menu" id="sideMenu">
   <button class="side-close" onclick="closeSideMenu()">×</button>
   <ul>
-          <li><a href="MOF.html">Meet Our Faculty</a></li>
-       <li><a href="MC.html">Media Coverage</a></li>
-      <li><a href="FAQ.html">FAQs</a></li>
-      <li><a href="Testimonials.html">Testimonials</a> </li>
-      <li><a href="Mandatory-Disclosure.html">Mandatory Disclosure</a></li>
-      <li><a href="Contact-Us.html">Contact Us</a></li>
-       <li><a href="T-C.html">Terms & Conditions</a></li>
-       <li><a href="P-P.html">Privacy Policy</a></li>
-       <li><a href="Disclaimer.html">Disclaimer</a></li>
+    <li><a href="#">Meet Our Faculty</a></li>
+    <li>
+      <a href="javascript:void(0)" onclick="toggleSub(this)">
+        Events @ GLA <i class="bi bi-chevron-down float-end"></i>
+      </a>
+      <ul class="side-sub">
+        <li><a href="#">News and Events</a></li>
+        <li><a href="#">Media Coverage</a></li>
+        <li><a href="#">CDOE Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#">FAQs</a></li>
+    <li><a href="#">Testimonials</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Mandatory Disclosure</a></li>
+    <li><a href="#">Contact Us</a></li>
   </ul>
 </aside>
 
 
-    <main>
-        <section class="leader-hero" data-aos="fade-up" data-aos-duration="900">
-            <div class="container">
-                <h1 data-aos="fade-up" data-aos-delay="100">Leadership that Shapes Learning,<br>Learning that Shapes Life.</h1>
-                <p data-aos="fade-up" data-aos-delay="200">Empowering learners through guidance, innovation, and values that create real impact beyond classrooms.</p>
+<section class="common-sec">
+  <picture class="inner_banner_image">
+    <img 
+      src="https://glaonline.com/uploads/cms_images/694e2225553471766728229.webp" 
+      alt="Media Coverage"
+      class="img-fluid w-100"
+    >
+  </picture>
 
-                <ul class="leader-tabs" data-aos="fade-up" data-aos-delay="300">
-                    <li><a href="Chancellor.html">Chancellor</a></li>
-                    <li><a href="Vice-Chancellor.html">Vice Chancellor</a></li>
-                    <li><a href="Director.html">Director</a></li>
-                    <li class="active"><a href="Ceo.html">CEO</a></li>
-                    <li><a href="Cfo.html">CFO</a></li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="chancellor-sec">
-            <div class="container">
-                <div class="chancellor-grid">
-                    <div class="left-photo" data-aos="fade-right" data-aos-duration="900">
-                        <img class="quote-mark" src="Leadership/1.jpg" alt="Quote">
-                        <img class="person-img" src="Leadership/5.jpg" alt="Neeraj Agrawal">
-                    </div>
-
-                    <div class="right-text" data-aos="fade-left" data-aos-duration="900">
-                        <h5>“Learning That Opens Doors, Builds Futures &amp; Reaches Every Home”</h5>
-
-                        <p>At GLA Online, I believe education should reach every learner - no matter where they live or how busy their life is. Our journey from a single campus to a nationwide digital platform comes with one clear purpose - to offer quality, flexible, and affordable programs that help learners grow in their careers and in their lives.</p>
-
-                        <p>Today, learners want more than a degree - they want skills, confidence, and direction. That is exactly what we aim to provide through industry-aligned courses, supportive faculty, and a strong digital ecosystem.</p>
-
-                        <p>My message to every learner is simple - stay focused, stay curious, and keep moving forward. Your future starts here.</p>
-
-                        <p>Welcome to GLA Online.<br>Let’s lead the change!</p>
-
-                        <div class="sign-box" data-aos="fade-up" data-aos-delay="150">
-                            <p>Love You All,</p>
-                            <h4>Neeraj Agrawal</h4>
-                            <p>CEO, GLA Online University</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-       <footer class="glaFooter_section">
-
-      <div class="glaFooter_container">
-
-        <!-- LINKS -->
-        <div class="glaFooter_links">
-          <a href="#">About Us</a>
-          <a href="#">Admissions</a>
-          <a href="#">Programs</a>
-          <a href="#">Events @ GLA</a>
-          <a href="#">FAQs</a>
-          <a href="#">Testimonials</a>
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Disclaimer</a>
-          <a href="#">Mandatory Disclosure</a>
-          <a href="#">Contact Us</a>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto" data-aos="fade-up" data-aos-delay="300" data-aos-duration="900">
+        <div class="common-text">
+          <h1>Media Coverage</h1>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- LINE -->
-        <div class="glaFooter_line"></div>
+<section class="gallery-list meida-coverage">
+  <div class="container">
+    <div class="gallery-list_grid">
 
-        <!-- BOTTOM -->
-        <div class="glaFooter_bottom">
-
-          <!-- LEFT -->
-          <div class="glaFooter_copy">
-            © Copyright 2026 - GLA Online. All Rights Reserved.
-          </div>
-
-          <!-- CENTER -->
-          <div class="glaFooter_social">
-            <a href="#" class="glaFb"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="glaYt"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="glaInsta"><i class="fab fa-instagram"></i></a>
-          </div>
-
-          <!-- RIGHT -->
-          <div class="glaFooter_credit">
-            Website Design and Developed by Sterco Digitex
-          </div>
-
-        </div>
-
+      <div class="g_list_bx" data-aos="fade-up">
+        <a href="https://glaonline.com/uploads/events/banner_images/6868e9a5b27011751706021.jpg" data-fancybox="gallery">
+          <img src="https://glaonline.com/uploads/events/6868e9a5b238a1751706021.jpg" alt="">
+        </a>
       </div>
 
-    </footer>
-  <!-- Apply Button -->
+      <div class="g_list_bx" data-aos="fade-up" data-aos-delay="100">
+        <a href="https://glaonline.com/uploads/events/banner_images/6868e9b7325751751706039.jpg" data-fancybox="gallery">
+          <img src="https://glaonline.com/uploads/events/6868e9b7321791751706039.jpg" alt="">
+        </a>
+      </div>
+
+      <div class="g_list_bx" data-aos="fade-up" data-aos-delay="200">
+        <a href="https://glaonline.com/uploads/events/banner_images/6868e9d3b3ed11751706067.jpg" data-fancybox="gallery">
+          <img src="https://glaonline.com/uploads/events/6868e9d3b39ca1751706067.jpg" alt="">
+        </a>
+      </div>
+
+      <div class="g_list_bx" data-aos="fade-up">
+        <a href="https://glaonline.com/uploads/events/banner_images/6868ea4116f841751706177.jpg" data-fancybox="gallery">
+          <img src="https://glaonline.com/uploads/events/6868ea4116bb01751706177.jpg" alt="">
+        </a>
+      </div>
+
+      <div class="g_list_bx" data-aos="fade-up" data-aos-delay="100">
+        <a href="https://glaonline.com/uploads/events/banner_images/6868ea5f4c3001751706207.jpg" data-fancybox="gallery">
+          <img src="https://glaonline.com/uploads/events/6868ea5f4becd1751706207.jpg" alt="">
+        </a>
+      </div>
+
+      <div class="g_list_bx" data-aos="fade-up" data-aos-delay="200">
+        <a href="https://glaonline.com/uploads/events/banner_images/6868ea8273a331751706242.jpg" data-fancybox="gallery">
+          <img src="https://glaonline.com/uploads/events/6868ea82735d81751706242.jpg" alt="">
+        </a>
+      </div>
+
+      <div class="g_list_bx" data-aos="fade-up">
+        <a href="https://glaonline.com/uploads/events/banner_images/6868eaa046b6d1751706272.jpg" data-fancybox="gallery">
+          <img src="https://glaonline.com/uploads/events/6868eaa0467351751706272.jpg" alt="">
+        </a>
+      </div>
+
+      <div class="g_list_bx" data-aos="fade-up" data-aos-delay="100">
+        <a href="https://glaonline.com/uploads/events/banner_images/6868eac48f6d21751706308.jpg" data-fancybox="gallery">
+          <img src="https://glaonline.com/uploads/events/6868eac48f2a51751706308.jpg" alt="">
+        </a>
+      </div>
+
+      <div class="g_list_bx" data-aos="fade-up" data-aos-delay="200">
+        <a href="https://glaonline.com/uploads/events/banner_images/6868eae05097f1751706336.jpg" data-fancybox="gallery">
+          <img src="https://glaonline.com/uploads/events/6868eae0504041751706336.jpg" alt="">
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Apply Button -->
   <a href="https://apply.glaonline.com/" target="_blank" class="float-apply">Apply Now</a>
 
   <!-- Bottom Navigation -->
@@ -1277,10 +1360,66 @@
     <a href="https://glaonline.com/contact-us">Contact Us</a>
   </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <footer class="glaFooter_section">
 
-    <script>
+      <div class="glaFooter_container">
+
+        <!-- LINKS -->
+        <div class="glaFooter_links">
+          <a href="#">About Us</a>
+          <a href="#">Admissions</a>
+          <a href="#">Programs</a>
+          <a href="#">Events @ GLA</a>
+          <a href="#">FAQs</a>
+          <a href="#">Testimonials</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Disclaimer</a>
+          <a href="#">Mandatory Disclosure</a>
+          <a href="#">Contact Us</a>
+        </div>
+
+        <!-- LINE -->
+        <div class="glaFooter_line"></div>
+
+        <!-- BOTTOM -->
+        <div class="glaFooter_bottom">
+
+          <!-- LEFT -->
+          <div class="glaFooter_copy">
+            © Copyright 2026 - GLA Online. All Rights Reserved.
+          </div>
+
+          <!-- CENTER -->
+          <div class="glaFooter_social">
+            <a href="#" class="glaFb"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="glaYt"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="glaInsta"><i class="fab fa-instagram"></i></a>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="glaFooter_credit">
+            Website Design and Developed by Sterco Digitex
+          </div>
+
+        </div>
+
+      </div>
+
+    </footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({
+    once: true,
+    offset: 80,
+    duration: 800
+  });
+
   function openSearch() {
     document.getElementById("searchOverlay").classList.add("active");
   }
@@ -1323,14 +1462,7 @@
   megaMenu.addEventListener("mouseleave", () => {
     megaMenu.classList.remove("active");
   });
-
-        AOS.init({
-            once: true,
-            offset: 90,
-            duration: 850,
-            easing: 'ease-in-out'
-        });
-
+  
     function openMobilePanel(panelId, buttonElement) {
       const panels = document.querySelectorAll(".mobile-panel");
       const buttons = document.querySelectorAll(".mobile-bottom button");
@@ -1369,5 +1501,6 @@
     });
   </script>
 
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 </body>
 </html>
