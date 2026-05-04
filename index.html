@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -126,13 +126,13 @@
 
 
             <li class="dropdown">
-              <a href="javascriot:void(0);" class="dropdown-toggle " data-bs-toggle="dropdown"> Admissions</a>
+              <a href="javascript:void(0);" class="dropdown-toggle " data-bs-toggle="dropdown"> Admissions</a>
               <ul class="dropdown-menu multi-level">
                 <li><a href="Admission-Procedure.html">Admission Procedure</a></li>
                 <li><a href="Eligibility-Criteria.html">Eligibility Criteria</a></li>
                 <li><a href="Fee-Structure.html">Fee Structure</a></li>
                 <li><a href="Evaluation-System.html">Evaluation System</a></li>
-              
+
               </ul>
             </li>
 
@@ -159,7 +159,7 @@
                               </figcaption>
                             </figure>
                           </div>
-                          <a href="BAPg.html" class="f_link">dvdv</a>
+                          <a href="BAPg.html" class="f_link"></a>
                           <div class="prgm_listing">
                             <div class="p_listing">
                               <h3><a href="BAPg.html">Master of Business Administration</a></h3>
@@ -313,7 +313,7 @@
       <form action="https://glaonline.com/search" id="desktop_global_search">
         <input type="text" method="GET" id="searchForm" placeholder="Search..." name="search" value="" required>
         <a class="global_search" id="searchBtn" href="javascript:void(0)">
-          <img src="https://glaonline.com/siteassets/images/search-icon.svg" alt="icon"></button>
+          <img src="https://glaonline.com/siteassets/images/search-icon.svg" alt="icon">
         </a>
       </form>
 
@@ -328,14 +328,14 @@
 
     <ul class="hamb_menu">
       <li><a href="MOF.html">Meet Our Faculty</a></li>
-       <li><a href="MC.html">Media Coverage</a></li>
+      <li><a href="MC.html">Media Coverage</a></li>
       <li><a href="FAQ.html">FAQs</a></li>
       <li><a href="Testimonials.html">Testimonials</a> </li>
       <li><a href="Mandatory-Disclosure.html">Mandatory Disclosure</a></li>
       <li><a href="Contact-Us.html">Contact Us</a></li>
-       <li><a href="T-C.html">Terms & Conditions</a></li>
-       <li><a href="P-P.html">Privacy Policy</a></li>
-       <li><a href="Disclaimer.html">Disclaimer</a></li>
+      <li><a href="T-C.html">Terms & Conditions</a></li>
+      <li><a href="P-P.html">Privacy Policy</a></li>
+      <li><a href="Disclaimer.html">Disclaimer</a></li>
     </ul>
 
 
@@ -352,7 +352,7 @@
             <img src="HBG/GLA1.JPG">
           </div>
 
-          <!-- <div class="swiper-slide">
+          <div class="swiper-slide">
             <img src="HBG/GLA2.JPG">
           </div>
 
@@ -365,7 +365,7 @@
 
           <div class="swiper-slide">
             <img src="HBG/GLA5.JPG">
-          </div> -->
+          </div>
 
 
         </div>
@@ -374,47 +374,49 @@
       </div>
 
       <!-- FORM -->
-     <div class="banner_form" id="reg-form">
-  <form id="registrationForm" novalidate>
-    <input type="text" id="name" placeholder="Name">
-    <small class="error" id="nameError"></small>
+      <div class="banner_form" id="reg-form">
+        <form id="registrationForm" method="post">
 
-    <input type="email" id="email" placeholder="Email Address">
-    <small class="error" id="emailError"></small>
+          <input type="text" id="name" name="name" placeholder="Name" required>
+          <small class="error" id="nameError"></small>
 
-    <input type="tel" id="mobile" placeholder="Mobile Number">
-    <small class="error" id="mobileError"></small>
+          <input type="email" id="email" name="email" placeholder="Email Address" required>
+          <small class="error" id="emailError"></small>
 
-    <input type="tel" id="alternateMobile" placeholder="Alternate Mobile No">
-    <small class="error" id="alternateMobileError"></small>
+          <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number" required>
+          <small class="error" id="mobileError"></small>
 
-    <select id="state">
-      <option value="">Select State</option>
-      <option value="Uttar Pradesh">Uttar Pradesh</option>
-      <option value="Delhi">Delhi</option>
-      <option value="Maharashtra">Maharashtra</option>
-    </select>
-    <small class="error" id="stateError"></small>
+          <input type="tel" id="alternateMobile" name="alternateMobile" placeholder="Alternate Mobile No">
+          <small class="error" id="alternateMobileError"></small>
 
-    <select id="city">
-      <option value="">Select City</option>
-      <option value="Mathura">Mathura</option>
-      <option value="Delhi">Delhi</option>
-      <option value="Mumbai">Mumbai</option>
-    </select>
-    <small class="error" id="cityError"></small>
+          <select id="state" name="state" required>
+            <option value="">Select State</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Maharashtra">Maharashtra</option>
+          </select>
+          <small class="error" id="stateError"></small>
 
-    <select id="program">
-      <option value="">Select Program</option>
-      <option value="MBA">MBA</option>
-      <option value="BBA">BBA</option>
-      <option value="MCA">MCA</option>
-    </select>
-    <small class="error" id="programError"></small>
+          <select id="city" name="city" required>
+            <option value="">Select City</option>
+            <option value="Mathura">Mathura</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Mumbai">Mumbai</option>
+          </select>
+          <small class="error" id="cityError"></small>
 
-    <button type="submit">Submit</button>
-  </form>
-</div>
+          <select id="program" name="program" required>
+            <option value="">Select Program</option>
+            <option value="MBA">MBA</option>
+            <option value="BBA">BBA</option>
+            <option value="MCA">MCA</option>
+          </select>
+          <small class="error" id="programError"></small>
+
+          <button type="submit">Submit</button>
+
+        </form>
+      </div>
 
 
     </section>
@@ -1244,9 +1246,8 @@ Part-7==============================-->
         <div class="row">
           <div class="col-lg-12 mx-auto">
             <div class="wall_dis_header">
-              <h6 class="h_16">Wall of Distinction <a href="WOD.html"
-                  class="meet_btn"><img src="https://glaonline.com/siteassets/images/b-pluse-icon.svg"
-                    alt="pluse-icon" /></a></h6>
+              <h6 class="h_16">Wall of Distinction <a href="WOD.html" class="meet_btn"><img
+                    src="https://glaonline.com/siteassets/images/b-pluse-icon.svg" alt="pluse-icon" /></a></h6>
               <h3 class="h_40">Distinguished Alumni <span>Center for Distance and Online Education</span></h3>
             </div>
 
@@ -1661,7 +1662,7 @@ Part 14==========-->
         <div class="mentor-left">
           <h2>
             Meet The Masters
-           
+
           </h2>
 
           <p>
@@ -2404,64 +2405,64 @@ Part 14==========-->
     <a href="Apply.html" class="mobile-apply-btn">Apply Now</a>
 
     <!-- BOTTOM NAV -->
-   <!-- Bottom Navigation -->
-  <nav class="mobile-bottom">
-    <button onclick="openMobilePanel('programPanel', this)">
-      <i class="bi bi-book"></i>
-      <span>Programs</span>
-    </button>
+    <!-- Bottom Navigation -->
+    <nav class="mobile-bottom">
+      <button onclick="openMobilePanel('programPanel', this)">
+        <i class="bi bi-book"></i>
+        <span>Programs</span>
+      </button>
 
-    <button onclick="openMobilePanel('admissionPanel', this)">
-      <i class="bi bi-mortarboard"></i>
-      <span>Admission</span>
-    </button>
+      <button onclick="openMobilePanel('admissionPanel', this)">
+        <i class="bi bi-mortarboard"></i>
+        <span>Admission</span>
+      </button>
 
-    <button onclick="openMobilePanel('contactPanel', this)">
-      <i class="bi bi-telephone-fill"></i>
-      <span>Contact</span>
-    </button>
+      <button onclick="openMobilePanel('contactPanel', this)">
+        <i class="bi bi-telephone-fill"></i>
+        <span>Contact</span>
+      </button>
 
-    <button onclick="openMobilePanel('menuPanel', this)">
-      <i class="bi bi-grid-fill"></i>
-      <span>Menu</span>
-    </button>
-  </nav>
+      <button onclick="openMobilePanel('menuPanel', this)">
+        <i class="bi bi-grid-fill"></i>
+        <span>Menu</span>
+      </button>
+    </nav>
 
-  <!-- Program Panel -->
-  <div class="mobile-panel" id="programPanel">
-    <h4>Find Your Program</h4>
-    <a href="BAPg.html">Master of Business Administration</a>
-    <a href="CApg.html">Master of Computer Applications</a>
-    <a href="BAUg.html">Bachelor of Business Administration</a>
-    <a href="CAUg.html">Bachelor of Computer Applications</a>
-    <a href="BCH.html">Bachelor of Commerce (Hons.)</a>
-  </div>
+    <!-- Program Panel -->
+    <div class="mobile-panel" id="programPanel">
+      <h4>Find Your Program</h4>
+      <a href="BAPg.html">Master of Business Administration</a>
+      <a href="CApg.html">Master of Computer Applications</a>
+      <a href="BAUg.html">Bachelor of Business Administration</a>
+      <a href="CAUg.html">Bachelor of Computer Applications</a>
+      <a href="BCH.html">Bachelor of Commerce (Hons.)</a>
+    </div>
 
-  <!-- Admission Panel -->
-  <div class="mobile-panel" id="admissionPanel">
-    <h4>Admissions</h4>
-    <a href="tel:+919568536853">+91-9568536853</a>
-    <a href="mailto:onlineadmissions@gla.ac.in">onlineadmissions@gla.ac.in</a>
-    <a href="Apply.html">Apply Now</a>
-  </div>
+    <!-- Admission Panel -->
+    <div class="mobile-panel" id="admissionPanel">
+      <h4>Admissions</h4>
+      <a href="tel:+919568536853">+91-9568536853</a>
+      <a href="mailto:onlineadmissions@gla.ac.in">onlineadmissions@gla.ac.in</a>
+      <a href="Apply.html">Apply Now</a>
+    </div>
 
-  <!-- Contact Panel -->
-  <div class="mobile-panel" id="contactPanel">
-    <h4>Contact</h4>
- 
-    <a href="Contact-Us.html">Contact Us</a>
-  </div>
+    <!-- Contact Panel -->
+    <div class="mobile-panel" id="contactPanel">
+      <h4>Contact</h4>
 
-  <!-- Menu Panel -->
-  <div class="mobile-panel" id="menuPanel">
-    <h4>Menu</h4>
-    <a href="Overview.html">About Us</a>
-    <a href="MOF.html">Meet Our Faculty</a>
-    <a href="FAQ.html">FAQs</a>
-    <a href="Testimonials.html">Testimonials</a>
-    <a href="Mandatory-Disclosure.html">Mandatory Disclosure</a>
- </div>
- </main>
+      <a href="Contact-Us.html">Contact Us</a>
+    </div>
+
+    <!-- Menu Panel -->
+    <div class="mobile-panel" id="menuPanel">
+      <h4>Menu</h4>
+      <a href="Overview.html">About Us</a>
+      <a href="MOF.html">Meet Our Faculty</a>
+      <a href="FAQ.html">FAQs</a>
+      <a href="Testimonials.html">Testimonials</a>
+      <a href="Mandatory-Disclosure.html">Mandatory Disclosure</a>
+    </div>
+  </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Swiper JS -->
   <script src="https://player.vimeo.com/api/player.js"></script>
