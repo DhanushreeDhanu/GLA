@@ -519,128 +519,94 @@ window.addEventListener("load", function () {
 
 /* form validation */
 
-
-document.addEventListener("DOMContentLoaded", function () {
-  const registrationForm = document.getElementById("registrationForm");
-
-  if (!registrationForm) return;
-
-  registrationForm.addEventListener("submit", function (e) {
+document.getElementById("registrationForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    let isValid = true;
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mobile = document.getElementById("mobile").value.trim();
+    const alternateMobile = document.getElementById("alternateMobile").value.trim();
+    const state = document.getElementById("state").value;
+    const city = document.getElementById("city").value;
+    const program = document.getElementById("program").value;
 
-    const fields = {
-      name: document.getElementById("name"),
-      email: document.getElementById("email"),
-      mobile: document.getElementById("mobile"),
-      alternateMobile: document.getElementById("alternateMobile"),
-      state: document.getElementById("state"),
-      city: document.getElementById("city"),
-      program: document.getElementById("program")
-    };
+    const nameRegex = /^[A-Za-z\s]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const mobileRegex = /^[6-9]\d{9}$/;
 
-    document.querySelectorAll("#registrationForm .error").forEach(el => {
-      el.textContent = "";
+    // Name Validation
+    if (name === "") {
+        Swal.fire("Error", "Name is required", "error");
+        return;
+    }
+    if (!nameRegex.test(name)) {
+        Swal.fire("Error", "Name should contain only letters", "error");
+        return;
+    }
+
+    // Email Validation
+    if (email === "") {
+        Swal.fire("Error", "Email is required", "error");
+        return;
+    }
+    if (!emailRegex.test(email)) {
+        Swal.fire("Error", "Enter valid email address", "error");
+        return;
+    }
+
+    // Mobile Validation
+    if (mobile === "") {
+        Swal.fire("Error", "Mobile number is required", "error");
+        return;
+    }
+    if (!mobileRegex.test(mobile)) {
+        Swal.fire("Error", "Enter valid 10-digit mobile number", "error");
+        return;
+    }
+
+    // Alternate Mobile Validation
+    if (alternateMobile !== "" && !mobileRegex.test(alternateMobile)) {
+        Swal.fire("Error", "Alternate mobile number must be valid", "error");
+        return;
+    }
+
+    // State Validation
+    if (state === "") {
+        Swal.fire("Error", "Please select your state", "error");
+        return;
+    }
+
+    // City Validation
+    if (city === "") {
+        Swal.fire("Error", "Please select your city", "error");
+        return;
+    }
+
+    // Program Validation
+    if (program === "") {
+        Swal.fire("Error", "Please select your program", "error");
+        return;
+    }
+
+    // Success
+    Swal.fire({
+        title: "Success!",
+        text: "Form submitted successfully!",
+        icon: "success",
+        confirmButtonColor: "#436f40"
+    }).then(() => {
+        this.submit();
     });
-
-    document.querySelectorAll("#registrationForm input, #registrationForm select").forEach(el => {
-      el.classList.remove("input-error");
-    });
-
-    if (!fields.name.value.trim()) {
-      showError(fields.name, "nameError", "Name is required");
-      isValid = false;
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!fields.email.value.trim()) {
-      showError(fields.email, "emailError", "Email is required");
-      isValid = false;
-    } else if (!emailPattern.test(fields.email.value.trim())) {
-      showError(fields.email, "emailError", "Enter valid email");
-      isValid = false;
-    }
-
-    const mobilePattern = /^[6-9][0-9]{9}$/;
-
-    if (!fields.mobile.value.trim()) {
-      showError(fields.mobile, "mobileError", "Mobile number is required");
-      isValid = false;
-    } else if (!mobilePattern.test(fields.mobile.value.trim())) {
-      showError(fields.mobile, "mobileError", "Enter valid 10-digit mobile number");
-      isValid = false;
-    }
-
-    if (
-      fields.alternateMobile.value.trim() &&
-      !mobilePattern.test(fields.alternateMobile.value.trim())
-    ) {
-      showError(fields.alternateMobile, "alternateMobileError", "Enter valid alternate number");
-      isValid = false;
-    }
-
-    if (!fields.state.value) {
-      showError(fields.state, "stateError", "Please select state");
-      isValid = false;
-    }
-
-    if (!fields.city.value) {
-      showError(fields.city, "cityError", "Please select city");
-      isValid = false;
-    }
-
-    if (!fields.program.value) {
-      showError(fields.program, "programError", "Please select program");
-      isValid = false;
-    }
-
-    if (isValid) {
-      alert("Form submitted successfully!");
-      registrationForm.reset();
-    }
-  });
-
-  function showError(input, errorId, message) {
-    input.classList.add("input-error");
-    document.getElementById(errorId).textContent = message;
-  }
 });
 
-    function openMobilePanel(panelId, buttonElement) {
-      const panels = document.querySelectorAll(".mobile-panel");
-      const buttons = document.querySelectorAll(".mobile-bottom button");
+// Restrict Name Field
+document.getElementById("name").addEventListener("input", function() {
+    this.value = this.value.replace(/[^A-Za-z\s]/g, '');
+});
 
-      panels.forEach(panel => {
-        if (panel.id === panelId) {
-          panel.classList.toggle("active");
-        } else {
-          panel.classList.remove("active");
-        }
-      });
-
-      buttons.forEach(button => {
-        if (button === buttonElement) {
-          button.classList.toggle("active");
-        } else {
-          button.classList.remove("active");
-        }
-      });
-    }
-
-    // Close when clicking outside
-    document.addEventListener("click", function (e) {
-      const clickedButton = e.target.closest(".mobile-bottom button");
-      const clickedPanel = e.target.closest(".mobile-panel");
-
-      if (!clickedButton && !clickedPanel) {
-        document.querySelectorAll(".mobile-panel").forEach(panel => {
-          panel.classList.remove("active");
-        });
-
-        document.querySelectorAll(".mobile-bottom button").forEach(button => {
-          button.classList.remove("active");
-        });
-      }
+// Restrict Mobile Fields
+["mobile", "alternateMobile"].forEach(id => {
+    document.getElementById(id).addEventListener("input", function() {
+        this.value = this.value.replace(/\D/g, '').slice(0,10);
     });
+});

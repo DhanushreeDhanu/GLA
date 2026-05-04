@@ -567,23 +567,23 @@
           </div>
 
           <form class="register-card">
-            <h2>Register Now</h2>
+            <h2 >Register Now</h2>
 
-            <input class="field" type="text" placeholder="Name">
-            <input class="field" type="email" placeholder="Email Address">
+            <input class="field" type="text" placeholder="Name *">
+            <input class="field" type="email" placeholder="Email Address *">
 
             <div class="phone-field">
               <span class="country-code">+91</span>
-              <input type="tel" placeholder="Mobile Number">
+              <input type="tel" placeholder="Mobile Number *">
             </div>
 
             <div class="two-cols">
               <select class="select-field">
-                <option>Select State</option>
+                <option>Select State *</option>
               </select>
 
               <select class="select-field">
-                <option>Select City</option>
+                <option>Select City *</option>
               </select>
             </div>
 
@@ -591,7 +591,7 @@
               <option>Select Program</option>
             </select>
 
-            <div class="dob-label">Date of birth?</div>
+            <div class="dob-label">Date of birth? *</div>
 
             <div class="three-cols">
               <select class="select-date">
@@ -608,7 +608,7 @@
             </div>
 
             <button class="btn" type="button">Register Now</button>
-            <button class="btn" type="button">LOGIN</button>
+            <!-- <button class="btn" type="button">LOGIN</button> -->
           </form>
         </div>
 
@@ -719,5 +719,216 @@
     </section>
 
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+const form = document.querySelector(".register-card");
+const inputs = form.querySelectorAll("input");
+const selects = form.querySelectorAll("select");
+
+const nameInput = inputs[0];
+const emailInput = inputs[1];
+const mobileInput = document.querySelector(".phone-field input");
+
+const stateSelect = selects[0];
+const citySelect = selects[1];
+const programSelect = selects[2];
+const daySelect = selects[3];
+const monthSelect = selects[4];
+const yearSelect = selects[5];
+
+document.querySelector(".btn").addEventListener("click", function () {
+  const name = nameInput.value.trim();
+  const email = emailInput.value.trim();
+  const mobile = mobileInput.value.trim();
+
+  const nameRegex = /^[A-Za-z\s]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const mobileRegex = /^[6-9]\d{9}$/;
+
+  if (name === "") {
+    Swal.fire("Error", "Please enter your name", "error");
+    return;
+  }
+
+  if (!nameRegex.test(name)) {
+    Swal.fire("Error", "Name should contain only letters", "error");
+    return;
+  }
+
+  if (email === "") {
+    Swal.fire("Error", "Please enter your email address", "error");
+    return;
+  }
+
+  if (!emailRegex.test(email)) {
+    Swal.fire("Error", "Please enter a valid email address", "error");
+    return;
+  }
+
+  if (mobile === "") {
+    Swal.fire("Error", "Please enter mobile number", "error");
+    return;
+  }
+
+  if (!mobileRegex.test(mobile)) {
+    Swal.fire("Error", "Enter valid 10 digit Indian mobile number", "error");
+    return;
+  }
+
+  if (stateSelect.value === "Select State") {
+    Swal.fire("Error", "Please select state", "error");
+    return;
+  }
+
+  if (citySelect.value === "Select City") {
+    Swal.fire("Error", "Please select city", "error");
+    return;
+  }
+
+  if (programSelect.value === "Select Program") {
+    Swal.fire("Error", "Please select program", "error");
+    return;
+  }
+
+  if (daySelect.value === "DD" || monthSelect.value === "MM" || yearSelect.value === "YYYY") {
+    Swal.fire("Error", "Please select complete date of birth", "error");
+    return;
+  }
+
+ Swal.fire({
+  title: "Success!",
+  text: "Registration submitted successfully",
+  icon: "success",
+  confirmButtonColor: "#436f40"
+}).then(() => {
+  form.reset();
+
+  // Reset city dropdown
+  citySelect.innerHTML = '<option>Select City</option>';
+
+  // Reset DOB dropdowns
+  daySelect.value = "DD";
+  monthSelect.value = "MM";
+  yearSelect.value = "YYYY";
+});
+});
+
+/* Only letters in name */
+nameInput.addEventListener("input", function () {
+  this.value = this.value.replace(/[^A-Za-z\s]/g, "");
+});
+
+/* Only numbers in mobile */
+mobileInput.addEventListener("input", function () {
+  this.value = this.value.replace(/\D/g, "").slice(0, 10);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* ---------- STATE + CITY DATA ---------- */
+  const stateCityData = {
+    "Uttar Pradesh": ["Mathura", "Agra", "Lucknow", "Noida", "Kanpur"],
+    "Delhi": ["New Delhi", "Dwarka", "Rohini", "Saket"],
+    "Maharashtra": ["Mumbai", "Pune", "Nagpur", "Nashik"],
+    "Rajasthan": ["Jaipur", "Udaipur", "Jodhpur"],
+    "Haryana": ["Gurgaon", "Faridabad", "Panipat"]
+  };
+
+  const stateSelect = document.querySelectorAll("select")[0];
+  const citySelect = document.querySelectorAll("select")[1];
+
+  /* Populate States */
+  stateSelect.innerHTML = '<option>Select State *</option>';
+  Object.keys(stateCityData).forEach(state => {
+    let option = document.createElement("option");
+    option.value = state;
+    option.textContent = state;
+    stateSelect.appendChild(option);
+  });
+
+  /* Change Cities Based on State */
+  stateSelect.addEventListener("change", function () {
+    citySelect.innerHTML = '<option>Select City</option>';
+
+    if (stateCityData[this.value]) {
+      stateCityData[this.value].forEach(city => {
+        let option = document.createElement("option");
+        option.value = city;
+        option.textContent = city;
+        citySelect.appendChild(option);
+      });
+    }
+  });
+
+  /* ---------- DATE OF BIRTH ---------- */
+  const daySelect = document.querySelectorAll("select")[3];
+  const monthSelect = document.querySelectorAll("select")[4];
+  const yearSelect = document.querySelectorAll("select")[5];
+
+  /* Days */
+  daySelect.innerHTML = '<option>DD</option>';
+  for (let i = 1; i <= 31; i++) {
+    let option = document.createElement("option");
+    option.value = i;
+    option.textContent = i;
+    daySelect.appendChild(option);
+  }
+
+  /* Months */
+  const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+
+  monthSelect.innerHTML = '<option>MM</option>';
+  months.forEach((month, index) => {
+    let option = document.createElement("option");
+    option.value = index + 1;
+    option.textContent = month;
+    monthSelect.appendChild(option);
+  });
+
+  /* Years */
+  yearSelect.innerHTML = '<option>YYYY</option>';
+  const currentYear = new Date().getFullYear();
+
+  for (let y = currentYear; y >= 1970; y--) {
+    let option = document.createElement("option");
+    option.value = y;
+    option.textContent = y;
+    yearSelect.appendChild(option);
+  }
+
+});
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* ---------- PROGRAM DATA ---------- */
+  const programs = [
+    "MBA - Master of Business Administration",
+    "MCA - Master of Computer Applications",
+    "BBA - Bachelor of Business Administration",
+    "BCA - Bachelor of Computer Applications",
+    "B.Com - Bachelor of Commerce",
+    "M.Com - Master of Commerce",
+    "BA - Bachelor of Arts",
+    "MA - Master of Arts"
+  ];
+
+  /* Program Select */
+  const programSelect = document.querySelectorAll("select")[2];
+
+  programSelect.innerHTML = '<option>Select Program *</option>';
+
+  programs.forEach(program => {
+    let option = document.createElement("option");
+    option.value = program;
+    option.textContent = program;
+    programSelect.appendChild(option);
+  });
+
+});
+</script>
 </body>
+
 </html>         

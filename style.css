@@ -38,12 +38,14 @@ body {
 
 @media (max-width: 1440px) {
   .home_banner img {
-    height: 150vh !important;
+    height: 100% !important;
+    width: 100% !important;
   }
 }
 @media (max-width: 1024px) {
   .home_banner img {
     height: 120vh !important;
+    width: 100% !important;
   }
 }
 /* overlay (optional, keep if needed) */
@@ -164,6 +166,43 @@ body {
   gap: 20px;
   flex-wrap: wrap;
 }
+/* FIX STICKY HEADER BUTTON TEXT COLOR */
+.main_header.fixed .apply_btn,
+.main_header.sticky .apply_btn,
+.main_header.scrolled .apply_btn {
+    color: #fff !important;
+}
+
+/* APPLY NOW BUTTON */
+.main_header.fixed .apply_btn:hover,
+.main_header.sticky .apply_btn:hover,
+.main_header.scrolled .apply_btn:hover {
+    color: #fff !important;
+}
+
+/* STUDENT LOGIN BUTTON */
+.main_header.fixed .top_nav ul li a.apply_btn,
+.main_header.sticky .top_nav ul li a.apply_btn,
+.main_header.scrolled .top_nav ul li a.apply_btn {
+    color: #fff !important;
+}
+
+/* FORCE GREEN BACKGROUND */
+.apply_btn {
+    background-color: #436f40 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+/* OPTIONAL HOVER */
+.apply_btn:hover {
+    background-color: #365a33 !important;
+    color: #fff !important;
+}
+
+
+
+
 
 .ranking_Bx li {
   flex: 1;
@@ -222,6 +261,47 @@ body {
   left: 0;
   transform: none;
   margin-top: 15px;
+}
+
+/* FULL WHITE TEXT FOR ALL DROPDOWN ITEMS */
+.dropdown-menu,
+.dropdown-menu li,
+.dropdown-menu li a,
+.dropdown-menu li a:link,
+.dropdown-menu li a:visited,
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus,
+.dropdown-menu li a:active {
+    color: #fff !important;
+}
+
+/* GREEN BACKGROUND */
+.dropdown-menu {
+    background-color: #436f40 !important;
+    border: none !important;
+}
+
+/* INDIVIDUAL ITEMS */
+.dropdown-menu li {
+    background-color: transparent !important;
+}
+
+/* HOVER */
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
+    background-color: rgba(255,255,255,0.15) !important;
+    color: #fff !important;
+}
+
+/* FORCE BOOTSTRAP OVERRIDE */
+.dropdown-item {
+    color: #fff !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    color: #fff !important;
+    background-color: rgba(255,255,255,0.15) !important;
 }
 
 /* ===== PEOPLE VISITED SECTION ===== */
@@ -1453,7 +1533,7 @@ body {
 .glaFaq_tabBtns {
   background: rgba(255, 255, 255, 0.08);
   padding: 20px 20px 80px;
-  min-height: 2200px;
+  min-height: 100px;
 }
 
 .glaFaq_tabBtn {
@@ -1821,8 +1901,7 @@ body {
 
     /* Hide on desktop */
     .mobile-bottom,
-    .mobile-panel,
-    .float-apply {
+    .mobile-panel {
       display: none;
     }
 
@@ -1935,3 +2014,158 @@ body {
         border-radius: 5px;
       }
     }
+
+    /*==================================form=================================*/
+ 
+
+
+/* Smaller responsive banner form */
+.banner_form {
+  width: 320px !important;
+  max-width: 90% !important;
+  padding: 25px !important;
+  right: 2% !important;
+  top: 55% !important;
+  transform: translateY(-50%) !important;
+}
+
+.banner_form form {
+  gap:2px !important;
+}
+
+.banner_form input,
+.banner_form select {
+  height: 42px !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+}
+
+.banner_form button {
+  height: 45px !important;
+  padding: 8px !important;
+  font-size: 15px !important;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .banner_form {
+    width: 300px !important;
+    right: 4% !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .banner_form {
+    position: relative !important;
+    width: 92% !important;
+    max-width: 360px !important;
+    margin: 20px auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    padding: 20px !important;
+  }
+
+  .banner_form input,
+  .banner_form select {
+    height: 40px !important;
+    font-size: 13px !important;
+  }
+}
+.floating-apply-btn {
+    display: block !important;
+    position: fixed !important;
+    right: 20px !important;
+    bottom: 30px !important;
+    background: #436f40 !important;
+    color: #fff !important;
+    padding: 14px 22px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    z-index: 999999 !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25) !important;
+    transition: all 0.3s ease !important;
+}
+
+.floating-apply-btn:hover {
+    background: #365a33 !important;
+    color: #fff !important;
+    transform: translateY(-3px);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .floating-apply-btn {
+        right: 15px !important;
+        bottom: 20px !important;
+        padding: 12px 18px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* Move swiper pagination dots 50px from left */
+.home_slider .swiper-pagination {
+    left: 200px !important;
+    right: auto !important;
+    width: auto !important;
+    text-align: left !important;
+}
+
+/* Optional: better bottom spacing */
+.home_slider .swiper-pagination {
+    bottom: 20px !important;
+}
+
+
+/* BACKGROUND IMAGE FOR ADVANTAGES SECTION */
+.advantages_section {
+    position: relative;
+    padding: 100px 0;
+    background: url("advantages.background.jpg") center center/cover no-repeat;
+    overflow: hidden;
+}
+
+/* DARK OVERLAY FOR BETTER TEXT VISIBILITY */
+.advantages_section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.82); /* light overlay */
+    z-index: 1;
+}
+
+/* KEEP CONTENT ABOVE BACKGROUND */
+.advantages_section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* OPTIONAL TEXT COLORS */
+.advantages_section h6,
+.advantages_section h3,
+.advantages_section p {
+    color: #1d3f6e !important;
+}
+
+
+
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .advantages_section {
+        padding: 60px 20px;
+        background-position: center;
+    }
+
+    .advantages_section::after {
+        width: 70%;
+        left: 15%;
+    }
+}
+
+.mobile-apply-btn {
+    display: none;
+} 

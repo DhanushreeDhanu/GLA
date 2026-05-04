@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,8 +11,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-  <style
-  >
+  <style>
     * {
       box-sizing: border-box;
     }
@@ -35,7 +35,7 @@
       width: 100%;
       background: #fff;
       z-index: 9999;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     }
 
     .header-wrap {
@@ -150,7 +150,7 @@
       visibility: hidden;
       transform: translateY(16px);
       transition: all 0.35s ease;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
       height: 400px;
     }
 
@@ -166,7 +166,7 @@
       overflow: hidden;
       position: relative;
       background: #000;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
     }
 
     .program-card img {
@@ -185,7 +185,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,0.95));
+      background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.95));
     }
 
     .program-tag {
@@ -238,7 +238,7 @@
     .search-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.92);
+      background: rgba(0, 0, 0, 0.92);
       z-index: 10000;
       display: none;
       align-items: center;
@@ -296,7 +296,7 @@
       z-index: 10001;
       padding: 35px 28px;
       transition: right 0.35s ease;
-      box-shadow: -10px 0 30px rgba(0,0,0,0.18);
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.18);
       overflow-y: auto;
     }
 
@@ -338,6 +338,7 @@
     }
 
     @media(max-width: 991px) {
+
       .top-links,
       .main-nav {
         display: none;
@@ -363,7 +364,7 @@
         display: none;
       }
 
-      
+
     }
 
     @media(max-width: 575px) {
@@ -380,120 +381,125 @@
         font-size: 23px;
       }
 
-       
+
     }
-  .top-links .apply-btn,
-.top-links .student-btn {
-  background: #2f6f35;
-  color: #fff !important;
-  padding: 9px 16px;
-  border-radius: 4px;
-  font-size: 15px;
-  font-weight: 500;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
 
-/* HOVER EFFECT */
-.top-links .apply-btn:hover,
-.top-links .student-btn:hover {
-  background: #ffd332;   /* Yellow */
-  color: #111 !important; /* Black */
-  transform: translateY(-2px);
-}
+    .top-links .apply-btn,
+    .top-links .student-btn {
+      background: #2f6f35;
+      color: #fff !important;
+      padding: 9px 16px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 500;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
 
-.top-links .apply-btn:hover i,
-.top-links .student-btn:hover i {
-  color: #111 !important;
-}
-/* Laptop responsive: 992px to 1366px */
-@media (min-width: 992px) and (max-width: 1366px) {
-  body {
-    padding-top: 76px;
-  }
+    /* HOVER EFFECT */
+    .top-links .apply-btn:hover,
+    .top-links .student-btn:hover {
+      background: #ffd332;
+      /* Yellow */
+      color: #111 !important;
+      /* Black */
+      transform: translateY(-2px);
+    }
 
-  .header-wrap {
-    padding: 12px 24px;
-  }
+    .top-links .apply-btn:hover i,
+    .top-links .student-btn:hover i {
+      color: #111 !important;
+    }
 
-  .logo img {
-    width: 220px;
-  }
+    /* Laptop responsive: 992px to 1366px */
+    @media (min-width: 992px) and (max-width: 1366px) {
+      body {
+        padding-top: 76px;
+      }
 
-  .right-head {
-    gap: 8px;
-  }
+      .header-wrap {
+        padding: 12px 24px;
+      }
 
-  .top-links,
-  .main-nav {
-    gap: 12px;
-  }
+      .logo img {
+        width: 220px;
+      }
 
-  .top-links a {
-    font-size: 13px;
-  }
+      .right-head {
+        gap: 8px;
+      }
 
-  .top-links .apply-btn,
-  .top-links .student-btn {
-    padding: 7px 10px;
-    font-size: 13px;
-  }
+      .top-links,
+      .main-nav {
+        gap: 12px;
+      }
 
-  .main-nav a {
-    font-size: 13px;
-  }
+      .top-links a {
+        font-size: 13px;
+      }
 
-  .search-btn,
-  .hamb-btn {
-    font-size: 22px;
-  }
+      .top-links .apply-btn,
+      .top-links .student-btn {
+        padding: 7px 10px;
+        font-size: 13px;
+      }
 
-  .mega-menu {
-    top: 92px;
-    padding: 24px 28px;
-    height: auto;
-  }
+      .main-nav a {
+        font-size: 13px;
+      }
 
-  .program-card {
-    height: 260px;
-  }
+      .search-btn,
+      .hamb-btn {
+        font-size: 22px;
+      }
 
-  .program-title {
-    font-size: 15px;
-  }
-}
+      .mega-menu {
+        top: 92px;
+        padding: 24px 28px;
+        height: auto;
+      }
 
-/* Smaller laptop / tablet landscape */
-@media (min-width: 992px) and (max-width: 1100px) {
-  .logo img {
-    width: 190px;
-  }
+      .program-card {
+        height: 260px;
+      }
 
-  .top-links,
-  .main-nav {
-    gap: 9px;
-  }
+      .program-title {
+        font-size: 15px;
+      }
+    }
 
-  .top-links a,
-  .main-nav a {
-    font-size: 12px;
-  }
+    /* Smaller laptop / tablet landscape */
+    @media (min-width: 992px) and (max-width: 1100px) {
+      .logo img {
+        width: 190px;
+      }
 
-  .top-links .apply-btn,
-  .top-links .student-btn {
-    padding: 6px 8px;
-    font-size: 12px;
-  }
-}
-.header-actions {
-  gap: 1.5rem;
-}
+      .top-links,
+      .main-nav {
+        gap: 9px;
+      }
 
-@media (min-width: 992px) and (max-width: 1366px) {
-  .header-actions {
-    gap: 0.8rem;
-  }
-}
+      .top-links a,
+      .main-nav a {
+        font-size: 12px;
+      }
+
+      .top-links .apply-btn,
+      .top-links .student-btn {
+        padding: 6px 8px;
+        font-size: 12px;
+      }
+    }
+
+    .header-actions {
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 992px) and (max-width: 1366px) {
+      .header-actions {
+        gap: 0.8rem;
+      }
+    }
 
 
 
@@ -567,7 +573,7 @@
       }
 
       .mobile-bottom button.active {
-        background: rgba(255,255,255,0.15);
+        background: rgba(255, 255, 255, 0.15);
       }
 
       .mobile-bottom i {
@@ -625,867 +631,751 @@
         border-radius: 5px;
       }
     }
+
     /* Floating Apply Button - visible on ALL screens */
-.float-apply {
-    display: inline-block;
-    position: fixed;
-    right: 15px;
-    bottom: 20px;
-    background: rgb(67, 111, 64);
-    color: white !important;
-    padding: 14px 22px;
-    border-radius: 6px 0 0 6px;
-    font-size: 15px;
-    font-weight: 700;
-    z-index: 9999;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
-    transition: all 0.3s ease;
-}
-
-.float-apply:hover {
-    background: #2f6f35;
-    color: white !important;
-    transform: translateX(-3px);
-}
-
-/* Tablet */
-@media(max-width:991px) {
     .float-apply {
+      display: inline-block;
+      position: fixed;
+      right: 15px;
+      bottom: 20px;
+      background: rgb(67, 111, 64);
+      color: white !important;
+      padding: 14px 22px;
+      border-radius: 6px 0 0 6px;
+      font-size: 15px;
+      font-weight: 700;
+      z-index: 9999;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .float-apply:hover {
+      background: #2f6f35;
+      color: white !important;
+      transform: translateX(-3px);
+    }
+
+    /* Tablet */
+    @media(max-width:991px) {
+      .float-apply {
         right: 15px;
         bottom: 95px;
         border-radius: 8px;
         padding: 12px 18px;
+      }
     }
-}
 
-/* Mobile */
-@media(max-width:575px) {
-    .float-apply {
+    /* Mobile */
+    @media(max-width:575px) {
+      .float-apply {
         font-size: 14px;
         padding: 11px 16px;
         right: 12px;
         bottom: 92px;
+      }
     }
-}
 
-          
-/* ===== FOOTER ===== */
-.glaFooter_section{
-  background:#1d1714;
-  padding:40px 18px 30px;
-  color:#fff;
-}
 
-.glaFooter_container{
-  max-width:1200px;
-  margin:0 auto;
-}
+    /* ===== FOOTER ===== */
+    .glaFooter_section {
+      background: #1d1714;
+      padding: 40px 18px 30px;
+      color: #fff;
+    }
 
-/* ===== LINKS ===== */
-.glaFooter_links{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:18px 22px;
-}
+    .glaFooter_container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-.glaFooter_links a{
-  color:#fff;
-  text-decoration:none;
-  font-size:15px;
-  
-  transition:0.3s;
-}
+    /* ===== LINKS ===== */
+    .glaFooter_links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px 22px;
+    }
 
-.glaFooter_links a:hover{
-  color:#ffc400;
-}
+    .glaFooter_links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
 
-/* LINE */
-.glaFooter_line{
-  height:1px;
-  background:rgba(255,255,255,.2);
-  margin:28px 0;
-}
+      transition: 0.3s;
+    }
 
-/* ===== BOTTOM ===== */
-.glaFooter_bottom{
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  gap:20px;
-}
+    .glaFooter_links a:hover {
+      color: #ffc400;
+    }
 
-/* TEXT */
-.glaFooter_copy,
-.glaFooter_credit{
-  font-size:13px;
-  
-}
+    /* LINE */
+    .glaFooter_line {
+      height: 1px;
+      background: rgba(255, 255, 255, .2);
+      margin: 28px 0;
+    }
 
-.glaFooter_credit{
-  text-align:right;
-}
+    /* ===== BOTTOM ===== */
+    .glaFooter_bottom {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 20px;
+    }
 
-/* ===== SOCIAL ICONS ===== */
-.glaFooter_social{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-}
+    /* TEXT */
+    .glaFooter_copy,
+    .glaFooter_credit {
+      font-size: 13px;
 
-.glaFooter_social a{
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:13px;
-  color:#fff;
-  text-decoration:none;
-  transition:0.3s;
-}
+    }
 
-/* FACEBOOK */
-.glaFb{
-  background:#1877f2;
-}
+    .glaFooter_credit {
+      text-align: right;
+    }
 
-/* YOUTUBE */
-.glaYt{
-  background:#ff0000;
-}
+    /* ===== SOCIAL ICONS ===== */
+    .glaFooter_social {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
 
-/* INSTAGRAM */
-.glaInsta{
-  background: radial-gradient(circle at 30% 30%, 
-    #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-}
+    .glaFooter_social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
 
-/* HOVER */
-.glaFooter_social a:hover{
-  transform:scale(1.1);
-}
+    /* FACEBOOK */
+    .glaFb {
+      background: #1877f2;
+    }
 
-/* ===== MOBILE ===== */
-@media(max-width:768px){
+    /* YOUTUBE */
+    .glaYt {
+      background: #ff0000;
+    }
 
-  .glaFooter_links{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:28px 40px;
-    text-align:left;
-  }
+    /* INSTAGRAM */
+    .glaInsta {
+      background: radial-gradient(circle at 30% 30%,
+          #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    }
 
-  .glaFooter_links a{
-    font-size:18px;
-  }
+    /* HOVER */
+    .glaFooter_social a:hover {
+      transform: scale(1.1);
+    }
 
-  .glaFooter_bottom{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    gap:12px;
-  }
+    /* ===== MOBILE ===== */
+    @media(max-width:768px) {
 
-  /* ORDER FIX */
-  .glaFooter_copy{
-    order:1;
-  }
+      .glaFooter_links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 40px;
+        text-align: left;
+      }
 
-  .glaFooter_credit{
-    order:2;
-    text-align:center;
-  }
+      .glaFooter_links a {
+        font-size: 18px;
+      }
 
-  .glaFooter_social{
-    order:3;
-    margin-top:10px;
-  }
-}
+      .glaFooter_bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+      }
 
-@media (max-width: 991px) {
-  .program-panel-ui {
-    left: 0;
-    right: 0;
-    bottom: 78px;
-    border-radius: 8px 8px 0 0;
-    padding: 18px 22px 130px;
-    background: #f1f1f1;
-    max-height: 85vh;
-  }
+      /* ORDER FIX */
+      .glaFooter_copy {
+        order: 1;
+      }
 
-  .program-panel-ui h3 {
-    text-align: center;
-    color: #09245a;
-    font-size: 30px;
-    font-weight: 400;
-    margin-bottom: 22px;
-  }
+      .glaFooter_credit {
+        order: 2;
+        text-align: center;
+      }
 
-  .program-panel-ui h3 b {
-    font-weight: 900;
-  }
+      .glaFooter_social {
+        order: 3;
+        margin-top: 10px;
+      }
+    }
 
-  .program-grid-mobile {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
+    @media (max-width: 991px) {
+      .program-panel-ui {
+        left: 0;
+        right: 0;
+        bottom: 78px;
+        border-radius: 8px 8px 0 0;
+        padding: 18px 22px 130px;
+        background: #f1f1f1;
+        max-height: 85vh;
+      }
 
-  .program-box {
-    background: #fff;
-    min-height: 124px;
-    padding: 18px 18px;
-    border-radius: 4px;
-    border-left: 2px solid #ffc928;
-    color: #09245a !important;
-    display: flex !important;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    border-bottom: 0 !important;
-  }
+      .program-panel-ui h3 {
+        text-align: center;
+        color: #09245a;
+        font-size: 30px;
+        font-weight: 400;
+        margin-bottom: 22px;
+      }
 
-  .program-box span {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.2;
-  }
+      .program-panel-ui h3 b {
+        font-weight: 900;
+      }
 
-  .program-box b {
-    font-size: 20px;
-    line-height: 1.2;
-    font-weight: 900;
-  }
+      .program-grid-mobile {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
 
-  .program-box em {
-    margin-top: 16px;
-    width: 25px;
-    height: 25px;
-    border: 1px solid #98b5ae;
-    color: #7fa19b;
-    font-style: normal;
-    display: grid;
-    place-items: center;
-    font-size: 22px;
-    line-height: 1;
-  }
+      .program-box {
+        background: #fff;
+        min-height: 124px;
+        padding: 18px 18px;
+        border-radius: 4px;
+        border-left: 2px solid #ffc928;
+        color: #09245a !important;
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        border-bottom: 0 !important;
+      }
 
-  .program-box:last-child {
-    grid-column: 1 / 2;
-  }
-}
+      .program-box span {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.2;
+      }
 
-@media (max-width: 575px) {
-  .program-panel-ui h3 {
-    font-size: 28px;
-  }
+      .program-box b {
+        font-size: 20px;
+        line-height: 1.2;
+        font-weight: 900;
+      }
 
-  .program-grid-mobile {
-    grid-template-columns: 1fr;
-  }
+      .program-box em {
+        margin-top: 16px;
+        width: 25px;
+        height: 25px;
+        border: 1px solid #98b5ae;
+        color: #7fa19b;
+        font-style: normal;
+        display: grid;
+        place-items: center;
+        font-size: 22px;
+        line-height: 1;
+      }
 
-  .program-box {
-    min-height: 110px;
-  }
-}
+      .program-box:last-child {
+        grid-column: 1 / 2;
+      }
+    }
 
-/* =========================
+    @media (max-width: 575px) {
+      .program-panel-ui h3 {
+        font-size: 28px;
+      }
+
+      .program-grid-mobile {
+        grid-template-columns: 1fr;
+      }
+
+      .program-box {
+        min-height: 110px;
+      }
+    }
+
+    /* =========================
    HERO BANNER
 ========================= */
-.common-sec {
-  position: relative;
-  min-height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
+    .common-sec {
+      position: relative;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
 
-.banner_image_right {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
+    .banner_image_right {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
 
-.banner_image_right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
+    .banner_image_right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
 
-.common-sec::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-}
+    .common-sec::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
 
-.common-sec .container {
-  position: relative;
-  z-index: 5;
-}
+    .common-sec .container {
+      position: relative;
+      z-index: 5;
+    }
 
-.admission-text {
-  text-align: center;
-  color: #fff;
-}
+    .admission-text {
+      text-align: center;
+      color: #fff;
+    }
 
-.admission-text h1 {
-  font-size: 60px;
-  font-weight: 700;
-  margin-bottom: 18px;
-  color: #fff;
-}
+    .admission-text h1 {
+      font-size: 60px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #fff;
+    }
 
-.admission-text blockquote {
-  font-size: 20px;
-  font-weight: 500;
-  margin: 0;
-  padding: 0;
-  border: none;
-  color: #fff;
-}
+    .admission-text blockquote {
+      font-size: 20px;
+      font-weight: 500;
+      margin: 0;
+      padding: 0;
+      border: none;
+      color: #fff;
+    }
 
-/* =========================
+    /* =========================
    PROGRAM SECTION
 ========================= */
-.progrm_lst1 {
-  padding: 70px 0;
-  background: #f3f3f3;
-}
+    .progrm_lst1 {
+      padding: 70px 0;
+      background: #f3f3f3;
+    }
 
-.program-courses {
-  display: flex;
-  justify-content: center;
-  gap: 26px;
-  flex-wrap: wrap;
-}
+    .program-courses {
+      display: flex;
+      justify-content: center;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
 
-.program-courses-list {
-  position: relative;
-  width: 310px;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  background: #000;
-}
+    .program-courses-list {
+      position: relative;
+      width: 310px;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      background: #000;
+    }
 
-.program-courses-list figure {
-  margin: 0;
-  position: relative;
-}
+    .program-courses-list figure {
+      margin: 0;
+      position: relative;
+    }
 
-.program-courses-list figure img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.45s ease;
-}
+    .program-courses-list figure img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
 
-.program-courses-list figure::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.02) 38%,
-    rgba(0,0,0,0.95) 100%
-  );
-  z-index: 1;
-}
+    .program-courses-list figure::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          rgba(0, 0, 0, 0.02) 38%,
+          rgba(0, 0, 0, 0.95) 100%);
+      z-index: 1;
+    }
 
-.program-courses-list figcaption {
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 14px;
-  z-index: 3;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
+    .program-courses-list figcaption {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
 
-.program-courses-list figcaption p {
-  margin: 0;
-  color: #ffc400;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.2;
-}
+    .program-courses-list figcaption p {
+      margin: 0;
+      color: #ffc400;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
 
-.program-courses-list figcaption p span {
-  display: block;
-  color: #fff;
-  font-size: 19px;
-  font-weight: 700;
-  margin-top: 4px;
-}
+    .program-courses-list figcaption p span {
+      display: block;
+      color: #fff;
+      font-size: 19px;
+      font-weight: 700;
+      margin-top: 4px;
+    }
 
-/* Plus Icon */
-.whyus_btn {
-  width: 22px;
-  height: 22px;
- 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
+    /* Plus Icon */
+    .whyus_btn {
+      width: 22px;
+      height: 22px;
 
-.whyus_btn img {
-  width: 24px !important;
-  height: 24px !important;
-  filter: brightness(0) invert(1);
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
 
-/* Full Card Link */
-.f_link {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-}
+    .whyus_btn img {
+      width: 24px !important;
+      height: 24px !important;
+      filter: brightness(0) invert(1);
+    }
 
-/* Hover */
-.program-courses-list:hover {
-  transform: translateY(-8px);
-}
+    /* Full Card Link */
+    .f_link {
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+    }
 
-.program-courses-list:hover figure img {
-  transform: scale(1.08);
-}
+    /* Hover */
+    .program-courses-list:hover {
+      transform: translateY(-8px);
+    }
 
-/* =========================
+    .program-courses-list:hover figure img {
+      transform: scale(1.08);
+    }
+
+    /* =========================
    TABLET
 ========================= */
-@media (max-width: 991px) {
-  .admission-text h1 {
-    font-size: 44px;
-  }
+    @media (max-width: 991px) {
+      .admission-text h1 {
+        font-size: 44px;
+      }
 
-  .admission-text blockquote {
-    font-size: 18px;
-  }
+      .admission-text blockquote {
+        font-size: 18px;
+      }
 
-  .program-courses-list {
-    width: 280px;
-  }
+      .program-courses-list {
+        width: 280px;
+      }
 
-  .program-courses-list figure img {
-    height: 320px;
-  }
-}
+      .program-courses-list figure img {
+        height: 320px;
+      }
+    }
 
-/* =========================
+    /* =========================
    MOBILE
 ========================= */
-@media (max-width: 767px) {
-  .common-sec {
-    min-height: 230px;
-  }
+    @media (max-width: 767px) {
+      .common-sec {
+        min-height: 230px;
+      }
 
-  .admission-text h1 {
-    font-size: 34px;
-  }
+      .admission-text h1 {
+        font-size: 34px;
+      }
 
-  .admission-text blockquote {
-    font-size: 15px;
-  }
+      .admission-text blockquote {
+        font-size: 15px;
+      }
 
-  .progrm_lst1 {
-    padding: 50px 0;
-  }
+      .progrm_lst1 {
+        padding: 50px 0;
+      }
 
-  .program-courses {
-    gap: 18px;
-  }
+      .program-courses {
+        gap: 18px;
+      }
 
-  .program-courses-list {
-    width: 100%;
-  }
+      .program-courses-list {
+        width: 100%;
+      }
 
-  .program-courses-list figure img {
-    height: 300px;
-  }
+      .program-courses-list figure img {
+        height: 300px;
+      }
 
-  .program-courses-list figcaption p span {
-    font-size: 18px;
-  }
-}
+      .program-courses-list figcaption p span {
+        font-size: 18px;
+      }
+    }
 
-/* =========================
+    /* =========================
    SMALL MOBILE
 ========================= */
-@media (max-width: 480px) {
-  .admission-text h1 {
-    font-size: 28px;
-  }
+    @media (max-width: 480px) {
+      .admission-text h1 {
+        font-size: 28px;
+      }
 
-  .program-courses-list figure img {
-    height: 260px;
-  }
+      .program-courses-list figure img {
+        height: 260px;
+      }
 
-  .program-courses-list figcaption p {
-    font-size: 14px;
-  }
+      .program-courses-list figcaption p {
+        font-size: 14px;
+      }
 
-  .program-courses-list figcaption p span {
-    font-size: 16px;
-  }
-}
-
-    </style>
+      .program-courses-list figcaption p span {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="main-header">
-  <div class="header-wrap">
-    <a href="#" class="logo">
-      <img src="https://glaonline.com/siteassets/images/green-logo.webp" alt="GLA Online">
-    </a>
+  <header class="main-header">
+    <div class="header-wrap">
+      <a href="index.html" class="logo">
+        <img src="https://glaonline.com/siteassets/images/green-logo.webp" alt="GLA Online">
+      </a>
 
-    <div class="right-head">
-    <ul class="top-links">
-  <li>
-    <a href="#">
-      <i class="bi bi-envelope-fill"></i> onlineadmissions@gla.ac.in
-    </a>
-  </li>
-
-  <li>
-    <a href="#">
-      <i class="bi bi-telephone-fill"></i> +91-9568536853
-    </a>
-  </li>
-
-  <li>
-    <a href="#" class="apply-btn">
-      Apply Now
-    </a>
-  </li>
-
-  <li>
-    <a href="#" class="student-btn">
-      Student Login
-    </a>
-  </li>
-</ul>
-
-     <div class="d-flex align-items-center header-actions">
-        <ul class="main-nav">
-          <li class="dropdown">
-            <a href="#">About Us <i class="bi bi-caret-down-fill small"></i></i></a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Overview</a></li>
-              <li><a class="dropdown-item" href="#">Leadership</a></li>
-              <li><a class="dropdown-item" href="#">Recognitions & Accreditations</a></li>
-            </ul>
-          </li>
-
-          <li class="dropdown">
-            <a href="#">Admissions<i class="bi bi-caret-down-fill small"></i></i></a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Admission Procedure</a></li>
-              <li><a class="dropdown-item" href="#">Eligibility Criteria</a></li>
-              <li><a class="dropdown-item" href="#">Fee Structure</a></li>
-              <li><a class="dropdown-item" href="#">Evaluation System</a></li>
-              <li><a class="dropdown-item" href="#">Academic Calendar</a></li>
-            </ul>
-          </li>
-
+      <div class="right-head">
+        <ul class="top-links">
           <li>
-            <a href="javascript:void(0)" id="programToggle">
-              Programs <i class="bi bi-caret-down-fill small"></i>
+            <a href="#">
+              <i class="bi bi-envelope-fill"></i> onlineadmissions@gla.ac.in
             </a>
           </li>
 
-          <li><a href="#">Contact Us</a></li>
+          <li>
+            <a href="#">
+              <i class="bi bi-telephone-fill"></i> +91-9568536853
+            </a>
+          </li>
+
+          <li>
+            <a href="Apply.html" class="apply-btn">
+              Apply Now
+            </a>
+          </li>
+
+          <li>
+            <a href="Student.html" class="student-btn">
+              Student Login
+            </a>
+          </li>
         </ul>
 
-        <button class="search-btn" onclick="openSearch()" aria-label="Search">
-          <i class="bi bi-search"></i>
-        </button>
+        <div class="d-flex align-items-center header-actions">
+          <ul class="main-nav">
+            <li class="dropdown">
+              <a href="#">About Us <i class="bi bi-caret-down-fill small"></i></i></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="Overview.html">Overview</a></li>
+                <li><a class="dropdown-item" href="Chancellor.html">Leadership</a></li>
+                <li><a class="dropdown-item" href="Reco-Accr.html">Recognitions & Accreditations</a></li>
+              </ul>
+            </li>
 
-        <span class="divider"></span>
+            <li class="dropdown">
+              <a href="#">Admissions<i class="bi bi-caret-down-fill small"></i></i></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="Admission-Procedure.html">Admission Procedure</a></li>
+                <li><a class="dropdown-item" href="Eligibility-Criteria.html">Eligibility Criteria</a></li>
+                <li><a class="dropdown-item" href="Fee-Structure.html">Fee Structure</a></li>
+                <li><a class="dropdown-item" href="Evaluation-System.html">Evaluation System</a></li>
+                
+              </ul>
+            </li>
 
-        <button class="hamb-btn" onclick="openSideMenu()" aria-label="Menu">
-          <i class="bi bi-list"></i>
-        </button>
+            <li>
+              <a href="javascript:void(0)" id="programToggle">
+                Programs <i class="bi bi-caret-down-fill small"></i>
+              </a>
+            </li>
+
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+
+          <button class="search-btn" onclick="openSearch()" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+
+          <span class="divider"></span>
+
+          <button class="hamb-btn" onclick="openSideMenu()" aria-label="Menu">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</header>
-    <section class="mega-menu" id="megaMenu">
-        <div class="container-fluid">
-            <div class="row g-4 row-cols-1 row-cols-md-5">
-                <div class="col">
-                    <div class="program-card">
-                        <span class="program-tag">PG</span>
-                        <img src="https://glaonline.com/uploads/course_group/6928264fb0a231764238927.webp" alt="MBA">
-                        <div class="program-title"><span>Master of</span>Business Administration</div>
-                        <div class="plus">+</div>
-                        <a href="BAPg.html" class="card-cover">MBA</a>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="program-card">
-                        <span class="program-tag">PG</span>
-                        <img src="https://glaonline.com/uploads/course_group/68aef588901ea1756296584.webp" alt="MCA">
-                        <div class="program-title"><span>Master of</span>Computer Applications</div>
-                        <div class="plus">+</div>
-                        <a href="CApg.html" class="card-cover">MCA</a>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="program-card">
-                        <span class="program-tag">UG</span>
-                        <img src="https://glaonline.com/uploads/course_group/68aedd4b265be1756290379.webp" alt="BBA">
-                        <div class="program-title"><span>Bachelor of</span>Business Administration</div>
-                        <div class="plus">+</div>
-                        <a href="BAUg.html" class="card-cover">BBA</a>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="program-card">
-                        <span class="program-tag">UG</span>
-                        <img src="https://glaonline.com/uploads/course_group/68aedd8f853ee1756290447.webp" alt="BCA">
-                        <div class="program-title"><span>Bachelor of</span>Computer Applications</div>
-                        <div class="plus">+</div>
-                        <a href="CAUg.html" class="card-cover">BCA</a>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="program-card">
-                        <span class="program-tag">UG</span>
-                        <img src="https://glaonline.com/uploads/course_group/68aeddd46cb4b1756290516.webp" alt="B.Com">
-                        <div class="program-title"><span>Bachelor of</span>Commerce Hons.</div>
-                        <div class="plus">+</div>
-                        <a href="BCH.html" class="card-cover">BCom</a>
-                    </div>
-                </div>
-            </div>
+  </header>
+  <section class="mega-menu" id="megaMenu">
+    <div class="container-fluid">
+      <div class="row g-4 row-cols-1 row-cols-md-5">
+        <div class="col">
+          <div class="program-card">
+            <span class="program-tag">PG</span>
+            <img src="https://glaonline.com/uploads/course_group/6928264fb0a231764238927.webp" alt="MBA">
+            <div class="program-title"><span>Master of</span>Business Administration</div>
+            <div class="plus">+</div>
+            <a href="BAPg.html" class="card-cover">MBA</a>
+          </div>
         </div>
-    </section>
+
+        <div class="col">
+          <div class="program-card">
+            <span class="program-tag">PG</span>
+            <img src="https://glaonline.com/uploads/course_group/68aef588901ea1756296584.webp" alt="MCA">
+            <div class="program-title"><span>Master of</span>Computer Applications</div>
+            <div class="plus">+</div>
+            <a href="CApg.html" class="card-cover">MCA</a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="program-card">
+            <span class="program-tag">UG</span>
+            <img src="https://glaonline.com/uploads/course_group/68aedd4b265be1756290379.webp" alt="BBA">
+            <div class="program-title"><span>Bachelor of</span>Business Administration</div>
+            <div class="plus">+</div>
+            <a href="BAUg.html" class="card-cover">BBA</a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="program-card">
+            <span class="program-tag">UG</span>
+            <img src="https://glaonline.com/uploads/course_group/68aedd8f853ee1756290447.webp" alt="BCA">
+            <div class="program-title"><span>Bachelor of</span>Computer Applications</div>
+            <div class="plus">+</div>
+            <a href="CAUg.html" class="card-cover">BCA</a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="program-card">
+            <span class="program-tag">UG</span>
+            <img src="https://glaonline.com/uploads/course_group/68aeddd46cb4b1756290516.webp" alt="B.Com">
+            <div class="program-title"><span>Bachelor of</span>Commerce Hons.</div>
+            <div class="plus">+</div>
+            <a href="BCH.html" class="card-cover">BCom</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
-<div class="search-overlay" id="searchOverlay">
-  <span class="search-close" onclick="closeSearch()">×</span>
-  <form class="search-form">
-    <input type="text" placeholder="Search..." required>
-    <button type="submit"><i class="bi bi-search"></i></button>
-  </form>
-</div>
+  <div class="search-overlay" id="searchOverlay">
+    <span class="search-close" onclick="closeSearch()">×</span>
+    <form class="search-form">
+      <input type="text" placeholder="Search..." required>
+      <button type="submit"><i class="bi bi-search"></i></button>
+    </form>
+  </div>
 
-<aside class="side-menu" id="sideMenu">
-  <button class="side-close" onclick="closeSideMenu()">×</button>
-  <ul>
+  <aside class="side-menu" id="sideMenu">
+    <button class="side-close" onclick="closeSideMenu()">×</button>
+    <ul>
       <li><a href="MOF.html">Meet Our Faculty</a></li>
-       <li><a href="MC.html">Media Coverage</a></li>
+      <li><a href="MC.html">Media Coverage</a></li>
       <li><a href="FAQ.html">FAQs</a></li>
       <li><a href="Testimonials.html">Testimonials</a> </li>
       <li><a href="Mandatory-Disclosure.html">Mandatory Disclosure</a></li>
       <li><a href="Contact-Us.html">Contact Us</a></li>
-       <li><a href="T-C.html">Terms & Conditions</a></li>
-       <li><a href="P-P.html">Privacy Policy</a></li>
-       <li><a href="Disclaimer.html">Disclaimer</a></li>
-  </ul>
-</aside>
+      <li><a href="T-C.html">Terms & Conditions</a></li>
+      <li><a href="P-P.html">Privacy Policy</a></li>
+      <li><a href="Disclaimer.html">Disclaimer</a></li>
+    </ul>
+  </aside>
 
- <section class="admission evaluation about-top-sec common-sec">
-	
-	
-			<picture class="banner_image_right">
-				<img src="https://glaonline.com/uploads/cms_images/694e2d325e0f31766731058.webp" alt="Programs" class="img-fluid w-100">
-		</picture>
-	        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto" data-aos="fade-up" data-aos-delay="600" data-aos-duration="600">
-                    <div class="admission-text">
-                         <h1>Undergraduate Programs </h1>
-                        <blockquote>Unlock Your Potential with Our Transformative Programs</blockquote>                    </div>
-                    
-                </div>
-            </div>
+  <section class="admission evaluation about-top-sec common-sec">
+
+
+    <picture class="banner_image_right">
+      <img src="https://glaonline.com/uploads/cms_images/694e2d325e0f31766731058.webp" alt="Programs"
+        class="img-fluid w-100">
+    </picture>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto" data-aos="fade-up" data-aos-delay="600" data-aos-duration="600">
+          <div class="admission-text">
+            <h1>Undergraduate Programs </h1>
+            <blockquote>Unlock Your Potential with Our Transformative Programs</blockquote>
+          </div>
+
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-  	<section class="progrm_lst1 pdt_8">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto" data-aos="fade-up" data-aos-delay="600" data-aos-duration="600">
-                    <div class="program-courses">
-                       							<div class="program-courses-list">
-								<figure>
-									<figure><img src="https://glaonline.com/uploads/course_group/68d67f03d32591758887683.webp" alt="Bachelor of  Computer Applications" class="img-fluid w-100"></figure>
-									<figcaption>
-										<p>Bachelor of <span>Computer Applications</span></p>										<a href="https://glaonline.com/program/bca" class="whyus_btn"><img src="https://glaonline.com/siteassets/images/h-pluse-icon.svg" alt="pluse-icon" class="img-fluid w-100"></a>
-									</figcaption>
-								</figure>
-								<a href="https://glaonline.com/program/bca" class="f_link"></a>
-							</div>
-                        							<div class="program-courses-list">
-								<figure>
-									<figure><img src="https://glaonline.com/uploads/course_group/68d67ee277d031758887650.webp" alt="Bachelor of Business Administration" class="img-fluid w-100"></figure>
-									<figcaption>
-										<p>Bachelor of <span>Business Administration</span></p>										<a href="https://glaonline.com/program/bba" class="whyus_btn"><img src="https://glaonline.com/siteassets/images/h-pluse-icon.svg" alt="pluse-icon" class="img-fluid w-100"></a>
-									</figcaption>
-								</figure>
-								<a href="https://glaonline.com/program/bba" class="f_link"></a>
-							</div>
-                        							<div class="program-courses-list">
-								<figure>
-									<figure><img src="https://glaonline.com/uploads/course_group/68d67ef6203c21758887670.webp" alt="Bachelor of Commerce (Hons.)" class="img-fluid w-100"></figure>
-									<figcaption>
-										<p>Bachelor of <span>Commerce (Hons.)</span></p>										<a href="https://glaonline.com/program/bcom-hons" class="whyus_btn"><img src="https://glaonline.com/siteassets/images/h-pluse-icon.svg" alt="pluse-icon" class="img-fluid w-100"></a>
-									</figcaption>
-								</figure>
-								<a href="https://glaonline.com/program/bcom-hons" class="f_link"></a>
-							</div>
-                                            </div>
-                </div>
+  <section class="progrm_lst1 pdt_8">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto" data-aos="fade-up" data-aos-delay="600" data-aos-duration="600">
+          <div class="program-courses">
+            <div class="program-courses-list">
+              <figure>
+                <figure><img src="https://glaonline.com/uploads/course_group/68d67f03d32591758887683.webp"
+                    alt="Bachelor of  Computer Applications" class="img-fluid w-100"></figure>
+                <figcaption>
+                  <p>Bachelor of <span>Computer Applications</span></p> <a href="CAUg.html"
+                    class="whyus_btn"><img src="https://glaonline.com/siteassets/images/h-pluse-icon.svg"
+                      alt="pluse-icon" class="img-fluid w-100"></a>
+                </figcaption>
+              </figure>
+              <a href="CAUg.html" class="f_link"></a>
             </div>
+            <div class="program-courses-list">
+              <figure>
+                <figure><img src="https://glaonline.com/uploads/course_group/68d67ee277d031758887650.webp"
+                    alt="Bachelor of Business Administration" class="img-fluid w-100"></figure>
+                <figcaption>
+                  <p>Bachelor of <span>Business Administration</span></p> <a href="BAUg.html"
+                    class="whyus_btn"><img src="https://glaonline.com/siteassets/images/h-pluse-icon.svg"
+                      alt="pluse-icon" class="img-fluid w-100"></a>
+                </figcaption>
+              </figure>
+              <a href="BAUg.html" class="f_link"></a>
+            </div>
+            <div class="program-courses-list">
+              <figure>
+                <figure><img src="https://glaonline.com/uploads/course_group/68d67ef6203c21758887670.webp"
+                    alt="Bachelor of Commerce (Hons.)" class="img-fluid w-100"></figure>
+                <figcaption>
+                  <p>Bachelor of <span>Commerce (Hons.)</span></p> <a href="BCH.html"
+                    class="whyus_btn"><img src="https://glaonline.com/siteassets/images/h-pluse-icon.svg"
+                      alt="pluse-icon" class="img-fluid w-100"></a>
+                </figcaption>
+              </figure>
+              <a href="BCH.html" class="f_link"></a>
+            </div>
+          </div>
         </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Apply Button -->
-  <a href="https://apply.glaonline.com/" target="_blank" class="float-apply">Apply Now</a>
+      </div>
+    </div>
+  </section>
+  <!-- Apply Button -->
+  <a href="Apply.html" target="_blank" class="float-apply">Apply Now</a>
 
   <!-- Bottom Navigation -->
   <nav class="mobile-bottom">
@@ -1513,11 +1403,11 @@
   <!-- Program Panel -->
   <div class="mobile-panel" id="programPanel">
     <h4>Find Your Program</h4>
-    <a href="https://glaonline.com/program/mba">Master of Business Administration</a>
-    <a href="https://glaonline.com/program/mca">Master of Computer Applications</a>
-    <a href="https://glaonline.com/program/bba">Bachelor of Business Administration</a>
-    <a href="https://glaonline.com/program/bca">Bachelor of Computer Applications</a>
-    <a href="https://glaonline.com/program/bcom-hons">Bachelor of Commerce (Hons.)</a>
+    <a href="BAPg.html">Master of Business Administration</a>
+    <a href="CApg.html">Master of Computer Applications</a>
+    <a href="BAUg.html">Bachelor of Business Administration</a>
+    <a href="CAUg.html">Bachelor of Computer Applications</a>
+    <a href="BCH.html">Bachelor of Commerce (Hons.)</a>
   </div>
 
   <!-- Admission Panel -->
@@ -1545,103 +1435,103 @@
     <a href="https://glaonline.com/contact-us">Contact Us</a>
   </div>
 
-      <footer class="glaFooter_section">
+  <footer class="glaFooter_section">
 
-      <div class="glaFooter_container">
+    <div class="glaFooter_container">
 
-        <!-- LINKS -->
-        <div class="glaFooter_links">
-      <a href="Overview.html">About Us</a>
-          <a href="Admission-Procedure.html">Admissions</a>
-          <a href="Programs.html">Programs</a>
-          <a href="MC.html">Events @ GLA</a>
-          <a href="FAQ.html">FAQs</a>
-          <a href="Testimonials.html">Testimonials</a>
-          <a href="T-C.html">Terms & Conditions</a>
-          <a href="P-P.html">Privacy Policy</a>
-          <a href="Disclaimer.html">Disclaimer</a>
-          <a href="Mandatory-Disclosure.html">Mandatory Disclosure</a>
-          <a href="Contact-Us.html">Contact Us</a>
+      <!-- LINKS -->
+      <div class="glaFooter_links">
+        <a href="Overview.html">About Us</a>
+        <a href="Admission-Procedure.html">Admissions</a>
+        <a href="Programs.html">Programs</a>
+        <a href="MC.html">Events @ GLA</a>
+        <a href="FAQ.html">FAQs</a>
+        <a href="Testimonials.html">Testimonials</a>
+        <a href="T-C.html">Terms & Conditions</a>
+        <a href="P-P.html">Privacy Policy</a>
+        <a href="Disclaimer.html">Disclaimer</a>
+        <a href="Mandatory-Disclosure.html">Mandatory Disclosure</a>
+        <a href="Contact-Us.html">Contact Us</a>
+      </div>
+
+      <!-- LINE -->
+      <div class="glaFooter_line"></div>
+
+      <!-- BOTTOM -->
+      <div class="glaFooter_bottom">
+
+        <!-- LEFT -->
+        <div class="glaFooter_copy">
+          © Copyright 2026 - GLA Online. All Rights Reserved.
         </div>
 
-        <!-- LINE -->
-        <div class="glaFooter_line"></div>
+        <!-- CENTER -->
+        <div class="glaFooter_social">
+          <a href="#" class="glaFb"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="glaYt"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="glaInsta"><i class="fab fa-instagram"></i></a>
+        </div>
 
-        <!-- BOTTOM -->
-        <div class="glaFooter_bottom">
-
-          <!-- LEFT -->
-          <div class="glaFooter_copy">
-            © Copyright 2026 - GLA Online. All Rights Reserved.
-          </div>
-
-          <!-- CENTER -->
-          <div class="glaFooter_social">
-            <a href="#" class="glaFb"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="glaYt"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="glaInsta"><i class="fab fa-instagram"></i></a>
-          </div>
-
-          <!-- RIGHT -->
-          <div class="glaFooter_credit">
-            Website Design and Developed by Sterco Digitex
-          </div>
-
+        <!-- RIGHT -->
+        <div class="glaFooter_credit">
+          Website Design and Developed by Sterco Digitex
         </div>
 
       </div>
 
-    </footer>
+    </div>
+
+  </footer>
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  function openSearch() {
-    document.getElementById("searchOverlay").classList.add("active");
-  }
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    function openSearch() {
+      document.getElementById("searchOverlay").classList.add("active");
+    }
 
-  function closeSearch() {
-    document.getElementById("searchOverlay").classList.remove("active");
-  }
+    function closeSearch() {
+      document.getElementById("searchOverlay").classList.remove("active");
+    }
 
-  function openSideMenu() {
-    document.getElementById("sideMenu").classList.add("active");
-  }
+    function openSideMenu() {
+      document.getElementById("sideMenu").classList.add("active");
+    }
 
-  function closeSideMenu() {
-    document.getElementById("sideMenu").classList.remove("active");
-  }
+    function closeSideMenu() {
+      document.getElementById("sideMenu").classList.remove("active");
+    }
 
-  function toggleSub(el) {
-    el.nextElementSibling.classList.toggle("open");
-  }
+    function toggleSub(el) {
+      el.nextElementSibling.classList.toggle("open");
+    }
 
-  const programToggle = document.getElementById("programToggle");
-  const megaMenu = document.getElementById("megaMenu");
+    const programToggle = document.getElementById("programToggle");
+    const megaMenu = document.getElementById("megaMenu");
 
-  programToggle.addEventListener("mouseenter", () => {
-    megaMenu.classList.add("active");
-  });
+    programToggle.addEventListener("mouseenter", () => {
+      megaMenu.classList.add("active");
+    });
 
-  programToggle.addEventListener("mouseleave", () => {
-    setTimeout(() => {
-      if (!megaMenu.matches(":hover") && !programToggle.matches(":hover")) {
-        megaMenu.classList.remove("active");
-      }
-    }, 120);
-  });
+    programToggle.addEventListener("mouseleave", () => {
+      setTimeout(() => {
+        if (!megaMenu.matches(":hover") && !programToggle.matches(":hover")) {
+          megaMenu.classList.remove("active");
+        }
+      }, 120);
+    });
 
-  megaMenu.addEventListener("mouseenter", () => {
-    megaMenu.classList.add("active");
-  });
+    megaMenu.addEventListener("mouseenter", () => {
+      megaMenu.classList.add("active");
+    });
 
-  megaMenu.addEventListener("mouseleave", () => {
-    megaMenu.classList.remove("active");
-  });
-  
+    megaMenu.addEventListener("mouseleave", () => {
+      megaMenu.classList.remove("active");
+    });
+
     function openMobilePanel(panelId, buttonElement) {
       const panels = document.querySelectorAll(".mobile-panel");
       const buttons = document.querySelectorAll(".mobile-bottom button");
@@ -1681,11 +1571,12 @@
 
 
     AOS.init({
-  duration: 700,
-  once: true
-});
+      duration: 700,
+      once: true
+    });
   </script>
 
 
 </body>
+
 </html>
